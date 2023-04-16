@@ -24,6 +24,8 @@ void write_bmp(char* buf, int width, int height, int bits_per_pixel, char* file_
 
 	fopen_s(&img_file, file_name, "wb");
 
+	//img_file = fopen(file_name, "wb");
+
 	char bmp_header[] = { 0x42, 0x4D,				//header field
 						  0x40, 0x00, 0x00, 0x00,	//BMP file size
 					      0x00, 0x00,				//reserved

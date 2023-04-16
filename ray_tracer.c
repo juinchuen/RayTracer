@@ -5,9 +5,9 @@ void cross(float* ret_val, float* x, float* y) {
 	//CROSS
 	//calculates x cross y
 
-	*(ret_val + 0) = *(x + 1) * *(y + 2) - *(x + 2) * *(y + 1);
-	*(ret_val + 1) = *(x + 2) * *(y + 0) - *(x + 0) * *(y + 2);
-	*(ret_val + 2) = *(x + 0) * *(y + 1) - *(x + 1) * *(y + 0);
+	ret_val[0] = x[1] * y[2] - x[2] * y[1];
+	ret_val[1] = x[2] * y[0] - x[0] * y[2];
+	ret_val[2] = x[0] * y[1] - x[1] * y[0];
 
 	return;
 }
@@ -16,7 +16,7 @@ float dot(float* x, float* y) {
 	//DOT
 	//calculates x dot y
 
-	return *(x + 0) * *(y + 0) + *(x + 1) * *(y + 1) + *(x + 2) * *(y + 2);
+	return x[0] * y[0] + x[1] * y[1] + x[2] * y[2];
 
 }
 
@@ -24,7 +24,7 @@ void normalize(float* ret_val, float* x) {
 	//NORMALIZE
 	//scales vector to unit length
 
-	float div = 1 / sqrt(*(x + 0) * *(x + 0) + *(x + 1) * *(x + 1) + *(x + 2) * *(x + 2));
+	float div = 1 / sqrt(dot(x, x));
 
 	scale(ret_val, x, div);
 
@@ -34,7 +34,7 @@ void print_vector(float* x) {
 	//PRINT_VECTOR
 	//prints 3 components of vector to terminal
 
-	printf("%f %f %f\n", *(x + 0), *(x + 1), *(x + 2));
+	printf("%f %f %f\n", x[0], x[1], x[2]);
 
 }
 
@@ -42,9 +42,9 @@ void add(float* ret_val, float* x, float* y) {
 	//ADD
 	//calculates x + y
 
-	*(ret_val + 0) = *(x + 0) + *(y + 0);
-	*(ret_val + 1) = *(x + 1) + *(y + 1);
-	*(ret_val + 2) = *(x + 2) + *(y + 2);
+	ret_val[0] = x[0] + y[0];
+	ret_val[1] = x[1] + y[1];
+	ret_val[2] = x[2] + y[2];
 
 }
 
@@ -52,18 +52,18 @@ void subtract(float* ret_val, float* x, float* y) {
 	//SUBTRACT
 	//calculates x - y
 
-	*(ret_val + 0) = *(x + 0) - *(y + 0);
-	*(ret_val + 1) = *(x + 1) - *(y + 1);
-	*(ret_val + 2) = *(x + 2) - *(y + 2);
+	ret_val[0] = x[0] - y[0];
+	ret_val[1] = x[1] - y[1];
+	ret_val[2] = x[2] - y[2];
 
 }
 
 void scale(float* ret_val, float* x, float a) {
 	//SCALE
 	//apply scalar to vector
-	*(ret_val + 0) = *(x + 0) * a;
-	*(ret_val + 1) = *(x + 1) * a;
-	*(ret_val + 2) = *(x + 2) * a;
+	ret_val[0] = x[0] * a;
+	ret_val[1] = x[1] * a;
+	ret_val[2] = x[2] * a;
 
 }
 
@@ -86,9 +86,15 @@ bool ray_triangle_intersect(float* p_hit, float* triangle, float* triangle_norma
 
 		float t = -(dot(triangle_normal, origin) + D) / dot(triangle_normal, dir);
 
-		*(p_hit + 0) = *(origin + 0) + *(dir + 0) * t;
-		*(p_hit + 1) = *(origin + 1) + *(dir + 1) * t;
-		*(p_hit + 2) = *(origin + 2) + *(dir + 2) * t;
+		scale(p_hit, dir, t);
+
+		add(p_hit, p_hit, origin);
+
+		if (t < 0) {
+
+			return false;
+
+		}
 
 		float e0[3] = { 0.0, 0.0, 0.0 };
 		float e1[3] = { 0.0, 0.0, 0.0 };

@@ -59,7 +59,7 @@ int main() {
 
 				subtract(distance, p_hit, eye);
 
-				*(img_buf + 3 * (256 * i + j)) = 0xFF;
+				*(img_buf + 3 * (256 * i + j) + 1) = 0xFF;
 
 			}
 
