@@ -1,35 +1,39 @@
 `timescale 1ns/10ps
 
-module cross(out, x, y);
+module cross(out0, out1, out2, x0, x1, x2, y0, y1, y2);
 
-    input [95:0] x;
-    input [95:0] y;
+    input signed [31:0] x0;
+    input signed [31:0] x1;
+    input signed [31:0] x2;
 
-    output [95:0] out;
+    input signed [31:0] y0;
+    input signed [31:0] y1;
+    input signed [31:0] y2;
 
-    assign out[31:0 ] = (x[63:32] * y[95:64] - x[95:64] * y[63:32]) >> 16;
-    assign out[63:32] = (x[95:64] * y[31:0 ] - x[31:0 ] * y[95:64]) >> 16;
-    assign out[95:64] = (x[31:0 ] * y[63:32] - x[63:32] * y[31:0 ]) >> 16;
+    output signed [31:0] out0;
+    output signed [31:0] out1;
+    output signed [31:0] out2;
+
+    assign out0 = (x1 * y2 - x2 * y1) >> 16;
+    assign out1 = (x2 * y0 - x0 * y2) >> 16;
+    assign out2 = (x0 * y1 - x1 * y0) >> 16;
 
 endmodule
 
-module dot(out, x, y);
+module dot(out0, out1, out2, x0, x1, x2, y0, y1, y2);
    
-	input [95:0] x;
-	input [95:0] y;
 
-	wire signed [31:0] x0, x1, x2;
-	wire signed [31:0] y0, y1, y2;
+    input signed [31:0] x0;
+    input signed [31:0] x1;
+    input signed [31:0] x2;
 
-	assign x0 = x[31:0 ];
-	assign x1 = x[63:32];
-	assign x2 = x[95:64];
+    input signed [31:0] y0;
+    input signed [31:0] y1;
+    input signed [31:0] y2;
 
-	assign y0 = y[31:0 ];
-	assign y1 = y[63:32];
-	assign y2 = y[95:64];
-
-	output signed [31:0] out;
+    output signed [31:0] out0;
+    output signed [31:0] out1;
+    output signed [31:0] out2;
 
 	wire signed [63:0] a;
 	wire signed [63:0] b;
@@ -39,49 +43,70 @@ module dot(out, x, y);
 	assign b = (x1 * y1) >> 16;
 	assign c = (x2 * y2) >> 16;
 
-
 	assign out = a + b + c;
 
 endmodule
 
-module scale(out, x, a);
+module scale(out0, out1, out2, x0, x1, x2, a);
 
-	input [95:0] x;
-	input signed [31:0] a;
+    input signed [31:0] x0;
+    input signed [31:0] x1;
+    input signed [31:0] x2;
 
-	wire signed [31:0] x0;
-	wire signed [31:0] x1;
-	wire signed [31:0] x2;
+    output signed [31:0] out0;
+    output signed [31:0] out1;
+    output signed [31:0] out2;
 
-	wire signed [63:0] out0;
-	wire signed [63:0] out1;
-	wire signed [63:0] out2;
+	wire signed [31:0] out0_big;
+	wire signed [31:0] out1_big;
+	wire signed [31:0] out2_big;
+	
+	assign out0_big = x0 * a;
+	assign out1_big = x1 * a;
+	assign out2_big = x2 * a;
 
-	assign x0 = x[31:0];
-	assign x1 = x[63:32];
-	assign x2 = x[95:64];
-
-	output [95:0] out;
-
-	assign out0 = x0 * a;
-	assign out1 = x1 * a;
-	assign out2 = x2 * a;
-
-	assign out[31:0 ] = out0 >> 16;
-	assign out[63:32] = out1 >> 16;
-	assign out[95:64] = out2 >> 16;
+	assign out0 = out0_big >> 16;
+	assign out1 = out1_big >> 16;
+	assign out2 = out2_big >> 16;
 
 endmodule
 
-module add(out, x, y);
+module add(out0, out1, out2, x0, x1, x2, y0, y1, y2);
 
-	input [95:0] x;
-	input [95:0] y;
+    input signed [31:0] x0;
+    input signed [31:0] x1;
+    input signed [31:0] x2;
 
-	output [95:0] out;
+    input signed [31:0] y0;
+    input signed [31:0] y1;
+    input signed [31:0] y2;
 
-	assign out[31:0 ] = x[31:0 ] + y[31:0 ];
-	assign out[63:32] = x[63:32] + y[63:32];
-	assign out[95:64] = x[95:64] + y[95:64];
+    output signed [31:0] out0;
+    output signed [31:0] out1;
+    output signed [31:0] out2;
+
+	assign out0 = x0 + y0;
+	assign out1 = x1 + y1;
+	assign out2 = x2 + y2;
+	
+endmodule
+
+module subtract(out0, out1, out2, x0, x1, x2, y0, y1, y2);
+
+    input signed [31:0] x0;
+    input signed [31:0] x1;
+    input signed [31:0] x2;
+
+    input signed [31:0] y0;
+    input signed [31:0] y1;
+    input signed [31:0] y2;
+
+    output signed [31:0] out0;
+    output signed [31:0] out1;
+    output signed [31:0] out2;
+
+	assign out0 = x0 - y0;
+	assign out1 = x1 - y1;
+	assign out2 = x2 - y2;
 	
 endmodule

@@ -2,12 +2,25 @@
 
 module ray_plane_intersect(p_hit, normal, origin, v0, dir);
 
-	input [95:0] normal;
-	input [95:0] origin;
-	input [95:0] v0;
-	input [95:0] dir;
+	input signed [31:0] normal0;
+	input signed [31:0] normal1;
+	input signed [31:0] normal2;
+	
+	input signed [31:0] origin0;
+	input signed [31:0] origin1;
+	input signed [31:0] origin2;
+	
+	input signed [31:0] v0_0;
+	input signed [31:0] v0_1;
+	input signed [31:0] v0_2;
 
-	output [95:0] p_hit;
+	input signed [31:0] dir0;
+	input signed [31:0] dir1;
+	input signed [31:0] dir2;	
+
+	output signed [31:0] p_hit0;
+	output signed [31:0] p_hit1;
+	output signed [31:0] p_hit2;
 
 	wire [31:0] normal_o_v;
 	wire [31:0] normal_o_origin;
