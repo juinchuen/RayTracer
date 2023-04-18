@@ -21,13 +21,13 @@ divide #(
     .QUANTIZED_BITS(QUANTIZED_BITS),
     .DATA_WIDTH(DATA_WIDTH)
 ) divide_isnt(
-    .clock(clock)
-    .reset(reset)
-    .dividend(dividend)
-    .divisor(divisor)
-    .quotient(quotient)
-    .remainder(remainder)
-    .valid_in(valid_in)
+    .clock(clock),
+    .reset(reset),
+    .dividend(dividend),
+    .divisor(divisor),
+    .quotient(quotient),
+    .remainder(remainder),
+    .valid_in(valid_in),
     .valid_out(valid_out)
 );
 
