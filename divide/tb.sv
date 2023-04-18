@@ -4,6 +4,7 @@ module tb();
 
 localparam QUANTIZED_BITS = 'd10;
 localparam DATA_WIDTH = 'd32;
+localparam CLOCK_PERIOD = 10;
 
 logic clock = 1'b1;
 logic reset = '0;
