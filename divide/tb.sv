@@ -48,8 +48,8 @@ end
 
 initial begin: input_process
     @(negedge clock);
-    dividend =  'd12166;
-    divisor =   'd19397;
+    dividend =  'd190;
+    divisor =   -'d10;
     valid_in = 'b1;
 end
 
