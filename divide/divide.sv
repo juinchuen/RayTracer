@@ -47,7 +47,7 @@ always_comb begin
         s0: begin
             if(valid_in) begin
                 B_c = divisor;
-                EAQ_c = {1'b0, DATA_WIDTH'(b0), dividend};
+                EAQ_c = {1'b0, DATA_WIDTH'(0), dividend};
                 i_c = 'b0;
                 next_state = s1;
             end
