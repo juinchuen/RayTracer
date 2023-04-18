@@ -70,7 +70,7 @@ always_comb begin
         s2: begin   //write
             quotient = EAQ[DATA_WIDTH-1:0]; //quotient in Q     EAQ[DATA_WIDTH-1:0]
             remainder = EAQ[DATA_WIDTH*2-1:DATA_WIDTH]; //remainder in A    EAQ[DATA_WIDTH*2-1:DATA_WIDTH]
-            valid_out = 'b0;
+            valid_out = 'b1;
         end
     endcase
 end
