@@ -55,8 +55,8 @@ always_comb begin
 
         s1: begin
             EAQ_c = EAQ << 1;
-            if(EAQ_c[2*DATA_WIDTH]) EAQ_c[2*DATA_WIDTH:DATA_WIDTH] = EAQ_c[DATA_WIDTH*2:DATA_WIDTH] + (DATA_WIDTH+1)'(B);
-            else                    EAQ_c[2*DATA_WIDTH:DATA_WIDTH] = EAQ_c[DATA_WIDTH*2:DATA_WIDTH] - (DATA_WIDTH+1)'(B);
+            if(EAQ_c[2*DATA_WIDTH]) EAQ_c[2*DATA_WIDTH:DATA_WIDTH] = EAQ_c[2*DATA_WIDTH:DATA_WIDTH] + (DATA_WIDTH+1)'(B);
+            else                    EAQ_c[2*DATA_WIDTH:DATA_WIDTH] = EAQ_c[2*DATA_WIDTH:DATA_WIDTH] - (DATA_WIDTH+1)'(B);
 
             if(EAQ_c[2*DATA_WIDTH]) EAQ_c[0] = 1'b0;
             else                    EAQ_c[0] = 1'b1;
