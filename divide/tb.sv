@@ -21,7 +21,7 @@ logic valid_in, valid_out;
 divide #(
     .QUANTIZED_BITS(QUANTIZED_BITS),
     .DATA_WIDTH(DATA_WIDTH)
-) divide_isnt(
+) divide_inst(
     .clock(clock),
     .reset(reset),
     .dividend(dividend),
