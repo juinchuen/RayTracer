@@ -1,6 +1,3 @@
-`timescale 1ns/10ps
-
-
 module ray_plane_intersect #(
 	parameter Q_BITS = 'd10)
 (

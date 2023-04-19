@@ -1,5 +1,3 @@
-`timescale 1ns/10ps
-
 module cross #(
     parameter Q_BITS = 'd10
 ) (
