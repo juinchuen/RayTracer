@@ -34,6 +34,8 @@ always_ff @(posedge clock or posedge reset) begin
     end
 end
 
+logic [2*DATA_WIDTH-1:0] temp;
+
 always_comb begin
     next_state = state;
     quotient = 'b0;
@@ -47,7 +49,8 @@ always_comb begin
         s0: begin
             if(valid_in) begin
                 B_c = divisor;
-                EAQ_c = {1'b0, DATA_WIDTH'(0), DATA_WIDTH'((2*DATA_WIDTH)'(dividend<<QUANTIZED_BITS) + divisor>>1)};
+                temp = (2*DATA_WIDTH)'(dividend) << QUANTIZED_BITS + (divisor >> 1);
+                EAQ_c = {1'b0, DATA_WIDTH'(0), DATA_WIDTH'(temp)};
                 i_c = 'b0;
                 next_state = s1;
             end
