@@ -45,7 +45,7 @@ module scale #(
     input int y[2:0],
     output int out[2:0]
 );
-	logic signed [47:0] out_big [2:0]
+	logic signed [47:0] out_big [2:0];
 	
     always_comb begin
         out_big[0] = (x[0] * a) >> 16;
