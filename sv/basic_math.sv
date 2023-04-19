@@ -23,7 +23,7 @@ module dot #(
 ) (
     input int x[2:0],
     input int y[2:0],
-    output int out[2:0]
+    output int out
 );
 	logic signed [47:0] out_big [2:0];
 
