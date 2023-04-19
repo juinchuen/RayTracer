@@ -14,7 +14,6 @@ logic reset = '0;
 logic signed [DATA_WIDTH-1:0] dividend;
 logic signed [DATA_WIDTH-1:0] divisor;
 logic signed [DATA_WIDTH-1:0] quotient;
-logic signed [DATA_WIDTH-1:0] remainder;
 
 logic valid_in, valid_out;
 
@@ -27,7 +26,6 @@ divide #(
     .dividend(dividend),
     .divisor(divisor),
     .quotient(quotient),
-    .remainder(remainder),
     .valid_in(valid_in),
     .valid_out(valid_out)
 );
