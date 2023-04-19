@@ -9,9 +9,11 @@ module divide_module #(
     input logic signed [D_WIDTH-1:0] dividend,
     input logic signed [D_WIDTH-1:0] divisor,
     output logic signed [D_WIDTH-1:0] quotient,
+    input logic in_empty,
+    output logic in_rd_en,
 
-    input logic valid_in,
-    output logic valid_out
+    output logic out_wr_en,
+    input logic out_full
 );
 
 logic signed [D_WIDTH-1:0] Q, Q_c; //Q is dividend
@@ -48,6 +50,8 @@ always_comb begin
     next_state = state;
     quotient = 'b0;
     valid_out = 'b0;
+    in_rd_en = 'b0;
+    out_wr_en = 'b0;
     i_c = i;
     B_c = B;
     EAQ_c = EAQ;
@@ -56,8 +60,7 @@ always_comb begin
 
     case(state)
         s0: begin
-            if(valid_in) begin
-                //if one is negative
+            if(!in_empty) begin
                 temp_dividend = dividend;
                 temp_divisor = divisor;
                 if(dividend < 0) begin
@@ -68,12 +71,13 @@ always_comb begin
                     divisor_flag_c = 'b1;
                     temp_divisor = -divisor;
                 end
-
                 B_c = temp_divisor;
                 temp = ((ED_WIDTH)'(temp_dividend) << Q_BITS) + (temp_divisor >> 1);
                 EAQ_c = {1'b0, ED_WIDTH'(0), temp};
                 i_c = 'b0;
-                next_state = s1;
+
+                in_rd_en = 'b1;
+                state_c = s1;
             end
         end
 
@@ -92,13 +96,15 @@ always_comb begin
         end
 
         s2: begin   //write
-            if(dividend_flag^divisor_flag)
-                quotient = -EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
-            else
-                quotient = EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
-            valid_out = 'b1;
-            dividend_flag_c = 'b0;
-            divisor_flag_c = 'b0;
+            if(!out_full) begin
+                if(dividend_flag^divisor_flag)
+                    quotient = -EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
+                else
+                    quotient = EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
+                out_wr_en = 'b1;
+                dividend_flag_c = 'b0;
+                divisor_flag_c = 'b0;
+            end
         end
     endcase
 end

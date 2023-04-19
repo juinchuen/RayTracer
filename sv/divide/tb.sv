@@ -10,14 +10,37 @@ localparam CLOCK_PERIOD = 10;
 
 logic clock = 1'b1;
 logic reset = '0;
+logic signed [DATA_WIDTH-1:0] din;
+logic signed [DATA_WIDTH-1:0] dout;
 // logic start = '0;
 // logic done  = '0;
+
+logic in_wr_en;
+logic in_full;
+
 
 logic signed [DATA_WIDTH-1:0] dividend;
 logic signed [DATA_WIDTH-1:0] divisor;
 logic signed [DATA_WIDTH-1:0] quotient;
 
 logic valid_in, valid_out;
+
+fifo #(
+    .FIFO_DATA_WIDTH     (DATA_WIDTH),
+    .FIFO_BUFFER_SIZE    (DATA_WIDTH*16)
+) fifo_in (
+    .reset               (reset),
+    .wr_clk              (clock),
+    .rd_clk              (clock),
+
+    .wr_en               (in_wr_en),
+    .din                 (din),
+    .full                (in_full),
+    
+    .rd_en               (rd_en),
+    .dout                (),
+    .empty               (empty)
+);
 
 divide_module #(
     .Q_BITS(QUANTIZED_BITS),
@@ -29,8 +52,25 @@ divide_module #(
     .dividend(dividend),
     .divisor(divisor),
     .quotient(quotient),
-    .valid_in(valid_in),
-    .valid_out(valid_out)
+    .in_empty(),
+    .out_full(),
+);
+
+fifo #(
+    .FIFO_DATA_WIDTH     (DATA_WIDTH),
+    .FIFO_BUFFER_SIZE    (DATA_WIDTH*16)
+) fifo_in (
+    .reset               (reset),
+    .wr_clk              (clock),
+    .rd_clk              (clock),
+
+    .wr_en               (wr_en),
+    .din                 (din),
+    .full                (full),
+    
+    .rd_en               (rd_en),
+    .dout                (dout),
+    .empty               (empty)
 );
 
 always begin
