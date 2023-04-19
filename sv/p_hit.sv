@@ -1,20 +1,20 @@
 module ray_plane_intersect #(
-	parameter Q_BITS = 'd10)
-(
-	input logic signed [0:2] [31:0] normal,
-	input logic signed [0:2] [31:0] origin,
-	input logic signed [0:2] [31:0] v0,
-	input logic signed [0:2] [31:0] dir,
-	output logic signed [0:2][31:0] p_hit
+	parameter Q_BITS = 'd10
+) (
+	input int normal [0:2], 
+	input int origin [0:2],
+	input int v0 [0:2],
+	input int dir [0:2],
+	output int p_hit [0:2]
 );
 
-	logic signed [31:0] normal_o_v;
-	logic signed [31:0] normal_o_origin;
-	logic signed [31:0] normal_o_dir;
-	logic signed [31:0] numerator;
-	logic signed [31:0] quotient;
-	logic signed [0:2][31:0] product;
-	logic signed [47:0] force_resolution;
+	int normal_o_v;
+	int normal_o_origin;
+	int normal_o_dir;
+	int numerator;
+	int quotient;
+	int product [0:2];
+	logic signed [31+Q_BITS:0] force_resolution;
 
 	// Module instantiations
 	dot dot_d0_inst (
