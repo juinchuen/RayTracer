@@ -59,7 +59,7 @@ module scale #(
 
 endmodule
 
-module add(out, x, y);
+module add
 (
     input int x[2:0],
     input int y[2:0],
@@ -72,7 +72,7 @@ module add(out, x, y);
     end
 endmodule
 
-module subtract(out0, out1, out2, x0, x1, x2, y0, y1, y2);
+module subtract
 (
     input int x[2:0],
     input int y[2:0],
