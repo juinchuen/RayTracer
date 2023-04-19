@@ -52,7 +52,7 @@ always_comb begin
     B_c = B;
     EAQ_c = EAQ;
     dividend_flag_c = dividend_flag;
-    divisor_flag_c = divisor_flag
+    divisor_flag_c = divisor_flag;
 
     case(state)
         s0: begin
