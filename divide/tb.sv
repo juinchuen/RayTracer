@@ -19,8 +19,8 @@ logic signed [DATA_WIDTH-1:0] remainder;
 logic valid_in, valid_out;
 
 divide #(
-    .QUANTIZED_BITS(QUANTIZED_BITS),
-    .DATA_WIDTH(DATA_WIDTH)
+    .Q_BITS(QUANTIZED_BITS),
+    .D_WIDTH(DATA_WIDTH)
 ) divide_inst(
     .clock(clock),
     .reset(reset),
