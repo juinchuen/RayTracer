@@ -18,7 +18,7 @@ logic signed [D_WIDTH-1:0] Q, Q_c; //Q is dividend
 logic signed [D_WIDTH-1:0] B, B_c; //B is divisor
 logic signed [2*ED_WIDTH:0] EAQ, EAQ_c; //register with all our math
 logic[7:0] i_c, i;
-logic negative; //flag
+logic divisor_flag, dividend_flag; //flag for negatives
 
 enum logic[1:0] {s0, s1, s2} state, next_state;
 
@@ -49,6 +49,14 @@ always_comb begin
     case(state)
         s0: begin
             if(valid_in) begin
+                //if one is negative
+                if(dividend < 0) begin
+                    dividend_flag = 'b1;
+                end
+                if(divisor < 0) begin
+                    divisor_flag = 'b1;
+                end
+
                 B_c = divisor;
                 temp = ((ED_WIDTH)'(dividend) << Q_BITS) + (divisor >> 1);
                 EAQ_c = {1'b0, ED_WIDTH'(0), temp};
