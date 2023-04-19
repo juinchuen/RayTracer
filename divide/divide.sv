@@ -18,6 +18,7 @@ logic signed [D_WIDTH-1:0] Q, Q_c; //Q is dividend
 logic signed [D_WIDTH-1:0] B, B_c; //B is divisor
 logic signed [2*ED_WIDTH:0] EAQ, EAQ_c; //register with all our math
 logic[7:0] i_c, i;
+logic negative; //flag
 
 enum logic[1:0] {s0, s1, s2} state, next_state;
 
