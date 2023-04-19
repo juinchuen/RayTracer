@@ -39,7 +39,6 @@ logic signed [ED_WIDTH-1:0] temp;
 always_comb begin
     next_state = state;
     quotient = 'b0;
-    remainder = 'b0;
     valid_out = 'b0;
     i_c = i;
     B_c = B;
@@ -49,8 +48,8 @@ always_comb begin
         s0: begin
             if(valid_in) begin
                 B_c = divisor;
-                temp = ((EXPAND_DATA_WIDTH)'(dividend) << Q_BITS) + (divisor >> 1);
-                EAQ_c = {1'b0, EXPAND_DATA_WIDTH'(0), temp};
+                temp = ((ED_WIDTH)'(dividend) << Q_BITS) + (divisor >> 1);
+                EAQ_c = {1'b0, ED_WIDTH'(0), temp};
                 i_c = 'b0;
                 next_state = s1;
             end
