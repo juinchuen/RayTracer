@@ -30,34 +30,34 @@ int d2;
 
 // Module instantiation
 // Subtract stage 1
-subtract u_subtract (
+subtract u_subtract_one (
     .out    (o0),
     .x      (v1),
     .y      (v0)
     
 );
-subtract u_subtract (
+subtract u_subtract_two (
     .out    (o1),
     .x      (v2),
     .y      (v1)
 );
-subtract u_subtract (
+subtract u_subtract_three (
     .out    (o2),
     .x      (v0),
     .y      (v2)
 );
 // Subtract stage 2
-subtract u_subtract (
+subtract u_subtract_four (
     .out    (p0),
     .x      (p_hit),
     .y      (v0)
 );
-subtract u_subtract (
+subtract u_subtract_five (
     .out    (p1),
     .x      (p_hit),
     .y      (v1)
 );
-subtract u_subtract (
+subtract u_subtract_six (
     .out    (p2),
     .x      (p_hit),
     .y      (v2)    
@@ -65,21 +65,21 @@ subtract u_subtract (
 // Cross stage
 cross #(
     .Q_BITS('d10)
-) u_cross (
+) u_cross_one (
     .out   (c0),
     .x     (o0),
     .y     (p0)
 );
 cross #(
     .Q_BITS ('d10)
-) u_cross (
+) u_cross_two (
     .out   (c1),
     .x     (o1),
     .y     (p1)
 );
 cross #(
     .Q_BITS ('d10)
-) u_cross (
+) u_cross_three (
     .out   (c2),
     .x     (o2),
     .y     (p2)
@@ -87,21 +87,21 @@ cross #(
 // Dot stage
 dot #(
     .Q_BITS ('d10)
-) u_dot (
+) u_dot_one (
     .out    (d0),
     .x      (c0),
     .y      (normal)
 );
 dot #(
     .Q_BITS ('d10)
-) u_dot (
+) u_dot_two (
     .out    (d1),
     .x      (c1),
     .y      (normal)
 );
 dot #(
     .Q_BITS ('d10)
-) u_dot (
+) u_dot_three (
     .out    (d2),
     .x      (c2),
     .y      (normal)
