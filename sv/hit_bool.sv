@@ -23,6 +23,10 @@ int [2:0] p2;
 int [2:0] c0; 
 int [2:0] c1;
 int [2:0] c2;
+// Dot product outputs
+int d0;
+int d1;
+int d2;
 
 // Module instantiation
 // Subtract stage 1
