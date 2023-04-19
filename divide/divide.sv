@@ -52,6 +52,8 @@ always_comb begin
         s0: begin
             if(valid_in) begin
                 //if one is negative
+                temp_dividend = dividend;
+                temp_divisor = divisor;
                 if(dividend < 0) begin
                     dividend_flag = 'b1;
                     temp_dividend = -dividend;
