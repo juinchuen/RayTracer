@@ -48,8 +48,8 @@ end
 
 initial begin: input_process
     @(negedge clock);
-    dividend =  'd12166;
-    divisor =   'd19397;
+    dividend =  'd12166 << QUANTIZED_BITS;
+    divisor =   'd19397 << QUANTIZED_BITS;
     valid_in = 'b1;
 end
 
