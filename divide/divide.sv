@@ -1,4 +1,4 @@
-module divide #(
+module divide_module #(
     parameter Q_BITS = 'd10,
     parameter D_WIDTH = 'd32,       //data width
     parameter ED_WIDTH = 2*D_WIDTH  //expanded data width
@@ -18,7 +18,7 @@ logic signed [D_WIDTH-1:0] Q, Q_c; //Q is dividend
 logic signed [D_WIDTH-1:0] B, B_c; //B is divisor
 logic signed [2*ED_WIDTH:0] EAQ, EAQ_c; //register with all our math
 logic[7:0] i_c, i;
-logic divisor_flag, dividend_flag; //flag for negatives
+logic divisor_flag, dividend_flag, divisor_flag_c, dividend_flag_c; //flag for negatives
 
 enum logic[1:0] {s0, s1, s2} state, next_state;
 
@@ -28,11 +28,15 @@ always_ff @(posedge clock or posedge reset) begin
         B <= 'b0;
         i <= 'b0;
         EAQ <= 'b0;
+        divisor_flag <= 'b0;
+        dividend_flag <= 'b0;
     end else begin
         state <= next_state;
         B <= B_c; 
         i <= i_c;
         EAQ <= EAQ_c;
+        divisor_flag <= divisor_flag_c;
+        dividend_flag <= dividend_flag_c;
     end
 end
 
@@ -52,16 +56,14 @@ always_comb begin
         s0: begin
             if(valid_in) begin
                 //if one is negative
-                divisor_flag = 'b0;
-                dividend_flag = 'b0;
                 temp_dividend = dividend;
                 temp_divisor = divisor;
                 if(dividend < 0) begin
-                    dividend_flag = 'b1;
+                    dividend_flag_c = 'b1;
                     temp_dividend = -dividend;
                 end
                 if(divisor < 0) begin
-                    divisor_flag = 'b1;
+                    divisor_flag_c = 'b1;
                     temp_divisor = -divisor;
                 end
 
@@ -92,8 +94,9 @@ always_comb begin
                 quotient = -EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
             else
                 quotient = EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
-            
             valid_out = 'b1;
+            dividend_flag_c = 'b0;
+            divisor_flag_c = 'b0;
         end
     endcase
 end

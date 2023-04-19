@@ -19,7 +19,7 @@ logic signed [DATA_WIDTH-1:0] quotient;
 
 logic valid_in, valid_out;
 
-divide #(
+divide_module #(
     .Q_BITS(QUANTIZED_BITS),
     .D_WIDTH(DATA_WIDTH),
     .ED_WIDTH(EXPANDED_DATA_WIDTH)
