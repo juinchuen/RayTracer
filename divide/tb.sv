@@ -4,6 +4,8 @@ module tb();
 
 localparam QUANTIZED_BITS = 'd10;
 localparam DATA_WIDTH = 'd32;
+localparam EXPANDED_DATA_WIDTH = DATA_WIDTH + QUANTIZED_BITS + 1;
+
 localparam CLOCK_PERIOD = 10;
 
 logic clock = 1'b1;
@@ -19,7 +21,8 @@ logic valid_in, valid_out;
 
 divide #(
     .Q_BITS(QUANTIZED_BITS),
-    .D_WIDTH(DATA_WIDTH)
+    .D_WIDTH(DATA_WIDTH),
+    .ED_WIDTH(EXPANDED_DATA_WIDTH)
 ) divide_inst(
     .clock(clock),
     .reset(reset),
