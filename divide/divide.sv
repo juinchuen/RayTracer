@@ -89,7 +89,7 @@ always_comb begin
 
         s2: begin   //write
             if(dividend_flag^divisor_flag)
-                quotient = EAQ[D_WIDTH-1:0] * -1; //quotient in Q     EAQ[ED_WIDTH-1:0]
+                quotient = -EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
             else
                 quotient = EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
             
