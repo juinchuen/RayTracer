@@ -49,7 +49,7 @@ always_comb begin
         s0: begin
             if(valid_in) begin
                 B_c = divisor;
-                temp = (2*DATA_WIDTH)'(dividend) << QUANTIZED_BITS + (divisor >> 1);
+                temp = ((2*DATA_WIDTH)'(dividend) << QUANTIZED_BITS) + (divisor >> 1);
                 EAQ_c = {1'b0, DATA_WIDTH'(0), DATA_WIDTH'(temp)};
                 i_c = 'b0;
                 next_state = s1;
