@@ -77,7 +77,7 @@ module subtract
     input int x[2:0],
     input int y[2:0],
     output int out[2:0],
-)
+);
     always_comb begin
 	    out[0] = x[0] - y[0];
 	    out[1] = x[1] - y[1];
