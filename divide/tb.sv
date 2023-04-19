@@ -56,10 +56,8 @@ end
 
 initial begin: output_read
     wait(valid_out);
-    $display("Answer is: %f", (quotient/(2^QUANTIZED_BITS)));
+    $display("Answer is: %f", (real'(quotient)/real'(2^QUANTIZED_BITS)));
     $finish;
 end
-
-
 
 endmodule
