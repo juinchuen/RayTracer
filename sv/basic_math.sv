@@ -1,21 +1,22 @@
-module cross #(
+module Cross #(
     parameter Q_BITS = 'd10
 ) (
     input int x [2:0],
     input int y [2:0],
     output int out [2:0]
 );
-    logic signed [47:0] out_big [2:0];
 
-    always_comb begin
-        out_big[1] = (x[2] * y[0] - x[0] * y[2]) >> Q_BITS;
-        out_big[0] = (x[1] * y[2] - x[2] * y[1]) >> Q_BITS;
-        out_big[2] = (x[0] * y[1] - x[1] * y[0]) >> Q_BITS;
+logic signed [47:0] out_big [2:0];
 
-        out[0] = out_big[0];
-        out[1] = out_big[1];    
-        out[2] = out_big[2];
-    end
+always_comb begin
+    out_big[0] = (x[1] * y[2] - x[2] * y[1]) >> Q_BITS;
+    out_big[1] = (x[2] * y[0] - x[0] * y[2]) >> Q_BITS;
+    out_big[2] = (x[0] * y[1] - x[1] * y[0]) >> Q_BITS;
+    out[0] = out_big[0];
+    out[1] = out_big[1];    
+    out[2] = out_big[2];
+
+end
 endmodule
 
 module dot #(
@@ -50,9 +51,9 @@ module scale #(
         out_big[1] = (x[1] * a) >> Q_BITS;
         out_big[2] = (x[2] * a) >> Q_BITS;
 
-        out[0] = out0_big;
-        out[1] = out1_big;
-        out[2] = out2_big;
+        out[0] = out_big[0];
+        out[1] = out_big[1];
+        out[2] = out_big[2];
     end
 
 endmodule
@@ -74,7 +75,7 @@ module subtract
 (
     input int x[2:0],
     input int y[2:0],
-    output int out[2:0],
+    output int out[2:0]
 );
     always_comb begin
 	    out[0] = x[0] - y[0];
