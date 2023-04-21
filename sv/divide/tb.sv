@@ -119,7 +119,7 @@ initial begin : txt_read_process
     while (!$feof(in_file_1) && !$feof(in_file_2)) begin
         @(negedge clock);
         in_wr_en = 1'b0;
-        if (!rad_full) begin
+        if (!in_full) begin
             $fscanf(in_file_1, "%08x\n", dividend_in);
             $fscanf(in_file_2, "%08x\n", divisor_in);
             in_wr_en = 1'b1;
@@ -137,6 +137,7 @@ initial begin: txt_write_process
     int j;
     int out_file, cmp_file;
     int pos, length;
+    int cmp_dout;
     @(negedge reset);
     @(negedge clock);
 
@@ -157,14 +158,14 @@ initial begin: txt_write_process
         out_rd_en = 1'b0;
         if (!out_empty) begin
             $fscanf(cmp_file, "%08x\n", cmp_dout);
-            $fwrite(out_file, "%08x\n", out_dout);
+            $fwrite(out_file, "%08x\n", dout);
 
             if (cmp_dout != out_dout) begin
                 errors += 1;
                 $write("@ %0t: ERROR: %x != %x\n", $time, out_dout, cmp_dout);
             end
             out_rd_en = 1'b1;
-            $display("Answer is: %f", (real'(out_dout)/real'(2**QUANTIZED_BITS)));
+            $display("Answer is: %f", (real'(dout)/real'(2**QUANTIZED_BITS)));
             j = j + 5;
         end
     end
