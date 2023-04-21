@@ -28,7 +28,7 @@ logic signed [DATA_WIDTH-1:0] dout;
 logic out_empty, out_rd_en;
 
 logic signed [DATA_WIDTH-1:0] dividend, divisor;
-logic empty_1, empty_2;
+logic empty_1, empty_2, in_empty;
 logic in_full_1, in_full_2;
 logic in_rd_en;
 
