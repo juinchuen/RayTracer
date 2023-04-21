@@ -103,6 +103,7 @@ always_comb begin
                 out_wr_en = 'b1;
                 dividend_flag_c = 'b0;
                 divisor_flag_c = 'b0;
+                next_state = s0;
             end
         end
     endcase
