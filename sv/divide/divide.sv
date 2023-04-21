@@ -49,7 +49,6 @@ logic signed [D_WIDTH-1:0] temp_divisor, temp_dividend;
 always_comb begin
     next_state = state;
     quotient = 'b0;
-    valid_out = 'b0;
     in_rd_en = 'b0;
     out_wr_en = 'b0;
     i_c = i;
@@ -77,7 +76,7 @@ always_comb begin
                 i_c = 'b0;
 
                 in_rd_en = 'b1;
-                state_c = s1;
+                next_state = s1;
             end
         end
 
