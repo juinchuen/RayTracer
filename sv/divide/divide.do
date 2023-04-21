@@ -23,6 +23,6 @@ add wave -noupdate -group tb/u_divide_top
 add wave -noupdate -group tb/u_divide_top -radix hexadecimal /tb/u_divide_top/*
 
 add wave -noupdate -group tb/u_divide_top/u_divide_module
-add wave -noupdate -group tb/u_divide_top/u_divide_module -radix hexadecimal /tb/u_divide_top/u_divide_module*
+add wave -noupdate -group tb/u_divide_top/u_divide_module -radix hexadecimal /tb/u_divide_top/u_divide_module/*
 
 run -all
