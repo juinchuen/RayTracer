@@ -160,9 +160,9 @@ initial begin: txt_write_process
             $fscanf(cmp_file, "%08x\n", cmp_dout);
             $fwrite(out_file, "%08x\n", dout);
 
-            if (cmp_dout != out_dout) begin
+            if (cmp_dout != dout) begin
                 errors += 1;
-                $write("@ %0t: ERROR: %x != %x\n", $time, out_dout, cmp_dout);
+                $write("@ %0t: ERROR: %x != %x\n", $time, dout, cmp_dout);
             end
             out_rd_en = 1'b1;
             $display("Answer is: %f", (real'(dout)/real'(2**QUANTIZED_BITS)));
