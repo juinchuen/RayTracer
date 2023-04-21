@@ -1,7 +1,7 @@
 module divide_module #(
     parameter Q_BITS = 'd10,
     parameter D_WIDTH = 'd32,       //data width
-    parameter ED_WIDTH = 2*D_WIDTH  //expanded data width
+    parameter ED_WIDTH = D_WIDTH + Q_BITS + 1  //expanded data width
     //ED_WIDTH should never be larger than Q_BITS + D_WIDTH + 1
 )(
     input logic clock,

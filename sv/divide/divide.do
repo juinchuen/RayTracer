@@ -3,7 +3,9 @@ vlib work
 vmap work work
 
 # compile
+vlog -work work "../fifo.sv"
 vlog -work work "divide.sv"
+vlog -work work "divide_top.sv"
 vlog -work work "tb.sv"
 
 # run simulation
