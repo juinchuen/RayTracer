@@ -13,8 +13,8 @@ module divide_top #(
     output logic in_rd_en,
 
     output logic    out_empty,
-    input logic     out_rd_en
-    output logic signed [D_WIDTH-1:0] out_dout,
+    input logic     out_rd_en,
+    output logic signed [D_WIDTH-1:0] out_dout
 );
 
 logic [D_WIDTH-1:0] out_din;
