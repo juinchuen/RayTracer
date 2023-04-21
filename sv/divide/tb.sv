@@ -4,7 +4,7 @@ module tb();
 
 localparam string TXT_IN_1 = "txt/dividend.txt";
 localparam string TXT_IN_2 = "txt/divisor.txt";
-localparam string CMP = "txt/cmp.txt";
+localparam string TXT_CMP = "txt/cmp.txt";
 localparam string TXT_OUT = "txt/out.txt";
 localparam CLOCK_PERIOD = 10;
 
