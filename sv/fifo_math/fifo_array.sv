@@ -15,7 +15,7 @@ module fifo_array #(
     output logic empty
 );
 
-logic full_arr[i], empty_arr[i];
+logic full_arr[ARRAY_SIZE-1:0], empty_arr[ARRAY_SIZE-1:0];
 
 genvar i;
 generate for(i = 0; i < ARRAY_SIZE; i = i + 1) begin
