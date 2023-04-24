@@ -9,8 +9,8 @@ module dot_module #(
     output logic in_rd_en,
     
     output int out,
-    output logic out_full
-    input logic out_wr_en,
+    output logic out_full,
+    input logic out_wr_en
 );
 
 enum logic {s0, s1} state, next_state;
