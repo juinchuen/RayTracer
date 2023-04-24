@@ -23,7 +23,7 @@ always_ff @(posedge clock or posedge reset) begin
         out <= 'b0;
     end else begin
         state <= next_state;
-        out <= out_c
+        out <= out_c;
     end
 end
 
