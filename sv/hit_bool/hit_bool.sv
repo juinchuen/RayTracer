@@ -12,14 +12,15 @@ module hit_bool #(
     input int v0 [2:0],
     input int v1 [2:0],
     input int v2 [2:0],
-    // FIFO signals coming in
+
+    // FIFO signals going in
     input logic fifo_in_empty,
-    input logic fifo_out_full,
-    // Output bool
-    output logic hit,
+    input logic fifo_out_rd_en,  
+
     // FIFO signals going out 
     output logic fifo_in_rd_en,
-    output logic fifo_out_wr_en
+    output logic fifo_out_dout,   
+    output logic fifo_out_empty  
 ); 
 
 // Intermediary signals
@@ -40,15 +41,23 @@ int d0;
 int d1;
 int d2;
 // hit bool
-logic hit_c;
+logic hit, hit_c;
 // unpack the p_hit input to put into an array of ints
 int p_hit_arr [2:0];
 assign p_hit_arr[0] = int'(p_hit[31:0]);
 assign p_hit_arr[1] = int'(p_hit[63:32]);
 assign p_hit_arr[2] = int'(p_hit[95:64]);
+// Output FIFO 
+logic fifo_out_full;   
+logic fifo_out_wr_en; 
+// State email
+typedef enum logic [1:0] {s0, s1} state_types;
+state_types state; 
+state_types state_c = s0;
 
 // Place debug statements here:
 
+/////////////////////////////////
 // Module instantiation
 // Subtract stage 1
 subtract u_subtract_one (
@@ -127,30 +136,60 @@ dot #(
     .y      (c2)
 );
 
+// FIFO to hold outputs
+fifo #(
+    .FIFO_DATA_WIDTH     (1),
+    .FIFO_BUFFER_SIZE    (1024)
+) u_fifo_out (
+    .reset               (reset),
+    .wr_clk              (clock),
+    .wr_en               (fifo_out_wr_en),
+    .din                 (hit),
+    .full                (fifo_out_full),
+    .rd_clk              (clock),
+    .rd_en               (fifo_out_rd_en),
+    .dout                (fifo_out_dout),
+    .empty               (fifo_out_empty)
+);
+
 always_ff @(posedge clock or posedge reset) begin
     if(reset)begin
         hit <= 0;
+        state <= s0;
     end else begin
         hit <= hit_c;
+        state <= state_c;
     end
 end
-
 
 always_comb begin
     // Check if dot products are greater than 0
     // If greater return 1. Else return 0
     fifo_in_rd_en = 0;
     fifo_out_wr_en = 0;
-    hit_c = (d0 > 0) && (d1 > 0) && (d2 > 0);
-
-    if (fifo_in_empty == 1'b0) begin
-        fifo_in_rd_en = 1'b1;
-    end
-    if (fifo_out_full == 1'b0)begin
-        fifo_out_wr_en = 1'b1;
-    end 
+    hit_c = hit;
+    
+    case (state)
+        s0: begin
+            if (fifo_in_empty == 1'b0) begin
+                hit_c = (d0 > 0) && (d1 > 0) && (d2 > 0);
+                fifo_in_rd_en = 1'b1;
+                state_c = s1;
+            end else begin
+                state_c = s0;
+            end
+        end
+        s1: begin
+            if (fifo_out_full == 1'b0)begin
+                fifo_out_wr_en = 1'b1;
+                hit_c = 0;
+                state_c = s0;
+            end else begin
+                state_c = s1;
+            end
+        end
+    endcase
 end
-
 endmodule
 
 // Debug statements
