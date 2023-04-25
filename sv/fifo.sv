@@ -1,4 +1,3 @@
-
 module fifo #(
     parameter FIFO_DATA_WIDTH = 32,
     parameter FIFO_BUFFER_SIZE = 1024) 
