@@ -60,7 +60,7 @@ fifo_array #(
 );
 
 dot #(
-    .Q_BITS       ('d10)
+    .Q_BITS       (Q_BITS)
 ) u_dot (
     .clock        (clock),
     .reset        (reset),
@@ -152,7 +152,6 @@ initial begin: txt_write_process
                 $write("@ %0t: ERROR: %x != %x\n", $time, dout, cmp_dout);
             end
             out_rd_en = 1'b1;
-            $display("Answer is: %f", (real'(dout)/real'(2**QUANTIZED_BITS)));
             j = j + 5;
         end
     end
