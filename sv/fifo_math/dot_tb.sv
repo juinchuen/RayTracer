@@ -107,8 +107,8 @@ initial begin : txt_read_process
         @(negedge clock);
         in_wr_en = 1'b0;
         if (!y_full || !x_full) begin
-            $fscanf(in_file_1, "%08x %08x %08x\n", x[0], x[1], x[2]);
-            $fscanf(in_file_2, "%08x %08x %08x\n", y[0], y[1], y[2]);
+            $fscanf(in_file_1, "%08x %08x %08x\n", x_din[0], x_din[1], x_din[2]);
+            $fscanf(in_file_2, "%08x %08x %08x\n", y_din[0], y_din[1], y_din[2]);
             in_wr_en = 1'b1;
         end
     end
