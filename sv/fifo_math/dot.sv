@@ -16,6 +16,7 @@ module dot_module #(
 enum logic {s0, s1} state, next_state;
 logic signed [47:0] out_big [2:0];
 int out_c;
+logic signed [31:0] test1, test2, test3;
 
 always_ff @(posedge clock or posedge reset) begin
     if(reset) begin
@@ -33,6 +34,10 @@ always_comb begin
 
     in_rd_en = 'b0;
     out_wr_en = 'b0;
+
+    test1 = out_big[0];
+    test2 = out_big[1];
+    test3 = out_big[2];
 
     case(state)
     s0: begin
