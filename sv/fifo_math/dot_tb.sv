@@ -37,7 +37,7 @@ fifo_array #(
     .reset             (reset),
     .clock             (clock),
     .wr_en             (in_wr_en),
-    .din               (x_din[ARRAY_SIZE-1:0]),
+    .din               (x_din[2:0]),
     .full              (x_full),
     .rd_en             (in_rd_en),
     .dout              (x[2:0]),
