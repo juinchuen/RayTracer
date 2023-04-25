@@ -26,7 +26,7 @@ logic out_empty, out_rd_en;
 int dout;
 
 
-int x[2:0], y[2:0];
+logic signed [31:0] x[2:0], y[2:0];
 logic x_empty, y_empty, in_empty, in_rd_en;
 
 fifo_array #(
