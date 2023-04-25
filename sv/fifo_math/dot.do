@@ -22,6 +22,9 @@ add wave -noupdate -group tb/fifo_array_y -radix hexadecimal /tb/fifo_array_y/*
 add wave -noupdate -group tb/u_dot
 add wave -noupdate -group tb/u_dot -radix hexadecimal /tb/u_dot/*
 
+add wave -noupdate -group tb/u_dot/u_dot_module
+add wave -noupdate -group tb/u_dot/u_dot_module -radix hexadecimal /tb/u_dot/u_dot_module/*
+
 # add wave -noupdate -group tb/u_divide_top/u_divide_module
 # add wave -noupdate -group tb/u_divide_top/u_divide_module -radix hexadecimal /tb/u_divide_top/u_divide_module/*
 
