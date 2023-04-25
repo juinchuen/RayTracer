@@ -3,8 +3,8 @@ module dot_module #(
 ) (
     input logic clock,
     input logic reset,
-    input int x[2:0],
-    input int y[2:0],
+    input logic signed [31:0] x[2:0],
+    input logic signed [31:0] y[2:0],
     input logic in_empty,
     output logic in_rd_en,
     
