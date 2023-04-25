@@ -35,9 +35,9 @@ always_comb begin
     in_rd_en = 'b0;
     out_wr_en = 'b0;
 
-    test1 = out_big[0];
-    test2 = out_big[1];
-    test3 = out_big[2];
+    test1 = x[0];
+    test2 = x[1];
+    test3 = x[2];
 
     case(state)
     s0: begin
