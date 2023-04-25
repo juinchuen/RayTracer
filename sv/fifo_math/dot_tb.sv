@@ -21,7 +21,7 @@ logic reset = '0;
 logic out_read_done = '0;
 
 logic in_wr_en;
-int x_din[2:0], y_din[2:0];
+logic signed [31:0] x_din[2:0], y_din[2:0];
 logic out_empty, out_rd_en;
 int dout;
 
