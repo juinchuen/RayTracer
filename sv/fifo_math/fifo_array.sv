@@ -17,6 +17,14 @@ module fifo_array #(
 
 logic full_arr[ARRAY_SIZE-1:0], empty_arr[ARRAY_SIZE-1:0];
 
+logic signed [31:0] temp1, temp2, temp3;
+
+always_comb begin
+    temp1 = din[1];
+    temp2 = din[2];
+    temp3 = din[3];
+end
+
 genvar i;
 generate for(i = 0; i < ARRAY_SIZE; i = i + 1) begin
     fifo #(
