@@ -23,7 +23,7 @@ logic out_read_done = '0;
 logic in_wr_en;
 int x_din[2:0], y_din[2:0];
 logic out_empty, out_rd_en;
-int out;
+int dout;
 
 
 int x[2:0], y[2:0];
@@ -68,7 +68,7 @@ dot #(
     .y            (y[2:0]),
     .in_empty     (in_empty),
     .in_rd_en     (in_rd_en),
-    .out          (out),
+    .out          (dout),
     .out_empty    (out_empty),
     .out_rd_en    (out_rd_en)
 );
@@ -106,7 +106,7 @@ initial begin : txt_read_process
     while (!$feof(in_file_1) && !$feof(in_file_2)) begin
         @(negedge clock);
         in_wr_en = 1'b0;
-        if (!in_full) begin
+        if (!y_full || !x_full) begin
             $fscanf(in_file_1, "%08x %08x %08x\n", x[0], x[1], x[2]);
             $fscanf(in_file_2, "%08x %08x %08x\n", y[0], y[1], y[2]);
             in_wr_en = 1'b1;
