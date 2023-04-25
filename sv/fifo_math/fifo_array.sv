@@ -7,11 +7,11 @@ module fifo_array #(
     input  logic clock,
 
     input  logic wr_en,
-    input  logic [FIFO_DATA_WIDTH-1:0] din[ARRAY_SIZE-1:0],
+    input  logic signed [FIFO_DATA_WIDTH-1:0] din[ARRAY_SIZE-1:0],
     output logic full,
     
     input  logic rd_en,
-    output logic [FIFO_DATA_WIDTH-1:0] dout[ARRAY_SIZE-1:0],
+    output logic signed [FIFO_DATA_WIDTH-1:0] dout[ARRAY_SIZE-1:0],
     output logic empty
 );
 
