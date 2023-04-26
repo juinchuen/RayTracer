@@ -50,8 +50,8 @@ logic [ARRAY_SIZE-1:0] dummy1, dummy2;
 
 genvar j;
 generate for(j = 0; j < ARRAY_SIZE; j = j + 1) begin
-    dummy1 = empty_arr[j];
-    dummy2 = full_arr[j];
+    assign dummy1 = empty_arr[j];
+    assign dummy2 = full_arr[j];
 end
 endgenerate
 
