@@ -48,8 +48,8 @@ fifo #(
     .FIFO_BUFFER_SIZE    (1024)
 ) fifo_a (
     .reset               (reset),
-    .wr_clk              (wr_clk),
-    .rd_clk              (rd_clk),
+    .wr_clk              (clk),
+    .rd_clk              (clk),
     .wr_en               (in_wr_en),
     .din                 (a_din),
     .full                (a_full),
