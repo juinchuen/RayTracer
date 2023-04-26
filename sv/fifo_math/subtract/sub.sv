@@ -6,7 +6,7 @@ module sub_module (
     input logic in_empty,
     output logic in_rd_en,
     
-    output int out[2:0],
+    output logic signed [31:0] out[2:0],
     input logic out_full,
     output logic out_wr_en
 );
@@ -14,7 +14,7 @@ module sub_module (
 //subtract x from y
 
 enum logic {s0, s1} state, next_state;
-int out_c[2:0];
+logic signed [31:0] out_c[2:0];
 
 always_ff @(posedge clock or posedge reset) begin
     if(reset) begin
@@ -76,7 +76,7 @@ module sub(
     input logic out_rd_en
 );
 
-int out_din[2:0];
+logic signed [31:0] out_din[2:0];
 logic out_full;
 
 sub_module u_sub_module (
