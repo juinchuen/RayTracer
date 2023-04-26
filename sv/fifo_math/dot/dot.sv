@@ -75,7 +75,7 @@ module dot #(
 );
 
 int out_din;
-logic out_full;
+logic out_full, out_wr_en;
 
 dot_module #(
     .Q_BITS      ('d10)
