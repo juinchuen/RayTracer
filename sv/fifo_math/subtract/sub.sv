@@ -19,10 +19,14 @@ int out_c[2:0];
 always_ff @(posedge clock or posedge reset) begin
     if(reset) begin
         state <= s0;
-        out <= 'b0;
+        out[0] <= 'b0;
+        out[1] <= 'b0;
+        out[2] <= 'b0;
     end else begin
         state <= next_state;
-        out <= out_c;
+        out[0] <= out_c[0];
+        out[1] <= out_c[1];
+        out[2] <= out_c[2];
     end
 end
 
