@@ -73,7 +73,7 @@ scale #(
 );
 
 always_comb begin
-    in_empty = y_empty || x_empty;
+    in_empty = a_empty || x_empty;
 end
 
 always begin
