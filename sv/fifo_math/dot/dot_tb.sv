@@ -2,10 +2,10 @@
 
 module tb();
 
-localparam string TXT_IN_1 = "txt/x.txt";
-localparam string TXT_IN_2 = "txt/y.txt";
-localparam string TXT_CMP = "txt/cmp.txt";
-localparam string TXT_OUT = "txt/out.txt";
+localparam string TXT_IN_1 = "../txt/x.txt";
+localparam string TXT_IN_2 = "../txt/y.txt";
+localparam string TXT_CMP = "../txt/cmp.txt";
+localparam string TXT_OUT = "out.txt";
 localparam CLOCK_PERIOD = 10;
 
 localparam Q_BITS = 'd10;
