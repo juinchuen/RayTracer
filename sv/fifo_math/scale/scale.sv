@@ -92,7 +92,7 @@ scale_module u_scale_module (
     .clock        (clock),
     .reset        (reset),
     .x            (x[2:0]),
-    .y            (a),
+    .a            (a),
     .in_empty     (in_empty),
     .in_rd_en     (in_rd_en),
     .out          (out_din[2:0]),
