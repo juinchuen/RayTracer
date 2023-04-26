@@ -44,11 +44,29 @@ generate for(i = 0; i < ARRAY_SIZE; i = i + 1) begin
         .empty               (empty_arr[i])
     );
 end
+endgenerate
 
-always_comb begin
-    empty = empty_arr.or();
-    full = full_arr.or();
+logic [ARRAY_SIZE-1:0] dummy1, dummy2;
+
+genvar j;
+generate for(j = 0; j < ARRAY_SIZE; j = j + 1) begin
+    dummy1 = empty_arr[j];
+    dummy2 = full_arr[j];
 end
 endgenerate
+
+always_comb begin
+    empty = |dummy1;
+    full = |dummy2;
+end
+
+// always_comb begin
+//     for() begin
+//         empty = empty || empty_arr[j];
+//         full = full || full_arr[j];
+//     end
+//     // empty = empty_arr.or();
+//     // full = full_arr.or();
+// end
     
 endmodule
