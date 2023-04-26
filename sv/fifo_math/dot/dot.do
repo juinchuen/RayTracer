@@ -3,8 +3,8 @@ vlib work
 vmap work work
 
 # compile
-vlog -work work "../fifo.sv"
-vlog -work work "fifo_array.sv"
+vlog -work work "../../fifo.sv"
+vlog -work work "../fifo_array.sv"
 vlog -work work "dot.sv"
 vlog -work work "dot_tb.sv"
 
