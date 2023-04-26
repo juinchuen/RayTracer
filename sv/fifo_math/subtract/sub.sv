@@ -71,7 +71,7 @@ module sub(
     input logic in_empty,
     output logic in_rd_en,
     
-    output int out[2:0],
+    output logic signed [31:0] out[2:0],
     input logic out_empty,
     input logic out_rd_en
 );
