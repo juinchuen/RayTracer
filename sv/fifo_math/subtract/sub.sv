@@ -1,4 +1,4 @@
-module dot_module (
+module sub_module (
     input logic clock,
     input logic reset,
     input logic signed [31:0] x[2:0],
@@ -6,7 +6,7 @@ module dot_module (
     input logic in_empty,
     output logic in_rd_en,
     
-    output int out,
+    output int out[2:0],
     input logic out_full,
     output logic out_wr_en
 );
@@ -14,7 +14,7 @@ module dot_module (
 //subtract x from y
 
 enum logic {s0, s1} state, next_state;
-int out_c;
+int out_c[2:0];
 
 always_ff @(posedge clock or posedge reset) begin
     if(reset) begin
@@ -58,3 +58,20 @@ always_comb begin
     endcase
 end
 endmodule
+
+module sub(
+    input logic clock,
+    input logic reset,
+    input logic signed [31:0] x[2:0],
+    input logic signed [31:0] y[2:0],
+    input logic in_empty,
+    output logic in_rd_en,
+    
+    output int out[2:0],
+    input logic out_empty,
+    input logic out_rd_en
+)
+
+int out_din;
+logic out_full;
+
