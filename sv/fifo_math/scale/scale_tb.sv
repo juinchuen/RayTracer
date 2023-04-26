@@ -3,7 +3,7 @@
 module tb();
 
 localparam string TXT_IN_1 = "../txt/x.txt";
-localparam string TXT_IN_2 = "../txt/y.txt";
+localparam string TXT_IN_2 = "../txt/a.txt";
 localparam string TXT_CMP = "../txt/cmp_array.txt";
 localparam string TXT_OUT = "out.txt";
 localparam CLOCK_PERIOD = 10;
@@ -19,14 +19,14 @@ logic reset = '0;
 logic out_read_done = '0;
 
 logic in_wr_en;
-logic signed [31:0] x_din[2:0], y_din[2:0];
+logic signed [31:0] x_din[2:0], a_din;
 logic out_empty, out_rd_en;
 logic signed [31:0] dout[2:0];
 
 
-logic signed [31:0] x[2:0], y[2:0];
-logic x_empty, y_empty, in_empty, in_rd_en;
-logic x_full, y_full;
+logic signed [31:0] x[2:0], a;
+logic x_empty, a_empty, in_empty, in_rd_en;
+logic x_full, a_full;
 
 fifo_array #(
     .FIFO_DATA_WIDTH   (32),
@@ -43,26 +43,28 @@ fifo_array #(
     .empty             (x_empty)
 );
 
-fifo_array #(
-    .FIFO_DATA_WIDTH   (32),
-    .FIFO_BUFFER_SIZE  (1024),
-    .ARRAY_SIZE        (3)
-) fifo_array_y (
-    .reset             (reset),
-    .clock             (clock),
-    .wr_en             (in_wr_en),
-    .din               (y_din[2:0]),
-    .full              (y_full),
-    .rd_en             (in_rd_en),
-    .dout              (y[2:0]),
-    .empty             (y_empty)
+fifo #(
+    .FIFO_DATA_WIDTH     (32),
+    .FIFO_BUFFER_SIZE    (1024)
+) fifo_a (
+    .reset               (reset),
+    .wr_clk              (wr_clk),
+    .rd_clk              (rd_clk),
+    .wr_en               (in_wr_en),
+    .din                 (a_din),
+    .full                (a_full),
+    .rd_en               (in_rd_en),
+    .dout                (a),
+    .empty               (a_empty)
 );
 
-sub u_sub (
+scale #(
+    .Q_BITS       ('d10)
+) u_scale (
     .clock        (clock),
     .reset        (reset),
     .x            (x[2:0]),
-    .y            (y[2:0]),
+    .a            (a),
     .in_empty     (in_empty),
     .in_rd_en     (in_rd_en),
     .out          (dout[2:0]),
@@ -90,9 +92,9 @@ end
 
 logic signed [31:0] temp1, temp2, temp3;
 
-// assign temp1 = dout[0]; 
-// assign temp2 = dout[1]; 
-// assign temp3 = dout[2]; 
+assign temp1 = dout[0]; 
+assign temp2 = dout[1]; 
+assign temp3 = dout[2]; 
 
 initial begin : txt_read_process
     int i;
@@ -109,9 +111,9 @@ initial begin : txt_read_process
     while (!$feof(in_file_1) && !$feof(in_file_2)) begin
         @(negedge clock);
         in_wr_en = 1'b0;
-        if (!y_full || !x_full) begin
+        if (!a_full || !x_full) begin
             $fscanf(in_file_1, "%08x %08x %08x\n", x_din[0], x_din[1], x_din[2]);
-            $fscanf(in_file_2, "%08x %08x %08x\n", y_din[0], y_din[1], y_din[2]);
+            $fscanf(in_file_2, "%08x\n", a_din);
             in_wr_en = 1'b1;
         end
     end
