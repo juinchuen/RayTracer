@@ -17,8 +17,8 @@ add wave -noupdate -group tb
 add wave -noupdate -group tb -radix hexadecimal /tb/*
 add wave -noupdate -group tb/fifo_array_x
 add wave -noupdate -group tb/fifo_array_x -radix hexadecimal /tb/fifo_array_x/*
-add wave -noupdate -group tb/fifo_y
-add wave -noupdate -group tb/fifo_y -radix hexadecimal /tb/fifo_y/*
+add wave -noupdate -group tb/fifo_a
+add wave -noupdate -group tb/fifo_a -radix hexadecimal /tb/fifo_a/*
 add wave -noupdate -group tb/u_scale
 add wave -noupdate -group tb/u_scale -radix hexadecimal /tb/u_scale/*
 
