@@ -152,7 +152,7 @@ initial begin: txt_write_process
                 $write("@ %0t: ERROR: %x != %x\n", $time, dout, cmp_dout);
             end
             out_rd_en = 1'b1;
-            j = j + 5;
+            j = j + 9;
         end
     end
     

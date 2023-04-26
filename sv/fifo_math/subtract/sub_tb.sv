@@ -140,15 +140,23 @@ initial begin: txt_write_process
         @(negedge clock);
         out_rd_en = 1'b0;
         if (!out_empty) begin
-            $fscanf(cmp_file, "%08x\n", cmp_dout);
-            $fwrite(out_file, "%08x\n", dout);
+            $fscanf(cmp_file, "%08x %08x %08x\n", cmp_dout[0], cmp_dout[1], cmp_dout[2]);
+            $fwrite(out_file, "%08x %08x %08x\n", dout[0], dout[1], dout[2]);
 
-            if (cmp_dout != dout) begin
+            if (cmp_dout[0] != dout[0]) begin
                 errors += 1;
-                $write("@ %0t: ERROR: %x != %x\n", $time, dout, cmp_dout);
+                $write("@ %0t: ERROR: %x != %x\n", $time, dout[0], cmp_dout[0]);
+            end
+            if (cmp_dout[1] != dout[1]) begin
+                errors += 1;
+                $write("@ %0t: ERROR: %x != %x\n", $time, dout[1], cmp_dout[1]);
+            end
+            if (cmp_dout[2] != dout[2]) begin
+                errors += 1;
+                $write("@ %0t: ERROR: %x != %x\n", $time, dout[2], cmp_dout[2]);
             end
             out_rd_en = 1'b1;
-            j = j + 5;
+            j = j + 27;
         end
     end
     
