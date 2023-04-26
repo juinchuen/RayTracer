@@ -70,7 +70,7 @@ module sub(
     output int out[2:0],
     input logic out_empty,
     input logic out_rd_en
-)
+);
 
 int out_din[2:0];
 logic out_full;
