@@ -72,6 +72,34 @@ module sub(
     input logic out_rd_en
 )
 
-int out_din;
+int out_din[2:0];
 logic out_full;
 
+sub_module u_sub_module (
+    .clock        (clock),
+    .reset        (reset),
+    .x            (x[2:0]),
+    .y            (y[2:0]),
+    .in_empty     (in_empty),
+    .in_rd_en     (in_rd_en),
+    .out          (out_din[2:0]),
+    .out_full     (out_full),
+    .out_wr_en    (out_wr_en)
+);
+
+fifo_array #(
+    .FIFO_DATA_WIDTH         (32),
+    .FIFO_BUFFER_SIZE        (1024),
+    .ARRAY_SIZE              (3)
+) u_fifo_array (
+    .reset                   (reset),
+    .clock                   (clock),
+    .wr_en                   (out_wr_en),
+    .din                     (out_din[2:0]),
+    .full                    (out_full),
+    .rd_en                   (out_rd_en),
+    .dout                    (out[2:0]),
+    .empty                   (out_empty)
+);
+
+endmodule
