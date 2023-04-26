@@ -57,7 +57,7 @@ fifo_array #(
     .empty             (y_empty)
 );
 
-sub u_dot (
+sub u_sub (
     .clock        (clock),
     .reset        (reset),
     .x            (x[2:0]),
