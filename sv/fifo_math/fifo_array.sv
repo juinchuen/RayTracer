@@ -46,19 +46,34 @@ generate for(i = 0; i < ARRAY_SIZE; i = i + 1) begin
 end
 endgenerate
 
-logic [ARRAY_SIZE-1:0] dummy1, dummy2;
+// logic [ARRAY_SIZE-1:0] dummy1, dummy2;
 
-genvar j;
-generate for(j = 0; j < ARRAY_SIZE; j = j + 1) begin
-    assign dummy1 = empty_arr[j];
-    assign dummy2 = full_arr[j];
-end
-endgenerate
+// genvar j;
+logic all_empty = 0;
+logic all_full = 0;
+// generate for(j = 0; j < ARRAY_SIZE; j = j + 1) begin
+//     assign dummy1 = empty_arr[j];
+//     assign dummy2 = full_arr[j];
+//     all_empty = all_empty or empty_arr[i];
+// end
+// endgenerate
+
 
 always_comb begin
-    empty = |dummy1;
-    full = |dummy2;
+    all_empty = empty_arr[0];
+    all_full = full_arr[0];
+    for(j = 1; j < ARRAY_SIZE; j = j + 1) begin
+        all_empty = all_empty || empty_arr[j];
+        all_full = all_full || full_arr[j];
+    end
+    empty = all_empty;
+    full = all_full;
 end
+
+// always_comb begin
+//     empty = |dummy1;
+//     full = |dummy2;
+// end
 
 // always_comb begin
 //     for() begin
