@@ -87,6 +87,12 @@ initial begin
     reset = 1'b0;
 end
 
+logic signed [31:0] temp1, temp2, temp3;
+
+assign temp1 = dout[0]; 
+assign temp2 = dout[1]; 
+assign temp3 = dout[2]; 
+
 initial begin : txt_read_process
     int i;
     int in_file_1, in_file_2;
