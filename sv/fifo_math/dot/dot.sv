@@ -16,7 +16,6 @@ module dot_module #(
 enum logic {s0, s1} state, next_state;
 logic signed [47:0] out_big [2:0];
 int out_c;
-logic signed [31:0] test1, test2, test3;
 
 always_ff @(posedge clock or posedge reset) begin
     if(reset) begin
