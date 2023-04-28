@@ -1,10 +1,8 @@
-module scale_module #(
-    parameter Q_BITS = 'd10
-) (
+module add_module (
     input logic clock,
     input logic reset,
     input logic signed [31:0] x[2:0],
-    input logic signed [31:0] a,
+    input logic signed [31:0] y[2:0],
     input logic in_empty,
     output logic in_rd_en,
     
@@ -13,10 +11,9 @@ module scale_module #(
     output logic out_wr_en
 );
 
-//multiply each x by a
+//subtract x from y
 
 enum logic {s0, s1} state, next_state;
-logic signed [31+Q_BITS:0] out_big [2:0];
 logic signed [31:0] out_c[2:0];
 
 always_ff @(posedge clock or posedge reset) begin
@@ -47,13 +44,9 @@ always_comb begin
     case(state)
     s0: begin
         if(!in_empty) begin
-            out_big[0] = (x[0] * a) >> Q_BITS;
-            out_big[1] = (x[1] * a) >> Q_BITS;
-            out_big[2] = (x[2] * a) >> Q_BITS;
-            
-            out_c[0] = out_big[0];
-            out_c[1] = out_big[1];
-            out_c[2] = out_big[2];
+            out_c[0] = x[0] + y[0];
+            out_c[1] = x[1] + y[1];
+            out_c[2] = x[2] + y[2];
 
             in_rd_en = 'b1;
             next_state = s1;
@@ -70,13 +63,11 @@ always_comb begin
 end
 endmodule
 
-module scale #(
-    parameter Q_BITS = 'd10
-) (
+module add(
     input logic clock,
     input logic reset,
     input logic signed [31:0] x[2:0],
-    input logic signed [31:0] a,
+    input logic signed [31:0] y[2:0],
     input logic in_empty,
     output logic in_rd_en,
     
@@ -88,11 +79,11 @@ module scale #(
 logic signed [31:0] out_din[2:0];
 logic out_full, out_wr_en;
 
-scale_module u_scale_module (
+sub_module u_sub_module (
     .clock        (clock),
     .reset        (reset),
     .x            (x[2:0]),
-    .a            (a),
+    .y            (y[2:0]),
     .in_empty     (in_empty),
     .in_rd_en     (in_rd_en),
     .out          (out_din[2:0]),

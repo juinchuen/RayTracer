@@ -74,7 +74,7 @@ module dot #(
     input logic out_rd_en
 );
 
-int out_din;
+logic signed [31:0] out_din;
 logic out_full, out_wr_en;
 
 dot_module #(
