@@ -1,139 +1,325 @@
 module hit_bool #(
     Q_BITS = 'd10
-)
-(
+)(
     //
     input logic clock,
     input logic reset,
     // p_hit module output, normal coordinates
-    input logic [95:0] p_hit,
-    input int normal [2:0],
+    input logic signed [31:0] p_hit [2:0],
+    input logic signed [31:0] normal [2:0],
     // Vector inputs
-    input int v0 [2:0],
-    input int v1 [2:0],
-    input int v2 [2:0],
+    input logic signed [31:0] v0 [2:0],
+    input logic signed [31:0] v1 [2:0],
+    input logic signed [31:0] v2 [2:0],
 
     // FIFO signals going in
-    input logic fifo_in_empty,
     input logic fifo_out_rd_en,  
 
-    // FIFO signals going out 
-    output logic fifo_in_rd_en,
+    input logic triangle_in_empty, 
+    output logic triangle_in_rd_en,
+    input logic p_hit_in_empty,
+    output logic p_hit_in_rd_en,
+    input logic v0_in_empty,
+    output logic v0_in_rd_en,
+    input logic v1_in_empty,
+    output logic v1_in_rd_en,
+    input logic v2_in_empty,
+    output logic v2_in_rd_en,
+
     output logic fifo_out_dout,   
     output logic fifo_out_empty  
 ); 
 
 // Intermediary signals
 // Vector subtraction outputs
-int o0 [2:0]; 
-int o1 [2:0];
-int o2 [2:0];
+logic signed [31:0] o0 [2:0]; 
+logic signed [31:0] o1 [2:0];
+logic signed [31:0] o2 [2:0];
 // p_hit and vector subtraction outputs
-int p0 [2:0]; 
-int p1 [2:0];
-int p2 [2:0];
+logic signed [31:0] p0 [2:0]; 
+logic signed [31:0] p1 [2:0];
+logic signed [31:0] p2 [2:0];
 // cross product outputs
-int c0 [2:0]; 
-int c1 [2:0];
-int c2 [2:0];
+logic signed [31:0] c0 [2:0]; 
+logic signed [31:0] c1 [2:0];
+logic signed [31:0] c2 [2:0];
 // Dot product outputs
-int d0;
-int d1;
-int d2;
+logic signed [31:0] d0;
+logic signed [31:0] d1;
+logic signed [31:0] d2;
 // hit bool
 logic hit, hit_c;
 // unpack the p_hit input to put into an array of ints
-int p_hit_arr [2:0];
-assign p_hit_arr[0] = int'(p_hit[31:0]);
-assign p_hit_arr[1] = int'(p_hit[63:32]);
-assign p_hit_arr[2] = int'(p_hit[95:64]);
+
 // Output FIFO 
 logic fifo_out_full;   
 logic fifo_out_wr_en; 
-// State email
-typedef enum logic [1:0] {s0, s1} state_types;
+// States
+typedef enum logic [1:0] {s0, s1, s2} state_types;
 state_types state; 
 state_types state_c = s0;
 
-// Place debug statements here:
+// Module instantiation vars
+logic sub_0_in_empty;
+logic sub_0_in_rd_en;
+logic sub_0_out_empty;
+logic sub_0_out_rd_en;
 
-/////////////////////////////////
-// Module instantiation
+logic sub_1_in_empty;
+logic sub_1_in_rd_en;
+logic sub_1_out_empty;
+logic sub_1_out_rd_en;
+logic sub_2_in_empty;
+
+logic sub_2_in_rd_en;
+logic sub_2_out_empty;
+logic sub_2_out_rd_en;
+
+logic sub_3_in_empty;
+logic sub_3_in_rd_en;
+logic sub_3_out_empty;
+logic sub_3_out_rd_en;
+
+logic sub_4_in_empty;
+logic sub_4_in_rd_en;
+logic sub_4_out_empty;
+logic sub_4_out_rd_en;
+
+logic sub_5_in_empty;
+logic sub_5_in_rd_en;
+logic sub_5_out_empty;
+logic sub_5_out_rd_en;
+
+logic cross_0_in_empty;
+logic cross_0_in_rd_en; 
+logic cross_0_out_empty;
+logic cross_0_out_rd_en;
+
+logic cross_1_in_empty;
+logic cross_1_in_rd_en; 
+logic cross_1_out_empty;
+logic cross_1_out_rd_en;
+
+logic cross_2_in_empty;
+logic cross_2_in_rd_en;
+logic cross_2_out_empty;
+logic cross_2_out_rd_en;
+
+logic dot_rd_en; 
+
+logic dot_0_in_empty;
+logic dot_0_in_rd_en;
+logic dot_0_out_empty;
+logic dot_0_out_rd_en;
+
+logic dot_1_in_empty;
+logic dot_1_in_rd_en;
+logic dot_1_out_empty;
+logic dot_1_out_rd_en;
+
+logic dot_2_in_empty;
+logic dot_2_in_rd_en;
+logic dot_2_out_empty;
+logic dot_2_out_rd_en;
+
+logic dot_empty;
+
+// Assignments 
+assign sub_0_in_empty = v0_in_empty || v1_in_empty;
+assign sub_0_out_rd_en = cross_0_in_rd_en;
+assign sub_1_in_empty = v1_in_empty || v2_in_empty;
+assign sub_1_out_rd_en = cross_1_in_rd_en;
+assign sub_2_in_empty = v2_in_empty || v0_in_empty;
+assign sub_2_out_rd_en = cross_2_in_rd_en;
+
+assign v0_in_rd_en = sub_0_in_rd_en || sub_2_in_rd_en;
+assign v1_in_rd_en = sub_0_in_rd_en || sub_1_in_rd_en;
+assign v2_in_rd_en = sub_1_in_rd_en || sub_2_in_rd_en;
+
+assign sub_3_in_empty = p_hit_in_empty || v0_in_empty;
+assign sub_3_out_rd_en = cross_0_in_rd_en;
+assign sub_4_in_empty = p_hit_in_empty || v1_in_empty;
+assign sub_4_out_rd_en = cross_1_in_rd_en;
+assign sub_5_in_empty = p_hit_in_empty || v2_in_empty;
+assign sub_5_out_rd_en = cross_2_in_rd_en;
+assign p_hit_in_rd_en = sub_3_in_rd_en && sub_4_in_rd_en && sub_5_in_rd_en;
+assign cross_0_in_empty = sub_0_out_empty || sub_3_out_empty; // sub 0 and 3 feed cross 0
+assign cross_0_out_rd_en = dot_0_in_rd_en;
+assign cross_1_in_empty = sub_1_out_empty || sub_4_out_empty; // sub 0 and 3 feed cross 0
+assign cross_1_out_rd_en = dot_1_in_rd_en;
+assign cross_2_in_empty = sub_2_out_empty || sub_5_out_empty;
+assign cross_2_out_rd_en = dot_2_in_rd_en;
+assign dot_0_in_empty = cross_0_out_empty || triangle_in_empty;
+assign dot_0_out_rd_en = dot_rd_en;
+assign dot_1_in_empty = cross_1_out_empty || triangle_in_empty;
+assign dot_1_out_rd_en = dot_rd_en;
+assign dot_2_in_empty = cross_2_out_empty || triangle_in_empty;
+assign dot_2_out_rd_en = dot_rd_en;
+assign triangle_in_rd_en = dot_0_in_rd_en && dot_1_in_rd_en && dot_2_in_rd_en;
+assign dot_empty = dot_0_out_empty && dot_1_out_empty && dot_2_out_empty;
+
 // Subtract stage 1
-subtract u_subtract_one (
-    .out    (o0),
-    .x      (v1),
-    .y      (v0)
+
+sub u_sub_0 ( // Pipes to cross 0
+    .clock        (clock),
+    .reset        (reset),
+    .x            (v1[2:0]),
+    .y            (v0[2:0]),
+    .in_empty     (sub_0_in_empty),
+    .in_rd_en     (sub_0_in_rd_en),
+    .out          (o0[2:0]),
+    .out_empty    (sub_0_out_empty),
+    .out_rd_en    (sub_0_out_rd_en)
 );
-subtract u_subtract_two (
-    .out    (o1),
-    .x      (v2),
-    .y      (v1)
+
+
+sub u_sub_1 ( // Pipes to cross 1 
+    .clock        (clock),
+    .reset        (reset),
+    .x            (v2[2:0]),
+    .y            (v1[2:0]),
+    .in_empty     (sub_1_in_empty),
+    .in_rd_en     (sub_1_in_rd_en),
+    .out          (o1[2:0]),
+    .out_empty    (sub_1_out_empty),
+    .out_rd_en    (sub_1_out_rd_en)
 );
-subtract u_subtract_three (
-    .out    (o2),
-    .x      (v0),
-    .y      (v2)
+
+sub u_sub_2 ( // Pipes to cross 2
+    .clock        (clock),
+    .reset        (reset),
+    .x            (v0[2:0]),
+    .y            (v2[2:0]),
+    .in_empty     (sub_2_in_empty),
+    .in_rd_en     (sub_2_in_rd_en),
+    .out          (o2[2:0]),
+    .out_empty    (sub_2_out_empty),
+    .out_rd_en    (sub_2_out_rd_en)
 );
+
 // Subtract stage 2
-subtract u_subtract_four (
-    .out    (p0),
-    .x      (p_hit_arr),
-    .y      (v0)
+sub u_sub_3 ( // Pipes to cross 0
+    .clock        (clock),
+    .reset        (reset),
+    .x            (p_hit[2:0]),
+    .y            (v0[2:0]),
+    .in_empty     (sub_3_in_empty),
+    .in_rd_en     (sub_3_in_rd_en),
+    .out          (p0[2:0]),
+    .out_empty    (sub_3_out_empty),
+    .out_rd_en    (sub_3_out_rd_en)
 );
-subtract u_subtract_five (
-    .out    (p1),
-    .x      (p_hit_arr),
-    .y      (v1)
+
+sub u_sub_4 ( // Pipes to cross 1
+    .clock        (clock),
+    .reset        (reset),
+    .x            (p_hit[2:0]),
+    .y            (v1[2:0]),
+    .in_empty     (sub_4_in_empty),
+    .in_rd_en     (sub_4_in_rd_en),
+    .out          (p1[2:0]),
+    .out_empty    (sub_4_out_empty),
+    .out_rd_en    (sub_4_out_rd_en)
 );
-subtract u_subtract_six (
-    .out    (p2),
-    .x      (p_hit_arr),
-    .y      (v2)    
+
+sub u_sub_5 ( // Pipes to cross 2
+    .clock        (clock),
+    .reset        (reset),
+    .x            (p_hit[2:0]),
+    .y            (v2[2:0]),
+    .in_empty     (sub_5_in_empty),
+    .in_rd_en     (sub_5_in_rd_en),
+    .out          (p2[2:0]),
+    .out_empty    (sub_5_out_empty),
+    .out_rd_en    (sub_5_out_rd_en)
 );
+
 // Cross stage
+
 Cross #(
-    .Q_BITS(Q_BITS)
-) u_Cross_one (
-    .out   (c0),
-    .x     (o0),
-    .y     (p0)
+    .Q_BITS       (Q_BITS)
+) u_Cross_0 (
+    .clock        (clock),
+    .reset        (reset),
+    .x            (o0[2:0]),
+    .y            (p0[2:0]),
+    .in_empty     (cross_0_in_empty),
+    .in_rd_en     (cross_0_in_rd_en),
+    .out_rd_en    (cross_0_out_rd_en),
+    .out_empty    (cross_0_out_empty),
+    .out          (c0[2:0])
 );
+
+
 Cross #(
-    .Q_BITS (Q_BITS)
-) u_Cross_two (
-    .out   (c1),
-    .x     (o1),
-    .y     (p1)
+    .Q_BITS       (Q_BITS)
+) u_Cross_1 (
+    .clock        (clock),
+    .reset        (reset),
+    .x            (o1[2:0]),
+    .y            (p1[2:0]),
+    .in_empty     (cross_1_in_empty),
+    .in_rd_en     (cross_1_in_rd_en),
+    .out_rd_en    (cross_1_out_rd_en),
+    .out_empty    (cross_1_out_empty),
+    .out          (c1[2:0])
 );
+
 Cross #(
-    .Q_BITS (Q_BITS)
-) u_Cross_three (
-    .out   (c2),
-    .x     (o2),
-    .y     (p2)
+    .Q_BITS       (Q_BITS)
+) u_Cross_2 (
+    .clock        (clock),
+    .reset        (reset),
+    .x            (o2[2:0]),
+    .y            (p2[2:0]),
+    .in_empty     (cross_2_in_empty),
+    .in_rd_en     (cross_2_in_rd_en),
+    .out_rd_en    (cross_2_out_rd_en),
+    .out_empty    (cross_2_out_empty),
+    .out          (c2[2:0])
 );
+
 // Dot stage
 dot #(
-    .Q_BITS (Q_BITS)
-) u_dot_one (
-    .out    (d0),
-    .x      (normal),
-    .y      (c0)
+    .Q_BITS       (Q_BITS)
+) u_dot_0 (
+    .clock        (clock),
+    .reset        (reset),
+    .x            (normal[2:0]),
+    .y            (c0[2:0]),
+    .in_empty     (dot_0_in_empty),
+    .in_rd_en     (dot_0_in_rd_en),
+    .out          (d0),
+    .out_empty    (dot_0_out_empty),
+    .out_rd_en    (dot_0_out_rd_en)
 );
+
 dot #(
-    .Q_BITS (Q_BITS)
-) u_dot_two (
-    .out    (d1),
-    .x      (normal),
-    .y      (c1)
+    .Q_BITS       (Q_BITS)
+) u_dot_1 (
+    .clock        (clock),
+    .reset        (reset),
+    .x            (normal[2:0]),
+    .y            (c1[2:0]),
+    .in_empty     (dot_1_in_empty),
+    .in_rd_en     (dot_1_in_rd_en),
+    .out          (d1),
+    .out_empty    (dot_1_out_empty),
+    .out_rd_en    (dot_1_out_rd_en)
 );
+
 dot #(
-    .Q_BITS (Q_BITS)
-) u_dot_three (
-    .out    (d2),
-    .x      (normal),
-    .y      (c2)
+    .Q_BITS       (Q_BITS)
+) u_dot_2 (
+    .clock        (clock),
+    .reset        (reset),
+    .x            (normal[2:0]),
+    .y            (c2[2:0]),
+    .in_empty     (dot_2_in_empty),
+    .in_rd_en     (dot_2_in_rd_en),
+    .out          (d2),
+    .out_empty    (dot_2_out_empty),
+    .out_rd_en    (dot_2_out_rd_en)
 );
 
 // FIFO to hold outputs
@@ -152,6 +338,11 @@ fifo #(
     .empty               (fifo_out_empty)
 );
 
+
+// Place debug statements here:
+
+/////////////////////////////////
+
 always_ff @(posedge clock or posedge reset) begin
     if(reset)begin
         hit <= 0;
@@ -165,24 +356,28 @@ end
 always_comb begin
     // Check if dot products are greater than 0
     // If greater return 1. Else return 0
-    fifo_in_rd_en = 0;
-    fifo_out_wr_en = 0;
-    hit_c = hit;
     
+    // Don't need to set triangle or p hit read enables here since sub modules take care of that
+
+    fifo_out_wr_en = 1'b0;
+    dot_rd_en = 1'b0;
+    hit_c = hit;
+    state_c = state;
+
     case (state)
-        s0: begin
-            if (fifo_in_empty == 1'b0) begin
+        s0: begin   // Calculate hit_c
+            if (!dot_empty) begin
                 hit_c = (d0 > 0) && (d1 > 0) && (d2 > 0);
-                fifo_in_rd_en = 1'b1;
+                dot_rd_en = 1'b1;
                 state_c = s1;
             end else begin
                 state_c = s0;
             end
         end
-        s1: begin
+        s1: begin   // Write hit_c to output fifo 
             if (fifo_out_full == 1'b0)begin
                 fifo_out_wr_en = 1'b1;
-                hit_c = 0;
+                hit_c = 1'b0;
                 state_c = s0;
             end else begin
                 state_c = s1;
@@ -193,102 +388,92 @@ end
 endmodule
 
 // Debug statements
-// int v0_0;
-// int v0_1;
-// int v0_2;
-
-// int v1_0;
-// int v1_1;
-// int v1_2;
-
-// int v2_0;
-// int v2_1;
-// int v2_2;
-
-// int normal_0;
-// int normal_1;
-// int normal_2;
-
-// int p_hit_arr_show_0;
-// int p_hit_arr_show_1;
-// int p_hit_arr_show_2;
-
-// int o0_show_0;
-// int o0_show_1;
-// int o0_show_2;
-// int o1_show_0;
-// int o1_show_1;
-// int o1_show_2;
-// int o2_show_0;
-// int o2_show_1;
-// int o2_show_2;
-
-// int p0_show_0;
-// int p0_show_1;
-// int p0_show_2;
-// int p1_show_0;
-// int p1_show_1;
-// int p1_show_2;
-// int p2_show_0;
-// int p2_show_1;
-// int p2_show_2;
-
-// int c0_show_0;
-// int c0_show_1;
-// int c0_show_2;
-// int c1_show_0;
-// int c1_show_1;
-// int c1_show_2;
-// int c2_show_0;
-// int c2_show_1;
-// int c2_show_2;
-
+// Inputs
+// logic signed [31:0] p_hit_0;
+// logic signed [31:0] p_hit_1;
+// logic signed [31:0] p_hit_2;
+// assign p_hit_0 = p_hit[0];
+// assign p_hit_1 = p_hit[1];
+// assign p_hit_2 = p_hit[2];
+// logic signed [31:0] normal_0;
+// logic signed [31:0] normal_1;
+// logic signed [31:0] normal_2;
+// assign normal_0 = normal[0];
+// assign normal_1 = normal[1];
+// assign normal_2 = normal[2];
+// logic signed [31:0] v0_0;
+// logic signed [31:0] v0_1;
+// logic signed [31:0] v0_2;
 // assign v0_0 = v0[0];
 // assign v0_1 = v0[1];
 // assign v0_2 = v0[2];
-
+// logic signed [31:0] v1_0;
+// logic signed [31:0] v1_1;
+// logic signed [31:0] v1_2;
 // assign v1_0 = v1[0];
 // assign v1_1 = v1[1];
 // assign v1_2 = v1[2];
-
+// logic signed [31:0] v2_0;
+// logic signed [31:0] v2_1;
+// logic signed [31:0] v2_2;
 // assign v2_0 = v2[0];
 // assign v2_1 = v2[1];
 // assign v2_2 = v2[2];
 
-// assign normal_0 = normal[0];
-// assign normal_1 = normal[1];
-// assign normal_2 = normal[2];
+// // Sub
+// logic signed [31:0] o0_0;
+// logic signed [31:0] o0_1;
+// logic signed [31:0] o0_2;
+// assign o0_0 = o0[0];
+// assign o0_1 = o0[1];
+// assign o0_2 = o0[2];
+// logic signed [31:0] o1_0;
+// logic signed [31:0] o1_1;
+// logic signed [31:0] o1_2;
+// assign o1_0 = o1[0];
+// assign o1_1 = o1[1];
+// assign o1_2 = o1[2];
+// logic signed [31:0] o2_0;
+// logic signed [31:0] o2_1;
+// logic signed [31:0] o2_2;
+// assign o2_0 = o2[0];
+// assign o2_1 = o2[1];
+// assign o2_2 = o2[2];
+// logic signed [31:0] p0_0;
+// logic signed [31:0] p0_1;
+// logic signed [31:0] p0_2;
+// assign p0_0 = p0[0];
+// assign p0_1 = p0[1];
+// assign p0_2 = p0[2];
+// logic signed [31:0] p1_0;
+// logic signed [31:0] p1_1;
+// logic signed [31:0] p1_2;
+// assign p1_0 = p1[0];
+// assign p1_1 = p1[1];
+// assign p1_2 = p1[2];
+// logic signed [31:0] p2_0;
+// logic signed [31:0] p2_1;
+// logic signed [31:0] p2_2;
+// assign p2_0 = p2[0];
+// assign p2_1 = p2[1];
+// assign p2_2 = p2[2];
 
-// assign p_hit_arr_show_0 = p_hit_arr[0];
-// assign p_hit_arr_show_1 = p_hit_arr[1];
-// assign p_hit_arr_show_2 = p_hit_arr[2];
-
-// assign o0_show_0 = o0[0];
-// assign o0_show_1 = o0[1];
-// assign o0_show_2 = o0[2];
-// assign o1_show_0 = o1[0];
-// assign o1_show_1 = o1[1];
-// assign o1_show_2 = o1[2];
-// assign o2_show_0 = o2[0];
-// assign o2_show_1 = o2[1];
-// assign o2_show_2 = o2[2];
-
-// assign p0_show_0 = p0[0];
-// assign p0_show_1 = p0[1];
-// assign p0_show_2 = p0[2];
-// assign p1_show_0 = p1[0];
-// assign p1_show_1 = p1[1];
-// assign p1_show_2 = p1[2];
-// assign p2_show_0 = p2[0];
-// assign p2_show_1 = p2[1];
-// assign p2_show_2 = p2[2];
-
-// assign c0_show_0 = c0[0];
-// assign c0_show_1 = c0[1];
-// assign c0_show_2 = c0[2];
-// assign c1_show_0 = c1[0];
-// assign c1_show_1 = c1[1];
-// assign c1_show_2 = c1[2];
-// assign c2_show_0 = c2[0];
-// assign c2_show_1 = c2[1];
-// assign c2_show_2 = c2[2];
+// // Cross
+// logic signed [31:0] c0_0;
+// logic signed [31:0] c0_1;
+// logic signed [31:0] c0_2;
+// assign c0_0 = c0[0];
+// assign c0_1 = c0[1];
+// assign c0_2 = c0[2];
+// logic signed [31:0] c1_0;
+// logic signed [31:0] c1_1;
+// logic signed [31:0] c1_2;
+// assign c1_0 = c1[0];
+// assign c1_1 = c1[1];
+// assign c1_2 = c1[2];
+// logic signed [31:0] c2_0;
+// logic signed [31:0] c2_1;
+// logic signed [31:0] c2_2;
+// assign c2_0 = c2[0];
+// assign c2_1 = c2[1];
+// assign c2_2 = c2[2];
