@@ -1,4 +1,4 @@
-#include"ray_tracer.h"
+#include "ray_tracer.h"
 
 void cross(float* ret_val, float* x, float* y) {
 
@@ -28,6 +28,14 @@ void normalize(float* ret_val, float* x) {
 
 	scale(ret_val, x, div);
 
+}
+
+float norm(float* x){
+	
+	return sqrt(x[0] * x[0] +
+				x[1] * x[1] +
+				x[2] * x[2]);
+	
 }
 
 void print_vector(float* x) {
@@ -138,9 +146,9 @@ void frame_vectors(float* start_pos, float* x_incr, float* y_incr, float* eye, f
 
 	cross(y_incr, x_incr, dir);
 
-	scale(y_incr, y_incr, *(size + 1) / *(res + 1));
+	scale(y_incr, y_incr, size[1] / res[1]);
 
-	scale(x_incr, x_incr, *(size) / *(res));
+	scale(x_incr, x_incr, size[0] / res[0]);
 
 	scale(start_pos, dir, distance);
 
@@ -149,10 +157,21 @@ void frame_vectors(float* start_pos, float* x_incr, float* y_incr, float* eye, f
 	float x_incr_start[] = { 0.0, 0.0, 0.0 };
 	float y_incr_start[] = { 0.0, 0.0, 0.0 };
 
-	scale(x_incr_start, x_incr, - *(res + 0) / 2.0);
-	scale(y_incr_start, y_incr, - *(res + 1) / 2.0);
+	scale(x_incr_start, x_incr, - res[0] / 2.0);
+	scale(y_incr_start, y_incr, - res[1] / 2.0);
+	
+	//scale(y_incr, y_incr, -1);
 
 	add(start_pos, start_pos, x_incr_start);
 	add(start_pos, start_pos, y_incr_start);
 
+}
+
+void initialize_z_buffer(float* z_buf, size_t num_elem){
+	
+	for (int i = 0; i < num_elem; i++){
+		
+		z_buf[i] = 2e30;
+		
+	}
 }

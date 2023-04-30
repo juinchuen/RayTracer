@@ -1,11 +1,11 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include"bmp.h"
-#include"ray_tracer.h"
+#include "ray_tracer.h"
+#include "bmp.h"
+
+#include <stdio.h>
+#include <stdlib.h>
 
 
-
-int main_test() {
+int main() {
 
 	float eye[] = { 0.0, 0.0, 0.0 };
 	float dir[] = { 1.0, 0.0, 0.0 };
@@ -24,6 +24,8 @@ int main_test() {
 	//print_vector(start_pos);
 	//print_vector(x_incr);
 	//print_vector(y_incr);
+	
+	
 
 	float triangle[] = { 6, -0.5, -0.5,
 						 5,  0.5,  1.0,
@@ -68,5 +70,7 @@ int main_test() {
 	}
 
 	write_bmp(img_buf, 256, 256, 24, "ray_trace_example.bmp");
+	
+	return 0;
 
 }
