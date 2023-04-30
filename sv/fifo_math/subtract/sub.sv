@@ -14,24 +14,24 @@ module sub_module (
 //subtract x from y
 
 enum logic {s0, s1} state, next_state;
-logic signed [31:0] out_c[2:0];
+logic signed [31:0] sub[2:0], sub_c[2:0];
 
 always_ff @(posedge clock or posedge reset) begin
     if(reset) begin
         state <= s0;
-        out[0] <= 'b0;
-        out[1] <= 'b0;
-        out[2] <= 'b0;
+        sub[0] <= 'b0;
+        sub[1] <= 'b0;
+        sub[2] <= 'b0;
     end else begin
         state <= next_state;
-        out[0] <= out_c[0];
-        out[1] <= out_c[1];
-        out[2] <= out_c[2];
+        sub[0] <= sub_c[0];
+        sub[1] <= sub_c[1];
+        sub[2] <= sub_c[2];
     end
 end
 
 always_comb begin
-    out_c = out;
+    sub_c = sub;
     next_state = state;
 
     in_rd_en = 'b0;
@@ -44,9 +44,9 @@ always_comb begin
     case(state)
     s0: begin
         if(!in_empty) begin
-            out_c[0] = x[0] - y[0];
-            out_c[1] = x[1] - y[1];
-            out_c[2] = x[2] - y[2];
+            sub_c[0] = x[0] - y[0];
+            sub_c[1] = x[1] - y[1];
+            sub_c[2] = x[2] - y[2];
 
             in_rd_en = 'b1;
             next_state = s1;
@@ -55,6 +55,10 @@ always_comb begin
 
     s1: begin
         if(!out_full) begin
+            out[0] = sub[0];
+            out[1] = sub[1];
+            out[2] = sub[2];
+
             out_wr_en = 'b1;
             next_state = s0;
         end
