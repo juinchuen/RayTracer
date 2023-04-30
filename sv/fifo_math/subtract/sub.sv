@@ -122,20 +122,20 @@ module sub_single_module (
 );
 
 enum logic {s0, s1} state, next_state;
-logic signed [31:0] out_c;
+logic signed [31:0] math, math_c;
 
 always_ff @(posedge clock or posedge reset) begin
     if(reset) begin
         state <= s0;
-        out <= 'b0;
+        math <= 'b0;
     end else begin
         state <= next_state;
-        out <= out_c;
+        math <= math_c;
     end
 end
 
 always_comb begin
-    out_c = out;
+    math_c = math;
     next_state = state;
 
     in_rd_en = 'b0;
@@ -144,7 +144,7 @@ always_comb begin
     case(state)
     s0: begin
         if(!in_empty) begin
-            out_c = x - y;
+            math_c = x - y;
             in_rd_en = 'b1;
             next_state = s1;
         end
@@ -152,6 +152,7 @@ always_comb begin
 
     s1: begin
         if(!out_full) begin
+            out = math;
             out_wr_en = 'b1;
             next_state = s0;
         end
