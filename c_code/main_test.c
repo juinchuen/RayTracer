@@ -5,7 +5,7 @@
 
 
 
-int main() {
+int main_test() {
 
 	float eye[] = { 0.0, 0.0, 0.0 };
 	float dir[] = { 1.0, 0.0, 0.0 };
