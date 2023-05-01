@@ -49,6 +49,20 @@ p_hit_1 #(
     .out_empty               (out_empty)
 );
 
+
+///testing
+logic[31:0] temparr1, temparr2, temparr3;
+logic temp1, temp2, temp3;
+
+always_comb begin
+    temp1 = in_wr_en[0];
+    temp1 = in_wr_en[1];
+    temparr1 = V0_IN;
+    temparr2 = TRIANGLE_IN_1;
+    temparr3 = origin[0];
+end
+///testing
+
 always begin
     clock = 1'b1;
     #(CLOCK_PERIOD/2);
