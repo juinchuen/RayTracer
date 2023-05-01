@@ -25,7 +25,7 @@ logic out_read_done = '0;
 
 //inputs
 logic in_wr_en[1:0], in_full[1:0];
-logic signed [31:0] tri_normal_1[2:0], tri_normal_2[2:0] v0[2:0], origin[2:0], dir[2:0];
+logic signed [31:0] tri_normal_1[2:0], tri_normal_2[2:0], v0[2:0], origin[2:0], dir[2:0];
 
 //outputs
 logic out_empty, out_rd_en;
