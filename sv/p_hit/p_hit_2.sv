@@ -25,13 +25,13 @@ p_hit_1 #(
 ) u_p_hit_1 (
     .clock                (clock),
     .reset                (reset),
-    .tri_normal_1[2:0]    (tri_normal_1[2:0]), //[x,y,z][0]
-    .tri_normal_2[2:0]    (tri_normal_2[2:0]), //[x,y,z][1]
-    .v0[2:0]              (v0[2:0]),
-    .origin[2:0]          (origin[2:0]),
-    .dir[2:0]             (dir_1[2:0]),
-    .in_full[1:0]         (in_full[1:0]), //[0,1]
-    .in_wr_en[1:0]        (in_wr_en[1:0]), //[0,1]
+    .tri_normal_1         (tri_normal_1[2:0]), //[x,y,z][0]
+    .tri_normal_2         (tri_normal_2[2:0]), //[x,y,z][1]
+    .v0                   (v0[2:0]),
+    .origin               (origin[2:0]),
+    .dir                  (dir_1[2:0]),
+    .in_full              (in_full[1:0]), //[0,1]
+    .in_wr_en             (in_wr_en[1:0]), //[0,1]
 
     .out                  (division_out),
     .out_rd_en            (rd_en),
@@ -58,7 +58,7 @@ scale #(
 ) u_scale (
     .clock        (clock),
     .reset        (reset),
-    .x[2:0]       (dir_2_out[2:0]),
+    .x            (dir_2_out[2:0]),
     .a            (division_out),
     .in_empty     (empty),
     .in_rd_en     (rd_en),
@@ -96,7 +96,7 @@ module p_hit #(
 );
 
 logic empty_arr[1:0], empty, rd_en;
-logic signed [31:0] origin_out[2:0], mult_out[2:0]
+logic signed [31:0] origin_out[2:0], mult_out[2:0];
 
 p_hit_mult #(
     .Q_BITS               (Q_BITS)
