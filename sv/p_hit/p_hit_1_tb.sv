@@ -98,7 +98,8 @@ initial begin : txt_read_process
 
     while (!$feof(in_file[0]) && !$feof(in_file[1])) begin
         @(negedge clock);
-        in_wr_en = 1'b0;
+        in_wr_en[0] = 1'b0;
+        in_wr_en[1] = 1'b0;
         if (!in_full[0] || !in_full[1]) begin
             $fscanf(in_file[0], "%x %x %x\n", origin[0], origin[1], origin[2]);
             $fscanf(in_file[1], "%x %x %x\n", dir[0], dir[1], dir[2]);
