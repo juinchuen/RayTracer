@@ -25,7 +25,7 @@ logic out_read_done = '0;
 
 //inputs
 logic in_wr_en[1:0], in_full[1:0];
-logic signed [31:0] tri_normal[2:0][1:0], v0[2:0], origin[2:0], dir[2:0];
+logic signed [31:0] tri_normal_1[2:0], tri_normal_2[2:0] v0[2:0], origin[2:0], dir[2:0];
 
 //outputs
 logic out_empty, out_rd_en;
@@ -36,8 +36,8 @@ p_hit_1 #(
 ) u_p_hit_1 (
     .clock                   (clock),
     .reset                   (reset),
-    .tri_normal_1            (tri_normal[2:0][0]), //[x,y,z][0,1]
-    .tri_normal_2            (tri_normal[2:0][1])
+    .tri_normal_1            (tri_normal_1[2:0]), //[x,y,z][0,1]
+    .tri_normal_2            (tri_normal_2[2:0]),
     .v0                      (v0[2:0]),
     .origin                  (origin[2:0]),
     .dir                     (dir[2:0]),
@@ -64,7 +64,7 @@ initial begin
 end
 
 initial begin : setting_up_constant_inputs
-    int in_file[2:0]
+    int in_file[2:0];
     @(negedge reset);
     $display("@ %0t: Loading file %s...", $time, V0_IN);
     $display("@ %0t: Loading file %s...", $time, TRIANGLE_IN_1);
@@ -75,8 +75,8 @@ initial begin : setting_up_constant_inputs
     in_file[2] = $fopen(TRIANGLE_IN_2, "rb");
 
     $fscanf(in_file[0], "%x, %x, %x\n", v0[0], v0[1], v0[2]);
-    $fscanf(in_file[1], "%x, %x, %x\n", tri_normal[0][0], tri_normal[1][0], tri_normal[2][0]);
-    $fscanf(in_file[2], "%x, %x, %x\n", tri_normal[0][1], tri_normal[1][1], tri_normal[2][2]);
+    $fscanf(in_file[1], "%x, %x, %x\n", tri_normal_1[0], tri_normal_1[1], tri_normal_1[2]);
+    $fscanf(in_file[2], "%x, %x, %x\n", tri_normal_2[0], tri_normal_2[1], tri_normal_2[2]);
 
     $fclose(in_file[0]);
     $fclose(in_file[1]);
