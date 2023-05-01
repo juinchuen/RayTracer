@@ -106,7 +106,7 @@ p_hit_mult #(
     .tri_normal_1         (tri_normal_1[2:0]),
     .tri_normal_2         (tri_normal_2[2:0]),
     .v0                   (v0[2:0]),
-    .origin               (origin[2:0]),
+    .origin               (origin_1[2:0]),
     .dir_1                (dir_1[2:0]),
     .dir_2                (dir_2[2:0]),
     .in_full              (in_full[2:0]),
