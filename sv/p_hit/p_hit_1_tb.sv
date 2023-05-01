@@ -52,11 +52,13 @@ p_hit_1 #(
 
 ///testing
 logic[31:0] temparr1, temparr2, temparr3;
-logic temp1, temp2, temp3;
+logic temp1, temp2, temp3, temp4;
 
 always_comb begin
     temp1 = in_wr_en[0];
-    temp1 = in_wr_en[1];
+    temp2 = in_wr_en[1];
+    temp3 = in_full[0];
+    temp4 = in_full[1];
     temparr1 = v0[0];
     temparr2 = tri_normal_1[0];
     temparr3 = origin[0];
