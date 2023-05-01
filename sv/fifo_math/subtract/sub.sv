@@ -144,6 +144,7 @@ module sub_single_module (
     always_comb begin
         math_c = math;
         next_state = state;
+        out = 'b0;
 
         in_rd_en = 'b0;
         out_wr_en = 'b0;
