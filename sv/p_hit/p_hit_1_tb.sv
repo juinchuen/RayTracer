@@ -36,7 +36,8 @@ p_hit_1 #(
 ) u_p_hit_1 (
     .clock                   (clock),
     .reset                   (reset),
-    .tri_normal              (tri_normal[2:0][1:0]), //[x,y,z][0,1]
+    .tri_normal_1            (tri_normal[2:0][0]), //[x,y,z][0,1]
+    .tri_normal_2            (tri_normal[2:0][1])
     .v0                      (v0[2:0]),
     .origin                  (origin[2:0]),
     .dir                     (dir[2:0]),

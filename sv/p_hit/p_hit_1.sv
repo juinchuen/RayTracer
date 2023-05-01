@@ -237,7 +237,8 @@ module p_hit_1 #(
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] tri_normal[2:0][1:0], //[x,y,z][0,1]
+    input logic signed [31:0] tri_normal_1[2:0], //[x,y,z][0]
+    input logic signed [31:0] tri_normal_2[2:0], //[x,y,z][1]
     input logic signed [31:0] v0[2:0],
     input logic signed [31:0] origin[2:0],
     input logic signed [31:0] dir[2:0],
@@ -257,7 +258,7 @@ module p_hit_1 #(
     ) top (
         .clock              (clock),
         .reset              (reset),
-        .tri_normal         (tri_normal[2:0][0]),
+        .tri_normal         (tri_normal_1[2:0]),
         .v0                 (v0[2:0]),
         .origin             (origin[2:0]),
         .in_full            (in_full[0]),
@@ -272,7 +273,7 @@ module p_hit_1 #(
     ) bottom (
         .clock              (clock),
         .reset              (reset),
-        .tri_normal         (tri_normal[2:0][1]),
+        .tri_normal         (tri_normal_2[2:0]),
         .dir                (dir[2:0]),
         .in_full            (in_full[1]),
         .in_wr_en           (in_wr_en[1]),
