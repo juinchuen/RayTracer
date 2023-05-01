@@ -18,5 +18,22 @@ module p_hit_2 #(
     output logic out_empty
 );
 
+p_hit_1 #(
+    .Q_BITS               ('d10)
+) u_p_hit_1 (
+    .clock                (clock),
+    .reset                (reset),
+    .tri_normal_1[2:0]    (tri_normal_1[2:0]), //[x,y,z][0]
+    .tri_normal_2[2:0]    (tri_normal_2[2:0]), //[x,y,z][1]
+    .v0[2:0]              (v0[2:0]),
+    .origin[2:0]          (origin[2:0]),
+    .dir[2:0]             (dir[2:0]),
+    .in_full[1:0]         (in_full[1:0]), //[0,1]
+    .in_wr_en[1:0]        (in_wr_en[1:0]), //[0,1]
+
+    .out                  (),
+    .out_rd_en            (),
+    .out_empty            ()
+);
 
 endmodule
