@@ -37,7 +37,7 @@ logic out_empty, out_rd_en;
 logic signed [31:0] out[2:0];
 
 p_hit #(
-    .Q_bits               (Q_BITS)
+    .Q_BITS               (Q_BITS)
 ) u_p_hit (
     .clock                (clock),
     .reset                (reset),
