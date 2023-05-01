@@ -8,6 +8,7 @@ vlog -work work "../fifo_math/fifo_array.sv"
 vlog -work work "../fifo_math/dot/dot.sv"
 vlog -work work "../fifo_math/subtract/sub.sv"
 vlog -work work "../divide/divide.sv"
+vlog -work work "../divide/divide_top.sv"
 vlog -work work "p_hit_1.sv"
 vlog -work work "p_hit_1_tb.sv"
 
