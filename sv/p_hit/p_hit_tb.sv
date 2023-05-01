@@ -180,7 +180,7 @@ initial begin: txt_write_process
 
             if (cmp_dout[0] != out[0]) begin
                 errors += 1;
-                $write("@ %0t: ERROR: %x != %x\n", $time, out, cmp_dout);
+                $write("@ %0t: ERROR: %x != %x\n", $time, out[0], cmp_dout[0]);
             end
             out_rd_en = 1'b1;
             j = j + 8;
