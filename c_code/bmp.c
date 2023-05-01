@@ -20,9 +20,10 @@ void write_bmp(char* buf, int width, int height, int bits_per_pixel, char* file_
 
 	printf("padding = %d, pixel_size = %d, file_size = %d\n", padding, pixel_size, file_size);
 
-	FILE* img_file;
+	// FILE* img_file;
 
-	fopen_s(&img_file, file_name, "wb");
+	// fopen_s(&img_file, file_name, "wb");
+	FILE* img_file = fopen(file_name, "wb");
 
 	//img_file = fopen(file_name, "wb");
 

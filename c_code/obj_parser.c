@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 
-int getline(char* buf, size_t num_char, FILE* input_file_pointer) {
+int getline_sex(char* buf, size_t num_char, FILE* input_file_pointer) {
 
     size_t num_read = 0;
 
@@ -31,9 +31,11 @@ int getline(char* buf, size_t num_char, FILE* input_file_pointer) {
 
 size_t obj_parser(float* triangle_buf, char* file_name) {
 
-    FILE* input_file;
+    // FILE* input_file;
 
-    fopen_s(&input_file, file_name, "r");
+    // fopen_s(&input_file, file_name, "r");
+
+	FILE* input_file = fopen(file_name, "r");
 
     float vertex_buf [vertex_limit * 3];
     float normal_buf [triangle_limit * 3];
@@ -60,7 +62,7 @@ size_t obj_parser(float* triangle_buf, char* file_name) {
 
     while (!feof(input_file)) {
         
-        num_read = getline(read_in, 100, input_file);
+        num_read = getline_sex(read_in, 100, input_file);
         
         //printf("fuck\n");
         
@@ -106,15 +108,15 @@ size_t obj_parser(float* triangle_buf, char* file_name) {
 				
 			case 'f' :
 				
-				sscanf(read_in, "f %[^/]/%[^/]/%s %[^/]/%[^/]/%s %[^/]/%[^/]/%s\n", &face0_read,
-																					&face1_read,
-																					&face2_read,
-																					&face3_read,
-																					&face4_read,
-																					&face5_read,
-																					&face6_read,
-																					&face7_read,
-																					&face8_read);
+				sscanf(read_in, "f %[^/]/%[^/]/%s %[^/]/%[^/]/%s %[^/]/%[^/]/%s\n", face0_read,
+																					face1_read,
+																					face2_read,
+																					face3_read,
+																					face4_read,
+																					face5_read,
+																					face6_read,
+																					face7_read,
+																					face8_read);
 					
 				//printf("%s %s %s %s %s %s %s %s %s\n", face0_read,
 													   //face1_read,

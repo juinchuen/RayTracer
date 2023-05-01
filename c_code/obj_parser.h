@@ -8,4 +8,5 @@
 #define vertex_limit 1000
 #define triangle_limit 2000
 
+int getline_sex(char* buf, size_t num_char, FILE* input_file_pointer);
 size_t obj_parser(float* triangle_buf, char* file_name);

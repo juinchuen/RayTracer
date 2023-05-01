@@ -33,7 +33,7 @@ int main() {
 	
 	float* z_buf = calloc(x_res * y_res, sizeof(float));
 
-	float dist_vec[] = {0.0};
+	float dist_vec[3] = {0.0};
 	float dist;
 	float pix_val_f;
 	char pix_val;
@@ -109,11 +109,18 @@ int main() {
 											 ray_origin,
 											 ray_dir);
 
+				printf("hi\r\n");
+
 				if (hit) {
 					
 					subtract(dist_vec, p_hit, ray_origin);
-					
+					// dist_vec[0] = p_hit[0] - ray_origin[0];
+					// dist_vec[1] = p_hit[1] - ray_origin[1];
+					// dist_vec[2] = p_hit[2] - ray_origin[2];
+
+
 					dist = norm(dist_vec);
+					
 
 					if (dist < z_buf[i * x_res + j]){
 						
@@ -129,7 +136,7 @@ int main() {
 			
 			if (z_buf[i * x_res + j] < 1e30){
 				
-				pix_val_f = dot(&triangle_buf[12*t_hit_buf[i * x_res + j] + 9], &up);
+				pix_val_f = dot(&triangle_buf[12*t_hit_buf[i * x_res + j] + 9], up);
 
 				pix_val = (char)(255.0 * (0.5 * (pix_val_f + 1.0)));
 				
