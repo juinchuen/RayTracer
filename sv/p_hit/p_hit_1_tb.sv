@@ -2,11 +2,11 @@
 
 module tb();
 
-localparam string TRIANGLE_IN_1 = "../test_data/triangle_normal.txt";
-localparam string TRIANGLE_IN_2 = "../test_data/triangle_normal_2.txt";
-localparam string V0_IN = "../test_data/triangle_data.txt";
-localparam string ORIGIN_IN = "../test_data/ray_origin_data.txt";
-localparam string DIR_IN = "../test_data/ray_dir_data.txt";
+localparam string TRIANGLE_IN_2 = "../../test_data/triangle_normal_2.txt";
+localparam string TRIANGLE_IN_1 = "../../test_data/triangle_normal.txt";
+localparam string V0_IN = "../../test_data/triangle_data.txt";
+localparam string ORIGIN_IN = "../../test_data/ray_origin_data.txt";
+localparam string DIR_IN = "../../test_data/ray_dir_data.txt";
 localparam string TXT_CMP = "txt/cmp.txt";
 localparam string TXT_OUT = "txt/out.txt";
 localparam CLOCK_PERIOD = 10;
