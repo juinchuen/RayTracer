@@ -57,8 +57,8 @@ logic temp1, temp2, temp3;
 always_comb begin
     temp1 = in_wr_en[0];
     temp1 = in_wr_en[1];
-    temparr1 = V0_IN;
-    temparr2 = TRIANGLE_IN_1;
+    temparr1 = v0[0];
+    temparr2 = tri_normal_1[0];
     temparr3 = origin[0];
 end
 ///testing
