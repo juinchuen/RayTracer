@@ -195,8 +195,7 @@ sub_single_module u_sub_single_module (
 
 fifo #(
     .FIFO_DATA_WIDTH         (32),
-    .FIFO_BUFFER_SIZE        (1024),
-    .ARRAY_SIZE              (3)
+    .FIFO_BUFFER_SIZE        (1024)
 ) u_fifo (
     .reset                   (reset),
     .wr_clk                  (clock),
