@@ -93,6 +93,7 @@ module p_hit_dot_add_pt1 #(
 );
 
     logic signed [31:0] v0_out[2:0], tri_normal_out[2:0], origin_out[2:0];
+    logic in_rd_en;
 
     p_hit_fifo_in_pt1 u_p_hit_fifo_in_pt1 (
         .clock                 (clock),
@@ -232,7 +233,7 @@ module p_hit_dot_pt2 #(
 endmodule
 
 module p_hit_1 #(
-    paramter Q_BITS = 'd10
+    parameter Q_BITS = 'd10
 ) (
     input logic clock,
     input logic reset,
@@ -248,6 +249,55 @@ module p_hit_1 #(
     output logic out_empty
 );
 
+    logic signed [31:0] x, y;
+    logic division_rd_en, empty_arr[1:0], div_empty;
 
+    p_hit_dot_add_pt1 #(
+        .Q_BITS             (Q_BITS)
+    ) top (
+        .clock              (clock),
+        .reset              (reset),
+        .tri_normal         (tri_normal[2:0][0]),
+        .v0                 (v0[2:0]),
+        .origin             (origin[2:0]),
+        .in_full            (in_full[0]),
+        .in_wr_en           (in_wr_en[1]),
+        .out                (x),
+        .out_empty          (empty_arr[0]),
+        .out_rd_en          (division_rd_en)
+    );
+
+    p_hit_dot_pt2 #(
+        .Q_BITS             (Q_BITS)
+    ) bottom (
+        .clock              (clock),
+        .reset              (reset),
+        .tri_normal[2:0]    (tri_normal[2:0][1]),
+        .dir[2:0]           (dir[2:0]),
+        .in_full            (in_full[1]),
+        .in_wr_en           (in_wr_en[1]),
+        .out                (y),
+        .out_rd_en          (division_rd_en),
+        .out_empty          (empty_arr[1])
+    );
+
+    divide_top #(
+        .Q_BITS       (Q_BITS),
+        .D_WIDTH      ('d32),
+    ) u_divide_top (
+        .clock        (clock),
+        .reset        (reset),
+        .dividend     (x),
+        .divisor      (y),
+        .in_empty     (div_empty),
+        .in_rd_en     (division_rd_en),
+        .out_empty    (out_empty),
+        .out_rd_en    (out_rd_en),
+        .out_dout     (out)
+    );
+
+    always_comb begin
+        div_empty = empty_arr[0] || empty_arr[1];
+    end
 
 endmodule
