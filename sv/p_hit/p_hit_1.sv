@@ -250,6 +250,13 @@ module p_hit_1 #(
     output logic out_empty
 );
 
+    logic signed [31:0] temp1, temp2, temp3;
+    always_comb begin
+        temp1 = tri_normal_1[0];
+        temp2 = v0[0];
+        temp3 = origin[0];
+    end
+
     logic signed [31:0] x, y;
     logic division_rd_en, empty_arr[1:0], div_empty;
 
