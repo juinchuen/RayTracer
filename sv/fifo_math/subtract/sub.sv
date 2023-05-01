@@ -178,7 +178,7 @@ module sub_single(
     input logic out_rd_en
 );
 
-logic signed [31:0] out_din[2:0];
+logic signed [31:0] out_din;
 logic out_full, out_wr_en;
 
 sub_single_module u_sub_single_module (
