@@ -1,7 +1,7 @@
 module fifo_array #(
     parameter FIFO_DATA_WIDTH = 32,
     parameter FIFO_BUFFER_SIZE = 1024,
-    parameter ARRAY_SIZE = 4
+    parameter ARRAY_SIZE = 3
 ) (
     input  logic reset,
     input  logic clock,
@@ -52,7 +52,7 @@ logic all_full = 0;
 always_comb begin
     all_empty = empty_arr[0];
     all_full = full_arr[0];
-    for(int j = 1; j < ARRAY_SIZE; j = j + 1) begin
+    for(int j = 0; j < ARRAY_SIZE; j = j + 1) begin
         all_empty = all_empty || empty_arr[j];
         all_full = all_full || full_arr[j];
     end
