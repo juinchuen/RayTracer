@@ -21,7 +21,7 @@ logic signed [31:0] division_out, dir_2_out[2:0];
 logic empty_arr[1:0], empty, rd_en;
 
 p_hit_1 #(
-    .Q_BITS               ('d10)
+    .Q_BITS               (Q_BITS)
 ) u_p_hit_1 (
     .clock                (clock),
     .reset                (reset),
@@ -54,7 +54,7 @@ fifo_array #(
 );
 
 scale #(
-    .Q_BITS       ('d10)
+    .Q_BITS       (Q_BITS)
 ) u_scale (
     .clock        (clock),
     .reset        (reset),
@@ -75,7 +75,7 @@ endmodule
 
 
 module p_hit #(
-    parameter Q_bits = 'd16
+    parameter Q_BITS = 'd16
 
 ) (
     input logic clock,
@@ -99,7 +99,7 @@ logic empty_arr[1:0], empty, rd_en;
 logic signed [31:0] origin_out[2:0], mult_out[2:0]
 
 p_hit_mult #(
-    .Q_BITS               ('d10)
+    .Q_BITS               (Q_BITS)
 ) u_p_hit_mult (
     .clock                (clock),
     .reset                (reset),
