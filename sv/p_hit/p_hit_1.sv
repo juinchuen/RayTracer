@@ -272,8 +272,8 @@ module p_hit_1 #(
     ) bottom (
         .clock              (clock),
         .reset              (reset),
-        .tri_normal[2:0]    (tri_normal[2:0][1]),
-        .dir[2:0]           (dir[2:0]),
+        .tri_normal         (tri_normal[2:0][1]),
+        .dir                (dir[2:0]),
         .in_full            (in_full[1]),
         .in_wr_en           (in_wr_en[1]),
         .out                (y),
@@ -283,7 +283,7 @@ module p_hit_1 #(
 
     divide_top #(
         .Q_BITS       (Q_BITS),
-        .D_WIDTH      ('d32),
+        .D_WIDTH      ('d32)
     ) u_divide_top (
         .clock        (clock),
         .reset        (reset),
