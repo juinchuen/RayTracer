@@ -55,8 +55,6 @@ p_hit #(
     .out_empty            (out_empty)
 );
 
-
-
 ///testing
 logic[31:0] temparr1, temparr2, temparr3;
 logic temp1, temp2, temp3, temp4;
@@ -68,7 +66,7 @@ always_comb begin
     temp4 = in_full[1];
     temparr1 = v0[0];
     temparr2 = tri_normal_1[0];
-    temparr3 = origin[0];
+    temparr3 = origin_1[0];
 end
 ///testing
 
