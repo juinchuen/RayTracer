@@ -109,7 +109,7 @@ int main() {
 											 ray_origin,
 											 ray_dir);
 
-				printf("hi\r\n");
+				//printf("hi\r\n");
 
 				if (hit) {
 					
