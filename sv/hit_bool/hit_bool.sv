@@ -7,24 +7,26 @@ module hit_bool #(
     // p_hit module output, normal coordinates
     input logic signed [31:0] p_hit [2:0],
     input logic signed [31:0] normal [2:0],
-    // Vector inputs
+    // Vector inputs (these are fed into the respective FIFOs)
     input logic signed [31:0] v0 [2:0],
     input logic signed [31:0] v1 [2:0],
     input logic signed [31:0] v2 [2:0],
 
+    input logic v0_in_wr_en, 
+    output logic v0_in_full,
+    input logic v1_in_wr_en,
+    output logic v1_in_full,
+    input logic v2_in_wr_en,
+    output logic v2_in_full,
+
     // FIFO signals going in
     input logic fifo_out_rd_en,  
 
-    input logic triangle_in_empty, 
-    output logic triangle_in_rd_en,
+    input logic normal_in_wr_en,
+    output logic normal_in_full,
+
     input logic p_hit_in_empty,
     output logic p_hit_in_rd_en,
-    input logic v0_in_empty,
-    output logic v0_in_rd_en,
-    input logic v1_in_empty,
-    output logic v1_in_rd_en,
-    input logic v2_in_empty,
-    output logic v2_in_rd_en,
 
     output logic fifo_out_dout,   
     output logic fifo_out_empty  
@@ -49,7 +51,24 @@ logic signed [31:0] d1;
 logic signed [31:0] d2;
 // hit bool
 logic hit, hit_c;
-// unpack the p_hit input to put into an array of ints
+
+// Input FIFOs
+logic normal_in_rd_en;
+logic normal_in_empty;
+logic signed [31:0] normal_in_din  [2:0] = {32'hd504, 32'h0, 32'h8e00};
+logic signed [31:0] normal_in_dout [2:0];
+
+logic v0_in_rd_en;
+logic signed [31:0] v0_in_dout[2:0];
+logic v0_in_empty;
+
+logic v1_in_rd_en;
+logic signed [31:0] v1_in_dout[2:0];
+logic v1_in_empty;
+
+logic v2_in_rd_en;
+logic signed [31:0] v2_in_dout[2:0];
+logic v2_in_empty;
 
 // Output FIFO 
 logic fifo_out_full;   
@@ -149,13 +168,13 @@ assign cross_1_in_empty = sub_1_out_empty || sub_4_out_empty; // sub 0 and 3 fee
 assign cross_1_out_rd_en = dot_1_in_rd_en;
 assign cross_2_in_empty = sub_2_out_empty || sub_5_out_empty;
 assign cross_2_out_rd_en = dot_2_in_rd_en;
-assign dot_0_in_empty = cross_0_out_empty || triangle_in_empty;
+assign dot_0_in_empty = cross_0_out_empty || normal_in_empty;
 assign dot_0_out_rd_en = dot_rd_en;
-assign dot_1_in_empty = cross_1_out_empty || triangle_in_empty;
+assign dot_1_in_empty = cross_1_out_empty || normal_in_empty;
 assign dot_1_out_rd_en = dot_rd_en;
-assign dot_2_in_empty = cross_2_out_empty || triangle_in_empty;
+assign dot_2_in_empty = cross_2_out_empty || normal_in_empty;
 assign dot_2_out_rd_en = dot_rd_en;
-assign triangle_in_rd_en = dot_0_in_rd_en && dot_1_in_rd_en && dot_2_in_rd_en;
+assign normal_in_rd_en = dot_0_in_rd_en && dot_1_in_rd_en && dot_2_in_rd_en;
 assign dot_empty = dot_0_out_empty && dot_1_out_empty && dot_2_out_empty;
 
 // Subtract stage 1
@@ -163,8 +182,8 @@ assign dot_empty = dot_0_out_empty && dot_1_out_empty && dot_2_out_empty;
 sub u_sub_0 ( // Pipes to cross 0
     .clock        (clock),
     .reset        (reset),
-    .x            (v1[2:0]),
-    .y            (v0[2:0]),
+    .x            (v1_in_dout[2:0]),
+    .y            (v0_in_dout[2:0]),
     .in_empty     (sub_0_in_empty),
     .in_rd_en     (sub_0_in_rd_en),
     .out          (o0[2:0]),
@@ -176,8 +195,8 @@ sub u_sub_0 ( // Pipes to cross 0
 sub u_sub_1 ( // Pipes to cross 1 
     .clock        (clock),
     .reset        (reset),
-    .x            (v2[2:0]),
-    .y            (v1[2:0]),
+    .x            (v2_in_dout[2:0]),
+    .y            (v1_in_dout[2:0]),
     .in_empty     (sub_1_in_empty),
     .in_rd_en     (sub_1_in_rd_en),
     .out          (o1[2:0]),
@@ -188,8 +207,8 @@ sub u_sub_1 ( // Pipes to cross 1
 sub u_sub_2 ( // Pipes to cross 2
     .clock        (clock),
     .reset        (reset),
-    .x            (v0[2:0]),
-    .y            (v2[2:0]),
+    .x            (v0_in_dout[2:0]),
+    .y            (v2_in_dout[2:0]),
     .in_empty     (sub_2_in_empty),
     .in_rd_en     (sub_2_in_rd_en),
     .out          (o2[2:0]),
@@ -202,7 +221,7 @@ sub u_sub_3 ( // Pipes to cross 0
     .clock        (clock),
     .reset        (reset),
     .x            (p_hit[2:0]),
-    .y            (v0[2:0]),
+    .y            (v0_in_dout[2:0]),
     .in_empty     (sub_3_in_empty),
     .in_rd_en     (sub_3_in_rd_en),
     .out          (p0[2:0]),
@@ -214,7 +233,7 @@ sub u_sub_4 ( // Pipes to cross 1
     .clock        (clock),
     .reset        (reset),
     .x            (p_hit[2:0]),
-    .y            (v1[2:0]),
+    .y            (v1_in_dout[2:0]),
     .in_empty     (sub_4_in_empty),
     .in_rd_en     (sub_4_in_rd_en),
     .out          (p1[2:0]),
@@ -226,7 +245,7 @@ sub u_sub_5 ( // Pipes to cross 2
     .clock        (clock),
     .reset        (reset),
     .x            (p_hit[2:0]),
-    .y            (v2[2:0]),
+    .y            (v2_in_dout[2:0]),
     .in_empty     (sub_5_in_empty),
     .in_rd_en     (sub_5_in_rd_en),
     .out          (p2[2:0]),
@@ -320,6 +339,68 @@ dot #(
     .out          (d2),
     .out_empty    (dot_2_out_empty),
     .out_rd_en    (dot_2_out_rd_en)
+);
+
+// FIFOs to hold inputs
+fifo_array #(
+    .FIFO_DATA_WIDTH         (32),
+    .FIFO_BUFFER_SIZE        (1024),
+    .ARRAY_SIZE              (3)
+) normal_in_array (
+    .reset                   (reset),
+    .clock                   (clock),
+    .wr_en                   (normal_in_wr_en),
+    .din                     (normal[2:0]),
+    .full                    (normal_in_full),
+    .rd_en                   (normal_in_rd_en),
+    .dout                    (normal_in_dout[2:0]),
+    .empty                   (normal_in_empty)
+);
+
+// Vector fifos
+fifo_array #(
+    .FIFO_DATA_WIDTH         (32),
+    .FIFO_BUFFER_SIZE        (1024),
+    .ARRAY_SIZE              (3)
+) v0_fifo_array (
+    .reset                   (reset),
+    .clock                   (clock),
+    .wr_en                   (v0_in_wr_en),
+    .din                     (v0[2:0]),
+    .full                    (v0_in_full),
+    .rd_en                   (v0_in_rd_en),
+    .dout                    (v0_in_dout[2:0]),
+    .empty                   (v0_in_empty)
+);
+
+fifo_array #(
+    .FIFO_DATA_WIDTH         (32),
+    .FIFO_BUFFER_SIZE        (1024),
+    .ARRAY_SIZE              (3)
+) v1_fifo_array (
+    .reset                   (reset),
+    .clock                   (clock),
+    .wr_en                   (v1_in_wr_en),
+    .din                     (v1[2:0]),
+    .full                    (v1_in_full),
+    .rd_en                   (v1_in_rd_en),
+    .dout                    (v1_in_dout[2:0]),
+    .empty                   (v1_in_empty)
+);
+
+fifo_array #(
+    .FIFO_DATA_WIDTH         (32),
+    .FIFO_BUFFER_SIZE        (1024),
+    .ARRAY_SIZE              (3)
+) v2_fifo_array (
+    .reset                   (reset),
+    .clock                   (clock),
+    .wr_en                   (v2_in_wr_en),
+    .din                     (v2[2:0]),
+    .full                    (v2_in_full),
+    .rd_en                   (v2_in_rd_en),
+    .dout                    (v2_in_dout[2:0]),
+    .empty                   (v2_in_empty)
 );
 
 // FIFO to hold outputs

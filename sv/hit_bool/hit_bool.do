@@ -17,11 +17,12 @@ vsim -classdebug -voptargs=+acc +notimingchecks -L work work.hit_bool_tb -wlf hi
 # wave
 add wave -noupdate -group hit_bool_tb
 add wave -noupdate -group hit_bool_tb -radix hexadecimal /hit_bool_tb/*
-add wave -noupdate -group hit_bool_tb/normal_fifo_array
-add wave -noupdate -group hit_bool_tb/normal_fifo_array -radix hexadecimal /hit_bool_tb/normal_fifo_array/*
 add wave -noupdate -group hit_bool_tb/p_hit_fifo_array
 add wave -noupdate -group hit_bool_tb/p_hit_fifo_array -radix hexadecimal /hit_bool_tb/p_hit_fifo_array/*
 add wave -noupdate -group hit_bool_tb/u_hit_bool
 add wave -noupdate -group hit_bool_tb/u_hit_bool -radix hexadecimal /hit_bool_tb/u_hit_bool/*
+
+#add wave -noupdate -group hit_bool_tb/u_hit_bool/u_sub_3
+#add wave -noupdate -group hit_bool_tb/u_hit_bool -radix hexadecimal /hit_bool_tb/u_hit_bool/u_sub_3/*
 
 run -all
