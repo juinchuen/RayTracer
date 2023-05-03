@@ -75,7 +75,7 @@ end
 endmodule
 
 module dot #(
-    parameter Q_BITS = 'd10
+    parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
@@ -93,7 +93,7 @@ logic signed [31:0] out_din;
 logic out_full, out_wr_en;
 
 dot_module #(
-    .Q_BITS      ('d10)
+    .Q_BITS      (Q_BITS)
 ) u_dot_module (
     .clock       (clock),
     .reset       (reset),
