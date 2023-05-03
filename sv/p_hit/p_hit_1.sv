@@ -1,15 +1,17 @@
-module p_hit_fifo_in_pt1 (
+module p_hit_fifo_in_pt1 #(
+    parameter D_BITS = 'd32
+) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] tri_normal_in[2:0],
-    input logic signed [31:0] v0_in[2:0],
-    input logic signed [31:0] origin_in[2:0],
+    input logic signed [D_BITS-1:0] tri_normal_in[2:0],
+    input logic signed [D_BITS-1:0] v0_in[2:0],
+    input logic signed [D_BITS-1:0] origin_in[2:0],
     output logic in_full,
     input logic in_wr_en,
 
-    output logic signed [31:0] tri_normal_out[2:0],
-    output logic signed [31:0] v0_out[2:0],
-    output logic signed [31:0] origin_out[2:0],
+    output logic signed [D_BITS-1:0] tri_normal_out[2:0],
+    output logic signed [D_BITS-1:0] v0_out[2:0],
+    output logic signed [D_BITS-1:0] origin_out[2:0],
     output logic in_empty,
     input logic in_rd_en
 );
@@ -17,8 +19,8 @@ module p_hit_fifo_in_pt1 (
     logic full_arr[2:0], empty_arr[2:0];
 
     fifo_array #(
-        .FIFO_DATA_WIDTH         (32),
-        .FIFO_BUFFER_SIZE        (1024),
+        .FIFO_DATA_WIDTH         (D_BITS),
+        .FIFO_BUFFER_SIZE        (D_BITS*16),
         .ARRAY_SIZE              (3)
     ) tri_normal_fifo (
         .reset                   (reset),
@@ -32,8 +34,8 @@ module p_hit_fifo_in_pt1 (
     );
 
     fifo_array #(
-        .FIFO_DATA_WIDTH         (32),
-        .FIFO_BUFFER_SIZE        (1024),
+        .FIFO_DATA_WIDTH         (D_BITS),
+        .FIFO_BUFFER_SIZE        (D_BITS*16),
         .ARRAY_SIZE              (3)
     ) v0_fifo (
         .reset                   (reset),
@@ -47,8 +49,8 @@ module p_hit_fifo_in_pt1 (
     );
 
     fifo_array #(
-        .FIFO_DATA_WIDTH         (32),
-        .FIFO_BUFFER_SIZE        (1024),
+        .FIFO_DATA_WIDTH         (D_BITS),
+        .FIFO_BUFFER_SIZE        (D_BITS*16),
         .ARRAY_SIZE              (3)
     ) origin_fifo (
         .reset                   (reset),
@@ -77,22 +79,23 @@ module p_hit_fifo_in_pt1 (
 endmodule
 
 module p_hit_dot_add_pt1 #(
+    parameter D_BITS = 'd32,
     parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] tri_normal[2:0],
-    input logic signed [31:0] v0[2:0],
-    input logic signed [31:0] origin[2:0],
+    input logic signed [D_BITS-1:0] tri_normal[2:0],
+    input logic signed [D_BITS-1:0] v0[2:0],
+    input logic signed [D_BITS-1:0] origin[2:0],
     output logic in_full,
     input logic in_wr_en,
 
-    output logic signed [31:0] out,
+    output logic signed [D_BITS-1:0] out,
     output logic out_empty,
     input logic out_rd_en
 );
 
-    logic signed [31:0] v0_out[2:0], tri_normal_out[2:0], origin_out[2:0];
+    logic signed [D_BITS-1:0] v0_out[2:0], tri_normal_out[2:0], origin_out[2:0];
     logic in_rd_en;
 
     // //testing
@@ -108,7 +111,9 @@ module p_hit_dot_add_pt1 #(
     // end
     // //testing
 
-    p_hit_fifo_in_pt1 u_p_hit_fifo_in_pt1 (
+    p_hit_fifo_in_pt1 #(
+        .D_BITS                (D_BITS)
+    ) u_p_hit_fifo_in_pt1 (
         .clock                 (clock),
         .reset                 (reset),
         .tri_normal_in         (tri_normal[2:0]),
@@ -125,11 +130,12 @@ module p_hit_dot_add_pt1 #(
     );
 
     logic dot_in_read_en[1:0];
-    logic signed [31:0] x, y;
+    logic signed [D_BITS-1:0] x, y;
     logic sub_in_rd_en, sub_in_empty;
     logic empty_arr[1:0];
 
     dot #(
+        .D_BITS       (D_BITS),
         .Q_BITS       (Q_BITS)
     ) x_dot (
         .clock        (clock),
@@ -145,6 +151,7 @@ module p_hit_dot_add_pt1 #(
     );
 
     dot #(
+        .D_BITS       (D_BITS),
         .Q_BITS       (Q_BITS)
     ) y_dot (
         .clock        (clock),
@@ -159,7 +166,9 @@ module p_hit_dot_add_pt1 #(
         .out_rd_en    (sub_in_rd_en)
     );
 
-    sub_single u_sub_single (
+    sub_single #(
+        .D_BITS       (D_BITS)
+    ) u_sub_single (
         .clock        (clock),
         .reset        (reset),
         .x            (x),
@@ -314,7 +323,7 @@ module p_hit_1 #(
 
     divide_top #(
         .Q_BITS       (Q_BITS),
-        .D_WIDTH      ('d32)
+        .D_BITS      ('d32)
     ) u_divide_top (
         .clock        (clock),
         .reset        (reset),
