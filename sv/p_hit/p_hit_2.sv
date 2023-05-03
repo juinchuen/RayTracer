@@ -1,5 +1,5 @@
 module p_hit_mult #(
-    parameter Q_BITS = 'd10
+    parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
