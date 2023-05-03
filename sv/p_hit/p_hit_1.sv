@@ -137,7 +137,7 @@ module p_hit_dot_add_pt1 #(
         .clock        (clock),
         .reset        (reset),
         .x            (tri_normal_out[2:0]),
-        .y            (origin[2:0]),
+        .y            (origin_out[2:0]),
         .in_empty     (in_empty),
         .in_rd_en     (dot_in_read_en[1]),
 
