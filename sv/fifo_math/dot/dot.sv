@@ -1,5 +1,5 @@
 module dot_module #(
-    parameter Q_BITS = 'd10
+    parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
@@ -31,12 +31,12 @@ end
 logic signed [31:0] temp1, temp2, temp3, temp4, temp5, temp6;
 
 always_comb begin
-    temp1 = x[0];
-    temp2 = x[1];
-    temp3 = x[2];
-    temp4 = y[0];
-    temp5 = y[1];
-    temp6 = y[2];
+    temp1 = out_big[0];
+    temp2 = out_big[1];
+    temp3 = out_big[2];
+    // temp4 = y[0];
+    // temp5 = y[1];
+    // temp6 = y[2];
 end
 //testing
 
