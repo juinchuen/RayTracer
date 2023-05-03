@@ -14,7 +14,7 @@ module dot_module #(
 );
 
 enum logic {s0, s1} state, next_state;
-logic signed [31+Q_BITS:0] out_big [2:0];
+logic signed [63-Q_BITS:0] out_big [2:0];
 logic signed [31:0] out_c;
 
 always_ff @(posedge clock or posedge reset) begin
