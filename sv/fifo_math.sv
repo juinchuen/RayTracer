@@ -471,7 +471,7 @@ endmodule
 
 ////////////////Scale Module//////////////////////////
 module sub_module #(
-    parameter D_BITS = 'd32;
+    parameter D_BITS = 'd32
 ) (
     input logic clock,
     input logic reset,
