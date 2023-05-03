@@ -50,9 +50,9 @@ always_comb begin
     case(state)
     s0: begin
         if(!in_empty) begin
-            out_big[0] = 64'(x[0] * y[0]) >> Q_BITS;
-            out_big[1] = 64'(x[1] * y[1]) >> Q_BITS;
-            out_big[2] = 64'(x[2] * y[2]) >> Q_BITS;
+            out_big[0] = (64'(x[0] * y[0])) >> Q_BITS;
+            out_big[1] = (64'(x[1] * y[1])) >> Q_BITS;
+            out_big[2] = (64'(x[2] * y[2])) >> Q_BITS;
 
             out_c = out_big[0] + out_big[1] + out_big[2];
 
