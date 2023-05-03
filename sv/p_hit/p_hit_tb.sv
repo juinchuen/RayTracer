@@ -13,7 +13,7 @@ localparam string TXT_CMP = "../../test_data/p_hit.txt";
 localparam string TXT_OUT = "txt/out.txt";
 localparam CLOCK_PERIOD = 10;
 
-localparam D_BITS = 'd40;
+localparam D_BITS = 'd32;
 localparam Q_BITS = 'd16;
 
 localparam SEEK_END = 2;
@@ -58,7 +58,7 @@ p_hit #(
 );
 
 ///testing
-logic[31:0] temparr1, temparr2, temparr3;
+logic[D_BITS-1:0] temparr1, temparr2, temparr3;
 logic temp1, temp2, temp3, temp4;
 
 always_comb begin
