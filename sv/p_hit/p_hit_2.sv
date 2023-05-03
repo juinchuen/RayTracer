@@ -21,7 +21,7 @@ logic signed [31:0] division_out, dir_2_out[2:0];
 logic empty_arr[1:0], empty, rd_en;
 
 //testing
-logic signed  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
+logic signed[31:0] temp1, temp2, temp3, temp4, temp5, temp6, temp7;
 
 always_comb begin
     temp1 = out[0];
