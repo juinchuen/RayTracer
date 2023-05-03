@@ -271,7 +271,7 @@ module p_hit_1 #(
     // end
 
     //testing
-    logic signed  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
+    logic signed [31:0]  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
 
     always_comb begin
         temp1 = origin[0];

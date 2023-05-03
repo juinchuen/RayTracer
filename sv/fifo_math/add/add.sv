@@ -79,6 +79,19 @@ module add(
 logic signed [31:0] out_din[2:0];
 logic out_full, out_wr_en;
 
+//testing
+logic signed [31:0]  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
+
+always_comb begin
+    temp1 = x[0];
+    temp2 = x[1];
+    temp3 = x[2];
+    temp4 = y[0];
+    temp5 = y[1];
+    temp6 = y[2];
+end
+//testing
+
 sub_module u_sub_module (
     .clock        (clock),
     .reset        (reset),
