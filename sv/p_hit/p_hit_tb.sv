@@ -64,9 +64,9 @@ always_comb begin
     temp2 = in_wr_en[1];
     temp3 = in_full[0];
     temp4 = in_full[1];
-    temparr1 = origin_1[0];
-    temparr2 = origin_1[1];
-    temparr3 = origin_1[2];
+    temparr1 = origin_2[0];
+    temparr2 = origin_2[1];
+    temparr3 = origin_2[2];
 end
 ///testing
 
