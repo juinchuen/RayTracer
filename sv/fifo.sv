@@ -94,7 +94,7 @@ module fifo_array #(
 
     logic full_arr[ARRAY_SIZE-1:0], empty_arr[ARRAY_SIZE-1:0];
 
-    logic signed [31:0] temp1, temp2, temp3;
+    logic signed [FIFO_DATA_WIDTH-1:0] temp1, temp2, temp3;
 
     always_comb begin
         temp1 = din[0];
