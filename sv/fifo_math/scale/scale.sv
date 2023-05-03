@@ -1,5 +1,5 @@
 module scale_module #(
-    parameter Q_BITS = 'd10
+    parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
@@ -47,9 +47,9 @@ always_comb begin
     case(state)
     s0: begin
         if(!in_empty) begin
-            out_big[0] = (x[0] * a) >> Q_BITS;
-            out_big[1] = (x[1] * a) >> Q_BITS;
-            out_big[2] = (x[2] * a) >> Q_BITS;
+            out_big[0] = 64'((x[0] * a)) >>> Q_BITS;
+            out_big[1] = 64'((x[1] * a)) >>> Q_BITS;
+            out_big[2] = 64'((x[2] * a)) >>> Q_BITS;
             
             out_c[0] = out_big[0];
             out_c[1] = out_big[1];
