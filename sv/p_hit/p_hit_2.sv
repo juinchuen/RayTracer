@@ -108,6 +108,15 @@ module p_hit #(
 logic empty_arr[1:0], empty, rd_en;
 logic signed [31:0] origin_out[2:0], mult_out[2:0];
 
+//testing
+logic signed  temp1, temp2, temp3;
+always_comb begin
+    temp1 = origin_1[0];
+    temp2 = origin_1[1];
+    temp3 = origin_1[2];
+end
+//testing
+
 p_hit_mult #(
     .Q_BITS               (Q_BITS)
 ) u_p_hit_mult (
