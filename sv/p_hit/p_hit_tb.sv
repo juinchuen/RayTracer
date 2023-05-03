@@ -155,7 +155,7 @@ initial begin: txt_write_process
     int j;
     int out_file, cmp_file;
     int pos, length;
-    int cmp_dout;
+    int cmp_dout[2:0];
     @(negedge reset);
     @(negedge clock);
 
