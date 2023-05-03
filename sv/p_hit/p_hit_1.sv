@@ -96,7 +96,7 @@ module p_hit_dot_add_pt1 #(
     logic in_rd_en;
 
     //testing
-    logic signed  temp1, temp2, temparr3, temp4, temp5, temp6, temp7;
+    logic signed  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
 
     always_comb begin
         temp1 = origin[0];
