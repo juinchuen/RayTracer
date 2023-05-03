@@ -226,7 +226,7 @@ endmodule
 
 ////////////////Cross Module//////////////////////////
 module cross_module #(
-    parameter D_BITS = 'd32
+    parameter D_BITS = 'd32,
     parameter Q_BITS = 'd10
 ) (
     input logic clock,
@@ -297,7 +297,7 @@ module cross_module #(
 endmodule
 
 module Cross #(
-    parameter D_BITS = 'd32;
+    parameter D_BITS = 'd32,
     parameter Q_BITS = 'd10
 ) (
     input logic clock,
