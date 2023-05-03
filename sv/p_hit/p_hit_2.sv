@@ -20,6 +20,16 @@ module p_hit_mult #(
 logic signed [31:0] division_out, dir_2_out[2:0];
 logic empty_arr[1:0], empty, rd_en;
 
+//testing
+logic signed  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
+
+always_comb begin
+    temp1 = origin[0];
+    temp2 = origin[1];
+    temp3 = origin[2];
+end
+//testing
+
 p_hit_1 #(
     .Q_BITS               (Q_BITS)
 ) u_p_hit_1 (

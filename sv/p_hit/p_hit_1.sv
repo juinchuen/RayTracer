@@ -270,6 +270,16 @@ module p_hit_1 #(
     //     temp3 = origin[0];
     // end
 
+    //testing
+    logic signed  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
+
+    always_comb begin
+        temp1 = origin[0];
+        temp2 = origin[1];
+        temp3 = origin[2];
+    end
+    //testing
+
     logic signed [31:0] x, y;
     logic division_rd_en, empty_arr[1:0], div_empty;
 
