@@ -77,7 +77,7 @@ module p_hit_fifo_in_pt1 (
 endmodule
 
 module p_hit_dot_add_pt1 #(
-    parameter Q_BITS = 'd10
+    parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
@@ -165,7 +165,7 @@ module p_hit_dot_add_pt1 #(
 endmodule
 
 module p_hit_dot_pt2 #(
-    parameter Q_BITS = 'd10
+    parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
@@ -233,7 +233,7 @@ module p_hit_dot_pt2 #(
 endmodule
 
 module p_hit_1 #(
-    parameter Q_BITS = 'd10
+    parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
