@@ -349,24 +349,25 @@ endmodule
 
 ////////////////Scale Module//////////////////////////
 module scale_module #(
+    parameter D_BITS = 'd32
     parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] x[2:0],
-    input logic signed [31:0] a,
+    input logic signed [D_BITS-1:0] x[2:0],
+    input logic signed [D_BITS-1:0] a,
     input logic in_empty,
     output logic in_rd_en,
     
-    output logic signed [31:0] out[2:0],
+    output logic signed [D_BITS-1:0] out[2:0],
     input logic out_full,
     output logic out_wr_en
 );
     //multiply each x by a
 
     enum logic {s0, s1} state, next_state;
-    logic signed [63-Q_BITS:0] out_big [2:0];
-    logic signed [31:0] out_c[2:0];
+    logic signed [(D_BITS*2)-1-Q_BITS:0] out_big [2:0];
+    logic signed [D_BITS-1:0] out_c[2:0];
 
     always_ff @(posedge clock or posedge reset) begin
         if(reset) begin
@@ -416,24 +417,26 @@ module scale_module #(
 endmodule
 
 module scale #(
+    parameter D_BITS = 'd32,
     parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] x[2:0],
-    input logic signed [31:0] a,
+    input logic signed [D_BITS-1:0] x[2:0],
+    input logic signed [D_BITS-1:0] a,
     input logic in_empty,
     output logic in_rd_en,
     
-    output logic signed [31:0] out[2:0],
+    output logic signed [D_BITS-1:0] out[2:0],
     output logic out_empty,
     input logic out_rd_en
 );
 
-    logic signed [31:0] out_din[2:0];
+    logic signed [D_BITS-1:0] out_din[2:0];
     logic out_full, out_wr_en;
 
     scale_module #(
+        .D_BITS       (D_BITS)
         .Q_BITS       (Q_BITS)
     ) u_scale_module (
         .clock        (clock),
@@ -448,8 +451,8 @@ module scale #(
     );
 
     fifo_array #(
-        .FIFO_DATA_WIDTH         (32),
-        .FIFO_BUFFER_SIZE        (1024),
+        .FIFO_DATA_WIDTH         (D_BITS),
+        .FIFO_BUFFER_SIZE        (D_BITs*16),
         .ARRAY_SIZE              (3)
     ) u_fifo_array (
         .reset                   (reset),
