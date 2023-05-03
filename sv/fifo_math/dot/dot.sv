@@ -29,7 +29,7 @@ end
 
 //testing
 logic signed [31+Q_BITS:0] temp1, temp2, temp3;
-logic signed [31:] temp4, temp5, temp6, temp7;
+logic signed [31:0] temp4, temp5, temp6, temp7;
 
 always_comb begin
     temp1 = out_big[0];
