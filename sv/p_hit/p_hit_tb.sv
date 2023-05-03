@@ -28,14 +28,14 @@ logic out_read_done = '0;
 
 //inputs
 logic in_wr_en[3:0], in_full[3:0];
-logic signed [31:0] tri_normal_1[2:0], tri_normal_2[2:0];
-logic signed [31:0] v0[2:0];
-logic signed [31:0] origin_1[2:0], origin_2[2:0];
-logic signed [31:0] dir_1[2:0], dir_2[2:0];
+logic signed [D_BITS-1:0] tri_normal_1[2:0], tri_normal_2[2:0];
+logic signed [D_BITS-1:0] v0[2:0];
+logic signed [D_BITS-1:0] origin_1[2:0], origin_2[2:0];
+logic signed [D_BITS-1:0] dir_1[2:0], dir_2[2:0];
 
 //outputs
 logic out_empty, out_rd_en;
-logic signed [31:0] out[2:0];
+logic signed [D_BITS-1:0] out[2:0];
 
 p_hit #(
     .D_BITS               (D_BITS),
@@ -157,7 +157,7 @@ initial begin: txt_write_process
     int j;
     int out_file, cmp_file;
     int pos, length;
-    int cmp_dout[2:0];
+    logic signed [D_BITS-1:0] cmp_dout[2:0];
     @(negedge reset);
     @(negedge clock);
 
