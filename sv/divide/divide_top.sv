@@ -1,28 +1,28 @@
 module divide_top #(
     parameter Q_BITS = 'd10,
-    parameter D_WIDTH = 'd32, //data width
-    parameter ED_WIDTH = D_WIDTH + Q_BITS + 'b1  //expanded data width
-    //ED_WIDTH should never be larger than Q_BITS + D_WIDTH + 1
+    parameter D_BITS = 'd32, //data width
+    parameter ED_WIDTH = D_BITS + Q_BITS + 'b1  //expanded data width
+    //ED_WIDTH should never be larger than Q_BITS + D_BITS + 1
 ) (
     input logic clock,
     input logic reset,
     
-    input logic signed [D_WIDTH-1:0] dividend,
-    input logic signed [D_WIDTH-1:0] divisor,
+    input logic signed [D_BITS-1:0] dividend,
+    input logic signed [D_BITS-1:0] divisor,
     input logic in_empty,
     output logic in_rd_en,
 
     output logic    out_empty,
     input logic     out_rd_en,
-    output logic signed [D_WIDTH-1:0] out_dout
+    output logic signed [D_BITS-1:0] out_dout
 );
 
-logic [D_WIDTH-1:0] out_din;
+logic [D_BITS-1:0] out_din;
 logic out_wr_en, out_full;
 
 divide_module #(
     .Q_BITS       (Q_BITS),
-    .D_WIDTH      (D_WIDTH),
+    .D_BITS       (D_BITS),
     .ED_WIDTH     (ED_WIDTH)
 ) u_divide_module (
     .clock        (clock),
@@ -38,8 +38,8 @@ divide_module #(
 );
 
 fifo #(
-    .FIFO_DATA_WIDTH     (D_WIDTH),
-    .FIFO_BUFFER_SIZE    (D_WIDTH*16)
+    .FIFO_DATA_WIDTH     (D_BITS),
+    .FIFO_BUFFER_SIZE    (D_BITS*16)
 ) u_fifo (
     .reset               (reset),
     .wr_clk              (clock),
