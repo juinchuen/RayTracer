@@ -349,7 +349,7 @@ endmodule
 
 ////////////////Scale Module//////////////////////////
 module scale_module #(
-    parameter D_BITS = 'd32
+    parameter D_BITS = 'd32,
     parameter Q_BITS = 'd16
 ) (
     input logic clock,
