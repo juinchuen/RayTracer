@@ -653,12 +653,12 @@ module sub_single #(
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [D_BITS:0] x,
-    input logic signed [D_BITS:0] y,
+    input logic signed [D_BITS-1:0] x,
+    input logic signed [D_BITS-1:0] y,
     input logic in_empty,
     output logic in_rd_en,
     
-    output logic signed [D_BITS:0] out,
+    output logic signed [D_BITS-1:0] out,
     output logic out_empty,
     input logic out_rd_en
 );
