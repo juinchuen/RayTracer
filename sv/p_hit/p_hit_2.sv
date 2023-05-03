@@ -20,18 +20,18 @@ module p_hit_mult #(
 logic signed [31:0] division_out, dir_2_out[2:0];
 logic empty_arr[1:0], empty, rd_en;
 
-//testing
-logic signed[31:0] temp1, temp2, temp3, temp4, temp5, temp6, temp7;
+// //testing
+// logic signed[31:0] temp1, temp2, temp3, temp4, temp5, temp6, temp7;
 
-always_comb begin
-    temp1 = out[0];
-    temp2 = out[1];
-    temp3 = out[2];
-    temp4 = dir_2[0];
-    temp5 = dir_2[1];
-    temp6 = dir_2[2];
-end
-//testing
+// always_comb begin
+//     temp1 = out[0];
+//     temp2 = out[1];
+//     temp3 = out[2];
+//     temp4 = dir_2[0];
+//     temp5 = dir_2[1];
+//     temp6 = dir_2[2];
+// end
+// //testing
 
 p_hit_1 #(
     .Q_BITS               (Q_BITS)
@@ -111,17 +111,17 @@ module p_hit #(
 logic empty_arr[1:0], empty, rd_en;
 logic signed [31:0] origin_out[2:0], mult_out[2:0];
 
-//testing
-logic signed [31:0]  temp1, temp2, temp3, temp4, temp5, temp6;
-always_comb begin
-    temp1 = out[0];
-    temp2 = out[1];
-    temp3 = out[2];
-    temp4 = origin_2[0];
-    temp5 = origin_2[1];
-    temp6 = origin_2[2];
-end
-//testing
+// //testing
+// logic signed [31:0]  temp1, temp2, temp3, temp4, temp5, temp6;
+// always_comb begin
+//     temp1 = out[0];
+//     temp2 = out[1];
+//     temp3 = out[2];
+//     temp4 = origin_2[0];
+//     temp5 = origin_2[1];
+//     temp6 = origin_2[2];
+// end
+// //testing
 
 p_hit_mult #(
     .Q_BITS               (Q_BITS)

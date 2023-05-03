@@ -95,18 +95,18 @@ module p_hit_dot_add_pt1 #(
     logic signed [31:0] v0_out[2:0], tri_normal_out[2:0], origin_out[2:0];
     logic in_rd_en;
 
-    //testing
-    logic signed  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
+    // //testing
+    // logic signed  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
 
-    always_comb begin
-        temp1 = origin[0];
-        temp2 = origin[1];
-        temp3 = origin[2];
-        temp4 = origin_out[0];
-        temp5 = origin_out[1];
-        temp6 = origin_out[2];
-    end
-    //testing
+    // always_comb begin
+    //     temp1 = origin[0];
+    //     temp2 = origin[1];
+    //     temp3 = origin[2];
+    //     temp4 = origin_out[0];
+    //     temp5 = origin_out[1];
+    //     temp6 = origin_out[2];
+    // end
+    // //testing
 
     p_hit_fifo_in_pt1 u_p_hit_fifo_in_pt1 (
         .clock                 (clock),
@@ -270,15 +270,15 @@ module p_hit_1 #(
     //     temp3 = origin[0];
     // end
 
-    //testing
-    logic signed [31:0]  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
+    // //testing
+    // logic signed [31:0]  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
 
-    always_comb begin
-        temp1 = origin[0];
-        temp2 = origin[1];
-        temp3 = origin[2];
-    end
-    //testing
+    // always_comb begin
+    //     temp1 = origin[0];
+    //     temp2 = origin[1];
+    //     temp3 = origin[2];
+    // end
+    // //testing
 
     logic signed [31:0] x, y;
     logic division_rd_en, empty_arr[1:0], div_empty;
