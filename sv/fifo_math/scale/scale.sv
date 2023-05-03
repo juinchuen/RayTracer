@@ -71,7 +71,7 @@ end
 endmodule
 
 module scale #(
-    parameter Q_BITS = 'd10
+    parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
@@ -88,7 +88,9 @@ module scale #(
 logic signed [31:0] out_din[2:0];
 logic out_full, out_wr_en;
 
-scale_module u_scale_module (
+scale_module #(
+    .Q_BITS       (Q_BITS)
+) u_scale_module (
     .clock        (clock),
     .reset        (reset),
     .x            (x[2:0]),

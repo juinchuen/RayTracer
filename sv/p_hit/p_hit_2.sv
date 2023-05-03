@@ -27,6 +27,9 @@ always_comb begin
     temp1 = out[0];
     temp2 = out[1];
     temp3 = out[2];
+    temp4 = dir_2[0];
+    temp5 = dir_2[1];
+    temp6 = dir_2[2];
 end
 //testing
 
