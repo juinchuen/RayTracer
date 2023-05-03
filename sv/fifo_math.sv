@@ -226,12 +226,13 @@ endmodule
 
 ////////////////Cross Module//////////////////////////
 module cross_module #(
+    parameter D_BITS = 'd32
     parameter Q_BITS = 'd10
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] x[2:0],
-    input logic signed [31:0] y[2:0],
+    input logic signed [D_BITS-1:0] x[2:0],
+    input logic signed [D_BITS-1:0] y[2:0],
     
     // Input FIFO ports
     input logic in_empty,
@@ -239,13 +240,13 @@ module cross_module #(
     
     // Output FIFO ports
     input logic out_full,
-    output logic signed [31:0] out [2:0],
+    output logic signed [D_BITS-1:0] out [2:0],
     output logic out_wr_en
 );
 
     enum logic {s0, s1} state, next_state;
-    logic signed [31:0] out_c [2:0];
-    logic signed [31+Q_BITS:0] out_big [2:0];
+    logic signed [D_BITS-1:0] out_c [2:0];
+    logic signed [(D_BITS*2)-1-Q_BITS:0] out_big [2:0];
 
     always_ff @(posedge clock or posedge reset) begin
         if (reset) begin
@@ -296,12 +297,13 @@ module cross_module #(
 endmodule
 
 module Cross #(
+    parameter D_BITS = 'd32;
     parameter Q_BITS = 'd10
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] x[2:0],
-    input logic signed [31:0] y[2:0],
+    input logic signed [D_BITS-1:0] x[2:0],
+    input logic signed [D_BITS-1:0] y[2:0],
     
     // Input FIFO ports
     input logic in_empty,
@@ -310,12 +312,13 @@ module Cross #(
     // Output FIFO ports
     input logic out_rd_en,
     output logic out_empty,
-    output logic signed [31:0] out [2:0]
+    output logic signed [D_BITS-1:0] out [2:0]
 );
-    logic signed [31:0] out_din [2:0];
+    logic signed [D_BITS-1:0] out_din [2:0];
     logic out_full, out_wr_en;
 
     cross_module #(
+        .D_BITS       (D_BITS),
         .Q_BITS       (Q_BITS)
     ) u_cross_module (
         .clock        (clock),
@@ -332,7 +335,7 @@ module Cross #(
     );
 
     fifo_array #(
-        .FIFO_DATA_WIDTH         (32),
+        .FIFO_DATA_WIDTH         (D_BITS),
         .FIFO_BUFFER_SIZE        (1024),
         .ARRAY_SIZE              (3)
     ) u_fifo_array (
