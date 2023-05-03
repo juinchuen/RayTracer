@@ -1,14 +1,14 @@
 module divide_module #(
     parameter Q_BITS = 'd10,
-    parameter D_WIDTH = 'd32,       //data width
-    parameter ED_WIDTH = D_WIDTH + Q_BITS + 1  //expanded data width
-    //ED_WIDTH should never be larger than Q_BITS + D_WIDTH + 1
+    parameter D_BITS = 'd32,       //data width
+    parameter ED_WIDTH = D_BITS + Q_BITS + 1  //expanded data width
+    //ED_WIDTH should never be larger than Q_BITS + D_BITS + 1
 )(
     input logic clock,
     input logic reset,
-    input logic signed [D_WIDTH-1:0] dividend,
-    input logic signed [D_WIDTH-1:0] divisor,
-    output logic signed [D_WIDTH-1:0] quotient,
+    input logic signed [D_BITS-1:0] dividend,
+    input logic signed [D_BITS-1:0] divisor,
+    output logic signed [D_BITS-1:0] quotient,
     input logic in_empty,
     output logic in_rd_en,
 
@@ -16,8 +16,8 @@ module divide_module #(
     input logic out_full
 );
 
-logic signed [D_WIDTH-1:0] Q, Q_c; //Q is dividend
-logic signed [D_WIDTH-1:0] B, B_c; //B is divisor
+logic signed [D_BITS-1:0] Q, Q_c; //Q is dividend
+logic signed [D_BITS-1:0] B, B_c; //B is divisor
 logic signed [2*ED_WIDTH:0] EAQ, EAQ_c; //register with all our math
 logic[7:0] i_c, i;
 logic divisor_flag, dividend_flag, divisor_flag_c, dividend_flag_c; //flag for negatives
@@ -44,7 +44,7 @@ end
 
 logic signed [ED_WIDTH-1:0] temp;
 
-logic signed [D_WIDTH-1:0] temp_divisor, temp_dividend;
+logic signed [D_BITS-1:0] temp_divisor, temp_dividend;
 
 always_comb begin
     next_state = state;
@@ -97,9 +97,9 @@ always_comb begin
         s2: begin   //write
             if(!out_full) begin
                 if(dividend_flag^divisor_flag)
-                    quotient = -EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
+                    quotient = -EAQ[D_BITS-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
                 else
-                    quotient = EAQ[D_WIDTH-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
+                    quotient = EAQ[D_BITS-1:0]; //quotient in Q     EAQ[ED_WIDTH-1:0]
                 out_wr_en = 'b1;
                 dividend_flag_c = 'b0;
                 divisor_flag_c = 'b0;

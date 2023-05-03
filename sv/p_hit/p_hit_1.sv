@@ -187,26 +187,27 @@ module p_hit_dot_add_pt1 #(
 endmodule
 
 module p_hit_dot_pt2 #(
+    parameter D_BITS = 'd32,
     parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] tri_normal[2:0],
-    input logic signed [31:0] dir[2:0],
+    input logic signed [D_BITS-1:0] tri_normal[2:0],
+    input logic signed [D_BITS-1:0] dir[2:0],
     output logic in_full,
     input logic in_wr_en,
 
-    output logic signed[31:0] out,
+    output logic signed[D_BITS-1:0] out,
     input logic out_rd_en,
     output logic out_empty
 );
 
-    logic signed [31:0] tri_normal_out[2:0], dir_out[2:0];
+    logic signed [D_BITS-1:0] tri_normal_out[2:0], dir_out[2:0];
     logic dot_rd_en, empty_arr[1:0], dot_empty, full_arr[1:0];
 
     fifo_array #(
-        .FIFO_DATA_WIDTH         (32),
-        .FIFO_BUFFER_SIZE        (1024),
+        .FIFO_DATA_WIDTH         (D_BITS),
+        .FIFO_BUFFER_SIZE        (D_BITS*16),
         .ARRAY_SIZE              (3)
     ) normal_fifo (
         .reset                   (reset),
@@ -220,8 +221,8 @@ module p_hit_dot_pt2 #(
     );
 
     fifo_array #(
-        .FIFO_DATA_WIDTH         (32),
-        .FIFO_BUFFER_SIZE        (1024),
+        .FIFO_DATA_WIDTH         (D_BITS),
+        .FIFO_BUFFER_SIZE        (D_BITS*16),
         .ARRAY_SIZE              (3)
     ) dir_fifo (
         .reset                   (reset),
@@ -235,6 +236,7 @@ module p_hit_dot_pt2 #(
     );
 
     dot #(
+        .D_BITS       (D_BITS),
         .Q_BITS       (Q_BITS)
     ) u_dot (
         .clock        (clock),
@@ -255,19 +257,20 @@ module p_hit_dot_pt2 #(
 endmodule
 
 module p_hit_1 #(
+    parameter D_BITS = 'd32,
     parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] tri_normal_1[2:0], //[x,y,z][0]
-    input logic signed [31:0] tri_normal_2[2:0], //[x,y,z][1]
-    input logic signed [31:0] v0[2:0],
-    input logic signed [31:0] origin[2:0],
-    input logic signed [31:0] dir[2:0],
+    input logic signed [D_BITS-1:0] tri_normal_1[2:0], //[x,y,z][0]
+    input logic signed [D_BITS-1:0] tri_normal_2[2:0], //[x,y,z][1]
+    input logic signed [D_BITS-1:0] v0[2:0],
+    input logic signed [D_BITS-1:0] origin[2:0],
+    input logic signed [D_BITS-1:0] dir[2:0],
     output logic in_full[1:0],  //[0,1]
     input logic in_wr_en[1:0],  //[0,1]
 
-    output logic signed [31:0] out,
+    output logic signed [D_BITS-1:0] out,
     input logic out_rd_en,
     output logic out_empty
 );
@@ -289,10 +292,11 @@ module p_hit_1 #(
     // end
     // //testing
 
-    logic signed [31:0] x, y;
+    logic signed [D_BITS-1:0] x, y;
     logic division_rd_en, empty_arr[1:0], div_empty;
 
     p_hit_dot_add_pt1 #(
+        .D_BITS             (D_BITS),
         .Q_BITS             (Q_BITS)
     ) top (
         .clock              (clock),
@@ -308,6 +312,7 @@ module p_hit_1 #(
     );
 
     p_hit_dot_pt2 #(
+        .D_BITS             (D_BITS),
         .Q_BITS             (Q_BITS)
     ) bottom (
         .clock              (clock),
@@ -323,7 +328,7 @@ module p_hit_1 #(
 
     divide_top #(
         .Q_BITS       (Q_BITS)
-        // .D_BITS       (D_BITS)
+        .D_BITS       (D_BITS)
     ) u_divide_top (
         .clock        (clock),
         .reset        (reset),
