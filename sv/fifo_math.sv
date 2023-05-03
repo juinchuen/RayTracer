@@ -602,7 +602,7 @@ module sub_single_module #(
     input logic in_empty,
     output logic in_rd_en,
     
-    output logic signed [D_BITS:0] out,
+    output logic signed [D_BITS-1:0] out,
     input logic out_full,
     output logic out_wr_en
 );
