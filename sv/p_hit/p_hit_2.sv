@@ -24,9 +24,9 @@ logic empty_arr[1:0], empty, rd_en;
 logic signed  temp1, temp2, temp3, temp4, temp5, temp6, temp7;
 
 always_comb begin
-    temp1 = origin[0];
-    temp2 = origin[1];
-    temp3 = origin[2];
+    temp1 = out[0];
+    temp2 = out[1];
+    temp3 = out[2];
 end
 //testing
 
