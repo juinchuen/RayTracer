@@ -13,6 +13,16 @@ module add_module (
 
 //subtract x from y
 
+//testing
+logic signed [31:0]  temp1, temp2, temp3;
+
+always_comb begin
+    temp1 = x[0];
+    temp2 = y[0];
+    temp3 = out_c[0];
+end
+//testing
+
 enum logic {s0, s1} state, next_state;
 logic signed [31:0] out_c[2:0];
 
