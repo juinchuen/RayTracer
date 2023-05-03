@@ -101,7 +101,7 @@ always_comb begin
 end
 //testing
 
-sub_module u_sub_module (
+add_module u_add_module (
     .clock        (clock),
     .reset        (reset),
     .x            (x[2:0]),
