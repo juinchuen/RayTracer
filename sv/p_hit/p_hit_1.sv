@@ -323,7 +323,7 @@ module p_hit_1 #(
 
     divide_top #(
         .Q_BITS       (Q_BITS),
-        .D_BITS      ('d32)
+        // .D_BITS       (D_BITS)
     ) u_divide_top (
         .clock        (clock),
         .reset        (reset),
