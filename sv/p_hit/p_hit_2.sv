@@ -18,104 +18,103 @@ module p_hit_mult #(
     output logic out_empty
 );
 
-logic signed [D_BITS-1:0] division_out, dir_2_out[2:0];
-logic empty_arr[1:0], empty, rd_en;
+    logic signed [D_BITS-1:0] division_out, dir_2_out[2:0];
+    logic empty_arr[1:0], empty, rd_en;
 
-// //testing
-// logic signed[31:0] temp1, temp2, temp3, temp4, temp5, temp6, temp7;
+    // //testing
+    // logic signed[D_BITS-1:0] temp1, temp2, temp3, temp4, temp5, temp6, temp7;
 
-// always_comb begin
-//     temp1 = out[0];
-//     temp2 = out[1];
-//     temp3 = out[2];
-//     temp4 = dir_2[0];
-//     temp5 = dir_2[1];
-//     temp6 = dir_2[2];
-// end
-// //testing
+    // always_comb begin
+    //     temp1 = out[0];
+    //     temp2 = out[1];
+    //     temp3 = out[2];
+    //     temp4 = dir_2[0];
+    //     temp5 = dir_2[1];
+    //     temp6 = dir_2[2];
+    // end
+    // //testing
 
-p_hit_1 #(
-    .D_BITS               (D_BITS),
-    .Q_BITS               (Q_BITS)
-) u_p_hit_1 (
-    .clock                (clock),
-    .reset                (reset),
-    .tri_normal_1         (tri_normal_1[2:0]), //[x,y,z][0]
-    .tri_normal_2         (tri_normal_2[2:0]), //[x,y,z][1]
-    .v0                   (v0[2:0]),
-    .origin               (origin[2:0]),
-    .dir                  (dir_1[2:0]),
-    .in_full              (in_full[1:0]), //[0,1]
-    .in_wr_en             (in_wr_en[1:0]), //[0,1]
+    p_hit_1 #(
+        .D_BITS               (D_BITS),
+        .Q_BITS               (Q_BITS)
+    ) u_p_hit_1 (
+        .clock                (clock),
+        .reset                (reset),
+        .tri_normal_1         (tri_normal_1[2:0]), //[x,y,z][0]
+        .tri_normal_2         (tri_normal_2[2:0]), //[x,y,z][1]
+        .v0                   (v0[2:0]),
+        .origin               (origin[2:0]),
+        .dir                  (dir_1[2:0]),
+        .in_full              (in_full[1:0]), //[0,1]
+        .in_wr_en             (in_wr_en[1:0]), //[0,1]
 
-    .out                  (division_out),
-    .out_rd_en            (rd_en),
-    .out_empty            (empty_arr[0])
-);
+        .out                  (division_out),
+        .out_rd_en            (rd_en),
+        .out_empty            (empty_arr[0])
+    );
 
-fifo_array #(
-    .FIFO_DATA_WIDTH         (D_BITS),
-    .FIFO_BUFFER_SIZE        (D_BITS*16),
-    .ARRAY_SIZE              (3)
-) dir_fifo (
-    .reset                   (reset),
-    .clock                   (clock),
-    .wr_en                   (in_wr_en[2]),
-    .din                     (dir_2[2:0]),
-    .full                    (in_full[2]),
-    .rd_en                   (rd_en),
-    .dout                    (dir_2_out[2:0]),
-    .empty                   (empty_arr[1])
-);
+    fifo_array #(
+        .FIFO_DATA_WIDTH         (D_BITS),
+        .FIFO_BUFFER_SIZE        (D_BITS*16),
+        .ARRAY_SIZE              (3)
+    ) dir_fifo (
+        .reset                   (reset),
+        .clock                   (clock),
+        .wr_en                   (in_wr_en[2]),
+        .din                     (dir_2[2:0]),
+        .full                    (in_full[2]),
+        .rd_en                   (rd_en),
+        .dout                    (dir_2_out[2:0]),
+        .empty                   (empty_arr[1])
+    );
 
-scale #(
-    .D_BITS       (D_BITS),
-    .Q_BITS       (Q_BITS)
-) u_scale (
-    .clock        (clock),
-    .reset        (reset),
-    .x            (dir_2_out[2:0]),
-    .a            (division_out),
-    .in_empty     (empty),
-    .in_rd_en     (rd_en),
-    .out          (out[2:0]),
-    .out_empty    (out_empty),
-    .out_rd_en    (out_rd_en)
-);
+    scale #(
+        .D_BITS       (D_BITS),
+        .Q_BITS       (Q_BITS)
+    ) u_scale (
+        .clock        (clock),
+        .reset        (reset),
+        .x            (dir_2_out[2:0]),
+        .a            (division_out),
+        .in_empty     (empty),
+        .in_rd_en     (rd_en),
+        .out          (out[2:0]),
+        .out_empty    (out_empty),
+        .out_rd_en    (out_rd_en)
+    );
 
-always_comb begin
-    empty = empty_arr[0] || empty_arr[1];
-end
-
+    always_comb begin
+        empty = empty_arr[0] || empty_arr[1];
+    end
 endmodule
 
 
 module p_hit #(
+    parameter D_BITS = 'd32,
     parameter Q_BITS = 'd16
-
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] tri_normal_1[2:0], //[x,y,z][0]
-    input logic signed [31:0] tri_normal_2[2:0], //[x,y,z][1]
-    input logic signed [31:0] v0[2:0],
-    input logic signed [31:0] origin_1[2:0],
-    input logic signed [31:0] origin_2[2:0],
-    input logic signed [31:0] dir_1[2:0],
-    input logic signed [31:0] dir_2[2:0],
+    input logic signed [D_BITS-1:0] tri_normal_1[2:0], //[x,y,z][0]
+    input logic signed [D_BITS-1:0] tri_normal_2[2:0], //[x,y,z][1]
+    input logic signed [D_BITS-1:0] v0[2:0],
+    input logic signed [D_BITS-1:0] origin_1[2:0],
+    input logic signed [D_BITS-1:0] origin_2[2:0],
+    input logic signed [D_BITS-1:0] dir_1[2:0],
+    input logic signed [D_BITS-1:0] dir_2[2:0],
     output logic in_full[3:0],  //
     input logic in_wr_en[3:0],  //
 
-    output logic signed [31:0] out[2:0],
+    output logic signed [D_BITS-1:0] out[2:0],
     input logic out_rd_en,
     output logic out_empty
 );
 
 logic empty_arr[1:0], empty, rd_en;
-logic signed [31:0] origin_out[2:0], mult_out[2:0];
+logic signed [D_BITS-1:0] origin_out[2:0], mult_out[2:0];
 
 // //testing
-// logic signed [31:0]  temp1, temp2, temp3, temp4, temp5, temp6;
+// logic signed [D_BITS-1:0]  temp1, temp2, temp3, temp4, temp5, temp6;
 // always_comb begin
 //     temp1 = out[0];
 //     temp2 = out[1];
@@ -127,6 +126,7 @@ logic signed [31:0] origin_out[2:0], mult_out[2:0];
 // //testing
 
 p_hit_mult #(
+    .D_BITS               (D_BITS),
     .Q_BITS               (Q_BITS)
 ) u_p_hit_mult (
     .clock                (clock),
@@ -145,8 +145,8 @@ p_hit_mult #(
 );
 
 fifo_array #(
-    .FIFO_DATA_WIDTH         (32),
-    .FIFO_BUFFER_SIZE        (1024),
+    .FIFO_DATA_WIDTH         (D_BITS),
+    .FIFO_BUFFER_SIZE        (D_BITS*16),
     .ARRAY_SIZE              (3)
 ) origin_array (
     .reset                   (reset),
@@ -159,7 +159,9 @@ fifo_array #(
     .empty                   (empty_arr[1])
 );
 
-add u_add (
+add #(
+    .D_BITS       (D_BITS)
+) u_add (
     .clock        (clock),
     .reset        (reset),
     .x            (origin_out[2:0]),
