@@ -112,11 +112,14 @@ logic empty_arr[1:0], empty, rd_en;
 logic signed [31:0] origin_out[2:0], mult_out[2:0];
 
 //testing
-logic signed [31:0]  temp1, temp2, temp3;
+logic signed [31:0]  temp1, temp2, temp3, temp4, temp5, temp6;
 always_comb begin
     temp1 = out[0];
     temp2 = out[1];
     temp3 = out[2];
+    temp4 = origin_2[0];
+    temp5 = origin_2[1];
+    temp6 = origin_2[2];
 end
 //testing
 
