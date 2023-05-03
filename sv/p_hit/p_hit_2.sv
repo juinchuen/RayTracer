@@ -1,23 +1,24 @@
 module p_hit_mult #(
+    parameter D_BITS = 'd32,
     parameter Q_BITS = 'd16
 ) (
     input logic clock,
     input logic reset,
-    input logic signed [31:0] tri_normal_1[2:0], //[x,y,z][0]
-    input logic signed [31:0] tri_normal_2[2:0], //[x,y,z][1]
-    input logic signed [31:0] v0[2:0],
-    input logic signed [31:0] origin[2:0],
-    input logic signed [31:0] dir_1[2:0],
-    input logic signed [31:0] dir_2[2:0],
+    input logic signed [D_BITS-1:0] tri_normal_1[2:0], //[x,y,z][0]
+    input logic signed [D_BITS-1:0] tri_normal_2[2:0], //[x,y,z][1]
+    input logic signed [D_BITS-1:0] v0[2:0],
+    input logic signed [D_BITS-1:0] origin[2:0],
+    input logic signed [D_BITS-1:0] dir_1[2:0],
+    input logic signed [D_BITS-1:0] dir_2[2:0],
     output logic in_full[2:0],  //
     input logic in_wr_en[2:0],  //
 
-    output logic signed [31:0] out[2:0],
+    output logic signed [D_BITS-1:0] out[2:0],
     input logic out_rd_en,
     output logic out_empty
 );
 
-logic signed [31:0] division_out, dir_2_out[2:0];
+logic signed [D_BITS-1:0] division_out, dir_2_out[2:0];
 logic empty_arr[1:0], empty, rd_en;
 
 // //testing
@@ -34,6 +35,7 @@ logic empty_arr[1:0], empty, rd_en;
 // //testing
 
 p_hit_1 #(
+    .D_BITS               (D_BITS),
     .Q_BITS               (Q_BITS)
 ) u_p_hit_1 (
     .clock                (clock),
@@ -52,8 +54,8 @@ p_hit_1 #(
 );
 
 fifo_array #(
-    .FIFO_DATA_WIDTH         (32),
-    .FIFO_BUFFER_SIZE        (1024),
+    .FIFO_DATA_WIDTH         (D_BITS),
+    .FIFO_BUFFER_SIZE        (D_BITS*16),
     .ARRAY_SIZE              (3)
 ) dir_fifo (
     .reset                   (reset),
@@ -67,6 +69,7 @@ fifo_array #(
 );
 
 scale #(
+    .D_BITS       (D_BITS),
     .Q_BITS       (Q_BITS)
 ) u_scale (
     .clock        (clock),
