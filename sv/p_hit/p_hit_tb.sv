@@ -13,7 +13,7 @@ localparam string TXT_CMP = "../../test_data/p_hit.txt";
 localparam string TXT_OUT = "txt/out.txt";
 localparam CLOCK_PERIOD = 10;
 
-localparam D_BTIS = 'd35;
+localparam D_BITS = 'd35;
 localparam Q_BITS = 'd16;
 
 localparam SEEK_END = 2;
