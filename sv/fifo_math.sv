@@ -436,7 +436,7 @@ module scale #(
     logic out_full, out_wr_en;
 
     scale_module #(
-        .D_BITS       (D_BITS)
+        .D_BITS       (D_BITS),
         .Q_BITS       (Q_BITS)
     ) u_scale_module (
         .clock        (clock),
