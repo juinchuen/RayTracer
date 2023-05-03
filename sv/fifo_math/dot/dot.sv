@@ -38,7 +38,7 @@ always_comb begin
     temp4 = x[0];
     temp5 = x[2];
     temp6 = y[0];
-    temp6 = y[2];
+    temp7 = y[2];
 end
 //testing
 
