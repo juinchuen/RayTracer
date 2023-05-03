@@ -27,6 +27,19 @@ always_ff @(posedge clock or posedge reset) begin
     end
 end
 
+//testing
+logic signed [31:0] temp1, temp2, temp3, temp4, temp5, temp6;
+
+always_comb begin
+    temp1 = x[0];
+    temp2 = x[1];
+    temp3 = x[2];
+    temp4 = y[0];
+    temp5 = y[1];
+    temp6 = y[2];
+end
+//testing
+
 always_comb begin
     out_c = out;
     next_state = state;

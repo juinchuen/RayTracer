@@ -93,6 +93,7 @@ bool ray_triangle_intersect(float* p_hit, float* triangle, float* triangle_norma
 		float D = -dot(triangle_normal, v0);
 
 		float t = -(dot(triangle_normal, origin) + D) / dot(triangle_normal, dir);
+        printf("%f\n", -D);
 
 		scale(p_hit, dir, t);
 
