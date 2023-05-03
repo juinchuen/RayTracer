@@ -11,7 +11,9 @@ module add_module (
     output logic out_wr_en
 );
 
-//subtract x from y
+
+enum logic {s0, s1} state, next_state;
+logic signed [31:0] out_c[2:0];
 
 //testing
 logic signed [31:0]  temp1, temp2, temp3;
@@ -22,9 +24,6 @@ always_comb begin
     temp3 = out_c[0];
 end
 //testing
-
-enum logic {s0, s1} state, next_state;
-logic signed [31:0] out_c[2:0];
 
 always_ff @(posedge clock or posedge reset) begin
     if(reset) begin
