@@ -130,10 +130,10 @@ initial begin : txt_read_process
         in_wr_en[2] = 1'b0;
         in_wr_en[3] = 1'b0;
         if (!in_full[0] || !in_full[1] || !in_full[2] || !in_full[3]) begin
-            $fscanf(in_file[0], "%x %x %x\n", origin_1[0], origin_1[1], origin_1[2]);
-            $fscanf(in_file[1], "%x %x %x\n", origin_2[0], origin_2[1], origin_2[2]);
-            $fscanf(in_file[2], "%x %x %x\n", dir_1[0], dir_1[1], dir_1[2]);
-            $fscanf(in_file[3], "%x %x %x\n", dir_2[0], dir_2[1], dir_2[2]);
+            $fscanf(in_file[0], "%x, %x, %x\n", origin_1[0], origin_1[1], origin_1[2]);
+            $fscanf(in_file[1], "%x, %x, %x\n", origin_2[0], origin_2[1], origin_2[2]);
+            $fscanf(in_file[2], "%x, %x, %x\n", dir_1[0], dir_1[1], dir_1[2]);
+            $fscanf(in_file[3], "%x, %x, %x\n", dir_2[0], dir_2[1], dir_2[2]);
             in_wr_en[0] = 1'b1;
             in_wr_en[1] = 1'b1;
             in_wr_en[2] = 1'b1;
