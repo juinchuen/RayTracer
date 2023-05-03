@@ -452,7 +452,7 @@ module scale #(
 
     fifo_array #(
         .FIFO_DATA_WIDTH         (D_BITS),
-        .FIFO_BUFFER_SIZE        (D_BITs*16),
+        .FIFO_BUFFER_SIZE        (D_BITS*16),
         .ARRAY_SIZE              (3)
     ) u_fifo_array (
         .reset                   (reset),
