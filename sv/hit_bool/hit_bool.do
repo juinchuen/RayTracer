@@ -4,10 +4,7 @@ vmap work work
 
 # compile
 vlog -work work "../fifo.sv"
-vlog -work work "../fifo_math/fifo_array.sv"
-vlog -work work "../fifo_math/subtract/sub.sv" 
-vlog -work work "../fifo_math/cross/cross.sv" 
-vlog -work work "../fifo_math/dot/dot.sv" 
+vlog -work work "../fifo_math.sv"
 vlog -work work "hit_bool.sv"
 vlog -work work "hit_bool_tb.sv"
 

@@ -1,78 +1,93 @@
 module hit_bool #(
+    D_BITS = 'd32,
     Q_BITS = 'd10
 )(
     //
     input logic clock,
     input logic reset,
     // p_hit module output, normal coordinates
-    input logic signed [31:0] p_hit [2:0],
-    input logic signed [31:0] normal [2:0],
+    input logic signed [D_BITS-1:0] p_hit [2:0],
+    input logic signed [D_BITS-1:0] normal [2:0],
     // Vector inputs (these are fed into the respective FIFOs)
-    input logic signed [31:0] v0 [2:0],
-    input logic signed [31:0] v1 [2:0],
-    input logic signed [31:0] v2 [2:0],
-
+    input logic signed [D_BITS-1:0] v0 [2:0],
+    input logic signed [D_BITS-1:0] v1 [2:0],
+    input logic signed [D_BITS-1:0] v2 [2:0],
+    // Internal FIFO signals
     input logic v0_in_wr_en, 
     output logic v0_in_full,
     input logic v1_in_wr_en,
     output logic v1_in_full,
     input logic v2_in_wr_en,
     output logic v2_in_full,
-
-    // FIFO signals going in
-    input logic fifo_out_rd_en,  
-
+    input logic fifo_out_rd_en,
     input logic normal_in_wr_en,
     output logic normal_in_full,
-
+    // Signals to p_hit module
     input logic p_hit_in_empty,
     output logic p_hit_in_rd_en,
-
+    // hit_bool output fifo
     output logic fifo_out_dout,   
-    output logic fifo_out_empty  
+    output logic fifo_out_empty,
+    // p_hit output FIFO
+    output logic signed [D_BITS-1:0] p_hit_fifo_out_dout [2:0],
+    output logic p_hit_fifo_out_empty,
+    input logic p_hit_fifo_out_rd_en
 ); 
 
 // Intermediary signals
 // Vector subtraction outputs
-logic signed [31:0] o0 [2:0]; 
-logic signed [31:0] o1 [2:0];
-logic signed [31:0] o2 [2:0];
+logic signed [D_BITS-1:0] o0 [2:0]; 
+logic signed [D_BITS-1:0] o1 [2:0];
+logic signed [D_BITS-1:0] o2 [2:0];
 // p_hit and vector subtraction outputs
-logic signed [31:0] p0 [2:0]; 
-logic signed [31:0] p1 [2:0];
-logic signed [31:0] p2 [2:0];
+logic signed [D_BITS-1:0] p0 [2:0]; 
+logic signed [D_BITS-1:0] p1 [2:0];
+logic signed [D_BITS-1:0] p2 [2:0];
 // cross product outputs
-logic signed [31:0] c0 [2:0]; 
-logic signed [31:0] c1 [2:0];
-logic signed [31:0] c2 [2:0];
+logic signed [D_BITS-1:0] c0 [2:0]; 
+logic signed [D_BITS-1:0] c1 [2:0];
+logic signed [D_BITS-1:0] c2 [2:0];
 // Dot product outputs
-logic signed [31:0] d0;
-logic signed [31:0] d1;
-logic signed [31:0] d2;
+logic signed [D_BITS-1:0] d0;
+logic signed [D_BITS-1:0] d1;
+logic signed [D_BITS-1:0] d2;
 // hit bool
 logic hit, hit_c;
 
 // Input FIFOs
 logic normal_in_rd_en;
 logic normal_in_empty;
-logic signed [31:0] normal_in_din  [2:0] = {32'hd504, 32'h0, 32'h8e00};
-logic signed [31:0] normal_in_dout [2:0];
+logic signed [D_BITS-1:0] normal_in_din  [2:0] = {32'hd504, 32'h0, 32'h8e00};
+logic signed [D_BITS-1:0] normal_in_dout [2:0];
 
 logic v0_in_rd_en;
-logic signed [31:0] v0_in_dout[2:0];
+logic signed [D_BITS-1:0] v0_in_dout[2:0];
 logic v0_in_empty;
 
 logic v1_in_rd_en;
-logic signed [31:0] v1_in_dout[2:0];
+logic signed [D_BITS-1:0] v1_in_dout[2:0];
 logic v1_in_empty;
 
 logic v2_in_rd_en;
-logic signed [31:0] v2_in_dout[2:0];
+logic signed [D_BITS-1:0] v2_in_dout[2:0];
 logic v2_in_empty;
 
-// Output FIFO 
+// Output hit_bool FIFO 
 logic fifo_out_full;   
-logic fifo_out_wr_en; 
+logic fifo_out_wr_en;
+
+// calc buffer p_hit fifo
+logic p_hit_calc_fifo_wr_en ;
+logic p_hit_calc_fifo_full;
+logic p_hit_calc_fifo_rd_en;
+logic p_hit_calc_fifo_empty;
+logic signed [D_BITS-1:0] p_hit_calc_fifo_dout [2:0];
+
+// Output p_hit FIFO
+logic p_hit_fifo_out_wr_en;
+logic signed [D_BITS-1:0] p_hit_fifo_out_din [2:0];
+logic p_hit_fifo_out_full;
+
 // States
 typedef enum logic [1:0] {s0, s1, s2} state_types;
 state_types state; 
@@ -155,13 +170,13 @@ assign v0_in_rd_en = sub_0_in_rd_en || sub_2_in_rd_en;
 assign v1_in_rd_en = sub_0_in_rd_en || sub_1_in_rd_en;
 assign v2_in_rd_en = sub_1_in_rd_en || sub_2_in_rd_en;
 
-assign sub_3_in_empty = p_hit_in_empty || v0_in_empty;
+assign sub_3_in_empty = p_hit_calc_fifo_empty || v0_in_empty;
 assign sub_3_out_rd_en = cross_0_in_rd_en;
-assign sub_4_in_empty = p_hit_in_empty || v1_in_empty;
+assign sub_4_in_empty = p_hit_calc_fifo_empty || v1_in_empty;
 assign sub_4_out_rd_en = cross_1_in_rd_en;
-assign sub_5_in_empty = p_hit_in_empty || v2_in_empty;
+assign sub_5_in_empty = p_hit_calc_fifo_empty || v2_in_empty;
 assign sub_5_out_rd_en = cross_2_in_rd_en;
-assign p_hit_in_rd_en = sub_3_in_rd_en && sub_4_in_rd_en && sub_5_in_rd_en;
+assign p_hit_calc_fifo_rd_en = sub_3_in_rd_en && sub_4_in_rd_en && sub_5_in_rd_en;
 assign cross_0_in_empty = sub_0_out_empty || sub_3_out_empty; // sub 0 and 3 feed cross 0
 assign cross_0_out_rd_en = dot_0_in_rd_en;
 assign cross_1_in_empty = sub_1_out_empty || sub_4_out_empty; // sub 0 and 3 feed cross 0
@@ -179,7 +194,9 @@ assign dot_empty = dot_0_out_empty && dot_1_out_empty && dot_2_out_empty;
 
 // Subtract stage 1
 
-sub u_sub_0 ( // Pipes to cross 0
+sub  #(
+    .D_BITS       (D_BITS)
+) u_sub_0 ( // Pipes to cross 0
     .clock        (clock),
     .reset        (reset),
     .x            (v1_in_dout[2:0]),
@@ -192,7 +209,9 @@ sub u_sub_0 ( // Pipes to cross 0
 );
 
 
-sub u_sub_1 ( // Pipes to cross 1 
+sub  #(
+    .D_BITS       (D_BITS)
+) u_sub_1 ( // Pipes to cross 1 
     .clock        (clock),
     .reset        (reset),
     .x            (v2_in_dout[2:0]),
@@ -204,7 +223,9 @@ sub u_sub_1 ( // Pipes to cross 1
     .out_rd_en    (sub_1_out_rd_en)
 );
 
-sub u_sub_2 ( // Pipes to cross 2
+sub  #(
+    .D_BITS       (D_BITS)
+) u_sub_2 ( // Pipes to cross 2
     .clock        (clock),
     .reset        (reset),
     .x            (v0_in_dout[2:0]),
@@ -217,10 +238,12 @@ sub u_sub_2 ( // Pipes to cross 2
 );
 
 // Subtract stage 2
-sub u_sub_3 ( // Pipes to cross 0
+sub  #(
+    .D_BITS       (D_BITS)
+) u_sub_3 ( // Pipes to cross 0
     .clock        (clock),
     .reset        (reset),
-    .x            (p_hit[2:0]),
+    .x            (p_hit_calc_fifo_dout[2:0]),
     .y            (v0_in_dout[2:0]),
     .in_empty     (sub_3_in_empty),
     .in_rd_en     (sub_3_in_rd_en),
@@ -229,10 +252,12 @@ sub u_sub_3 ( // Pipes to cross 0
     .out_rd_en    (sub_3_out_rd_en)
 );
 
-sub u_sub_4 ( // Pipes to cross 1
+sub  #(
+    .D_BITS       (D_BITS)
+) u_sub_4 ( // Pipes to cross 1
     .clock        (clock),
     .reset        (reset),
-    .x            (p_hit[2:0]),
+    .x            (p_hit_calc_fifo_dout[2:0]),
     .y            (v1_in_dout[2:0]),
     .in_empty     (sub_4_in_empty),
     .in_rd_en     (sub_4_in_rd_en),
@@ -241,10 +266,12 @@ sub u_sub_4 ( // Pipes to cross 1
     .out_rd_en    (sub_4_out_rd_en)
 );
 
-sub u_sub_5 ( // Pipes to cross 2
+sub  #(
+    .D_BITS       (D_BITS)
+) u_sub_5 ( // Pipes to cross 2
     .clock        (clock),
     .reset        (reset),
-    .x            (p_hit[2:0]),
+    .x            (p_hit_calc_fifo_dout[2:0]),
     .y            (v2_in_dout[2:0]),
     .in_empty     (sub_5_in_empty),
     .in_rd_en     (sub_5_in_rd_en),
@@ -256,6 +283,7 @@ sub u_sub_5 ( // Pipes to cross 2
 // Cross stage
 
 Cross #(
+    .D_BITS       (D_BITS),
     .Q_BITS       (Q_BITS)
 ) u_Cross_0 (
     .clock        (clock),
@@ -271,6 +299,7 @@ Cross #(
 
 
 Cross #(
+    .D_BITS       (D_BITS),
     .Q_BITS       (Q_BITS)
 ) u_Cross_1 (
     .clock        (clock),
@@ -285,6 +314,7 @@ Cross #(
 );
 
 Cross #(
+    .D_BITS       (D_BITS),
     .Q_BITS       (Q_BITS)
 ) u_Cross_2 (
     .clock        (clock),
@@ -300,6 +330,7 @@ Cross #(
 
 // Dot stage
 dot #(
+    .D_BITS       (D_BITS),
     .Q_BITS       (Q_BITS)
 ) u_dot_0 (
     .clock        (clock),
@@ -314,6 +345,7 @@ dot #(
 );
 
 dot #(
+    .D_BITS       (D_BITS),
     .Q_BITS       (Q_BITS)
 ) u_dot_1 (
     .clock        (clock),
@@ -328,6 +360,7 @@ dot #(
 );
 
 dot #(
+    .D_BITS       (D_BITS),
     .Q_BITS       (Q_BITS)
 ) u_dot_2 (
     .clock        (clock),
@@ -403,6 +436,41 @@ fifo_array #(
     .empty                   (v2_in_empty)
 );
 
+// Calculations take 2 clock cycles, but we want to store the new p_hit data being
+// read every cycle, so we unfortunately need two buffers, one for holding and one 
+// to pass to the data operations
+
+// Fifo array to hold p_hit, used for calculations
+fifo_array #(
+    .FIFO_DATA_WIDTH         (32),
+    .FIFO_BUFFER_SIZE        (1024),
+    .ARRAY_SIZE              (3)
+) u_calc_fifo_array (
+    .reset                   (reset),
+    .clock                   (clock),
+    .wr_en                   (p_hit_calc_fifo_wr_en),
+    .din                     (p_hit[2:0]),
+    .full                    (p_hit_calc_fifo_full),
+    .rd_en                   (p_hit_calc_fifo_rd_en),
+    .dout                    (p_hit_calc_fifo_dout[2:0]),
+    .empty                   (p_hit_calc_fifo_empty)
+);
+// FIFO array to hold p_hit, used to output alongside a boolean
+// assign p_hit_fifo_out_din = p_hit;
+fifo_array #(
+    .FIFO_DATA_WIDTH         (32),
+    .FIFO_BUFFER_SIZE        (1024),
+    .ARRAY_SIZE              (3)
+) u_p_hit_fifo_array (
+    .reset                   (reset),
+    .clock                   (clock),
+    .wr_en                   (p_hit_fifo_out_wr_en),
+    .din                     (p_hit[2:0]),
+    .full                    (p_hit_fifo_out_full),
+    .rd_en                   (p_hit_fifo_out_rd_en),
+    .dout                    (p_hit_fifo_out_dout[2:0]),
+    .empty                   (p_hit_fifo_out_empty)
+);
 // FIFO to hold outputs
 fifo #(
     .FIFO_DATA_WIDTH     (1),
@@ -418,11 +486,6 @@ fifo #(
     .dout                (fifo_out_dout),
     .empty               (fifo_out_empty)
 );
-
-
-// Place debug statements here:
-
-/////////////////////////////////
 
 always_ff @(posedge clock or posedge reset) begin
     if(reset)begin
@@ -444,7 +507,17 @@ always_comb begin
     dot_rd_en = 1'b0;
     hit_c = hit;
     state_c = state;
+    p_hit_calc_fifo_wr_en = 1'b0;
+    p_hit_fifo_out_wr_en = 1'b0;
+    p_hit_in_rd_en = 1'b0;
 
+    // Load p_hit to its output FIFO 
+    if (!p_hit_fifo_out_full && !p_hit_calc_fifo_full && !p_hit_in_empty)begin
+        // Read p hit data every cycle as long as the input fifos are not full
+        p_hit_calc_fifo_wr_en = 1'b1;
+        p_hit_fifo_out_wr_en = 1'b1;
+        p_hit_in_rd_en = 1'b1;
+    end 
     case (state)
         s0: begin   // Calculate hit_c
             if (!dot_empty) begin
@@ -468,93 +541,3 @@ always_comb begin
 end
 endmodule
 
-// Debug statements
-// Inputs
-// logic signed [31:0] p_hit_0;
-// logic signed [31:0] p_hit_1;
-// logic signed [31:0] p_hit_2;
-// assign p_hit_0 = p_hit[0];
-// assign p_hit_1 = p_hit[1];
-// assign p_hit_2 = p_hit[2];
-// logic signed [31:0] normal_0;
-// logic signed [31:0] normal_1;
-// logic signed [31:0] normal_2;
-// assign normal_0 = normal[0];
-// assign normal_1 = normal[1];
-// assign normal_2 = normal[2];
-// logic signed [31:0] v0_0;
-// logic signed [31:0] v0_1;
-// logic signed [31:0] v0_2;
-// assign v0_0 = v0[0];
-// assign v0_1 = v0[1];
-// assign v0_2 = v0[2];
-// logic signed [31:0] v1_0;
-// logic signed [31:0] v1_1;
-// logic signed [31:0] v1_2;
-// assign v1_0 = v1[0];
-// assign v1_1 = v1[1];
-// assign v1_2 = v1[2];
-// logic signed [31:0] v2_0;
-// logic signed [31:0] v2_1;
-// logic signed [31:0] v2_2;
-// assign v2_0 = v2[0];
-// assign v2_1 = v2[1];
-// assign v2_2 = v2[2];
-
-// // Sub
-// logic signed [31:0] o0_0;
-// logic signed [31:0] o0_1;
-// logic signed [31:0] o0_2;
-// assign o0_0 = o0[0];
-// assign o0_1 = o0[1];
-// assign o0_2 = o0[2];
-// logic signed [31:0] o1_0;
-// logic signed [31:0] o1_1;
-// logic signed [31:0] o1_2;
-// assign o1_0 = o1[0];
-// assign o1_1 = o1[1];
-// assign o1_2 = o1[2];
-// logic signed [31:0] o2_0;
-// logic signed [31:0] o2_1;
-// logic signed [31:0] o2_2;
-// assign o2_0 = o2[0];
-// assign o2_1 = o2[1];
-// assign o2_2 = o2[2];
-// logic signed [31:0] p0_0;
-// logic signed [31:0] p0_1;
-// logic signed [31:0] p0_2;
-// assign p0_0 = p0[0];
-// assign p0_1 = p0[1];
-// assign p0_2 = p0[2];
-// logic signed [31:0] p1_0;
-// logic signed [31:0] p1_1;
-// logic signed [31:0] p1_2;
-// assign p1_0 = p1[0];
-// assign p1_1 = p1[1];
-// assign p1_2 = p1[2];
-// logic signed [31:0] p2_0;
-// logic signed [31:0] p2_1;
-// logic signed [31:0] p2_2;
-// assign p2_0 = p2[0];
-// assign p2_1 = p2[1];
-// assign p2_2 = p2[2];
-
-// // Cross
-// logic signed [31:0] c0_0;
-// logic signed [31:0] c0_1;
-// logic signed [31:0] c0_2;
-// assign c0_0 = c0[0];
-// assign c0_1 = c0[1];
-// assign c0_2 = c0[2];
-// logic signed [31:0] c1_0;
-// logic signed [31:0] c1_1;
-// logic signed [31:0] c1_2;
-// assign c1_0 = c1[0];
-// assign c1_1 = c1[1];
-// assign c1_2 = c1[2];
-// logic signed [31:0] c2_0;
-// logic signed [31:0] c2_1;
-// logic signed [31:0] c2_2;
-// assign c2_0 = c2[0];
-// assign c2_1 = c2[1];
-// assign c2_2 = c2[2];
