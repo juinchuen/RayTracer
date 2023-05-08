@@ -1,0 +1,35 @@
+##### START OF AREA REPORT #####[
+Design view:work.accumulate(verilog)
+Selecting part 5CSEBA6U23I7
+
+Total combinational functions 156 of 83820 ( 0%)
+ALUT usage by number of inputs
+		  7 input functions 	 0
+		  6 input functions 	 0
+		  5 input functions 	 12
+		  4 input functions 	 1
+		  <=3 input functions 	 143
+ALUTs by mode
+		  normal mode            54
+		  extended LUT mode      0
+		  arithmetic mode        70
+		  shared arithmetic mode 32
+Total registers 404 of 167640 ( 0%)
+Total Estimated Packed ALMs 101 of 41910 ( 0%)
+I/O pins 199 of 497 (40%), total I/O based on largest package of this part.
+
+Number of I/O registers
+			Input DDRs    :0
+			Output DDRs   :0
+
+DSP.M9X9: 3
+DSP.M18X18_FULL: 3
+DSP.M18X18_SUMOF2: 3
+DSP Blocks:     9 
+ShiftTap:       0  (0 registers)
+M10Ks:           0  (0% of 553)
+Memory ALUTs:   0  (0% of 20955)
+Total ESB:      0 bits 
+
+##### END OF AREA REPORT #####]
+

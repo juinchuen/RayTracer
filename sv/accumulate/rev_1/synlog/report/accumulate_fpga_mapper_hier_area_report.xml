@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- *************************************************************************************
+FILE DESCRIPTION
+The file contains the information about resource utilization per module to be displayed in the summary report.
+*******************************************************************************************-->
+<modules>
+<column_headers>
+<data>Module name</data>
+<data>ATOMS</data>
+<data>SHARED ARITHMATIC MODE</data>
+<data>COMB ARITHMETIC MODE</data>
+<data>REGISTERS</data>
+<data>SYNC RAMS</data>
+<data>MACs</data>
+</column_headers>
+<module>
+<data>accumulate</data>
+<data>54</data>
+<data>32</data>
+<data>70</data>
+<data>404</data>
+<data>0</data>
+<data>9</data>
+</module>
+</modules>

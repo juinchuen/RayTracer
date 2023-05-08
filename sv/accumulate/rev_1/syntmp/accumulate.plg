@@ -1,0 +1,16 @@
+@P:  Part : 5cseba6ui23-7
+@P:  Worst Slack : -0.907
+@P:  accumulate|clock - Estimated Frequency : 165.4 MHz
+@P:  accumulate|clock - Requested Frequency : 194.6 MHz
+@P:  accumulate|clock - Estimated Period : 6.046
+@P:  accumulate|clock - Requested Period : 5.139
+@P:  accumulate|clock - Slack : -0.907
+@P: accumulate Part : 5cseba6ui23-7
+@P: accumulate I/O ATOMs : 100
+@P: accumulate Total LUTs : 156 
+@P: accumulate Register bits : 404
+@P: accumulate Packed ALMs : 101
+@P: accumulate .M9X9 : 3
+@P: accumulate .M18X18_FULL : 3
+@P: accumulate .M18X18_SUMOF2 : 3
+@P:  CPU Time : 0h:00m:01s
