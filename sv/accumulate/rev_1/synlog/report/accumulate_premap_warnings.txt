@@ -1,3 +1,0 @@
-@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
-@W: FA352 |Not using the Clearbox flow might affect timing correlation and Quality of Results (QoR).
-@W: MT529 :"/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate.sv":32:0:32:5|Found inferred clock accumulate|clock which controls 393 sequential elements including dist_min[31:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
