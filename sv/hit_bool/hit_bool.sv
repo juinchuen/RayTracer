@@ -1,6 +1,7 @@
 module hit_bool #(
     D_BITS = 'd32,
-    Q_BITS = 'd10
+    Q_BITS = 'd10,
+    M_BITS = 'd12
 )(
     //
     input logic clock,
@@ -22,6 +23,20 @@ module hit_bool #(
     input logic fifo_out_rd_en,
     input logic normal_in_wr_en,
     output logic normal_in_full,
+    // Pass through data
+    input logic [M_BITS-1:0] tri_id_fifo_din,
+    input logic [M_BITS-1:0] ray_id_fifo_din,
+    output logic [M_BITS-1:0] tri_id_fifo_dout,
+    output logic [M_BITS-1:0] ray_id_fifo_dout,
+    input logic tri_id_fifo_wr_en,
+    input logic ray_id_fifo_wr_en,
+    input logic tri_id_fifo_rd_en,
+    input logic ray_id_fifo_rd_en,
+    output logic tri_id_fifo_full,
+    output logic ray_id_fifo_full,
+    output logic tri_id_fifo_empty,
+    output logic ray_id_fifo_empty,
+    
     // Signals to p_hit module
     input logic p_hit_in_empty,
     output logic p_hit_in_rd_en,
@@ -439,6 +454,38 @@ fifo_array #(
 // Calculations take 2 clock cycles, but we want to store the new p_hit data being
 // read every cycle, so we unfortunately need two buffers, one for holding and one 
 // to pass to the data operations
+
+// Fifo to hold triangle ID
+fifo #(
+    .FIFO_DATA_WIDTH     (M_BITS),
+    .FIFO_BUFFER_SIZE    (1024)
+) u_tri_id_fifo (
+    .reset               (reset),
+    .wr_clk              (clock),
+    .wr_en               (tri_id_fifo_wr_en),
+    .din                 (tri_id_fifo_din),
+    .full                (tri_id_fifo_full),
+    .rd_clk              (clock),
+    .rd_en               (tri_id_fifo_rd_en),
+    .dout                (tri_id_fifo_dout),
+    .empty               (tri_id_fifo_empty)
+);
+
+// Fifo to hold ray ID
+fifo #(
+    .FIFO_DATA_WIDTH     (M_BITS),
+    .FIFO_BUFFER_SIZE    (1024)
+) u_ray_id_fifo (
+    .reset               (reset),
+    .wr_clk              (clock),
+    .wr_en               (ray_id_fifo_wr_en),
+    .din                 (ray_id_fifo_din),
+    .full                (ray_id_fifo_full),
+    .rd_clk              (clock),
+    .rd_en               (ray_id_fifo_rd_en),
+    .dout                (ray_id_fifo_dout),
+    .empty               (ray_id_fifo_empty)
+);
 
 // Fifo array to hold p_hit, used for calculations
 fifo_array #(
