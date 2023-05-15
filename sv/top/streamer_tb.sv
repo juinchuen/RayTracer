@@ -55,7 +55,7 @@ initial begin
     reset = 0;
     in_empty = 0;
 
-    #100
+    #300
 
     $finish;
 

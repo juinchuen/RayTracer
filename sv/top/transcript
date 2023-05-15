@@ -18,16 +18,16 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 10:43:01 on May 10,2023
+# Start time: 16:05:59 on May 10,2023
 # vlog -reportprogress 300 -work work streamer_tb.sv 
 # -- Compiling module streamer_tb
 # 
 # Top level modules:
 # 	streamer_tb
-# End time: 10:43:01 on May 10,2023, Elapsed time: 0:00:00
+# End time: 16:05:59 on May 10,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 10:43:01 on May 10,2023
+# Start time: 16:05:59 on May 10,2023
 # vlog -reportprogress 300 -work work streamer.sv 
 # -- Compiling module streamer
 # ** Warning: streamer.sv(11): (vlog-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -35,17 +35,18 @@
 # 
 # Top level modules:
 # 	streamer
-# End time: 10:43:01 on May 10,2023, Elapsed time: 0:00:00
+# End time: 16:05:59 on May 10,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # vsim -classdebug -voptargs="+acc" "+notimingchecks" -L work work.streamer_tb -wlf streamer_tb.wlf 
-# Start time: 10:43:01 on May 10,2023
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 16:05:59 on May 10,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading sv_std.std
 # Loading work.streamer_tb(fast)
 # Loading work.streamer(fast)
 # ** Note: $finish    : streamer_tb.sv(60)
-#    Time: 115 ns  Iteration: 0  Instance: /streamer_tb
+#    Time: 315 ns  Iteration: 0  Instance: /streamer_tb
 # 1
 # Break in Module streamer_tb at streamer_tb.sv line 60
-# End time: 10:46:31 on May 10,2023, Elapsed time: 0:03:30
+# Causality operation skipped due to absence of debug database file
+# End time: 16:10:12 on May 10,2023, Elapsed time: 0:04:13
 # Errors: 0, Warnings: 0
