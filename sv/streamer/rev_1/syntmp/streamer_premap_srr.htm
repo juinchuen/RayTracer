@@ -1,0 +1,106 @@
+<html><body><samp><pre>
+<!@TC:1684182667>
+# Mon May 15 15:31:07 2023
+
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.7 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62382
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+<a name=mapperReport27></a>Synopsys Intel FPGA Technology Pre-mapping, Version maprc, Build 4745R, Built Nov 27 2018 21:14:52</a>
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
+
+@A:<a href="@A:MF827:@XP_HELP">MF827</a> : <!@TM:1684182667> | No constraint file specified. 
+@N:<a href="@N:MF284:@XP_HELP">MF284</a> : <!@TM:1684182667> | Setting synthesis effort to medium for the design 
+Linked File:  <a href="/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/streamer_scck.rpt:@XP_FILE">streamer_scck.rpt</a>
+Printing clock  summary report in "/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/streamer_scck.rpt" file 
+@N:<a href="@N:MF915:@XP_HELP">MF915</a> : <!@TM:1684182667> | Option synthesis_strategy=advanced is enabled.  
+@N:<a href="@N:MF248:@XP_HELP">MF248</a> : <!@TM:1684182667> | Running in 64-bit mode. 
+@N:<a href="@N:MF666:@XP_HELP">MF666</a> : <!@TM:1684182667> | Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.) 
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+<font color=#A52A2A>@W:<a href="@W:FA406:@XP_HELP">FA406</a> : <!@TM:1684182667> | Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.</font> 
+@N:<a href="@N:FA350:@XP_HELP">FA350</a> : <!@TM:1684182667> | Clearbox flow is not supported when QUARTUS_ROOTDIR is not set 
+@N:<a href="@N:FA351:@XP_HELP">FA351</a> : <!@TM:1684182667> | Clearbox flow is not supported because clearbox does not exist 
+<font color=#A52A2A>@W:<a href="@W:FA352:@XP_HELP">FA352</a> : <!@TM:1684182667> | Not using the Clearbox flow might affect timing correlation and Quality of Results (QoR).</font> 
+@N:<a href="@N:MF284:@XP_HELP">MF284</a> : <!@TM:1684182667> | Setting synthesis effort to medium for the design 
+
+Finished Clear Box Flow. (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 116MB peak: 118MB)
+
+@N:<a href="@N:MH105:@XP_HELP">MH105</a> : <!@TM:1684182667> | UMR3 is only supported for HAPS-80. 
+@N:<a href="@N:MH105:@XP_HELP">MH105</a> : <!@TM:1684182667> | UMR3 is only supported for HAPS-80. 
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 117MB peak: 118MB)
+
+
+
+<a name=mapperReport28></a>Clock Summary</a>
+******************
+
+          Start              Requested     Requested     Clock        Clock                     Clock
+Level     Clock              Frequency     Period        Type         Group                     Load 
+-----------------------------------------------------------------------------------------------------
+0 -       streamer|clock     785.5 MHz     1.273         inferred     Autoconstr_clkgroup_0     594  
+=====================================================================================================
+
+
+
+Clock Load Summary
+***********************
+
+                   Clock     Source          Clock Pin                        Non-clock Pin     Non-clock Pin
+Clock              Load      Pin             Seq Example                      Seq Example       Comb Example 
+-------------------------------------------------------------------------------------------------------------
+streamer|clock     594       clock(port)     instruction_out\[0\][31:0].C     -                 -            
+=============================================================================================================
+
+<font color=#A52A2A>@W:<a href="@W:MT529:@XP_HELP">MT529</a> : <a href="/home/jco1147/ray_tracer/github/RayTracer/sv/top/streamer.sv:24:0:24:6:@W:MT529:@XP_MSG">streamer.sv(24)</a><!@TM:1684182667> | Found inferred clock streamer|clock which controls 594 sequential elements including state[3:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. </font>
+
+Finished Pre Mapping Phase.
+@N:<a href="@N:BN225:@XP_HELP">BN225</a> : <!@TM:1684182667> | Writing default property annotation file /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/streamer.sap. 
+
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 117MB peak: 119MB)
+
+Encoding state machine state[3:0] (in view: work.streamer(verilog))
+original code -> new code
+   000 -> 00
+   001 -> 01
+   010 -> 10
+   011 -> 11
+@N:<a href="@N:MO225:@XP_HELP">MO225</a> : <a href="/home/jco1147/ray_tracer/github/RayTracer/sv/top/streamer.sv:24:0:24:6:@N:MO225:@XP_MSG">streamer.sv(24)</a><!@TM:1684182667> | There are no possible illegal states for state machine state[3:0] (in view: work.streamer(verilog)); safe FSM implementation is not required.
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 118MB peak: 119MB)
+
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 118MB peak: 119MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 33MB peak: 119MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Mon May 15 15:31:07 2023
+
+###########################################################]
+
+</pre></samp></body></html>

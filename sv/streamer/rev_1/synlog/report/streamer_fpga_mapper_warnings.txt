@@ -1,0 +1,3 @@
+@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
+@W: FA352 |Not using the Clearbox flow might affect timing correlation and Quality of Results (QoR).
+@W: MT420 |Found inferred clock streamer|clock with period 1.50ns. Please declare a user-defined clock on port clock.

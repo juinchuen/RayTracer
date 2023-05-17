@@ -1,0 +1,3 @@
+%%% protect protected_file
+@E 
+@
