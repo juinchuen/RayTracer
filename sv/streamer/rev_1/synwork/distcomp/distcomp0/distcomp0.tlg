@@ -1,0 +1,19 @@
+@N:: Applying property .distcompmodetop with value 1 on module streamer in library work
+@N:: Applying property .distcompnoprune with value 1 on module streamer in library work
+@N:: Applying property .noprune with value 1 on module streamer in library work
+Selecting top level module streamer
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/streamer.sv":1:7:1:14|Synthesizing module streamer in library work.
+Running optimization stage 1 on streamer .......
+Running optimization stage 2 on streamer .......
+@N: CL201 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/streamer.sv":24:0:24:5|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 4 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp0/distcomp0.rt.csv
+

@@ -18,7 +18,7 @@ module streamer #(
     input logic signed [D_BITS-1 : 0] mem_data [11:0]
 );
 
-localparam [12:0] TRI_MAX = 'd5; 
+localparam [12:0] TRI_MAX = 'hb; 
 logic [2:0] state;
 
 always @ (posedge clock or posedge reset) begin

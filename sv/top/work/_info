@@ -10,61 +10,62 @@ z2
 cModel Technology
 Z0 d/home/jco1147/ray_tracer/github/RayTracer/sv/top
 T_opt
-!s110 1683752760
-V]_5:RnXO96ZM5od?22VPW0
-04 11 4 work streamer_tb fast 0
-=1-a4bb6d3fef1e-645c0737-cb0d1-2b8398
+!s110 1684284670
+VMLQZKQCJPagY`3RIieLI13
+04 9 4 work memory_tb fast 0
+=1-a4bb6d3fef1e-646424fe-d4f93-60de5
 o-quiet -auto_acc_if_foreign -work work -L work +acc
 Z1 tCvgOpt 0
 n@_opt
 OL;O;2020.1;71
-vstreamer
+R0
+vdummy_memory
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1683752759
+Z3 !s110 1684284825
 !i10b 1
-!s100 dQ;40gBAEz1FXZH=YTZLg0
+!s100 W]SWF88O[n^V:[H^fkj@91
 Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IMZ>^5MD7BR@zITGI1B7li2
+IZ7i]EH@RG8PPLDlOMoLe<2
 Z5 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1683733082
-8streamer.sv
-Fstreamer.sv
-!i122 13
-L0 1 136
+w1684284664
+8dummy_memory.sv
+Fdummy_memory.sv
+!i122 12
+L0 1 60
 Z6 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1683752759.000000
-!s107 streamer.sv|
-!s90 -reportprogress|300|-work|work|streamer.sv|
+Z7 !s108 1684284825.000000
+!s107 dummy_memory.sv|
+!s90 -reportprogress|300|-work|work|dummy_memory.sv|
 !i113 0
 Z8 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
 R1
-vstreamer_tb
+vmemory_tb
 R2
 R3
 !i10b 1
-!s100 34fi6c;ol==KjhAb0niEC0
+!s100 NBzfmYhKQ^KAD?42d7EUd1
 R4
-IMhKZji3hWTFJzPHLHX5941
+IXF6V?mIj3Ad_[zITTWTVA3
 R5
 S1
 R0
-w1683752516
-8streamer_tb.sv
-Fstreamer_tb.sv
-!i122 12
-L0 1 120
+w1684284306
+8dummy_memory_tb.sv
+Fdummy_memory_tb.sv
+!i122 11
+L0 1 54
 R6
 r1
 !s85 0
 31
 R7
-!s107 streamer_tb.sv|
-!s90 -reportprogress|300|-work|work|streamer_tb.sv|
+!s107 dummy_memory_tb.sv|
+!s90 -reportprogress|300|-work|work|dummy_memory_tb.sv|
 !i113 0
 R8
 R1

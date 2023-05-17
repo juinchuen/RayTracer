@@ -1,0 +1,109 @@
+###########################################################[
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.7 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62382
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+Synopsys Verilog Compiler, Version comp2018q4p1, Build 004R, Built Nov 27 2018 21:19:49
+
+@N|Running in 64-bit mode
+@N: CG1349 :	| Running Verilog Compiler in System Verilog mode
+
+@N: CG1350 :	| Running Verilog Compiler in Multiple File Compilation Unit mode
+
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera.v" (library work)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v" (library work)
+@N: CG1343 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v":735:14:735:33|Read directive read_comments_as_HDL on.
+@N: CG1344 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v":743:14:743:33|Read directive read_comments_as_HDL off.
+@W: CS141 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v":1725:22:1725:53|Unrecognized synthesis directive enable_verilog_initial_construct. Verify the correct directive name.
+@W: CS141 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v":1832:22:1832:53|Unrecognized synthesis directive enable_verilog_initial_construct. Verify the correct directive name.
+@W: CS141 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v":2553:22:2553:53|Unrecognized synthesis directive enable_verilog_initial_construct. Verify the correct directive name.
+@W: CS141 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v":3108:22:3108:53|Unrecognized synthesis directive enable_verilog_initial_construct. Verify the correct directive name.
+@W: CS141 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v":4364:22:4364:53|Unrecognized synthesis directive enable_verilog_initial_construct. Verify the correct directive name.
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v" (library work)
+@I:"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v":"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev_atoms.v" (library work)
+@I:"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v":"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev_hssi_atoms.v" (library work)
+@I:"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v":"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev_hps_atoms.sv" (library work)
+@I:"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v":"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev_pcie_hip_atoms.v" (library work)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v" (library work)
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53001:16:53001:28|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53051:16:53051:27|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53060:16:53060:28|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53074:16:53074:27|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53221:20:53221:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53226:20:53226:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53229:20:53229:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53232:20:53232:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53346:20:53346:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53351:20:53351:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53354:20:53354:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53357:20:53357:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53446:20:53446:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53451:20:53451:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53454:20:53454:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53457:20:53457:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53545:20:53545:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53550:20:53550:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53553:20:53553:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53556:20:53556:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53642:20:53642:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53647:20:53647:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53650:20:53650:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53653:20:53653:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53861:12:53861:24|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53875:12:53875:23|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":54140:12:54140:24|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":54154:12:54154:23|Read directive translate_on.
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_lpm.v" (library work)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_primitives.v" (library work)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/hypermods.v" (library __hyper__lib__)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/umr_capim.v" (library snps_haps)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/synip/hcei/zceistubs.v" (library snps_haps)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/scemi_objects.v" (library snps_haps)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/scemi_pipes.svh" (library snps_haps)
+@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/top/streamer.sv" (library work)
+Verilog syntax check successful!
+
+Compiler output is up to date.  No re-compile necessary
+
+@N:: Applying property .distcompmodetop with value 1 on module streamer in library work
+@N:: Applying property .distcompnoprune with value 1 on module streamer in library work
+@N:: Applying property .noprune with value 1 on module streamer in library work
+Selecting top level module streamer
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/streamer.sv":1:7:1:14|Synthesizing module streamer in library work.
+Running optimization stage 1 on streamer .......
+Running optimization stage 2 on streamer .......
+@N: CL201 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/streamer.sv":24:0:24:5|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 4 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp0/distcomp0.rt.csv
+
+@END
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 85MB peak: 86MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Mon May 15 15:40:38 2023
+
+###########################################################]
