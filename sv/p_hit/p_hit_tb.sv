@@ -44,8 +44,8 @@ p_hit #(
 ) u_p_hit (
     .clock                (clock),
     .reset                (reset),
-    .tri_normal           (tri_normal_1[2:0]),
-    .v0                   (v0[2:0]),
+    .tri_normal_in        (tri_normal_1[2:0]),
+    .v0_in                (v0[2:0]),
     .origin               (origin_1[2:0]),
     .dir                  (dir_1[2:0]),
     .in_full              (in_full[3:0]),
