@@ -48,9 +48,9 @@ p_hit #(
     .v0_in                (v0[2:0]),
     .origin               (origin_1[2:0]),
     .dir                  (dir_1[2:0]),
-    .in_full              (in_full[3:0]),
-    .in_wr_en             (in_wr_en[3:0]),
-    .p_hit                  (out[2:0]),
+    .in_full              (in_full[0]),
+    .in_wr_en             (in_wr_en[0]),
+    .p_hit                (out[2:0]),
     .out_rd_en            (out_rd_en),
     .out_empty            (out_empty),
     .v0_out               (v0_out[2:0])
