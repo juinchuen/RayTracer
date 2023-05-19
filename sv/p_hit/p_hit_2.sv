@@ -207,8 +207,8 @@ module p_hit #(
     output logic out_empty 
 );
 
-logic in_full_arr[7:0]
-logic out_empty_arr[5:0]
+logic in_full_arr[7:0];
+logic out_empty_arr[5:0];
 
 p_hit_module #(
     .D_BITS               (D_BITS),
