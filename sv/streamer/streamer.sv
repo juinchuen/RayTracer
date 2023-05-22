@@ -13,6 +13,7 @@ module streamer #(
     input logic out_full,
     output logic out_wr_en,
     output logic signed [D_BITS-1 : 0] instruction_out [17:0],
+    output logic [M_BITS-1 : 0] triangle_ID_out,
 
     output logic [M_BITS-1 : 0] mem_addr,
     input logic signed [D_BITS-1 : 0] mem_data [11:0]
@@ -21,6 +22,8 @@ module streamer #(
 localparam [12:0] TRI_MAX = 'hb; 
 logic [2:0] state;
 
+int i;
+
 always @ (posedge clock or posedge reset) begin
 
     if (reset) begin
@@ -28,24 +31,13 @@ always @ (posedge clock or posedge reset) begin
         in_rd_en            <= 0;
         out_wr_en           <= 0;
 
-        instruction_out[ 0] <= 'b0;
-        instruction_out[ 1] <= 'b0;
-        instruction_out[ 2] <= 'b0;
-        instruction_out[ 3] <= 'b0;
-        instruction_out[ 4] <= 'b0;
-        instruction_out[ 5] <= 'b0;
-        instruction_out[ 6] <= 'b0;
-        instruction_out[ 7] <= 'b0;
-        instruction_out[ 8] <= 'b0;
-        instruction_out[ 9] <= 'b0;
-        instruction_out[10] <= 'b0;
-        instruction_out[11] <= 'b0;
-        instruction_out[12] <= 'b0;
-        instruction_out[13] <= 'b0;
-        instruction_out[14] <= 'b0;
-        instruction_out[15] <= 'b0;
-        instruction_out[16] <= 'b0;
-        instruction_out[17] <= 'b0;
+        for (i = 0; i < 18; i = i + 1) begin
+
+            instruction_out[i]  <= 'b0;
+
+        end
+
+        triangle_ID_out     <= 'b0;
         
         mem_addr            <= 'b0;
         state               <= 'b0;
@@ -82,6 +74,7 @@ always @ (posedge clock or posedge reset) begin
 
                         out_wr_en               <= 0;
                         instruction_out [17:6]  <= mem_data;
+                        triangle_ID_out         <= mem_addr;
                         mem_addr                <= mem_addr + 1;
                         state                   <= 'h3;
 
@@ -100,28 +93,17 @@ always @ (posedge clock or posedge reset) begin
 
             default :   begin
 
-                            in_rd_en        <= 0;
-                            out_wr_en       <= 0;
+                            in_rd_en            <= 0;
+                            out_wr_en           <= 0;
 
-                            instruction_out[ 0] <= 'b0;
-                            instruction_out[ 1] <= 'b0;
-                            instruction_out[ 2] <= 'b0;
-                            instruction_out[ 3] <= 'b0;
-                            instruction_out[ 4] <= 'b0;
-                            instruction_out[ 5] <= 'b0;
-                            instruction_out[ 6] <= 'b0;
-                            instruction_out[ 7] <= 'b0;
-                            instruction_out[ 8] <= 'b0;
-                            instruction_out[ 9] <= 'b0;
-                            instruction_out[10] <= 'b0;
-                            instruction_out[11] <= 'b0;
-                            instruction_out[12] <= 'b0;
-                            instruction_out[13] <= 'b0;
-                            instruction_out[14] <= 'b0;
-                            instruction_out[15] <= 'b0;
-                            instruction_out[16] <= 'b0;
-                            instruction_out[17] <= 'b0;
+                            for (i = 0; i < 18; i = i + 1) begin
 
+                                instruction_out[i]  <= 'b0;
+
+                            end
+
+                            triangle_ID_out     <= 'b0;
+                            
                             mem_addr            <= 'b0;
                             state               <= 'b0;
 

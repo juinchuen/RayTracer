@@ -1,0 +1,90 @@
+# //  ModelSim SE-64 2020.1 Jan 28 2020 Linux 4.18.0-477.10.1.el8_8.x86_64
+# //
+# //  Copyright 1991-2020 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  ModelSim SE-64 and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# do top.do
+# -9
+# Model Technology ModelSim SE-64 vmap 2020.1 Lib Mapping Utility 2020.01 Jan 28 2020
+# vmap work work 
+# Copying /vol/mentor/modelsim-2020.1/modeltech/linux_x86_64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:42:24 on May 22,2023
+# vlog -reportprogress 300 -work work ../sramb.sv 
+# -- Compiling module sramb
+# 
+# Top level modules:
+# 	sramb
+# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:42:25 on May 22,2023
+# vlog -reportprogress 300 -work work ../streamer/streamer.sv 
+# -- Compiling module streamer
+# ** Warning: ../streamer/streamer.sv(11): (vlog-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../streamer/streamer.sv(19): (vlog-13314) Defaulting port 'mem_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	streamer
+# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 2
+# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:42:25 on May 22,2023
+# vlog -reportprogress 300 -work work ../fifo.sv 
+# -- Compiling module fifo
+# -- Compiling module fifo_array
+# ** Warning: ../fifo.sv(87): (vlog-13314) Defaulting port 'din' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	fifo_array
+# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:42:25 on May 22,2023
+# vlog -reportprogress 300 -work work top.sv 
+# -- Compiling module ray_tracer_top
+# ** Warning: top.sv(12): (vlog-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# 
+# Top level modules:
+# 	ray_tracer_top
+# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
+# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
+# Start time: 12:42:25 on May 22,2023
+# vlog -reportprogress 300 -work work top_tb.sv 
+# -- Compiling module top_tb
+# 
+# Top level modules:
+# 	top_tb
+# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -classdebug -voptargs="+acc" "+notimingchecks" -L work work.top_tb -wlf top_tb.wlf 
+# Start time: 12:42:25 on May 22,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: top.sv(12): (vopt-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: top.sv(75): (vopt-2685) [TFMPC] - Too few port connections for 'STREAMER0'.  Expected 11, found 10.
+# ** Warning: top.sv(75): (vopt-2718) [TFMPC] - Missing connection for port 'triangle_ID_out'.
+# ** Warning: ../streamer/streamer.sv(11): (vopt-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Warning: ../streamer/streamer.sv(19): (vopt-13314) Defaulting port 'mem_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+# ** Note: (vopt-143) Recognized 1 FSM in module "streamer(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
+# Loading sv_std.std
+# Loading work.top_tb(fast)
+# Loading work.ray_tracer_top(fast)
+# Loading work.fifo(fast)
+# Loading work.streamer(fast)
+# Loading work.sramb(fast)
+# Loading triangles into memory
+# ** Note: $finish    : top_tb.sv(45)
+#    Time: 3115 ns  Iteration: 0  Instance: /top_tb
+# 1
+# Break in Module top_tb at top_tb.sv line 45
