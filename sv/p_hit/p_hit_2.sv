@@ -291,20 +291,35 @@ fifo_array #(
     .empty              (out_empty_arr[4])
 );
 
-fifo_array #(
-    .FIFO_DATA_WIDTH    (M_BITS),
-    .FIFO_BUFFER_SIZE   (M_BITS*32),
-    .ARRAY_SIZE         (1)
-) triangle_id_fifo (
-    .reset              (reset),
-    .clock              (clock),
-    .wr_en              (in_wr_en),
-    .din                (triangle_id_in[0]),
-    .full               (in_full_arr[7]),
-    .rd_en              (out_rd_en),
-    .dout               (triangle_id_out[0]),
-    .empty              (out_empty_arr[5])
+fifo #(
+    .FIFO_DATA_WIDTH     (M_BITS),
+    .FIFO_BUFFER_SIZE    (M_BITS*32)
+) u_fifo (
+    .reset               (reset),
+    .wr_clk              (clock),
+    .wr_en               (in_wr_en),
+    .din                 (triangle_id_in),
+    .full                (in_full_arr[7]),
+    .rd_clk              (clock),
+    .rd_en               (out_rd_en),
+    .dout                (triangle_id_out),
+    .empty               (out_empty_arr[5])
 );
+
+// fifo_array #(
+//     .FIFO_DATA_WIDTH    (M_BITS),
+//     .FIFO_BUFFER_SIZE   (M_BITS*32),
+//     .ARRAY_SIZE         (1)
+// ) triangle_id_fifo (
+//     .reset              (reset),
+//     .clock              (clock),
+//     .wr_en              (in_wr_en),
+//     .din                (triangle_id_in[0]),
+//     .full               (in_full_arr[7]),
+//     .rd_en              (out_rd_en),
+//     .dout               (triangle_id_out[0]),
+//     .empty              (out_empty_arr[5])
+// );
 
 logic all_empty = 0;
 logic all_full = 0;
