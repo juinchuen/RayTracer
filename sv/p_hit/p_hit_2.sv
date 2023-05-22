@@ -299,10 +299,10 @@ fifo_array #(
     .reset              (reset),
     .clock              (clock),
     .wr_en              (in_wr_en),
-    .din                (triangle_id_in),
+    .din                (triangle_id_in[0]),
     .full               (in_full_arr[7]),
     .rd_en              (out_rd_en),
-    .dout               (triangle_id_out),
+    .dout               (triangle_id_out[0]),
     .empty              (out_empty_arr[5])
 );
 
