@@ -1,6 +1,7 @@
 module accumulate #(
     parameter Q_BITS = 'd10,
-    parameter D_BITS = 'd32
+    parameter D_BITS = 'd32,
+    parameter M_BITS = 'd12
 ) (
     input logic clock,
     input logic reset,
@@ -17,17 +18,22 @@ module accumulate #(
     output logic signed [D_BITS-1 : 0] p_hit_min [2:0]
 );
 
-logic [3:0] state;
+logic           [3:0]                   state;
 
-logic [D_BITS+Q_BITS-1 : 0] p_hit_squared [2:0];
+logic           [D_BITS+Q_BITS-1 : 0]   p_hit_squared   [2:0];
 
-logic [D_BITS-1 : 0] xy_add;
-logic [D_BITS-1 : 0] d2;
+logic           [D_BITS-1 : 0]          xy_add;
+logic           [D_BITS-1 : 0]          d2;
 
-logic signed [D_BITS-1 : 0] read_p_hit [2:0];
-logic read_hit;
+logic signed    [D_BITS-1 : 0]          read_p_hit      [2:0];
+logic                                   read_hit;
 
-logic [D_BITS-1 : 0] dist_min;
+logic           [D_BITS-1 : 0]          dist_min;
+
+logic signed    [D_BITS-1 : 0]          p_hit_min_store [2:0];
+logic           [M_BITS-1 : 0]          triangle_ID_store;
+
+logic                                   start_up_flag;
 
 always @ (posedge clock or posedge reset) begin
 
@@ -54,6 +60,14 @@ always @ (posedge clock or posedge reset) begin
         p_hit_min[2]        <= 'b0;
     
         dist_min            <= ~'b0;
+
+        p_hit_min_store[0]  <= 'b0;
+        p_hit_min_store[1]  <= 'b0;
+        p_hit_min_store[2]  <= 'b0;
+        
+        triangle_ID_store   <= 'b0;
+
+        start_up_flag       <= 'b1;
 
     end
 
@@ -94,6 +108,8 @@ always @ (posedge clock or posedge reset) begin
                             state <= 'h3;
 
                         end
+
+                        if 
 
                     end
 
