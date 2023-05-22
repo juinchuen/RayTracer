@@ -32,6 +32,7 @@ logic signed [D_BITS-1:0] tri_normal_1[2:0], tri_normal_2[2:0];
 logic signed [D_BITS-1:0] v0[2:0];
 logic signed [D_BITS-1:0] origin_1[2:0], origin_2[2:0];
 logic signed [D_BITS-1:0] dir_1[2:0], dir_2[2:0];
+logic signed [D_BITS-1:0] v0_out[2:0];
 
 //outputs
 logic out_empty, out_rd_en;
@@ -43,18 +44,16 @@ p_hit #(
 ) u_p_hit (
     .clock                (clock),
     .reset                (reset),
-    .tri_normal_1         (tri_normal_1[2:0]),
-    .tri_normal_2         (tri_normal_2[2:0]),
-    .v0                   (v0[2:0]),
-    .origin_1             (origin_1[2:0]),
-    .origin_2             (origin_2[2:0]),
-    .dir_1                (dir_1[2:0]),
-    .dir_2                (dir_2[2:0]),
-    .in_full              (in_full[3:0]),
-    .in_wr_en             (in_wr_en[3:0]),
-    .out                  (out[2:0]),
+    .tri_normal_in        (tri_normal_1[2:0]),
+    .v0_in                (v0[2:0]),
+    .origin               (origin_1[2:0]),
+    .dir                  (dir_1[2:0]),
+    .in_full              (in_full[0]),
+    .in_wr_en             (in_wr_en[0]),
+    .p_hit                (out[2:0]),
     .out_rd_en            (out_rd_en),
-    .out_empty            (out_empty)
+    .out_empty            (out_empty),
+    .v0_out               (v0_out[2:0])
 );
 
 ///testing
