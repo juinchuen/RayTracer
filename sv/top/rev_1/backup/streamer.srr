@@ -1,0 +1,1169 @@
+#Build: Synplify (R) Premier O-2018.09-SP1, Build 3588R, Nov 27 2018
+#install: /vol/synopsys/fpga/O-2018.09-SP1
+#OS: Linux 
+#Hostname: joker.ece.northwestern.edu
+
+# Fri May 19 09:51:43 2023
+
+#Implementation: rev_1
+
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.8 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62115
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+Synopsys HDL Compiler, Version comp2018q4p1, Build 004R, Built Nov 27 2018 21:19:49
+
+@N|Running in 64-bit mode
+###########################################################[
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.8 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62115
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+Synopsys Verilog Compiler, Version comp2018q4p1, Build 004R, Built Nov 27 2018 21:19:49
+
+@N|Running in 64-bit mode
+@N: CG1349 :	| Running Verilog Compiler in System Verilog mode
+
+@N: CG1350 :	| Running Verilog Compiler in Multiple File Compilation Unit mode
+
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera.v" (library work)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v" (library work)
+@N: CG1343 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v":735:14:735:33|Read directive read_comments_as_HDL on.
+@N: CG1344 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v":743:14:743:33|Read directive read_comments_as_HDL off.
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v" (library work)
+@I:"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v":"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev_atoms.v" (library work)
+@I:"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v":"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev_hssi_atoms.v" (library work)
+@I:"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v":"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev_hps_atoms.sv" (library work)
+@I:"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v":"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev_pcie_hip_atoms.v" (library work)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v" (library work)
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53001:16:53001:28|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53051:16:53051:27|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53060:16:53060:28|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53074:16:53074:27|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53221:20:53221:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53226:20:53226:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53229:20:53229:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53232:20:53232:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53346:20:53346:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53351:20:53351:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53354:20:53354:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53357:20:53357:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53446:20:53446:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53451:20:53451:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53454:20:53454:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53457:20:53457:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53545:20:53545:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53550:20:53550:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53553:20:53553:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53556:20:53556:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53642:20:53642:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53647:20:53647:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53650:20:53650:32|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53653:20:53653:31|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53861:12:53861:24|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":53875:12:53875:23|Read directive translate_on.
+@N: CG334 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":54140:12:54140:24|Read directive translate_off.
+@N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":54154:12:54154:23|Read directive translate_on.
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_lpm.v" (library work)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_primitives.v" (library work)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/hypermods.v" (library __hyper__lib__)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/umr_capim.v" (library snps_haps)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/synip/hcei/zceistubs.v" (library snps_haps)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/scemi_objects.v" (library snps_haps)
+@I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/scemi_pipes.svh" (library snps_haps)
+@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv" (library work)
+@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv" (library work)
+@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv" (library work)
+@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv" (library work)
+Verilog syntax check successful!
+Selecting top level module fifo_array
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Synthesizing module fifo_array in library work.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_32s_1024s_11s
+Running optimization stage 1 on fifo_32s_1024s_11s .......
+Running optimization stage 1 on fifo_array .......
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 86MB peak: 88MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri May 19 09:51:44 2023
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.8 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62115
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+Synopsys Synopsys Netlist Linker, Version comp2018q4p1, Build 004R, Built Nov 27 2018 21:19:49
+
+@N|Running in 64-bit mode
+@N: NF107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Selected library: work cell: fifo_array view verilog as top level
+@N: NF107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Selected library: work cell: fifo_array view verilog as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri May 19 09:51:44 2023
+
+###########################################################]
+
+Finished Containment srs generation. (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+
+Divided design in to 1 groups
+@L:"/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp0/distcomp0.log" "Log file for distribution node work.fifo_array.verilog "
+Compiling work_fifo_array_verilog as a separate process
+Compilation of node work.fifo_array finished successfully.Real start time 0h:00m:00s, Real end time = 0h:00m:01s, Total real run time = 0h:00m:01s
+
+Distributed Compiler Report
+***************************
+
+DP Name                     Status      Start time     End Time       Total Real Time     Log File                                                                                        
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+work.fifo_array.verilog     Success     0h:00m:00s     0h:00m:01s     0h:00m:01s          /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp0/distcomp0.log
+==========================================================================================================================================================================================
+###########################################################[
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.8 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62115
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+Synopsys Synopsys Netlist Linker, Version comp2018q4p1, Build 004R, Built Nov 27 2018 21:19:49
+
+@N|Running in 64-bit mode
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri May 19 09:51:46 2023
+
+###########################################################]
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+
+Process took 0h:00m:02s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri May 19 09:51:46 2023
+
+###########################################################]
+###########################################################[
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.8 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62115
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+Synopsys Synopsys Netlist Linker, Version comp2018q4p1, Build 004R, Built Nov 27 2018 21:19:49
+
+@N|Running in 64-bit mode
+@N: NF107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Selected library: work cell: fifo_array view verilog as top level
+@N: NF107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Selected library: work cell: fifo_array view verilog as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Fri May 19 09:51:47 2023
+
+###########################################################]
+Premap Report
+
+# Fri May 19 09:51:47 2023
+
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.8 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62115
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+Synopsys Intel FPGA Technology Pre-mapping, Version maprc, Build 4745R, Built Nov 27 2018 21:14:52
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
+
+@A: MF827 |No constraint file specified.
+@N: MF284 |Setting synthesis effort to medium for the design
+@L: /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/streamer_scck.rpt 
+Printing clock  summary report in "/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/streamer_scck.rpt" file 
+@N: MF915 |Option synthesis_strategy=advanced is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 101MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 101MB)
+
+@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
+@N: FA350 |Clearbox flow is not supported when QUARTUS_ROOTDIR is not set
+@N: FA351 |Clearbox flow is not supported because clearbox does not exist
+@W: FA352 |Not using the Clearbox flow might affect timing correlation and Quality of Results (QoR).
+@N: MF284 |Setting synthesis effort to medium for the design
+
+Finished Clear Box Flow. (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 115MB peak: 117MB)
+
+@N: MH105 |UMR3 is only supported for HAPS-80.
+@N: MH105 |UMR3 is only supported for HAPS-80.
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 115MB peak: 117MB)
+
+
+
+Clock Summary
+******************
+
+          Start                Requested     Requested     Clock        Clock                     Clock
+Level     Clock                Frequency     Period        Type         Group                     Load 
+-------------------------------------------------------------------------------------------------------
+0 -       fifo_array|clock     434.7 MHz     2.300         inferred     Autoconstr_clkgroup_0     261  
+=======================================================================================================
+
+
+
+Clock Load Summary
+***********************
+
+                     Clock     Source          Clock Pin                                   Non-clock Pin     Non-clock Pin
+Clock                Load      Pin             Seq Example                                 Seq Example       Comb Example 
+--------------------------------------------------------------------------------------------------------------------------
+fifo_array|clock     261       clock(port)     genblk1\[2\]\.u_fifo.fifo_buf[31:0].CLK     -                 -            
+==========================================================================================================================
+
+@W: MT529 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":62:4:62:12|Found inferred clock fifo_array|clock which controls 261 sequential elements including genblk1\[0\]\.u_fifo.empty. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/streamer.sap.
+
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 116MB peak: 118MB)
+
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 116MB peak: 118MB)
+
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 116MB peak: 118MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 31MB peak: 118MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Fri May 19 09:51:47 2023
+
+###########################################################]
+Map & Optimize Report
+
+# Fri May 19 09:51:48 2023
+
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.8 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62115
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+Synopsys Intel FPGA Technology Mapper, Version maprc, Build 4745R, Built Nov 27 2018 21:14:52
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
+
+@N: MF284 |Setting synthesis effort to medium for the design
+@N: MF915 |Option synthesis_strategy=advanced is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 100MB)
+
+@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
+@N: FA350 |Clearbox flow is not supported when QUARTUS_ROOTDIR is not set
+@N: FA351 |Clearbox flow is not supported because clearbox does not exist
+@W: FA352 |Not using the Clearbox flow might affect timing correlation and Quality of Results (QoR).
+@N: MF284 |Setting synthesis effort to medium for the design
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 115MB peak: 117MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+@N: MT206 |Auto Constrain mode is enabled
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 115MB peak: 117MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 116MB peak: 117MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 116MB peak: 117MB)
+
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[0] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[0] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[1] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[1] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[2] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[2] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[3] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[3] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[4] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[4] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[5] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[5] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[6] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[6] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[7] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[7] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[8] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[8] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[9] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[9] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[10] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[10] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[11] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[11] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[12] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[12] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[13] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[13] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[14] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[14] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[15] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[15] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[16] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[16] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[17] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[17] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[18] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[18] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[19] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[19] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[20] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[20] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[21] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[21] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[22] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[22] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[23] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[23] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[24] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[24] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[25] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[25] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[26] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[26] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[27] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[27] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[28] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[28] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[29] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[29] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[30] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[30] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[31] (in view: work.fifo_32s_1024s_11s_2(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[31] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[0] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[0] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[1] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[1] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[2] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[2] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[3] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[3] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[4] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[4] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[5] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[5] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[6] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[6] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[7] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[7] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[8] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[8] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[9] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[9] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[10] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[10] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[11] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[11] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[12] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[12] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[13] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[13] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[14] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[14] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[15] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[15] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[16] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[16] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[17] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[17] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[18] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[18] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[19] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[19] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[20] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[20] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[21] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[21] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[22] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[22] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[23] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[23] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[24] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[24] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[25] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[25] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[26] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[26] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[27] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[27] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[28] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[28] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[29] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[29] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[30] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[30] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[31] (in view: work.fifo_32s_1024s_11s_1(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[31] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[0] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[0] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[1] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[1] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[2] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[2] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[3] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[3] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[4] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[4] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[5] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[5] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[6] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[6] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[7] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[7] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[8] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[8] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[9] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[9] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[10] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[10] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[11] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[11] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[12] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[12] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[13] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[13] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[14] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[14] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[15] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[15] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[16] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[16] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[17] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[17] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[18] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[18] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[19] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[19] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[20] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[20] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[21] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[21] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[22] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[22] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[23] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[23] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[24] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[24] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[25] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[25] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[26] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[26] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[27] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[27] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[28] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[28] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[29] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[29] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[30] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[30] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@N: BN362 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Removing sequential instance dout[31] (in view: work.fifo_32s_1024s_11s_0(verilog)) of type view:PrimLib.dff(prim) because it does not drive other instances.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[31] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@W: FX107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|RAM fifo_buf[31:0] (in view: work.fifo_32s_1024s_11s_0(verilog)) does not have a read/write conflict check. Possible simulation mismatch. To resolve a read/write conflict, either set syn_ramstyle = rw_check, or enable the "Read Write Check on RAM" Implementation Option. For more information, search for "read/write conflict check" in Online Help.
+@W: FX107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|RAM fifo_buf[31:0] (in view: work.fifo_32s_1024s_11s_1(verilog)) does not have a read/write conflict check. Possible simulation mismatch. To resolve a read/write conflict, either set syn_ramstyle = rw_check, or enable the "Read Write Check on RAM" Implementation Option. For more information, search for "read/write conflict check" in Online Help.
+@W: FX107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|RAM fifo_buf[31:0] (in view: work.fifo_32s_1024s_11s_2(verilog)) does not have a read/write conflict check. Possible simulation mismatch. To resolve a read/write conflict, either set syn_ramstyle = rw_check, or enable the "Read Write Check on RAM" Implementation Option. For more information, search for "read/write conflict check" in Online Help.
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[31:0] (in view: work.fifo_32s_1024s_11s_0(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[31:0] (in view: work.fifo_32s_1024s_11s_1(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+@A: BN291 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":49:4:49:12|Boundary register dout[31:0] (in view: work.fifo_32s_1024s_11s_2(verilog)) is packed into a complex cell. To disable register packing, set syn_keep=1 on the net between the register and the complex cell. 
+
+Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 116MB peak: 118MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 116MB peak: 118MB)
+
+
+Starting gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 118MB peak: 120MB)
+
+
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 118MB peak: 120MB)
+
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 121MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 122MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 122MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 122MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 122MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 122MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 121MB peak: 122MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 136MB peak: 143MB)
+
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 143MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 143MB)
+
+
+
+@S |Clock Optimization Summary
+
+
+#### START OF CLOCK OPTIMIZATION REPORT #####[
+
+1 non-gated/non-generated clock tree(s) driving 81 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+================================= Non-Gated/Non-Generated Clocks =================================
+Clock Tree ID     Driving Element     Drive Element Type     Fanout     Sample Instance           
+--------------------------------------------------------------------------------------------------
+@K:CKID0001       clock_in            cyclonev_io_ibuf       81         genblk1\[2\]\.u_fifo.empty
+==================================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######]
+
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 125MB peak: 143MB)
+
+Writing Analyst data base /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/streamer_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 135MB peak: 143MB)
+
+Writing Verilog Netlist and constraint files
+Writing .vqm output for Quartus
+
+Writing scf file... (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 143MB)
+
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+Writing FDC file /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/streamer_synplify.fdc
+
+Finished Writing Verilog Netlist and constraint files (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 135MB peak: 143MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 136MB peak: 143MB)
+
+@W: MT420 |Found inferred clock fifo_array|clock with period 3.19ns. Please declare a user-defined clock on port clock.
+
+
+##### START OF TIMING REPORT #####[
+# Timing Report written on Fri May 19 09:51:50 2023
+#
+
+
+Top view:               fifo_array
+Requested Frequency:    313.1 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
+
+
+
+Performance Summary
+*******************
+
+
+Worst slack in design: -0.304
+
+                     Requested     Estimated     Requested     Estimated                Clock        Clock                
+Starting Clock       Frequency     Frequency     Period        Period        Slack      Type         Group                
+--------------------------------------------------------------------------------------------------------------------------
+fifo_array|clock     313.1 MHz     285.9 MHz     3.193         3.498         -0.304     inferred     Autoconstr_clkgroup_0
+==========================================================================================================================
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks                              |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+---------------------------------------------------------------------------------------------------------------------------
+Starting          Ending            |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+---------------------------------------------------------------------------------------------------------------------------
+fifo_array|clock  fifo_array|clock  |  3.193       -0.304  |  No paths    -      |  No paths    -      |  No paths    -    
+===========================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: fifo_array|clock
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+                                     Starting                                                Arrival           
+Instance                             Reference            Type       Pin     Net             Time        Slack 
+                                     Clock                                                                     
+---------------------------------------------------------------------------------------------------------------
+genblk1\[1\]\.u_fifo.wr_addr[4]      fifo_array|clock     dffeas     q       wr_addr[4]      0.825       -0.304
+genblk1\[1\]\.u_fifo.rd_addr[5]      fifo_array|clock     dffeas     q       rd_addr[5]      0.825       -0.292
+genblk1\[2\]\.u_fifo.wr_addr[10]     fifo_array|clock     dffeas     q       wr_addr[10]     0.825       -0.292
+genblk1\[1\]\.u_fifo.rd_addr[4]      fifo_array|clock     dffeas     q       rd_addr[4]      0.825       -0.281
+genblk1\[2\]\.u_fifo.rd_addr[10]     fifo_array|clock     dffeas     q       rd_addr[10]     0.825       -0.281
+genblk1\[0\]\.u_fifo.rd_addr[0]      fifo_array|clock     dffeas     q       rd_addr[0]      0.825       -0.274
+genblk1\[1\]\.u_fifo.rd_addr[0]      fifo_array|clock     dffeas     q       rd_addr[0]      0.825       -0.274
+genblk1\[2\]\.u_fifo.rd_addr[0]      fifo_array|clock     dffeas     q       rd_addr[0]      0.825       -0.274
+genblk1\[0\]\.u_fifo.rd_addr[8]      fifo_array|clock     dffeas     q       rd_addr[8]      0.825       -0.266
+genblk1\[1\]\.u_fifo.rd_addr[8]      fifo_array|clock     dffeas     q       rd_addr[8]      0.825       -0.266
+===============================================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+                                                         Starting                                                                      Required           
+Instance                                                 Reference            Type                   Pin              Net              Time         Slack 
+                                                         Clock                                                                                            
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_8[9:0]        fifo_array|clock     cyclonev_ram_block     portbaddr[9]     portbaddr[9]     3.224        -0.304
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_9[19:10]      fifo_array|clock     cyclonev_ram_block     portbaddr[9]     portbaddr[9]     3.224        -0.304
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_10[29:20]     fifo_array|clock     cyclonev_ram_block     portbaddr[9]     portbaddr[9]     3.224        -0.304
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_11[31:30]     fifo_array|clock     cyclonev_ram_block     portbaddr[9]     portbaddr[9]     3.224        -0.304
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_8[9:0]        fifo_array|clock     cyclonev_ram_block     portbaddr[8]     portbaddr[8]     3.224        -0.294
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_9[19:10]      fifo_array|clock     cyclonev_ram_block     portbaddr[8]     portbaddr[8]     3.224        -0.294
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_10[29:20]     fifo_array|clock     cyclonev_ram_block     portbaddr[8]     portbaddr[8]     3.224        -0.294
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_11[31:30]     fifo_array|clock     cyclonev_ram_block     portbaddr[8]     portbaddr[8]     3.224        -0.294
+genblk1\[2\]\.u_fifo.fifo_buf.I_1.fifo_buf_8[9:0]        fifo_array|clock     cyclonev_ram_block     portbaddr[9]     portbaddr[9]     3.224        -0.292
+genblk1\[2\]\.u_fifo.fifo_buf.I_1.fifo_buf_9[19:10]      fifo_array|clock     cyclonev_ram_block     portbaddr[9]     portbaddr[9]     3.224        -0.292
+==========================================================================================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      3.193
+    - Setup time:                            0.542
+    + Intrinsic clock delay:                 0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         3.224
+
+    - Propagation time:                      2.762
+    - Intrinsic clock delay:                 0.766
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -0.304
+
+    Number of logic level(s):                12
+    Starting point:                          genblk1\[1\]\.u_fifo.wr_addr[4] / q
+    Ending point:                            genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_8[9:0] / portbaddr[9]
+    The start point is clocked by            fifo_array|clock [rising] on pin clk
+    The end   point is clocked by            fifo_array|clock [rising] on pin clk0
+
+Instance / Net                                                                Pin              Pin               Arrival     No. of    
+Name                                                  Type                    Name             Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------------------------------------------------
+genblk1\[1\]\.u_fifo.wr_addr[4]                       dffeas                  q                Out     0.058     0.825       -         
+wr_addr[4]                                            Net                     -                -       0.434     -           8         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]               cyclonev_lcell_comb     datae            In      -         1.259       -         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]               cyclonev_lcell_comb     combout          Out     0.195     1.454       -         
+g0_1                                                  Net                     -                -       0.260     -           1         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]             cyclonev_lcell_comb     dataf            In      -         1.714       -         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]             cyclonev_lcell_comb     combout          Out     0.081     1.795       -         
+empty_t_NE_7                                          Net                     -                -       0.319     -           2         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0           cyclonev_lcell_comb     datab            In      -         2.113       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0           cyclonev_lcell_comb     cout             Out     0.628     2.742       -         
+un10_rd_addr_t_carry_0                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1           cyclonev_lcell_comb     cin              In      -         2.742       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1           cyclonev_lcell_comb     cout             Out     0.011     2.752       -         
+un10_rd_addr_t_carry_1                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2           cyclonev_lcell_comb     cin              In      -         2.752       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2           cyclonev_lcell_comb     cout             Out     0.011     2.763       -         
+un10_rd_addr_t_carry_2                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3           cyclonev_lcell_comb     cin              In      -         2.763       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3           cyclonev_lcell_comb     cout             Out     0.011     2.773       -         
+un10_rd_addr_t_carry_3                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4           cyclonev_lcell_comb     cin              In      -         2.773       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4           cyclonev_lcell_comb     cout             Out     0.011     2.784       -         
+un10_rd_addr_t_carry_4                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5           cyclonev_lcell_comb     cin              In      -         2.784       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5           cyclonev_lcell_comb     cout             Out     0.011     2.794       -         
+un10_rd_addr_t_carry_5                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6           cyclonev_lcell_comb     cin              In      -         2.794       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6           cyclonev_lcell_comb     cout             Out     0.011     2.805       -         
+un10_rd_addr_t_carry_6                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7           cyclonev_lcell_comb     cin              In      -         2.805       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7           cyclonev_lcell_comb     cout             Out     0.011     2.815       -         
+un10_rd_addr_t_carry_7                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8           cyclonev_lcell_comb     cin              In      -         2.815       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8           cyclonev_lcell_comb     cout             Out     0.011     2.826       -         
+un10_rd_addr_t_carry_8                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_9           cyclonev_lcell_comb     cin              In      -         2.826       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_9           cyclonev_lcell_comb     sumout           Out     0.321     3.147       -         
+portbaddr[9]                                          Net                     -                -       0.382     -           5         
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_8[9:0]     cyclonev_ram_block      portbaddr[9]     In      -         3.529       -         
+=======================================================================================================================================
+Total path delay (propagation time + ICD at startpoint + setup - ICD at endpoint) of 3.498 is 2.103(60.1%) logic and 1.394(39.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+*Arrival time includes intrinsic clock delay at start point and clock delay at startpoint
+
+
+Path information for path number 2: 
+      Requested Period:                      3.193
+    - Setup time:                            0.542
+    + Intrinsic clock delay:                 0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         3.224
+
+    - Propagation time:                      2.762
+    - Intrinsic clock delay:                 0.766
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -0.304
+
+    Number of logic level(s):                12
+    Starting point:                          genblk1\[1\]\.u_fifo.wr_addr[4] / q
+    Ending point:                            genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_9[19:10] / portbaddr[9]
+    The start point is clocked by            fifo_array|clock [rising] on pin clk
+    The end   point is clocked by            fifo_array|clock [rising] on pin clk0
+
+Instance / Net                                                                  Pin              Pin               Arrival     No. of    
+Name                                                    Type                    Name             Dir     Delay     Time        Fan Out(s)
+-----------------------------------------------------------------------------------------------------------------------------------------
+genblk1\[1\]\.u_fifo.wr_addr[4]                         dffeas                  q                Out     0.058     0.825       -         
+wr_addr[4]                                              Net                     -                -       0.434     -           8         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]                 cyclonev_lcell_comb     datae            In      -         1.259       -         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]                 cyclonev_lcell_comb     combout          Out     0.195     1.454       -         
+g0_1                                                    Net                     -                -       0.260     -           1         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]               cyclonev_lcell_comb     dataf            In      -         1.714       -         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]               cyclonev_lcell_comb     combout          Out     0.081     1.795       -         
+empty_t_NE_7                                            Net                     -                -       0.319     -           2         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0             cyclonev_lcell_comb     datab            In      -         2.113       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0             cyclonev_lcell_comb     cout             Out     0.628     2.742       -         
+un10_rd_addr_t_carry_0                                  Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1             cyclonev_lcell_comb     cin              In      -         2.742       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1             cyclonev_lcell_comb     cout             Out     0.011     2.752       -         
+un10_rd_addr_t_carry_1                                  Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2             cyclonev_lcell_comb     cin              In      -         2.752       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2             cyclonev_lcell_comb     cout             Out     0.011     2.763       -         
+un10_rd_addr_t_carry_2                                  Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3             cyclonev_lcell_comb     cin              In      -         2.763       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3             cyclonev_lcell_comb     cout             Out     0.011     2.773       -         
+un10_rd_addr_t_carry_3                                  Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4             cyclonev_lcell_comb     cin              In      -         2.773       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4             cyclonev_lcell_comb     cout             Out     0.011     2.784       -         
+un10_rd_addr_t_carry_4                                  Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5             cyclonev_lcell_comb     cin              In      -         2.784       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5             cyclonev_lcell_comb     cout             Out     0.011     2.794       -         
+un10_rd_addr_t_carry_5                                  Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6             cyclonev_lcell_comb     cin              In      -         2.794       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6             cyclonev_lcell_comb     cout             Out     0.011     2.805       -         
+un10_rd_addr_t_carry_6                                  Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7             cyclonev_lcell_comb     cin              In      -         2.805       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7             cyclonev_lcell_comb     cout             Out     0.011     2.815       -         
+un10_rd_addr_t_carry_7                                  Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8             cyclonev_lcell_comb     cin              In      -         2.815       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8             cyclonev_lcell_comb     cout             Out     0.011     2.826       -         
+un10_rd_addr_t_carry_8                                  Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_9             cyclonev_lcell_comb     cin              In      -         2.826       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_9             cyclonev_lcell_comb     sumout           Out     0.321     3.147       -         
+portbaddr[9]                                            Net                     -                -       0.382     -           5         
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_9[19:10]     cyclonev_ram_block      portbaddr[9]     In      -         3.529       -         
+=========================================================================================================================================
+Total path delay (propagation time + ICD at startpoint + setup - ICD at endpoint) of 3.498 is 2.103(60.1%) logic and 1.394(39.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+*Arrival time includes intrinsic clock delay at start point and clock delay at startpoint
+
+
+Path information for path number 3: 
+      Requested Period:                      3.193
+    - Setup time:                            0.542
+    + Intrinsic clock delay:                 0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         3.224
+
+    - Propagation time:                      2.762
+    - Intrinsic clock delay:                 0.766
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -0.304
+
+    Number of logic level(s):                12
+    Starting point:                          genblk1\[1\]\.u_fifo.wr_addr[4] / q
+    Ending point:                            genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_10[29:20] / portbaddr[9]
+    The start point is clocked by            fifo_array|clock [rising] on pin clk
+    The end   point is clocked by            fifo_array|clock [rising] on pin clk0
+
+Instance / Net                                                                   Pin              Pin               Arrival     No. of    
+Name                                                     Type                    Name             Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------------------------------------------------
+genblk1\[1\]\.u_fifo.wr_addr[4]                          dffeas                  q                Out     0.058     0.825       -         
+wr_addr[4]                                               Net                     -                -       0.434     -           8         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]                  cyclonev_lcell_comb     datae            In      -         1.259       -         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]                  cyclonev_lcell_comb     combout          Out     0.195     1.454       -         
+g0_1                                                     Net                     -                -       0.260     -           1         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]                cyclonev_lcell_comb     dataf            In      -         1.714       -         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]                cyclonev_lcell_comb     combout          Out     0.081     1.795       -         
+empty_t_NE_7                                             Net                     -                -       0.319     -           2         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0              cyclonev_lcell_comb     datab            In      -         2.113       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0              cyclonev_lcell_comb     cout             Out     0.628     2.742       -         
+un10_rd_addr_t_carry_0                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1              cyclonev_lcell_comb     cin              In      -         2.742       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1              cyclonev_lcell_comb     cout             Out     0.011     2.752       -         
+un10_rd_addr_t_carry_1                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2              cyclonev_lcell_comb     cin              In      -         2.752       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2              cyclonev_lcell_comb     cout             Out     0.011     2.763       -         
+un10_rd_addr_t_carry_2                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3              cyclonev_lcell_comb     cin              In      -         2.763       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3              cyclonev_lcell_comb     cout             Out     0.011     2.773       -         
+un10_rd_addr_t_carry_3                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4              cyclonev_lcell_comb     cin              In      -         2.773       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4              cyclonev_lcell_comb     cout             Out     0.011     2.784       -         
+un10_rd_addr_t_carry_4                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5              cyclonev_lcell_comb     cin              In      -         2.784       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5              cyclonev_lcell_comb     cout             Out     0.011     2.794       -         
+un10_rd_addr_t_carry_5                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6              cyclonev_lcell_comb     cin              In      -         2.794       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6              cyclonev_lcell_comb     cout             Out     0.011     2.805       -         
+un10_rd_addr_t_carry_6                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7              cyclonev_lcell_comb     cin              In      -         2.805       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7              cyclonev_lcell_comb     cout             Out     0.011     2.815       -         
+un10_rd_addr_t_carry_7                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8              cyclonev_lcell_comb     cin              In      -         2.815       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8              cyclonev_lcell_comb     cout             Out     0.011     2.826       -         
+un10_rd_addr_t_carry_8                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_9              cyclonev_lcell_comb     cin              In      -         2.826       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_9              cyclonev_lcell_comb     sumout           Out     0.321     3.147       -         
+portbaddr[9]                                             Net                     -                -       0.382     -           5         
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_10[29:20]     cyclonev_ram_block      portbaddr[9]     In      -         3.529       -         
+==========================================================================================================================================
+Total path delay (propagation time + ICD at startpoint + setup - ICD at endpoint) of 3.498 is 2.103(60.1%) logic and 1.394(39.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+*Arrival time includes intrinsic clock delay at start point and clock delay at startpoint
+
+
+Path information for path number 4: 
+      Requested Period:                      3.193
+    - Setup time:                            0.542
+    + Intrinsic clock delay:                 0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         3.224
+
+    - Propagation time:                      2.762
+    - Intrinsic clock delay:                 0.766
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -0.304
+
+    Number of logic level(s):                12
+    Starting point:                          genblk1\[1\]\.u_fifo.wr_addr[4] / q
+    Ending point:                            genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_11[31:30] / portbaddr[9]
+    The start point is clocked by            fifo_array|clock [rising] on pin clk
+    The end   point is clocked by            fifo_array|clock [rising] on pin clk0
+
+Instance / Net                                                                   Pin              Pin               Arrival     No. of    
+Name                                                     Type                    Name             Dir     Delay     Time        Fan Out(s)
+------------------------------------------------------------------------------------------------------------------------------------------
+genblk1\[1\]\.u_fifo.wr_addr[4]                          dffeas                  q                Out     0.058     0.825       -         
+wr_addr[4]                                               Net                     -                -       0.434     -           8         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]                  cyclonev_lcell_comb     datae            In      -         1.259       -         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]                  cyclonev_lcell_comb     combout          Out     0.195     1.454       -         
+g0_1                                                     Net                     -                -       0.260     -           1         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]                cyclonev_lcell_comb     dataf            In      -         1.714       -         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]                cyclonev_lcell_comb     combout          Out     0.081     1.795       -         
+empty_t_NE_7                                             Net                     -                -       0.319     -           2         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0              cyclonev_lcell_comb     datab            In      -         2.113       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0              cyclonev_lcell_comb     cout             Out     0.628     2.742       -         
+un10_rd_addr_t_carry_0                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1              cyclonev_lcell_comb     cin              In      -         2.742       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1              cyclonev_lcell_comb     cout             Out     0.011     2.752       -         
+un10_rd_addr_t_carry_1                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2              cyclonev_lcell_comb     cin              In      -         2.752       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2              cyclonev_lcell_comb     cout             Out     0.011     2.763       -         
+un10_rd_addr_t_carry_2                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3              cyclonev_lcell_comb     cin              In      -         2.763       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3              cyclonev_lcell_comb     cout             Out     0.011     2.773       -         
+un10_rd_addr_t_carry_3                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4              cyclonev_lcell_comb     cin              In      -         2.773       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4              cyclonev_lcell_comb     cout             Out     0.011     2.784       -         
+un10_rd_addr_t_carry_4                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5              cyclonev_lcell_comb     cin              In      -         2.784       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5              cyclonev_lcell_comb     cout             Out     0.011     2.794       -         
+un10_rd_addr_t_carry_5                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6              cyclonev_lcell_comb     cin              In      -         2.794       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6              cyclonev_lcell_comb     cout             Out     0.011     2.805       -         
+un10_rd_addr_t_carry_6                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7              cyclonev_lcell_comb     cin              In      -         2.805       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7              cyclonev_lcell_comb     cout             Out     0.011     2.815       -         
+un10_rd_addr_t_carry_7                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8              cyclonev_lcell_comb     cin              In      -         2.815       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8              cyclonev_lcell_comb     cout             Out     0.011     2.826       -         
+un10_rd_addr_t_carry_8                                   Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_9              cyclonev_lcell_comb     cin              In      -         2.826       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_9              cyclonev_lcell_comb     sumout           Out     0.321     3.147       -         
+portbaddr[9]                                             Net                     -                -       0.382     -           5         
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_11[31:30]     cyclonev_ram_block      portbaddr[9]     In      -         3.529       -         
+==========================================================================================================================================
+Total path delay (propagation time + ICD at startpoint + setup - ICD at endpoint) of 3.498 is 2.103(60.1%) logic and 1.394(39.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+*Arrival time includes intrinsic clock delay at start point and clock delay at startpoint
+
+
+Path information for path number 5: 
+      Requested Period:                      3.193
+    - Setup time:                            0.542
+    + Intrinsic clock delay:                 0.573
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         3.224
+
+    - Propagation time:                      2.752
+    - Intrinsic clock delay:                 0.766
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (non-critical) :                 -0.294
+
+    Number of logic level(s):                11
+    Starting point:                          genblk1\[1\]\.u_fifo.wr_addr[4] / q
+    Ending point:                            genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_8[9:0] / portbaddr[8]
+    The start point is clocked by            fifo_array|clock [rising] on pin clk
+    The end   point is clocked by            fifo_array|clock [rising] on pin clk0
+
+Instance / Net                                                                Pin              Pin               Arrival     No. of    
+Name                                                  Type                    Name             Dir     Delay     Time        Fan Out(s)
+---------------------------------------------------------------------------------------------------------------------------------------
+genblk1\[1\]\.u_fifo.wr_addr[4]                       dffeas                  q                Out     0.058     0.825       -         
+wr_addr[4]                                            Net                     -                -       0.434     -           8         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]               cyclonev_lcell_comb     datae            In      -         1.259       -         
+genblk1\[1\]\.u_fifo.rd_addr_RNISCHK[4]               cyclonev_lcell_comb     combout          Out     0.195     1.454       -         
+g0_1                                                  Net                     -                -       0.260     -           1         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]             cyclonev_lcell_comb     dataf            In      -         1.714       -         
+genblk1\[1\]\.u_fifo.wr_addr_RNICTEH1[10]             cyclonev_lcell_comb     combout          Out     0.081     1.795       -         
+empty_t_NE_7                                          Net                     -                -       0.319     -           2         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0           cyclonev_lcell_comb     datab            In      -         2.113       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_0           cyclonev_lcell_comb     cout             Out     0.628     2.742       -         
+un10_rd_addr_t_carry_0                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1           cyclonev_lcell_comb     cin              In      -         2.742       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_1           cyclonev_lcell_comb     cout             Out     0.011     2.752       -         
+un10_rd_addr_t_carry_1                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2           cyclonev_lcell_comb     cin              In      -         2.752       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_2           cyclonev_lcell_comb     cout             Out     0.011     2.763       -         
+un10_rd_addr_t_carry_2                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3           cyclonev_lcell_comb     cin              In      -         2.763       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_3           cyclonev_lcell_comb     cout             Out     0.011     2.773       -         
+un10_rd_addr_t_carry_3                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4           cyclonev_lcell_comb     cin              In      -         2.773       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_4           cyclonev_lcell_comb     cout             Out     0.011     2.784       -         
+un10_rd_addr_t_carry_4                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5           cyclonev_lcell_comb     cin              In      -         2.784       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_5           cyclonev_lcell_comb     cout             Out     0.011     2.794       -         
+un10_rd_addr_t_carry_5                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6           cyclonev_lcell_comb     cin              In      -         2.794       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_6           cyclonev_lcell_comb     cout             Out     0.011     2.805       -         
+un10_rd_addr_t_carry_6                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7           cyclonev_lcell_comb     cin              In      -         2.805       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_7           cyclonev_lcell_comb     cout             Out     0.011     2.815       -         
+un10_rd_addr_t_carry_7                                Net                     -                -       0.000     -           1         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8           cyclonev_lcell_comb     cin              In      -         2.815       -         
+genblk1\[1\]\.u_fifo.un10_rd_addr_t_carry_8           cyclonev_lcell_comb     sumout           Out     0.321     3.136       -         
+portbaddr[8]                                          Net                     -                -       0.382     -           5         
+genblk1\[1\]\.u_fifo.fifo_buf.I_1.fifo_buf_8[9:0]     cyclonev_ram_block      portbaddr[8]     In      -         3.518       -         
+=======================================================================================================================================
+Total path delay (propagation time + ICD at startpoint + setup - ICD at endpoint) of 3.487 is 2.093(60.0%) logic and 1.394(40.0%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+*Arrival time includes intrinsic clock delay at start point and clock delay at startpoint
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+None
+
+Finished final timing analysis (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 143MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 137MB peak: 143MB)
+
+##### START OF AREA REPORT #####[
+Design view:work.fifo_array(verilog)
+Selecting part 5CGXFC7C6F23C6
+@N: FA174 |The following device usage report estimates place and route data. Please look at the place and route report for final resource usage.
+
+Total combinational functions 152 of 112960 ( 0%)
+ALUT usage by number of inputs
+		  7 input functions 	 0
+		  6 input functions 	 13
+		  5 input functions 	 12
+		  4 input functions 	 26
+		  <=3 input functions 	 101
+ALUTs by mode
+		  normal mode            53
+		  extended LUT mode      0
+		  arithmetic mode        99
+		  shared arithmetic mode 0
+Total registers 69 of 225920 ( 0%)
+Total Estimated Packed ALMs 86 of 56480 ( 0%)
+I/O pins 198 of 522 (38%), total I/O based on largest package of this part.
+
+Number of I/O registers
+			Input DDRs    :0
+			Output DDRs   :0
+
+DSP Blocks:     0 
+ShiftTap:       0  (0 registers)
+Ena:             0
+Sload:           0
+Sclr:            0
+M10Ks:           12  (1% of 686)
+Memory ALUTs:   0  (0% of 28240)
+Total ESB:      98304 bits 
+
+##### END OF AREA REPORT #####]
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:02s; CPU Time elapsed 0h:00m:01s; Memory used current: 26MB peak: 143MB)
+
+Process took 0h:00m:02s realtime, 0h:00m:01s cputime
+# Fri May 19 09:51:50 2023
+
+###########################################################]

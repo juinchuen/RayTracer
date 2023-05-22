@@ -1,0 +1,8 @@
+/vol/synopsys/fpga/O-2018.09-SP1/bin/syn_nfilter  -link  -top  ray_tracer_top  -multisrs  /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/streamer_comp.srs  -osyn  /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/streamer_mult.srs  -log  /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synlog/streamer_multi_srs_gen.srr 
+relcom:/vol/synopsys/fpga/O-2018.09-SP1/bin/syn_nfilter -link -top ray_tracer_top -multisrs ../synwork/streamer_comp.srs -osyn ../synwork/streamer_mult.srs -log ../synlog/streamer_multi_srs_gen.srr
+rc:0 success:1 runtime:0
+file:../synwork/streamer_comp.srs|io:i|time:1684508187|size:9555|exec:0|csum:094D3F52D424671493694DCA814E5F77
+file:../synwork/streamer_mult.srs|io:o|time:1684508189|size:4386|exec:0|csum:
+file:../synlog/streamer_multi_srs_gen.srr|io:o|time:1684508189|size:1176|exec:0|csum:
+file:/vol/synopsys/fpga/O-2018.09-SP1/linux_a_64/syn_nfilter|io:i|time:1543382463|size:12202632|exec:1|csum:2CF5CA82A12C53A85C3E36D57C2461DC
+file:/vol/synopsys/fpga/O-2018.09-SP1/bin/syn_nfilter|io:i|time:1543382354|size:368|exec:1|csum:004E4455B64BA10AD6A92FB2301610E0

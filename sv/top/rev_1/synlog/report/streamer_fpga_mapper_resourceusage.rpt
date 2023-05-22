@@ -1,0 +1,32 @@
+##### START OF AREA REPORT #####[
+Design view:work.ray_tracer_top(verilog)
+Selecting part 5CGXFC7C6F23C6
+
+Total combinational functions 76 of 112960 ( 0%)
+ALUT usage by number of inputs
+		  7 input functions 	 0
+		  6 input functions 	 12
+		  5 input functions 	 12
+		  4 input functions 	 22
+		  <=3 input functions 	 30
+ALUTs by mode
+		  normal mode            54
+		  extended LUT mode      0
+		  arithmetic mode        22
+		  shared arithmetic mode 0
+Total registers 36 of 225920 ( 0%)
+Total Estimated Packed ALMs 46 of 56480 ( 0%)
+I/O pins 772 of 522 (148%), total I/O based on largest package of this part.
+
+Number of I/O registers
+			Input DDRs    :0
+			Output DDRs   :0
+
+DSP Blocks:     0 
+ShiftTap:       0  (0 registers)
+M10Ks:           20  (2% of 686)
+Memory ALUTs:   0  (0% of 28240)
+Total ESB:      63744 bits 
+
+##### END OF AREA REPORT #####]
+

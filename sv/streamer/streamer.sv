@@ -92,7 +92,7 @@ always @ (posedge clock or posedge reset) begin
                         if (!out_full) begin
 
                             out_wr_en   <= 1;
-                            state       <= (mem_addr == TRI_MAX) ? 'h0 : 'h2;
+                            state       <= (mem_addr == (TRI_MAX + 1)) ? 'h0 : 'h2;
 
                         end
 

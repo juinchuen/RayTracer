@@ -1,0 +1,13 @@
+@P:  Part : 5cgxfc7c6fc23-6
+@P:  Worst Slack : -0.266
+@P:  ray_tracer_top|clock - Estimated Frequency : 308.0 MHz
+@P:  ray_tracer_top|clock - Requested Frequency : 335.5 MHz
+@P:  ray_tracer_top|clock - Estimated Period : 3.247
+@P:  ray_tracer_top|clock - Requested Period : 2.980
+@P:  ray_tracer_top|clock - Slack : -0.266
+@P: ray_tracer_top Part : 5cgxfc7c6fc23-6
+@P: ray_tracer_top I/O ATOMs : 195
+@P: ray_tracer_top Total LUTs : 76 
+@P: ray_tracer_top Register bits : 36
+@P: ray_tracer_top Packed ALMs : 46
+@P:  CPU Time : 0h:00m:06s
