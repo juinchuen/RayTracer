@@ -6,48 +6,57 @@ module hit_bool #(
     //
     input logic clock,
     input logic reset,
+
     // p_hit module output, normal coordinates
     input logic signed [D_BITS-1:0] p_hit [2:0],
     input logic signed [D_BITS-1:0] normal [2:0],
+
     // Vector inputs (these are fed into the respective FIFOs)
     input logic signed [D_BITS-1:0] v0 [2:0],
     input logic signed [D_BITS-1:0] v1 [2:0],
     input logic signed [D_BITS-1:0] v2 [2:0],
-    // Internal FIFO signals
-    input logic v0_in_wr_en, 
-    output logic v0_in_full,
-    input logic v1_in_wr_en,
-    output logic v1_in_full,
-    input logic v2_in_wr_en,
-    output logic v2_in_full,
-    input logic fifo_out_rd_en,
-    input logic normal_in_wr_en,
-    output logic normal_in_full,
+
     // Pass through data
     input logic [M_BITS-1:0] tri_id_fifo_din,
     input logic [M_BITS-1:0] ray_id_fifo_din,
+
     output logic [M_BITS-1:0] tri_id_fifo_dout,
     output logic [M_BITS-1:0] ray_id_fifo_dout,
+    output logic fifo_out_dout,
+    output logic signed [D_BITS-1:0] p_hit_fifo_out_dout [2:0],
+
+    // Internal FIFO signals
+    input logic v0_in_wr_en, 
+    input logic v1_in_wr_en,
+    input logic v2_in_wr_en,
+    input logic normal_in_wr_en,
     input logic tri_id_fifo_wr_en,
     input logic ray_id_fifo_wr_en,
-    input logic tri_id_fifo_rd_en,
-    input logic ray_id_fifo_rd_en,
+
+    output logic v0_in_full,
+    output logic v1_in_full,
+    output logic v2_in_full,
+    output logic normal_in_full,
     output logic tri_id_fifo_full,
     output logic ray_id_fifo_full,
+
+    input logic fifo_out_rd_en, //hit_bool output fifo
+    input logic tri_id_fifo_rd_en,
+    input logic ray_id_fifo_rd_en,
+    input logic p_hit_fifo_out_rd_en,
+    
+    output logic p_hit_in_rd_en,
+
+    input logic p_hit_in_empty,
+
     output logic tri_id_fifo_empty,
     output logic ray_id_fifo_empty,
-    
-    // Signals to p_hit module
-    input logic p_hit_in_empty,
-    output logic p_hit_in_rd_en,
-    // hit_bool output fifo
-    output logic fifo_out_dout,   
     output logic fifo_out_empty,
-    // p_hit output FIFO
-    output logic signed [D_BITS-1:0] p_hit_fifo_out_dout [2:0],
-    output logic p_hit_fifo_out_empty,
-    input logic p_hit_fifo_out_rd_en
+    output logic p_hit_fifo_out_empty   
+    
 ); 
+
+
 
 // Intermediary signals
 // Vector subtraction outputs

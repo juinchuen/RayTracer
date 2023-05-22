@@ -13,21 +13,21 @@
 # //
 # do top.do
 # -9
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim SE-64 vmap 2020.1 Lib Mapping Utility 2020.01 Jan 28 2020
 # vmap work work 
-# Copying /vol/mentor/modelsim-2020.1/modeltech/linux_x86_64/../modelsim.ini to modelsim.ini
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 12:42:24 on May 22,2023
+# Start time: 12:46:58 on May 22,2023
 # vlog -reportprogress 300 -work work ../sramb.sv 
 # -- Compiling module sramb
 # 
 # Top level modules:
 # 	sramb
-# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:01
+# End time: 12:46:59 on May 22,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 12:42:25 on May 22,2023
+# Start time: 12:46:59 on May 22,2023
 # vlog -reportprogress 300 -work work ../streamer/streamer.sv 
 # -- Compiling module streamer
 # ** Warning: ../streamer/streamer.sv(11): (vlog-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -35,10 +35,10 @@
 # 
 # Top level modules:
 # 	streamer
-# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:00
+# End time: 12:46:59 on May 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 12:42:25 on May 22,2023
+# Start time: 12:46:59 on May 22,2023
 # vlog -reportprogress 300 -work work ../fifo.sv 
 # -- Compiling module fifo
 # -- Compiling module fifo_array
@@ -46,37 +46,30 @@
 # 
 # Top level modules:
 # 	fifo_array
-# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:00
+# End time: 12:46:59 on May 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 12:42:25 on May 22,2023
+# Start time: 12:46:59 on May 22,2023
 # vlog -reportprogress 300 -work work top.sv 
 # -- Compiling module ray_tracer_top
 # ** Warning: top.sv(12): (vlog-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	ray_tracer_top
-# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:00
+# End time: 12:46:59 on May 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 12:42:25 on May 22,2023
+# Start time: 12:46:59 on May 22,2023
 # vlog -reportprogress 300 -work work top_tb.sv 
 # -- Compiling module top_tb
 # 
 # Top level modules:
 # 	top_tb
-# End time: 12:42:25 on May 22,2023, Elapsed time: 0:00:00
+# End time: 12:46:59 on May 22,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vsim -classdebug -voptargs="+acc" "+notimingchecks" -L work work.top_tb -wlf top_tb.wlf 
-# Start time: 12:42:25 on May 22,2023
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: top.sv(12): (vopt-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: top.sv(75): (vopt-2685) [TFMPC] - Too few port connections for 'STREAMER0'.  Expected 11, found 10.
-# ** Warning: top.sv(75): (vopt-2718) [TFMPC] - Missing connection for port 'triangle_ID_out'.
-# ** Warning: ../streamer/streamer.sv(11): (vopt-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../streamer/streamer.sv(19): (vopt-13314) Defaulting port 'mem_data' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Note: (vopt-143) Recognized 1 FSM in module "streamer(fast)".
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=5.
+# Start time: 12:46:59 on May 22,2023
+# ** Note: (vsim-8009) Loading existing optimized design _opt
 # Loading sv_std.std
 # Loading work.top_tb(fast)
 # Loading work.ray_tracer_top(fast)
@@ -88,3 +81,5 @@
 #    Time: 3115 ns  Iteration: 0  Instance: /top_tb
 # 1
 # Break in Module top_tb at top_tb.sv line 45
+# End time: 12:52:14 on May 22,2023, Elapsed time: 0:05:15
+# Errors: 0, Warnings: 0

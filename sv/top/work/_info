@@ -10,17 +10,18 @@ z2
 cModel Technology
 Z0 d/home/jco1147/ray_tracer/github/RayTracer/sv/top
 T_opt
-Z1 !s110 1684777345
+!s110 1684777345
 VlSUb>07PdhRIdm]co8hl`1
 04 6 4 work top_tb fast 0
 =1-a4bb6d3fef1e-646ba981-69b94-b7c6a
 o-quiet -auto_acc_if_foreign -work work -L work +acc
-Z2 tCvgOpt 0
+Z1 tCvgOpt 0
 n@_opt
 OL;O;2020.1;71
+R0
 vfifo
-Z3 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-R1
+Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z3 !s110 1684777619
 !i10b 1
 !s100 OOn0C0[^WQDWlOl0_JEgB2
 Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -31,21 +32,21 @@ R0
 Z6 w1683305992
 Z7 8../fifo.sv
 Z8 F../fifo.sv
-!i122 2
+!i122 7
 L0 1 76
 Z9 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z10 !s108 1684777345.000000
+Z10 !s108 1684777619.000000
 Z11 !s107 ../fifo.sv|
 Z12 !s90 -reportprogress|300|-work|work|../fifo.sv|
 !i113 0
 Z13 o-work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
-R2
-vfifo_array
-R3
 R1
+vfifo_array
+R2
+R3
 !i10b 1
 !s100 KzD4XRIEXz1?oe]B:Ol>A2
 R4
@@ -56,7 +57,7 @@ R0
 R6
 R7
 R8
-!i122 2
+!i122 7
 L0 78 62
 R9
 r1
@@ -67,10 +68,10 @@ R11
 R12
 !i113 0
 R13
-R2
-vray_tracer_top
-R3
 R1
+vray_tracer_top
+R2
+R3
 !i10b 1
 !s100 ?0e68BLhNB<i5zEi=^Jl23
 R4
@@ -78,10 +79,10 @@ Ila5H8Of_Cl3=0:UL@`Vk72
 R5
 S1
 R0
-w1684777308
+Z14 w1684777532
 8top.sv
 Ftop.sv
-!i122 3
+!i122 8
 L0 1 126
 R9
 r1
@@ -92,10 +93,10 @@ R10
 !s90 -reportprogress|300|-work|work|top.sv|
 !i113 0
 R13
-R2
-vsramb
-R3
 R1
+vsramb
+R2
+R3
 !i10b 1
 !s100 M<O8@gVUFi5^g?o=Wc@[:1
 R4
@@ -106,21 +107,21 @@ R0
 w1684774146
 8../sramb.sv
 F../sramb.sv
-!i122 0
+!i122 5
 L0 16 61
 R9
 r1
 !s85 0
 31
-!s108 1684777344.000000
+!s108 1684777618.000000
 !s107 ../sramb.sv|
 !s90 -reportprogress|300|-work|work|../sramb.sv|
 !i113 0
 R13
-R2
-vstreamer
-R3
 R1
+vstreamer
+R2
+R3
 !i10b 1
 !s100 n>^;0_CJS;ULm3C2<menV2
 R4
@@ -128,10 +129,10 @@ IzKYHBgQ]DN;9JeGl8^bi_3
 R5
 S1
 R0
-w1684775825
+R14
 8../streamer/streamer.sv
 F../streamer/streamer.sv
-!i122 1
+!i122 6
 L0 1 118
 R9
 r1
@@ -142,10 +143,10 @@ R10
 !s90 -reportprogress|300|-work|work|../streamer/streamer.sv|
 !i113 0
 R13
-R2
-vtop_tb
-R3
 R1
+vtop_tb
+R2
+R3
 !i10b 1
 !s100 eKMcQMko^kF7ZYPLmf7TW1
 R4
@@ -156,7 +157,7 @@ R0
 w1684774147
 8top_tb.sv
 Ftop_tb.sv
-!i122 4
+!i122 9
 L0 1 85
 R9
 r1
@@ -167,4 +168,4 @@ R10
 !s90 -reportprogress|300|-work|work|top_tb.sv|
 !i113 0
 R13
-R2
+R1
