@@ -192,7 +192,7 @@ module p_hit #(
     input logic signed [D_BITS-1:0] v2_in[2:0],
     input logic signed [D_BITS-1:0] origin[2:0],
     input logic signed [D_BITS-1:0] dir[2:0],
-    input logic signed [M_BITS-1:0] triangle_id_in[2:0],
+    input logic signed [M_BITS-1:0] triangle_id_in,
     output logic in_full,
     input logic in_wr_en,
 
@@ -200,8 +200,8 @@ module p_hit #(
     output logic signed [D_BITS-1:0] v0_out[2:0],
     output logic signed [D_BITS-1:0] v1_out[2:0],
     output logic signed [D_BITS-1:0] v2_out[2:0],
-    output logic signed [D_BITS-1:0] triangle_id_out[2:0],
-    output logic signed [M_BITS-1:0] tri_normal_out[2:0],
+    output logic signed [M_BITS-1:0] triangle_id_out,
+    output logic signed [D_BITS-1:0] tri_normal_out[2:0],
 
     input logic out_rd_en,
     output logic out_empty 
@@ -294,15 +294,15 @@ fifo_array #(
 fifo_array #(
     .FIFO_DATA_WIDTH    (M_BITS),
     .FIFO_BUFFER_SIZE   (M_BITS*32),
-    .ARRAY_SIZE         (3)
+    .ARRAY_SIZE         (1)
 ) triangle_id_fifo (
     .reset              (reset),
     .clock              (clock),
     .wr_en              (in_wr_en),
-    .din                (triangle_id_in[2:0]),
+    .din                (triangle_id_in),
     .full               (in_full_arr[7]),
     .rd_en              (out_rd_en),
-    .dout               (triangle_id_out[2:0]),
+    .dout               (triangle_id_out),
     .empty              (out_empty_arr[5])
 );
 
