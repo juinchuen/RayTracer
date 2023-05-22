@@ -1,6 +1,0 @@
-
-. Module name, ATOMS, SHARED ARITHMATIC MODE, COMB ARITHMETIC MODE, REGISTERS, SYNC RAMS, MACs
-. ray_tracer_top, 54, 0, 22, 36, 394, 0
-.	. fifo_192_300_10s, 45, 0, 10, 21, 10, 0
-.	. sramb_16s_12s_384s, 0, 0, 0, 0, 384, 0
-.	. streamer_10_32_12_11, 9, 0, 12, 15, 0, 0

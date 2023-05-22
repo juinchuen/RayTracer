@@ -1,3 +1,0 @@
-ray_tracer_top.MEM0 work sramb 0 1
-ray_tracer_top.STREAMER0 work streamer 0 1
-ray_tracer_top.INPUT_RAY_FIFO work fifo 0 1

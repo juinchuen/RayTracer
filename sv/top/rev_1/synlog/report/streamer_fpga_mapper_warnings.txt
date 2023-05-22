@@ -1,4 +1,0 @@
-@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
-@W: FA352 |Not using the Clearbox flow might affect timing correlation and Quality of Results (QoR).
-@W: FX107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|RAM INPUT_RAY_FIFO.fifo_buf[191:0] (in view: work.ray_tracer_top(verilog)) does not have a read/write conflict check. Possible simulation mismatch. To resolve a read/write conflict, either set syn_ramstyle = rw_check, or enable the "Read Write Check on RAM" Implementation Option. For more information, search for "read/write conflict check" in Online Help.
-@W: MT420 |Found inferred clock ray_tracer_top|clock with period 2.98ns. Please declare a user-defined clock on port clock.
