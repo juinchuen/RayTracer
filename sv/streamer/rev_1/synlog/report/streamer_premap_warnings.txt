@@ -1,3 +1,0 @@
-@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
-@W: FA352 |Not using the Clearbox flow might affect timing correlation and Quality of Results (QoR).
-@W: MT529 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/streamer.sv":24:0:24:5|Found inferred clock streamer|clock which controls 594 sequential elements including state[3:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 

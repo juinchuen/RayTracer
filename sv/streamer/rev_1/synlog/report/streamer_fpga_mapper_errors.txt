@@ -1,2 +1,0 @@
-@E: FA459 |I/O usage is 1170, which is much higher than part resource 522
-@E: MF871 |Unable to write netlist because of resource overflow.

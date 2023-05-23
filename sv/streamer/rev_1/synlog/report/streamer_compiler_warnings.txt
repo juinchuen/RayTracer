@@ -1,2 +1,0 @@
-@W:: Distributed compilation : All files are passed to distribution points
-
