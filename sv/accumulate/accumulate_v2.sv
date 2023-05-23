@@ -3,22 +3,22 @@ module accumulate #(
     parameter D_BITS = 'd32,
     parameter M_BITS = 'd12
 ) (
-    input logic clock,
-    input logic reset,
+    input   logic                           clock,
+    input   logic                           reset,
 
-    input logic in_empty,
-    output logic in_rd_en,
+    input   logic                           in_empty,
+    output  logic                           in_rd_en,
 
-    input logic out_full,
-    output logic out_wr_en,
+    input   logic                           out_full,
+    output  logic                           out_wr_en,
 
-    input logic hit,
-    input logic signed [D_BITS-1 : 0] p_hit [2:0],
-    input logic [M_BITS-1 : 0] triangle_ID,
+    input   logic                           hit,
+    input   logic signed    [D_BITS-1 : 0]  p_hit               [2:0],
+    input   logic           [M_BITS-1 : 0]  triangle_ID,
 
-    output logic                       hit_min,
-    output logic signed [D_BITS-1 : 0] p_hit_min [2:0],
-    output logic signed [M_BITS-1 : 0] triangle_ID_min;
+    output  logic                           hit_min,
+    output  logic signed    [D_BITS-1 : 0]  p_hit_min           [2:0],
+    output  logic           [M_BITS-1 : 0]  triangle_ID_min
 );
 
 logic           [3:0]                   state;
@@ -35,18 +35,17 @@ logic           [D_BITS-1 : 0]          d2_min;
 
 logic                                   start_up_flag;
 
+int                                     i;
+
 always @ (posedge clock or posedge reset) begin
 
     if (reset) begin
-
-        int i = 0;
 
         for (i = 0; i < 3; i++) begin
 
             read_p_hit[i]       <= 'b0;
             p_hit_squared[i]    <= 'b0;
             p_hit_min[i]        <= 'b0;
-            p_hit_min_store[i]  <= 'b0;
 
         end
 
@@ -144,6 +143,8 @@ always @ (posedge clock or posedge reset) begin
 
                             state   <= 'h4;
 
+                        end
+
                         else begin
 
                             state <= 'h0;
@@ -154,9 +155,9 @@ always @ (posedge clock or posedge reset) begin
 
             'h04 :  begin
 
-                        p_hit_squared[0]    <= read_hit[0] * read_hit[0];
-                        p_hit_squared[1]    <= read_hit[1] * read_hit[1];
-                        p_hit_squared[2]    <= read_hit[2] * read_hit[2];
+                        p_hit_squared[0]    <= read_p_hit[0] * read_p_hit[0];
+                        p_hit_squared[1]    <= read_p_hit[1] * read_p_hit[1];
+                        p_hit_squared[2]    <= read_p_hit[2] * read_p_hit[2];
 
                     end
 
@@ -191,7 +192,6 @@ always @ (posedge clock or posedge reset) begin
                             read_p_hit[i]       <= 'b0;
                             p_hit_squared[i]    <= 'b0;
                             p_hit_min[i]        <= 'b0;
-                            p_hit_min_store[i]  <= 'b0;
 
                         end
 
@@ -215,5 +215,7 @@ always @ (posedge clock or posedge reset) begin
         endcase
 
     end
+
+end
 
 endmodule

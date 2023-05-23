@@ -8,24 +8,40 @@ module top_tb ();
     logic reset;
 
     logic in_wr_en;
-    logic [D_BITS-1 : 0] ray_in [5:0];
 
     logic in_full;
     logic signed [D_BITS-1 : 0] instruction_read [17:0];
 
+    logic signed [6 * D_BITS - 1 : 0]  ray_data        [1023:0];
+
+    logic signed [6 * D_BITS - 1 : 0]  ray_data_single;
+
+    logic signed [D_BITS-1 : 0]        ray_data_feed   [5:0];
+
+    int count;
+    genvar i;
+
+    generate
+
+    for (i  = 0; i < 6; i = i + 1) begin
+
+        assign ray_data_feed [i] = ray_data_single [D_BITS * i + 31 : D_BITS * i];
+
+    end
+
+    endgenerate
+
     initial begin
+
+        $display("Loading ray data");
+        $readmemh("../ray_data.txt", ray_data);
 
         clock = 1;
         reset = 0;
 
-        in_wr_en = 0;
+        count = 0;
 
-        ray_in [0] = 'd0;
-        ray_in [1] = 'd0;
-        ray_in [2] = 'd0;
-        ray_in [3] = 'd0;
-        ray_in [4] = 'd0;
-        ray_in [5] = 'd0;
+        in_wr_en = 0;
         
         # 5
 
@@ -36,11 +52,11 @@ module top_tb ();
         reset = 0;
         in_wr_en = 1;
 
-        # 100
+        wait(count == 1024)
 
         in_wr_en = 0;
 
-        #3000
+        #100
 
         $finish;
 
@@ -56,12 +72,13 @@ module top_tb ();
 
     always @ (posedge clock) begin
 
-        ray_in [0] = ray_in [0] + 1;
-        ray_in [1] = ray_in [1] + 1;
-        ray_in [2] = ray_in [2] + 1;
-        ray_in [3] = ray_in [3] + 1;
-        ray_in [4] = ray_in [4] + 1;
-        ray_in [5] = ray_in [5] + 1;
+        if (!reset && in_wr_en) begin
+
+            ray_data_single <= ray_data[count];
+
+            count <= count + 1;
+
+        end
 
     end
 
@@ -76,7 +93,7 @@ module top_tb ();
         .clock              (clock),
         .reset              (reset),
         .in_wr_en           (in_wr_en),
-        .ray_in             (ray_in),
+        .ray_in             (ray_data_feed),
         .in_full            (in_full),
         .instruction_read   (instruction_read)
 

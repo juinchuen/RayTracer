@@ -321,10 +321,14 @@ fifo #(
 //     .empty              (out_empty_arr[5])
 // );
 
-logic all_empty = 0;
-logic all_full = 0;
+logic all_empty;
+logic all_full;
 
 always_comb begin
+
+    all_empty = 0;
+    all_full  = 0;
+
     for(int i = 0; i < 8; i = i + 1) begin
         all_full = all_full || in_full_arr[i];
     end
