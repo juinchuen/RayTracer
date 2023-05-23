@@ -21,8 +21,6 @@ vlog -work work "../p_hit/p_hit_2.sv"
 vlog -work work "../hit_bool/hit_bool.sv"
 vlog -work work "../hit_bool/hit_bool_tb.sv"
 
-
-
 vsim -classdebug -voptargs=+acc +notimingchecks -L work work.top_tb -wlf top_tb.wlf
 
 # wave
@@ -39,11 +37,21 @@ add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/full_phit_str
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/rd_streamer_fifo0
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/wr_streamer_phit
 
-add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/all_full
-add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/reset
-add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/in_full
-add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/in_full_arr
-add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/all_full
+add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/tri_normal_in
+add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/v0_in
+add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/v1_in
+add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/v2_in
+add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/origin
+add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/dir
+add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/triangle_id_in
+
+add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/ray_in
+add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/state
+add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/instruction_out
+add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/out_wr_en
+add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/in_empty
+add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/in_rd_en
+
 
 
 

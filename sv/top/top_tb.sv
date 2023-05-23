@@ -70,13 +70,13 @@ module top_tb ();
 
     end
 
-    always @ (posedge clock) begin
+    always @ (posedge clock or in_wr_en) begin
 
         if (!reset && in_wr_en) begin
 
-            ray_data_single <= ray_data[count];
+            ray_data_single = ray_data[count];
 
-            count <= count + 1;
+            count = count + 1;
 
         end
 

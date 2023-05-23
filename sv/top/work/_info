@@ -10,17 +10,18 @@ z2
 cModel Technology
 Z0 d/home/jco1147/ray_tracer/github/RayTracer/sv/top
 T_opt
-!s110 1684869722
-V5FYPV?I]2XGVR9K6>QGGl1
+!s110 1684871663
+V1c>b0Q]EBXz^90SaN=EX?2
 04 6 4 work top_tb fast 0
-=1-a4bb6d3fef1e-646d1259-f242b-a2ec5
+=1-a4bb6d3fef1e-646d19ef-5ccc4-cdc5b
 o-quiet -auto_acc_if_foreign -work work -L work +acc
 Z1 tCvgOpt 0
 n@_opt
 OL;O;2020.1;71
+R0
 vaccumulate
 Z2 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
-Z3 !s110 1684869721
+Z3 !s110 1684872135
 !i10b 1
 !s100 1@k@O<j:>2bD@`ABY`5>c3
 Z4 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -31,13 +32,13 @@ R0
 w1684866764
 8../accumulate/accumulate_v2.sv
 F../accumulate/accumulate_v2.sv
-!i122 167
+!i122 249
 L0 1 221
 Z6 OL;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1684869720.000000
+Z7 !s108 1684872135.000000
 !s107 ../accumulate/accumulate_v2.sv|
 !s90 -reportprogress|300|-work|work|../accumulate/accumulate_v2.sv|
 !i113 0
@@ -56,15 +57,15 @@ R0
 Z9 w1683305992
 Z10 8../fifo_math.sv
 Z11 F../fifo_math.sv
-!i122 168
+!i122 250
 L0 67 47
 R6
 r1
 !s85 0
 31
-Z12 !s108 1684869721.000000
-Z13 !s107 ../fifo_math.sv|
-Z14 !s90 -reportprogress|300|-work|work|../fifo_math.sv|
+R7
+Z12 !s107 ../fifo_math.sv|
+Z13 !s90 -reportprogress|300|-work|work|../fifo_math.sv|
 !i113 0
 R8
 R1
@@ -81,15 +82,15 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 2 64
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
@@ -106,15 +107,15 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 299 53
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
@@ -132,21 +133,21 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 228 70
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
 vdivide_module
 R2
-R3
+Z14 !s110 1684872136
 !i10b 1
 !s100 8S8odeIaoC=eBVm<G4iK?0
 R4
@@ -157,13 +158,13 @@ R0
 R9
 8../divide/divide.sv
 F../divide/divide.sv
-!i122 169
+!i122 251
 L0 1 112
 R6
 r1
 !s85 0
 31
-R12
+R7
 !s107 ../divide/divide.sv|
 !s90 -reportprogress|300|-work|work|../divide/divide.sv|
 !i113 0
@@ -171,7 +172,7 @@ R8
 R1
 vdivide_top
 R2
-R3
+R14
 !i10b 1
 !s100 gYhSXB@o]O:d9f8ASRnmm2
 R4
@@ -182,13 +183,13 @@ R0
 R9
 8../divide/divide_top.sv
 F../divide/divide_top.sv
-!i122 170
+!i122 252
 L0 1 57
 R6
 r1
 !s85 0
 31
-R12
+Z15 !s108 1684872136.000000
 !s107 ../divide/divide_top.sv|
 !s90 -reportprogress|300|-work|work|../divide/divide_top.sv|
 !i113 0
@@ -207,15 +208,15 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 176 50
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
@@ -232,21 +233,21 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 116 59
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
 vfifo
 R2
-Z15 !s110 1684869720
+R3
 !i10b 1
 !s100 OOn0C0[^WQDWlOl0_JEgB2
 R4
@@ -257,7 +258,7 @@ R0
 R9
 Z16 8../fifo.sv
 Z17 F../fifo.sv
-!i122 164
+!i122 246
 L0 1 76
 R6
 r1
@@ -271,7 +272,7 @@ R8
 R1
 vfifo_array
 R2
-R15
+R3
 !i10b 1
 !s100 KzD4XRIEXz1?oe]B:Ol>A2
 R4
@@ -282,7 +283,7 @@ R0
 R9
 R16
 R17
-!i122 164
+!i122 246
 L0 78 62
 R6
 r1
@@ -296,7 +297,7 @@ R8
 R1
 vhit_bool
 R2
-R3
+R14
 !i10b 1
 !s100 2oV<ozKboXW1AbC57I_MN2
 R4
@@ -307,13 +308,13 @@ R0
 Z20 w1684858652
 8../hit_bool/hit_bool.sv
 F../hit_bool/hit_bool.sv
-!i122 173
+!i122 255
 L0 1 596
 R6
 r1
 !s85 0
 31
-R12
+R15
 !s107 ../hit_bool/hit_bool.sv|
 !s90 -reportprogress|300|-work|work|../hit_bool/hit_bool.sv|
 !i113 0
@@ -321,7 +322,7 @@ R8
 R1
 vhit_bool_tb
 R2
-R3
+R14
 !i10b 1
 !s100 7=ecB`72?ENA^<Po@?]`f3
 R4
@@ -332,13 +333,13 @@ R0
 R20
 8../hit_bool/hit_bool_tb.sv
 F../hit_bool/hit_bool_tb.sv
-!i122 174
+!i122 256
 L0 3 303
 R6
 r1
 !s85 0
 31
-R12
+R15
 !s107 ../hit_bool/hit_bool_tb.sv|
 !s90 -reportprogress|300|-work|work|../hit_bool/hit_bool_tb.sv|
 !i113 0
@@ -346,7 +347,7 @@ R8
 R1
 vp_hit
 R2
-R3
+R14
 !i10b 1
 !s100 h^LHHI9X4`f7jb0g17c5`3
 R4
@@ -357,13 +358,13 @@ R0
 Z21 w1684869705
 Z22 8../p_hit/p_hit_2.sv
 Z23 F../p_hit/p_hit_2.sv
-!i122 172
+!i122 254
 L0 182 161
 R6
 r1
 !s85 0
 31
-R12
+R15
 Z24 !s107 ../p_hit/p_hit_2.sv|
 Z25 !s90 -reportprogress|300|-work|work|../p_hit/p_hit_2.sv|
 !i113 0
@@ -371,7 +372,7 @@ R8
 R1
 vp_hit_1
 R2
-R3
+R14
 !i10b 1
 !s100 =48DFkWcgRdoEH^m_NSdL2
 R4
@@ -382,13 +383,13 @@ R0
 Z26 w1683305993
 Z27 8../p_hit/p_hit_1.sv
 Z28 F../p_hit/p_hit_1.sv
-!i122 171
+!i122 253
 L0 259 90
 R6
 r1
 !s85 0
 31
-R12
+R15
 Z29 !s107 ../p_hit/p_hit_1.sv|
 Z30 !s90 -reportprogress|300|-work|work|../p_hit/p_hit_1.sv|
 !i113 0
@@ -396,7 +397,7 @@ R8
 R1
 vp_hit_dot_add_pt1
 R2
-R3
+R14
 !i10b 1
 !s100 aQbmE[zcG3M8f]SA`UzFi3
 R4
@@ -407,13 +408,13 @@ R0
 R26
 R27
 R28
-!i122 171
+!i122 253
 L0 81 107
 R6
 r1
 !s85 0
 31
-R12
+R15
 R29
 R30
 !i113 0
@@ -421,7 +422,7 @@ R8
 R1
 vp_hit_dot_pt2
 R2
-R3
+R14
 !i10b 1
 !s100 1bBVHilP74IfEdO02JlFQ3
 R4
@@ -432,13 +433,13 @@ R0
 R26
 R27
 R28
-!i122 171
+!i122 253
 L0 189 69
 R6
 r1
 !s85 0
 31
-R12
+R15
 R29
 R30
 !i113 0
@@ -446,7 +447,7 @@ R8
 R1
 vp_hit_fifo_in_pt1
 R2
-R3
+R14
 !i10b 1
 !s100 7]V84d0B^B]L@Vab?WbiS0
 R4
@@ -457,13 +458,13 @@ R0
 R26
 R27
 R28
-!i122 171
+!i122 253
 L0 1 79
 R6
 r1
 !s85 0
 31
-R12
+R15
 R29
 R30
 !i113 0
@@ -471,7 +472,7 @@ R8
 R1
 vp_hit_module
 R2
-R3
+R14
 !i10b 1
 !s100 DNo?DoYYh6j:95;d7aklo1
 R4
@@ -482,13 +483,13 @@ R0
 R21
 R22
 R23
-!i122 172
+!i122 254
 L0 92 88
 R6
 r1
 !s85 0
 31
-R12
+R15
 R24
 R25
 !i113 0
@@ -496,7 +497,7 @@ R8
 R1
 vp_hit_mult
 R2
-R3
+R14
 !i10b 1
 !s100 VDFQnJfDo0k_FOz:Pzh0N0
 R4
@@ -507,13 +508,13 @@ R0
 R21
 R22
 R23
-!i122 172
+!i122 254
 L0 1 89
 R6
 r1
 !s85 0
 31
-R12
+R15
 R24
 R25
 !i113 0
@@ -521,7 +522,7 @@ R8
 R1
 vray_tracer_top
 R2
-R15
+R3
 !i10b 1
 !s100 9>Z8D[jg7=4OPNFd3QGRU2
 R4
@@ -532,7 +533,7 @@ R0
 w1684866799
 8top.sv
 Ftop.sv
-!i122 165
+!i122 247
 L0 1 246
 R6
 r1
@@ -557,15 +558,15 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 422 49
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
@@ -582,21 +583,21 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 354 67
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
 vsramb
 R2
-R15
+R3
 !i10b 1
 !s100 M<O8@gVUFi5^g?o=Wc@[:1
 R4
@@ -607,13 +608,13 @@ R0
 w1684774146
 8../sramb.sv
 F../sramb.sv
-!i122 162
+!i122 244
 L0 16 61
 R6
 r1
 !s85 0
 31
-R7
+!s108 1684872134.000000
 !s107 ../sramb.sv|
 !s90 -reportprogress|300|-work|work|../sramb.sv|
 !i113 0
@@ -621,7 +622,7 @@ R8
 R1
 vstreamer
 R2
-R15
+R3
 !i10b 1
 !s100 n>^;0_CJS;ULm3C2<menV2
 R4
@@ -632,7 +633,7 @@ R0
 w1684789871
 8../streamer/streamer.sv
 F../streamer/streamer.sv
-!i122 163
+!i122 245
 L0 1 118
 R6
 r1
@@ -657,15 +658,15 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 547 47
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
@@ -682,15 +683,15 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 473 73
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
@@ -707,15 +708,15 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 651 47
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
@@ -732,32 +733,32 @@ R0
 R9
 R10
 R11
-!i122 168
+!i122 250
 L0 595 55
 R6
 r1
 !s85 0
 31
+R7
 R12
 R13
-R14
 !i113 0
 R8
 R1
 vtop_tb
 R2
-R15
+R3
 !i10b 1
-!s100 ZJS8ZQMQ<;fFYiPa;mY`]1
+!s100 08Rm11955VfJ4Q`3RGMZS2
 R4
-I;bL8eHi@N?78>Zg:HgBbY3
+I4[i]l<7eK_6A6a:h7J0CQ3
 R5
 S1
 R0
-w1684866885
+w1684871651
 8top_tb.sv
 Ftop_tb.sv
-!i122 166
+!i122 248
 L0 1 102
 R6
 r1
