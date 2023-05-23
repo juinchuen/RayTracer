@@ -1,4 +1,3 @@
-0, 0, 0
 6ccc9, 1b332, fffe4cce
 6ccc9, 17ccb, fffe4cce
 6ccc9, 14665, fffe4cce

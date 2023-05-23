@@ -19,7 +19,11 @@ add wave -noupdate -group hit_bool_tb/p_hit_fifo_array -radix hexadecimal /hit_b
 add wave -noupdate -group hit_bool_tb/u_hit_bool
 add wave -noupdate -group hit_bool_tb/u_hit_bool -radix hexadecimal /hit_bool_tb/u_hit_bool/*
 
+add wave -noupdate -group hit_bool_tb/u_hit_bool/u_hit_bool_fifo
+add wave -noupdate -group hit_bool_tb/u_hit_bool -radix hexadecimal /hit_bool_tb/u_hit_bool/u_hit_bool_fifo/*
+
 #add wave -noupdate -group hit_bool_tb/u_hit_bool/u_sub_3
 #add wave -noupdate -group hit_bool_tb/u_hit_bool -radix hexadecimal /hit_bool_tb/u_hit_bool/u_sub_3/*
+
 
 run -all
