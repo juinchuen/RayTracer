@@ -321,8 +321,8 @@ fifo #(
 //     .empty              (out_empty_arr[5])
 // );
 
-logic all_empty;
-logic all_full;
+logic all_empty = '0;
+logic all_full = '0;
 
 always_comb begin
 
