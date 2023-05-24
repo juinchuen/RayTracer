@@ -293,7 +293,7 @@ fifo_array #(
 
 fifo #(
     .FIFO_DATA_WIDTH     (M_BITS),
-    .FIFO_BUFFER_SIZE    (M_BITS*32)
+    .FIFO_BUFFER_SIZE    (M_BITS*64)
 ) u_fifo (
     .reset               (reset),
     .wr_clk              (clock),
