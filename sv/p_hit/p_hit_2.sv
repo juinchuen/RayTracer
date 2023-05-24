@@ -291,40 +291,46 @@ fifo_array #(
     .empty              (out_empty_arr[4])
 );
 
-fifo #(
-    .FIFO_DATA_WIDTH     (M_BITS),
-    .FIFO_BUFFER_SIZE    (M_BITS*64)
-) u_fifo (
-    .reset               (reset),
-    .wr_clk              (clock),
-    .wr_en               (in_wr_en),
-    .din                 (triangle_id_in),
-    .full                (in_full_arr[7]),
-    .rd_clk              (clock),
-    .rd_en               (out_rd_en),
-    .dout                (triangle_id_out),
-    .empty               (out_empty_arr[5])
-);
+logic signed [M_BITS-1:0] temp_in[1:0], temp_out[1:0]
 
-// fifo_array #(
-//     .FIFO_DATA_WIDTH    (M_BITS),
-//     .FIFO_BUFFER_SIZE   (M_BITS*32),
-//     .ARRAY_SIZE         (1)
-// ) triangle_id_fifo (
-//     .reset              (reset),
-//     .clock              (clock),
-//     .wr_en              (in_wr_en),
-//     .din                (triangle_id_in[0]),
-//     .full               (in_full_arr[7]),
-//     .rd_en              (out_rd_en),
-//     .dout               (triangle_id_out[0]),
-//     .empty              (out_empty_arr[5])
+fifo_array#(
+    .FIFO_DATA_WIDTH     (M_BITS),
+    .FIFO_BUFFER_SIZE    (M_BITS*32)
+    .ARRAY_SIZE          (2)
+) triangle_id_fifo (
+    .reset              (reset),
+    .clock              (clock),
+    .wr_en              (in_wr_en),
+    .din                (temp_in[1:0]),
+    .full               (in_full_arr[7]),
+    .rd_en              (out_rd_en),
+    .dout               (temp_out[1:0]),
+    .empty              (out_empty_arr[5])
+)
+
+// fifo #(
+//     .FIFO_DATA_WIDTH     (M_BITS),
+//     .FIFO_BUFFER_SIZE    (M_BITS*32)
+// ) u_fifo (
+//     .reset               (reset),
+//     .wr_clk              (clock),
+//     .wr_en               (in_wr_en),
+//     .din                 (triangle_id_in),
+//     .full                (in_full_arr[7]),
+//     .rd_clk              (clock),
+//     .rd_en               (out_rd_en),
+//     .dout                (triangle_id_out),
+//     .empty               (out_empty_arr[5])
 // );
+
 
 logic all_empty = '0;
 logic all_full = '0;
 
 always_comb begin
+
+    temp_in[0] = triangle_id_in;
+    temp_in[1] = '0;
 
     all_empty = 0;
     all_full  = 0;
@@ -337,6 +343,8 @@ always_comb begin
     end
     out_empty = all_empty;
     in_full = all_full;
+
+    triangle_id_out = temp_out[0];
 end
     
 endmodule
