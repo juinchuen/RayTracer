@@ -291,7 +291,7 @@ fifo_array #(
     .empty              (out_empty_arr[4])
 );
 
-logic signed [M_BITS-1:0] temp_in[1:0], temp_out[1:0]
+logic signed [M_BITS-1:0] temp_in[1:0], temp_out[1:0];
 
 fifo_array#(
     .FIFO_DATA_WIDTH     (M_BITS),
