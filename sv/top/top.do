@@ -36,6 +36,8 @@ add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/ray_parse_fif
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/full_phit_streamer
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/rd_streamer_fifo0
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/wr_streamer_phit
+add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/instruction_read
+add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/triangle_ID_streamer_phit
 
 add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/tri_normal_in
 add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/v0_in
@@ -70,6 +72,14 @@ add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/start_up
 add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/d2_min
 add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/d2
 add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/p_hit_squared
+
+add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/phit_phit_hitb
+add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/v0_phit_hitb
+add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/v1_phit_hitb
+add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/v2_phit_hitb
+add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/triangle_ID_phit_hitb
+add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/normal_phit_hitb
+add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/rd_hitb_phit
 
 
 

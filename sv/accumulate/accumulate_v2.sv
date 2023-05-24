@@ -31,7 +31,7 @@ logic signed    [D_BITS-1 : 0]          read_p_hit      [2:0];
 logic                                   read_hit;
 logic           [M_BITS-1 : 0]          read_triangle_ID;
 
-logic           [D_BITS-1 : 0]          d2_min;
+logic           [D_BITS+Q_BITS+1 : 0]   d2_min;
 
 logic                                   start_up_flag;
 
