@@ -306,7 +306,7 @@ fifo_array#(
     .rd_en              (out_rd_en),
     .dout               (temp_out[1:0]),
     .empty              (out_empty_arr[5])
-)
+);
 
 // fifo #(
 //     .FIFO_DATA_WIDTH     (M_BITS),
