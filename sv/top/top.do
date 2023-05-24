@@ -35,9 +35,9 @@ add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/empty_fifo0_s
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/ray_parse_fifo0_streamer
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/full_phit_streamer
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/rd_streamer_fifo0
-add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/wr_streamer_phit
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/instruction_read
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/triangle_ID_streamer_phit
+add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/wr_streamer_phit
 
 add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/tri_normal_in
 add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/v0_in
