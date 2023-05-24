@@ -13,7 +13,17 @@ module ray_tracer_top #(
     
     output  logic                       in_full,
 
-    output  logic signed [D_BITS-1 : 0] instruction_read    [17:0]
+    output  logic signed [D_BITS-1 : 0] instruction_read    [17:0],
+
+    output logic                        hit_acc_shader,
+    output logic signed  [D_BITS-1 : 0] phit_acc_shader     [2:0],
+    output logic         [M_BITS-1 : 0] triangle_ID_acc_shader,
+    output logic                        wr_acc_shader,
+
+    output logic signed  [D_BITS-1 : 0] phit_hitb_acc       [2:0],
+    output logic                        hit_hitb_acc,
+    output logic         [M_BITS-1 : 0] triangle_ID_hitb_acc,
+    output logic                        rd_acc_hitb
 );
 
     // WIRE DECLARATION LIST
@@ -56,21 +66,19 @@ module ray_tracer_top #(
     logic                           rd_hitb_phit;
     logic                           empty_phit_hitb;
 
-    logic           [M_BITS-1 : 0]  triangle_ID_hitb_acc;
-    logic                           hit_hitb_acc;
-    logic signed    [D_BITS-1 : 0]  phit_hitb_acc           [2:0];
-    logic                           rd_acc_hitb;
+    // logic           [M_BITS-1 : 0]  triangle_ID_hitb_acc;
+    // logic                           hit_hitb_acc;
+    // logic signed    [D_BITS-1 : 0]  phit_hitb_acc           [2:0];
+    // logic                           rd_acc_hitb;
     logic                           empty_hitb_acc;
 
-    logic                           hit_min;
-    logic signed    [D_BITS-1 : 0]  p_hit_min [2:0];
-    logic           [M_BITS-1 : 0]  triangle_ID_min;
+    logic                           full_shader_acc;
+    // logic                           wr_acc_shader;
+    // logic                           hit_acc_shader;
+    // logic signed    [D_BITS-1 : 0]  phit_acc_shader         [2:0];
+    // logic           [M_BITS-1 : 0]  triangle_ID_acc_shader;
 
-    logic                           full_acc_shader;
-    logic                           wr_acc_shader;
-    logic                           hit_acc_shader;
-    logic signed    [D_BITS-1 : 0]  phit_acc_shader         [2:0];
-    logic           [M_BITS-1 : 0]  triangle_ID_acc_shader;
+    assign                          full_shader_acc = 0;
 
     generate
 
@@ -231,16 +239,16 @@ module ray_tracer_top #(
         .in_empty       (empty_hitb_acc),
         .in_rd_en       (rd_acc_hitb),
 
-        .out_full       (full_acc_shader),
+        .out_full       (full_shader_acc),
         .out_wr_en      (wr_acc_shader),
 
-        .hit            (hit_acc_shader),
-        .p_hit          (phit_acc_shader),
-        .triangle_ID    (triangle_ID_acc_shader),
+        .hit            (hit_hitb_acc),
+        .p_hit          (phit_hitb_acc),
+        .triangle_ID    (triangle_ID_hitb_acc),
 
-        .hit_min            (hit_min),
-        .p_hit_min          (p_hit_min),
-        .triangle_ID_min    (triangle_ID_min)
+        .hit_min            (hit_acc_shader),
+        .p_hit_min          (phit_acc_shader),
+        .triangle_ID_min    (triangle_ID_acc_shader)
     );
 
 endmodule

@@ -61,6 +61,7 @@ always @ (posedge clock or posedge reset) begin
     
         d2_min              <= ~'b0;
         triangle_ID_min     <= 'b0;
+        hit_min             <= 'b0;
 
         start_up_flag       <= 'b1;
 
@@ -125,6 +126,12 @@ always @ (posedge clock or posedge reset) begin
 
                         end
 
+                        else begin
+
+                            state <= 'h3;
+
+                        end
+
                     end
 
             'h03 :  begin
@@ -159,11 +166,15 @@ always @ (posedge clock or posedge reset) begin
                         p_hit_squared[1]    <= read_p_hit[1] * read_p_hit[1];
                         p_hit_squared[2]    <= read_p_hit[2] * read_p_hit[2];
 
+                        state               <= 'h5;
+
                     end
 
             'h05 :  begin
 
-                        d2  <= p_hit_squared[0] + p_hit_squared[1] + p_hit_squared[2];
+                        d2      <= p_hit_squared[0] + p_hit_squared[1] + p_hit_squared[2];
+
+                        state   <= 'h6;
 
                     end
 

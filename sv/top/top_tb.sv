@@ -18,10 +18,25 @@ module top_tb ();
 
     logic signed [D_BITS-1 : 0]        ray_data_feed   [5:0];
 
+    logic        [M_BITS-1 : 0] triangle_ID_out;
+    logic signed [D_BITS-1 : 0] p_hit_out              [2:0];
+    logic                       hit_out;
+    logic                       wr_en_out;
+
+    logic        [M_BITS-1 : 0] triangle_ID_hitb;
+    logic signed [D_BITS-1 : 0] p_hit_hitb             [2:0];
+    logic                       hit_hitb;
+    logic                       rd_hitb;
+
     int count;
     genvar i;
 
+    int out_count = 0;
+
     generate
+
+    int sim_output_file;
+    int hitb_output_file;
 
     for (i  = 0; i < 6; i = i + 1) begin
 
@@ -33,6 +48,9 @@ module top_tb ();
 
     initial begin
 
+        sim_output_file = $fopen("sim_output_file", "w");
+        hitb_output_file = $fopen("hitb_output_file", "w");
+        
         $display("Loading ray data");
         $readmemh("../ray_data.txt", ray_data);
 
@@ -56,7 +74,9 @@ module top_tb ();
 
         in_wr_en = 0;
 
-        #100
+        wait(out_count == 1024)
+
+        $fclose(sim_output_file);
 
         $finish;
 
@@ -90,13 +110,66 @@ module top_tb ();
 
     ) DUT_INST0 (
 
-        .clock              (clock),
-        .reset              (reset),
-        .in_wr_en           (in_wr_en),
-        .ray_in             (ray_data_feed),
-        .in_full            (in_full),
-        .instruction_read   (instruction_read)
+        .clock                      (clock),
+        .reset                      (reset),
+        .in_wr_en                   (in_wr_en),
+        .ray_in                     (ray_data_feed),
+        .in_full                    (in_full),
+        .instruction_read           (instruction_read),
+        .hit_acc_shader             (hit_out),
+        .phit_acc_shader            (p_hit_out),
+        .triangle_ID_acc_shader     (triangle_ID_out),
+        .wr_acc_shader              (wr_en_out),
+
+        .phit_hitb_acc              (p_hit_hitb),
+        .hit_hitb_acc               (hit_hitb),
+        .triangle_ID_hitb_acc       (triangle_ID_hitb),
+        .rd_acc_hitb                (rd_hitb)
 
     );
+
+    always @ (posedge wr_en_out) begin
+
+        if (hit_out) begin
+
+            $fwrite(sim_output_file, "hit, %8d\n", triangle_ID_out);
+
+        end
+
+        else begin
+
+            $fwrite(sim_output_file, "no hit\n");
+
+        end
+
+        out_count = out_count + 1;
+
+    end
+
+    always @ (posedge rd_hitb) begin
+
+        if (hit_hitb) begin
+
+            $fwrite(hitb_output_file,
+                    "  hit, %2d, %x, %x %x\n",
+                    triangle_ID_hitb,
+                    p_hit_hitb[0],
+                    p_hit_hitb[1],
+                    p_hit_hitb[2]);
+
+        end
+
+        else begin
+
+            $fwrite(hitb_output_file,
+                    "nohit, %2d, %x, %x %x\n",
+                    triangle_ID_hitb,
+                    p_hit_hitb[0],
+                    p_hit_hitb[1],
+                    p_hit_hitb[2]);
+
+        end
+
+    end
 
 endmodule

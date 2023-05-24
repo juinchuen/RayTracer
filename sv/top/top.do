@@ -51,7 +51,25 @@ add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/
 add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/out_wr_en
 add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/in_empty
 add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/in_rd_en
+add wave -noupdate -group STREAM -radix hexadecimal /top_tb/DUT_INST0/STREAMER0/triangle_ID_out
 
+add wave -noupdate -group OUTPUT -radix hexadecimal /top_tb/DUT_INST0/hit_acc_shader
+add wave -noupdate -group OUTPUT -radix hexadecimal /top_tb/DUT_INST0/phit_acc_shader
+add wave -noupdate -group OUTPUT -radix hexadecimal /top_tb/DUT_INST0/triangle_ID_acc_shader
+add wave -noupdate -group OUTPUT -radix hexadecimal /top_tb/DUT_INST0/wr_acc_shader
+
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/out_wr_en
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/state
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/hit_min
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/p_hit_min
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/triangle_ID_min
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/read_hit
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/read_p_hit
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/read_triangle_ID
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/start_up_flag
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/d2_min
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/d2
+add wave -noupdate -group ACC -radix hexadecimal /top_tb/DUT_INST0/ACC0/p_hit_squared
 
 
 
