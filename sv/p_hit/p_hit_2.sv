@@ -295,7 +295,7 @@ logic signed [M_BITS-1:0] temp_in[1:0], temp_out[1:0];
 
 fifo_array#(
     .FIFO_DATA_WIDTH     (M_BITS),
-    .FIFO_BUFFER_SIZE    (M_BITS*32)
+    .FIFO_BUFFER_SIZE    (M_BITS*32),
     .ARRAY_SIZE          (2)
 ) triangle_id_fifo (
     .reset              (reset),
