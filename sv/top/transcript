@@ -18,16 +18,16 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:28 on May 24,2023
+# Start time: 19:30:02 on May 24,2023
 # vlog -reportprogress 300 -work work ../sramb.sv 
 # -- Compiling module sramb
 # 
 # Top level modules:
 # 	sramb
-# End time: 15:25:29 on May 24,2023, Elapsed time: 0:00:01
+# End time: 19:30:03 on May 24,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:29 on May 24,2023
+# Start time: 19:30:03 on May 24,2023
 # vlog -reportprogress 300 -work work ../streamer/streamer.sv 
 # -- Compiling module streamer
 # ** Warning: ../streamer/streamer.sv(11): (vlog-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -35,10 +35,10 @@
 # 
 # Top level modules:
 # 	streamer
-# End time: 15:25:29 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:03 on May 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:29 on May 24,2023
+# Start time: 19:30:03 on May 24,2023
 # vlog -reportprogress 300 -work work ../fifo.sv 
 # -- Compiling module fifo
 # -- Compiling module fifo_array
@@ -46,39 +46,39 @@
 # 
 # Top level modules:
 # 	fifo_array
-# End time: 15:25:29 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:03 on May 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:29 on May 24,2023
+# Start time: 19:30:03 on May 24,2023
 # vlog -reportprogress 300 -work work top.sv 
 # -- Compiling module ray_tracer_top
 # ** Warning: top.sv(12): (vlog-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	ray_tracer_top
-# End time: 15:25:29 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:03 on May 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:29 on May 24,2023
+# Start time: 19:30:03 on May 24,2023
 # vlog -reportprogress 300 -work work top_tb.sv 
 # -- Compiling module top_tb
 # 
 # Top level modules:
 # 	top_tb
-# End time: 15:25:29 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:04 on May 24,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:29 on May 24,2023
+# Start time: 19:30:04 on May 24,2023
 # vlog -reportprogress 300 -work work ../accumulate/accumulate_v2.sv 
 # -- Compiling module accumulate
 # ** Warning: ../accumulate/accumulate_v2.sv(16): (vlog-13314) Defaulting port 'p_hit' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	accumulate
-# End time: 15:25:29 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:04 on May 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:29 on May 24,2023
+# Start time: 19:30:04 on May 24,2023
 # vlog -reportprogress 300 -work work ../fifo_math.sv 
 # -- Compiling module add_module
 # ** Warning: ../fifo_math.sv(7): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -118,28 +118,28 @@
 # 	scale
 # 	sub
 # 	sub_single
-# End time: 15:25:30 on May 24,2023, Elapsed time: 0:00:01
+# End time: 19:30:04 on May 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 18
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:30 on May 24,2023
+# Start time: 19:30:04 on May 24,2023
 # vlog -reportprogress 300 -work work ../divide/divide.sv 
 # -- Compiling module divide_module
 # 
 # Top level modules:
 # 	divide_module
-# End time: 15:25:30 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:04 on May 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:30 on May 24,2023
+# Start time: 19:30:04 on May 24,2023
 # vlog -reportprogress 300 -work work ../divide/divide_top.sv 
 # -- Compiling module divide_top
 # 
 # Top level modules:
 # 	divide_top
-# End time: 15:25:30 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:05 on May 24,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:30 on May 24,2023
+# Start time: 19:30:05 on May 24,2023
 # vlog -reportprogress 300 -work work ../p_hit/p_hit_1.sv 
 # -- Compiling module p_hit_fifo_in_pt1
 # ** Warning: ../p_hit/p_hit_1.sv(6): (vlog-13314) Defaulting port 'tri_normal_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -162,10 +162,10 @@
 # 
 # Top level modules:
 # 	p_hit_1
-# End time: 15:25:30 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:05 on May 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 14
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:30 on May 24,2023
+# Start time: 19:30:05 on May 24,2023
 # vlog -reportprogress 300 -work work ../p_hit/p_hit_2.sv 
 # -- Compiling module p_hit_mult
 # ** Warning: ../p_hit/p_hit_2.sv(7): (vlog-13314) Defaulting port 'tri_normal_1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -194,10 +194,10 @@
 # 
 # Top level modules:
 # 	p_hit
-# End time: 15:25:31 on May 24,2023, Elapsed time: 0:00:01
+# End time: 19:30:05 on May 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 21
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:31 on May 24,2023
+# Start time: 19:30:05 on May 24,2023
 # vlog -reportprogress 300 -work work ../hit_bool/hit_bool.sv 
 # -- Compiling module hit_bool
 # ** Warning: ../hit_bool/hit_bool.sv(11): (vlog-13314) Defaulting port 'p_hit_din' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -208,20 +208,20 @@
 # 
 # Top level modules:
 # 	hit_bool
-# End time: 15:25:31 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:05 on May 24,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 5
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 15:25:31 on May 24,2023
+# Start time: 19:30:05 on May 24,2023
 # vlog -reportprogress 300 -work work ../hit_bool/hit_bool_tb.sv 
 # -- Compiling module hit_bool_tb
 # 
 # Top level modules:
 # 	hit_bool_tb
-# End time: 15:25:31 on May 24,2023, Elapsed time: 0:00:00
+# End time: 19:30:06 on May 24,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vsim -classdebug -voptargs="+acc" "+notimingchecks" -L work work.top_tb -wlf top_tb.wlf 
-# Start time: 15:25:31 on May 24,2023
-# ** Note: (vsim-8009) Loading existing optimized design _opt
+# Start time: 19:30:06 on May 24,2023
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading sv_std.std
 # Loading work.top_tb(fast)
 # Loading work.ray_tracer_top(fast)
@@ -262,7 +262,7 @@
 # Loading work.accumulate(fast)
 # Loading ray data
 # Loading triangles into memory
-# ** Note: $finish    : top_tb.sv(81)
-#    Time: 1570440 ns  Iteration: 3  Instance: /top_tb
+# ** Note: $finish    : top_tb.sv(84)
+#    Time: 5400840 ns  Iteration: 3  Instance: /top_tb
 # 1
-# Break in Module top_tb at top_tb.sv line 81
+# Break in Module top_tb at top_tb.sv line 84

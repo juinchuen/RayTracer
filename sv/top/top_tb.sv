@@ -32,11 +32,13 @@ module top_tb ();
     genvar i;
 
     int out_count = 0;
-
-    generate
+    int ascii_count = 0;
 
     int sim_output_file;
     int hitb_output_file;
+    int ascii_output_file;
+
+    generate
 
     for (i  = 0; i < 6; i = i + 1) begin
 
@@ -50,6 +52,7 @@ module top_tb ();
 
         sim_output_file = $fopen("sim_output_file", "w");
         hitb_output_file = $fopen("hitb_output_file", "w");
+        ascii_output_file = $fopen("ascii_output_file", "w");
         
         $display("Loading ray data");
         $readmemh("../ray_data.txt", ray_data);
@@ -74,7 +77,7 @@ module top_tb ();
 
         in_wr_en = 0;
 
-        wait(out_count == 1024)
+        wait(out_count == 1000)
 
         $fclose(sim_output_file);
 
@@ -133,16 +136,28 @@ module top_tb ();
         if (hit_out) begin
 
             $fwrite(sim_output_file, "hit, %8d\n", triangle_ID_out);
+            $fwrite(ascii_output_file, "%1x", triangle_ID_out);
 
         end
 
         else begin
 
             $fwrite(sim_output_file, "no hit\n");
+            $fwrite(ascii_output_file, ".");
 
         end
 
         out_count = out_count + 1;
+
+        ascii_count = ascii_count + 1;
+
+        if (ascii_count == 32) begin
+
+            $fwrite(ascii_output_file, "\n");
+
+            ascii_count = 0;
+
+        end
 
     end
 
@@ -161,12 +176,7 @@ module top_tb ();
 
         else begin
 
-            $fwrite(hitb_output_file,
-                    "nohit, %2d, %x, %x %x\n",
-                    triangle_ID_hitb,
-                    p_hit_hitb[0],
-                    p_hit_hitb[1],
-                    p_hit_hitb[2]);
+            $fwrite(hitb_output_file, "nohit\n");
 
         end
 
