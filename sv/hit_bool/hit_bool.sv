@@ -21,8 +21,10 @@ module hit_bool #(
     // Pass through data
     input logic [M_BITS-1:0] tri_id_din,
     input logic [M_BITS-1:0] ray_id_din,
+    input logic signed [D_BITS-1:0] ray_origin_din [2:0],
     output logic [M_BITS-1:0] tri_id_dout,
     output logic [M_BITS-1:0] ray_id_dout,
+    output logic signed [D_BITS-1:0] ray_origin_dout [2:0],
     
     // hit_bool output
     output logic hit_bool_dout,
@@ -45,16 +47,18 @@ logic v2_in_full;
 logic normal_in_full;
 logic tri_id_fifo_full;
 logic ray_id_fifo_full;
+logic ray_origin_fifo_full;
 logic p_hit_calc_fifo_full;
 logic p_hit_fifo_out_full;
-assign in_full = v0_in_full || v1_in_full || v2_in_full || normal_in_full || tri_id_fifo_full || ray_id_fifo_full || p_hit_calc_fifo_full || p_hit_fifo_out_full;
+assign in_full = v0_in_full || v1_in_full || v2_in_full || normal_in_full || tri_id_fifo_full || ray_id_fifo_full || ray_origin_fifo_full || p_hit_calc_fifo_full || p_hit_fifo_out_full;
 
 // Tie output FIFO empty signals together
 logic tri_id_fifo_empty;
 logic ray_id_fifo_empty;
+logic ray_origin_fifo_empty;
 logic p_hit_fifo_out_empty;
 logic hit_bool_empty;
-assign out_empty = tri_id_fifo_empty || ray_id_fifo_empty || p_hit_fifo_out_empty || hit_bool_empty;
+assign out_empty = tri_id_fifo_empty || ray_id_fifo_empty || ray_origin_fifo_empty || p_hit_fifo_out_empty || hit_bool_empty;
 
 // Global write var for all input FIFOs
 logic in_wr_en; 
@@ -82,7 +86,6 @@ logic hit, hit_c;
 // Input FIFOs
 logic normal_in_rd_en;
 logic normal_in_empty;
-logic signed [D_BITS-1:0] normal_in_din  [2:0] = {32'hd504, 32'h0, 32'h8e00};
 logic signed [D_BITS-1:0] normal_in_dout [2:0];
 
 logic v0_in_rd_en;
@@ -402,7 +405,7 @@ dot #(
 
 // FIFOs to hold inputs
 fifo_array #(
-    .FIFO_DATA_WIDTH         (32),
+    .FIFO_DATA_WIDTH         (D_BITS),
     .FIFO_BUFFER_SIZE        (1024),
     .ARRAY_SIZE              (3)
 ) normal_in_array (
@@ -418,7 +421,7 @@ fifo_array #(
 
 // Vector fifos
 fifo_array #(
-    .FIFO_DATA_WIDTH         (32),
+    .FIFO_DATA_WIDTH         (D_BITS),
     .FIFO_BUFFER_SIZE        (1024),
     .ARRAY_SIZE              (3)
 ) v0_fifo_array (
@@ -433,7 +436,7 @@ fifo_array #(
 );
 
 fifo_array #(
-    .FIFO_DATA_WIDTH         (32),
+    .FIFO_DATA_WIDTH         (D_BITS),
     .FIFO_BUFFER_SIZE        (1024),
     .ARRAY_SIZE              (3)
 ) v1_fifo_array (
@@ -448,7 +451,7 @@ fifo_array #(
 );
 
 fifo_array #(
-    .FIFO_DATA_WIDTH         (32),
+    .FIFO_DATA_WIDTH         (D_BITS),
     .FIFO_BUFFER_SIZE        (1024),
     .ARRAY_SIZE              (3)
 ) v2_fifo_array (
@@ -498,9 +501,25 @@ fifo #(
     .empty               (ray_id_fifo_empty)
 );
 
+// Fifo to hold ray origin
+fifo_array #(
+    .FIFO_DATA_WIDTH         (D_BITS),
+    .FIFO_BUFFER_SIZE        (1024),
+    .ARRAY_SIZE              (3)
+) u_ray_origin_fifo(
+    .reset                   (reset),
+    .clock                   (clock),
+    .wr_en                   (in_wr_en),
+    .din                     (ray_origin_din[2:0]),
+    .full                    (ray_origin_fifo_full),
+    .rd_en                   (out_rd_en),
+    .dout                    (ray_origin_dout[2:0]),
+    .empty                   (ray_origin_fifo_empty)
+);
+
 // Fifo array to hold p_hit, used for calculations
 fifo_array #(
-    .FIFO_DATA_WIDTH         (32),
+    .FIFO_DATA_WIDTH         (D_BITS),
     .FIFO_BUFFER_SIZE        (1024),
     .ARRAY_SIZE              (3)
 ) u_calc_fifo_array (
@@ -516,7 +535,7 @@ fifo_array #(
 // FIFO array to hold p_hit, used to output alongside a boolean
 // assign p_hit_fifo_out_din = p_hit;
 fifo_array #(
-    .FIFO_DATA_WIDTH         (32),
+    .FIFO_DATA_WIDTH         (D_BITS),
     .FIFO_BUFFER_SIZE        (1024),
     .ARRAY_SIZE              (3)
 ) u_p_hit_fifo_array (
@@ -544,6 +563,25 @@ fifo #(
     .dout                (hit_bool_dout),
     .empty               (hit_bool_empty)
 );
+
+logic signed [D_BITS-1:0] help1;
+assign help1 = ray_origin_din[0];
+
+logic signed [D_BITS-1:0] help2;
+assign help2 = ray_origin_din[1];
+
+logic signed [D_BITS-1:0] help3;
+assign help3 = ray_origin_din[2];
+
+
+logic signed [D_BITS-1:0] break1;
+assign break1 = ray_origin_dout[0];
+
+logic signed [D_BITS-1:0] break2;
+assign break2 = ray_origin_dout[1];
+
+logic signed [D_BITS-1:0] break3;
+assign break3 = ray_origin_dout[2];
 
 always_ff @(posedge clock or posedge reset) begin
     if(reset)begin
