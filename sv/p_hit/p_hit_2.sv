@@ -190,7 +190,7 @@ module p_hit #(
     input logic signed [D_BITS-1:0] v0_in[2:0],
     input logic signed [D_BITS-1:0] v1_in[2:0],
     input logic signed [D_BITS-1:0] v2_in[2:0],
-    input logic signed [D_BITS-1:0] origin[2:0],
+    input logic signed [D_BITS-1:0] origin_in[2:0],
     input logic signed [D_BITS-1:0] dir[2:0],
     input logic signed [M_BITS-1:0] triangle_id_in,
     output logic in_full,
@@ -200,6 +200,7 @@ module p_hit #(
     output logic signed [D_BITS-1:0] v0_out[2:0],
     output logic signed [D_BITS-1:0] v1_out[2:0],
     output logic signed [D_BITS-1:0] v2_out[2:0],
+    output logic signed [D_BITS-1:0] origin_out[2:0],
     output logic signed [M_BITS-1:0] triangle_id_out,
     output logic signed [D_BITS-1:0] tri_normal_out[2:0],
 
@@ -207,8 +208,8 @@ module p_hit #(
     output logic out_empty 
 );
 
-logic in_full_arr[7:0];
-logic out_empty_arr[5:0];
+logic in_full_arr[8:0];
+logic out_empty_arr[6:0];
 
 p_hit_module #(
     .D_BITS               (D_BITS),
@@ -219,8 +220,8 @@ p_hit_module #(
     .tri_normal_1         (tri_normal_in[2:0]),
     .tri_normal_2         (tri_normal_in[2:0]),
     .v0                   (v0_in[2:0]),
-    .origin_1             (origin[2:0]),
-    .origin_2             (origin[2:0]),
+    .origin_1             (origin_in[2:0]),
+    .origin_2             (origin_in[2:0]),
     .dir_1                (dir[2:0]),
     .dir_2                (dir[2:0]),
     .in_full              ({in_full_arr[0], in_full_arr[1], in_full_arr[2]}),
@@ -323,6 +324,22 @@ fifo #(
     .empty               (out_empty_arr[5])
 );
 
+fifo_array #(
+    .FIFO_DATA_WIDTH    (D_BITS),
+    .FIFO_BUFFER_SIZE   (D_BITS*32),
+    .ARRAY_SIZE         (3)
+) origin_fifo (
+    .reset              (reset),
+    .clock              (clock),
+    .wr_en              (in_wr_en),
+    .din                (origin_in[2:0]),
+    .full               (in_full_arr[8]),
+    .rd_en              (out_rd_en),
+    .dout               (origin_out[2:0]),
+    .empty              (out_empty_arr[6])
+);
+
+
 
 logic all_empty = '0;
 logic all_full = '0;
@@ -335,10 +352,10 @@ always_comb begin
     all_empty = 0;
     all_full  = 0;
 
-    for(int i = 0; i < 8; i = i + 1) begin
+    for(int i = 0; i < 9; i = i + 1) begin
         all_full = all_full || in_full_arr[i];
     end
-    for(int i = 0; i < 6; i = i + 1) begin
+    for(int i = 0; i < 7; i = i + 1) begin
         all_empty = all_empty || out_empty_arr[i];
     end
     out_empty = all_empty;

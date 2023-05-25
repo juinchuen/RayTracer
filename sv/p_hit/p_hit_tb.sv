@@ -46,7 +46,7 @@ p_hit #(
     .reset                (reset),
     .tri_normal_in        (tri_normal_1[2:0]),
     .v0_in                (v0[2:0]),
-    .origin               (origin_1[2:0]),
+    .origin_in               (origin_1[2:0]),
     .dir                  (dir_1[2:0]),
     .in_full              (in_full[0]),
     .in_wr_en             (in_wr_en[0]),
