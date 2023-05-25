@@ -15,6 +15,7 @@ module accumulate #(
     input   logic                           hit,
     input   logic signed    [D_BITS-1 : 0]  p_hit               [2:0],
     input   logic           [M_BITS-1 : 0]  triangle_ID,
+    input   logic signed    [D_BITS-1 : 0]  origin              [2:0],
 
     output  logic                           hit_min,
     output  logic signed    [D_BITS-1 : 0]  p_hit_min           [2:0],
@@ -30,6 +31,7 @@ logic           [D_BITS+Q_BITS+1 : 0]   d2;
 logic signed    [D_BITS-1 : 0]          read_p_hit      [2:0];
 logic                                   read_hit;
 logic           [M_BITS-1 : 0]          read_triangle_ID;
+logic signed    [D_BITS-1 : 0]          read_origin     [2:0];
 
 logic           [D_BITS+Q_BITS+1 : 0]   d2_min;
 
@@ -46,6 +48,7 @@ always @ (posedge clock or posedge reset) begin
             read_p_hit[i]       <= 'b0;
             p_hit_squared[i]    <= 'b0;
             p_hit_min[i]        <= 'b0;
+            read_origin[i]      <= 'b0;
 
         end
 
@@ -93,6 +96,8 @@ always @ (posedge clock or posedge reset) begin
                         read_p_hit [2]      <= p_hit[2];
 
                         read_triangle_ID    <= triangle_ID;
+
+                        read_origin         <= origin;
 
                         state               <= 'h2;
 
@@ -148,7 +153,7 @@ always @ (posedge clock or posedge reset) begin
 
                             hit_min <= 'b1;
 
-                            state   <= 'h4;
+                            state   <= 'h7;
 
                         end
 
@@ -157,6 +162,16 @@ always @ (posedge clock or posedge reset) begin
                             state <= 'h0;
 
                         end
+
+                    end
+
+            'h07 :  begin
+
+                        read_p_hit[0]   <= read_p_hit[0] - read_origin[0];
+                        read_p_hit[1]   <= read_p_hit[1] - read_origin[1];
+                        read_p_hit[2]   <= read_p_hit[2] - read_origin[2];
+                        
+                        state           <= 'h4;
 
                     end
 

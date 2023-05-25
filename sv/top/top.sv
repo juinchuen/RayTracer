@@ -55,7 +55,8 @@ module ray_tracer_top #(
     logic signed    [D_BITS-1 : 0]  v0_phit_hitb            [2:0];
     logic signed    [D_BITS-1 : 0]  v1_phit_hitb            [2:0];
     logic signed    [D_BITS-1 : 0]  v2_phit_hitb            [2:0];
-    logic signed    [D_BITS-1 : 0]  normal_phit_hitb [2:0];
+    logic signed    [D_BITS-1 : 0]  origin_phit_hitb        [2:0];
+    logic signed    [D_BITS-1 : 0]  normal_phit_hitb        [2:0];
     
     logic           [M_BITS-1 : 0]  triangle_ID_phit_hitb;
 
@@ -77,6 +78,8 @@ module ray_tracer_top #(
     // logic                           hit_acc_shader;
     // logic signed    [D_BITS-1 : 0]  phit_acc_shader         [2:0];
     // logic           [M_BITS-1 : 0]  triangle_ID_acc_shader;
+
+    logic signed    [D_BITS-1 : 0]  origin_hitb_acc         [2:0];
 
     assign                          full_shader_acc = 0;
 
@@ -172,7 +175,7 @@ module ray_tracer_top #(
         .v0_in              (instruction_read [ 8: 6]),
         .v1_in              (instruction_read [11: 9]),
         .v2_in              (instruction_read [14:12]),
-        .origin             (instruction_read [ 2: 0]),
+        .origin_in          (instruction_read [ 2: 0]),
         .dir                (instruction_read [ 5: 3]),
         .triangle_id_in     (triangle_ID_streamer_phit),
         .in_full            (full_phit_streamer),
@@ -182,6 +185,7 @@ module ray_tracer_top #(
         .v0_out             (v0_phit_hitb),
         .v1_out             (v1_phit_hitb),
         .v2_out             (v2_phit_hitb),
+        .origin_out         (origin_phit_hitb),
         .triangle_id_out    (triangle_ID_phit_hitb),
         .tri_normal_out     (normal_phit_hitb),
 
@@ -210,10 +214,12 @@ module ray_tracer_top #(
         .v2             (v2_phit_hitb),
 
         // Pass through data
-        .tri_id_din     (triangle_ID_phit_hitb),
-        .ray_id_din     (ray_ID_dummy_in),
-        .tri_id_dout    (triangle_ID_hitb_acc),
-        .ray_id_dout    (ray_ID_dummy_out),
+        .tri_id_din         (triangle_ID_phit_hitb),
+        .ray_id_din         (ray_ID_dummy_in),
+        .ray_origin_din     (origin_phit_hitb),
+        .tri_id_dout        (triangle_ID_hitb_acc),
+        .ray_id_dout        (ray_ID_dummy_out),
+        .ray_origin_dout    (origin_hitb_acc),
         
         // hit_bool output
         .hit_bool_dout  (hit_hitb_acc),
@@ -245,6 +251,7 @@ module ray_tracer_top #(
         .hit            (hit_hitb_acc),
         .p_hit          (phit_hitb_acc),
         .triangle_ID    (triangle_ID_hitb_acc),
+        .origin         (origin_hitb_acc),
 
         .hit_min            (hit_acc_shader),
         .p_hit_min          (phit_acc_shader),

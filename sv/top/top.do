@@ -43,7 +43,7 @@ add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/tri_
 add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/v0_in
 add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/v1_in
 add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/v2_in
-add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/origin
+add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/origin_in
 add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/dir
 add wave -noupdate -group P_HIT -radix hexadecimal /top_tb/DUT_INST0/P_HIT0/triangle_id_in
 
