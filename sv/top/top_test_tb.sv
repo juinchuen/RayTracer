@@ -1,8 +1,8 @@
-module top_tb ();
+module top_test_tb ();
 
     localparam D_BITS = 'd32;
     localparam M_BITS = 'd12;
-    localparam Q_BITS = 'd16;
+    localparam Q_BITS = 'd10;
 
     logic clock;
     logic reset;
@@ -32,11 +32,6 @@ module top_tb ();
     genvar i;
 
     int out_count = 0;
-    int ascii_count = 0;
-
-    int sim_output_file;
-    int hitb_output_file;
-    int ascii_output_file;
 
     generate
 
@@ -49,10 +44,6 @@ module top_tb ();
     endgenerate
 
     initial begin
-
-        sim_output_file = $fopen("sim_output_file", "w");
-        hitb_output_file = $fopen("hitb_output_file", "w");
-        ascii_output_file = $fopen("ascii_output_file", "w");
         
         $display("Loading ray data");
         $readmemh("../ray_data.txt", ray_data);
@@ -73,13 +64,13 @@ module top_tb ();
         reset = 0;
         in_wr_en = 1;
 
-        wait(count == 1024)
+        ray_data_single = ray_data[238];
+
+        # 20
 
         in_wr_en = 0;
 
-        wait(out_count == 1000)
-
-        $fclose(sim_output_file);
+        wait(wr_en_out);
 
         $finish;
 
@@ -90,18 +81,6 @@ module top_tb ();
         # 5
 
         clock = ~clock;
-
-    end
-
-    always @ (posedge clock or in_wr_en) begin
-
-        if (!reset && in_wr_en) begin
-
-            ray_data_single = ray_data[count];
-
-            count = count + 1;
-
-        end
 
     end
 
@@ -130,56 +109,5 @@ module top_tb ();
         .rd_acc_hitb                (rd_hitb)
 
     );
-
-    always @ (posedge wr_en_out) begin
-
-        if (hit_out) begin
-
-            $fwrite(sim_output_file, "hit, %8d\n", triangle_ID_out);
-            $fwrite(ascii_output_file, "%1x", triangle_ID_out);
-
-        end
-
-        else begin
-
-            $fwrite(sim_output_file, "no hit\n");
-            $fwrite(ascii_output_file, ".");
-
-        end
-
-        out_count = out_count + 1;
-
-        ascii_count = ascii_count + 1;
-
-        if (ascii_count == 32) begin
-
-            $fwrite(ascii_output_file, "\n");
-
-            ascii_count = 0;
-
-        end
-
-    end
-
-    always @ (posedge rd_hitb) begin
-
-        if (hit_hitb) begin
-
-            $fwrite(hitb_output_file,
-                    "  hit, %2d, %x, %x %x\n",
-                    triangle_ID_hitb,
-                    p_hit_hitb[0],
-                    p_hit_hitb[1],
-                    p_hit_hitb[2]);
-
-        end
-
-        else begin
-
-            $fwrite(hitb_output_file, "nohit\n");
-
-        end
-
-    end
 
 endmodule
