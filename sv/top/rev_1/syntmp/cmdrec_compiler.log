@@ -1,0 +1,35 @@
+/vol/synopsys/fpga/O-2018.09-SP1/bin/c_hdl  -osyn  /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/hit_bool_comp.srs  -hdllog  /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synlog/hit_bool_compiler.srr  -encrypt  -mp  4  -prodtype  synplify_premier  -licensetype  synplifypremierdp  -distcompmode 1 -verification_mode 0  -verilog  -prodtype  synplify_premier  -pqdpadd -verification_mode 0 -infer_seqShift -primux -fixsmult -dspmac -nram -divnmod -continue_on_error -nostructver   -I /home/jco1147/ray_tracer/github/RayTracer/sv/top/  -I /vol/synopsys/fpga/O-2018.09-SP1/lib   -sysv  -devicelib  /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera.v  -devicelib  /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v  -devicelib  /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v  -devicelib  /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v  -devicelib  /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_lpm.v  -devicelib  /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_primitives.v  -encrypt  -pro  -dmgen  /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/dm  -auto_infer_blackbox 0 -proto -ui -fid2 -ram -sharing on -ll 2000 -autosm  -D_MULTIPLE_FILE_COMPILATION_UNIT_  -fast_synthesis 0  -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/divide/divide.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/divide/divide_top.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_1.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv -lib work -fsysv /home/jco1147/ray_tracer/github/RayTracer/sv/hit_bool/hit_bool.sv  -jobname  "compiler" 
+relcom:/vol/synopsys/fpga/O-2018.09-SP1/bin/c_hdl -osyn ../synwork/hit_bool_comp.srs -hdllog ../synlog/hit_bool_compiler.srr -encrypt -mp 4 -prodtype synplify_premier -licensetype synplifypremierdp -distcompmode 1 -verification_mode 0 -verilog -prodtype synplify_premier -pqdpadd -verification_mode 0 -infer_seqShift -primux -fixsmult -dspmac -nram -divnmod -continue_on_error -nostructver -I ../../ -I /vol/synopsys/fpga/O-2018.09-SP1/lib -sysv -devicelib /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera.v -devicelib /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v -devicelib /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v -devicelib /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v -devicelib /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_lpm.v -devicelib /vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_primitives.v -encrypt -pro -dmgen ../dm -auto_infer_blackbox 0 -proto -ui -fid2 -ram -sharing on -ll 2000 -autosm -D_MULTIPLE_FILE_COMPILATION_UNIT_ -fast_synthesis 0 -lib work -fsysv ../../top.sv -lib work -fsysv ../../../accumulate/accumulate_v2.sv -lib work -fsysv ../../../sramb.sv -lib work -fsysv ../../../streamer/streamer.sv -lib work -fsysv ../../../fifo.sv -lib work -fsysv ../../../fifo_math.sv -lib work -fsysv ../../../divide/divide.sv -lib work -fsysv ../../../divide/divide_top.sv -lib work -fsysv ../../../p_hit/p_hit_1.sv -lib work -fsysv ../../../p_hit/p_hit_2.sv -lib work -fsysv ../../../hit_bool/hit_bool.sv -jobname "compiler"
+rc:0 success:1 runtime:5
+file:../synwork/hit_bool_comp.srs|io:o|time:1684994241|size:82126|exec:0|csum:
+file:../synlog/hit_bool_compiler.srr|io:o|time:1684994241|size:27076|exec:0|csum:
+file:/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera.v|io:i|time:1543381811|size:761|exec:0|csum:530DBF8BEE396EFE8B33F0255371F1EA
+file:/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/altera_mult_add.v|io:i|time:1543381811|size:168277|exec:0|csum:6E29C085D2A2C382F4C51DABDB48F76A
+file:/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/cyclonev.v|io:i|time:1543381840|size:131|exec:0|csum:6832EE71B40C2B86E4A43BC5063506D9
+file:/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v|io:i|time:1543381839|size:2618882|exec:0|csum:84794777C52804010B1D63698E285DB9
+file:/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_lpm.v|io:i|time:1543381839|size:14867|exec:0|csum:01D82E1D5975CD832C9D765243E5182D
+file:/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_primitives.v|io:i|time:1543381839|size:35286|exec:0|csum:C0AAD8CA21730C472D624582C058B929
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../top.sv|io:i|time:1684991739|size:8549|exec:0|csum:BCE348776CD17A25F359C8CDEC2DC7FB
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../accumulate/accumulate_v2.sv|io:i|time:1684990662|size:6317|exec:0|csum:20015B612CA97DE39AB825EB988D4C93
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../sramb.sv|io:i|time:1684774146|size:1554|exec:0|csum:C4911F7899D659C04DC6EAC6C659AE6A
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../streamer/streamer.sv|io:i|time:1684789871|size:2744|exec:0|csum:E131F3F029DA45467B1EC4CCF471F961
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../fifo.sv|io:i|time:1683305992|size:4165|exec:0|csum:62649641FD8AF51CCB82DD343972A422
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../fifo_math.sv|io:i|time:1683305992|size:17830|exec:0|csum:C7FE4886FDBA8CB817C309E3D1909060
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../divide/divide.sv|io:i|time:1683305992|size:3413|exec:0|csum:317DD1655F82A2EA6397BF116D4C7E66
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../divide/divide_top.sv|io:i|time:1683305992|size:1425|exec:0|csum:0E9124986EF69A4A3339E64D0C87A3B9
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../p_hit/p_hit_1.sv|io:i|time:1683305993|size:10368|exec:0|csum:42126A60EC8A1BB583AD7E3CEB12D30A
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../p_hit/p_hit_2.sv|io:i|time:1684989833|size:11033|exec:0|csum:2FED3C5A30B9826138C9F450F1F6A587
+file:./-fsysv|io:i|time:0|size:-1|exec:0|csum:
+file:../../../hit_bool/hit_bool.sv|io:i|time:1684989833|size:17972|exec:0|csum:A57EF4DB7218E7EABE1CD5068CDAEF63
+file:/vol/synopsys/fpga/O-2018.09-SP1/linux_a_64/c_hdl|io:i|time:1543382462|size:8760008|exec:1|csum:CF968C540087EF9F5288FFCDBF191EA5
+file:/vol/synopsys/fpga/O-2018.09-SP1/bin/c_hdl|io:i|time:1543382354|size:367|exec:1|csum:E52A0D56112AD6C22F02B648B6F508CE

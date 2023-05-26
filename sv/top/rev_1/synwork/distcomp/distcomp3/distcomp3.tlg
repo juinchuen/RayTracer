@@ -1,0 +1,100 @@
+@N:: Applying property .distcompnoprune with value 1 on module hit_bool in library work
+@N:: Applying property .noprune with value 1 on module hit_bool in library work
+@N:: Applying property .distcomp_black_box with value 1 on module hit_bool in library work
+@N:: Applying property syn_black_box with value 1 on module hit_bool in library work
+@N:: Applying property .distcompnoprune with value 1 on module p_hit in library work
+@N:: Applying property .noprune with value 1 on module p_hit in library work
+@N:: Applying property .distcomp_black_box with value 1 on module p_hit in library work
+@N:: Applying property syn_black_box with value 1 on module p_hit in library work
+@N:: Applying property .distcompmodetop with value 1 on module ray_tracer_top in library work
+@N:: Applying property .distcompnoprune with value 1 on module ray_tracer_top in library work
+@N:: Applying property .noprune with value 1 on module ray_tracer_top in library work
+@N:: Applying property .distcompnoprune with value 1 on module accumulate in library work
+@N:: Applying property .noprune with value 1 on module accumulate in library work
+@N:: Applying property .distcompnoprune with value 1 on module sramb in library work
+@N:: Applying property .noprune with value 1 on module sramb in library work
+@N:: Applying property .distcompnoprune with value 1 on module streamer in library work
+@N:: Applying property .noprune with value 1 on module streamer in library work
+@N:: Applying property .distcompnoprune with value 1 on module fifo in library work
+@N:: Applying property .noprune with value 1 on module fifo in library work
+Selecting top level module ray_tracer_top
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000011000000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_192_1024_11s
+Running optimization stage 1 on fifo_192_1024_11s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=1024, width=192
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv":1:7:1:14|Synthesizing module streamer in library work.
+
+	Q_BITS=32'b00000000000000000000000000001010
+	D_BITS=32'b00000000000000000000000000100000
+	M_BITS=32'b00000000000000000000000000001100
+	TRI_MAX=13'b0000000001011
+   Generated name = streamer_10_32_12_11
+Running optimization stage 1 on streamer_10_32_12_11 .......
+@W: CL169 :"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv":27:0:27:5|Pruning unused register i[31:0]. Make sure that there are no unused intermediate registers.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":16:7:16:11|Synthesizing module sramb in library work.
+
+	SRAMB_BUFFER_SIZE=32'b00000000000000000000000000010000
+	SRAMB_ADDR_WIDTH=32'b00000000000000000000000000001100
+	SRAMB_DATA_WIDTH=32'b00000000000000000000000110000000
+   Generated name = sramb_16s_12s_384s
+Opening data file ../triangle_data.txt from directory /home/jco1147/ray_tracer/github/RayTracer/sv/top/..
+@W: CG532 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":34:1:34:7|Within an initial block, only Verilog force statements and memory $readmemh/$readmemb initialization statements are recognized, and all other content is ignored.
+Running optimization stage 1 on sramb_16s_12s_384s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":62:1:62:6|Found RAM mem, depth=16, width=384
+@W: CL271 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":62:1:62:6|Pruning unused bits 11 to 4 of read_addr[11:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv":182:7:182:11|Synthesizing module p_hit in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+	M_BITS=32'b00000000000000000000000000001100
+   Generated name = p_hit_32_10_12
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/hit_bool/hit_bool.sv":1:7:1:14|Synthesizing module hit_bool in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+	M_BITS=32'b00000000000000000000000000001100
+   Generated name = hit_bool_32_10_12
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv":1:7:1:16|Synthesizing module accumulate in library work.
+
+	Q_BITS=32'b00000000000000000000000000001010
+	D_BITS=32'b00000000000000000000000000100000
+	M_BITS=32'b00000000000000000000000000001100
+   Generated name = accumulate_10_32_12
+Running optimization stage 1 on accumulate_10_32_12 .......
+@W: CL169 :"/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv":42:0:42:5|Pruning unused register i[31:0]. Make sure that there are no unused intermediate registers.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv":1:7:1:20|Synthesizing module ray_tracer_top in library work.
+Running optimization stage 1 on ray_tracer_top .......
+Running optimization stage 2 on ray_tracer_top .......
+Running optimization stage 2 on accumulate_10_32_12 .......
+@N: CL201 :"/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv":42:0:42:5|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 8 reachable states with original encodings of:
+   0000
+   0001
+   0010
+   0011
+   0100
+   0101
+   0110
+   0111
+Running optimization stage 2 on sramb_16s_12s_384s .......
+@W: CL246 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":24:42:24:48|Input port bits 11 to 4 of rd_addr[11:0] are unused. Assign logic for all port bits or change the input port size.
+@W: CL246 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":25:42:25:48|Input port bits 11 to 4 of wr_addr[11:0] are unused. Assign logic for all port bits or change the input port size.
+Running optimization stage 2 on streamer_10_32_12_11 .......
+@N: CL201 :"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv":27:0:27:5|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 4 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+Running optimization stage 2 on fifo_192_1024_11s .......
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp3/distcomp3.rt.csv
+

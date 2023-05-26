@@ -19,7 +19,6 @@ vlog -work work "../p_hit/p_hit_2.sv"
 
 # dependencies for hit_bool
 vlog -work work "../hit_bool/hit_bool.sv"
-vlog -work work "../hit_bool/hit_bool_tb.sv"
 
 vsim -classdebug -voptargs=+acc +notimingchecks -L work work.top_tb -wlf top_tb.wlf
 

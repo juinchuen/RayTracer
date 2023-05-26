@@ -1,0 +1,116 @@
+@N:: Applying property .distcompnoprune with value 1 on module dot in library work
+@N:: Applying property .noprune with value 1 on module dot in library work
+@N:: Applying property .distcomp_black_box with value 1 on module dot in library work
+@N:: Applying property syn_black_box with value 1 on module dot in library work
+@N:: Applying property .distcompmodetop with value 1 on module hit_bool in library work
+@N:: Applying property .distcompnoprune with value 1 on module hit_bool in library work
+@N:: Applying property .noprune with value 1 on module hit_bool in library work
+@N:: Applying property .distcompnoprune with value 1 on module fifo in library work
+@N:: Applying property .noprune with value 1 on module fifo in library work
+@N:: Applying property .distcompnoprune with value 1 on module fifo_array in library work
+@N:: Applying property .noprune with value 1 on module fifo_array in library work
+@N:: Applying property .distcompnoprune with value 1 on module Cross in library work
+@N:: Applying property .noprune with value 1 on module Cross in library work
+@N:: Applying property .distcompnoprune with value 1 on module cross_module in library work
+@N:: Applying property .noprune with value 1 on module cross_module in library work
+@N:: Applying property .distcompnoprune with value 1 on module sub in library work
+@N:: Applying property .noprune with value 1 on module sub in library work
+@N:: Applying property .distcompnoprune with value 1 on module sub_module in library work
+@N:: Applying property .noprune with value 1 on module sub_module in library work
+Selecting top level module hit_bool
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv":473:7:473:16|Synthesizing module sub_module in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+   Generated name = sub_module_32s
+Running optimization stage 1 on sub_module_32s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Synthesizing module fifo_array in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000001000000000
+	ARRAY_SIZE=32'b00000000000000000000000000000011
+   Generated name = fifo_array_32s_512s_3s
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000001000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001010
+   Generated name = fifo_32s_512s_10s
+Running optimization stage 1 on fifo_32s_512s_10s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=512, width=32
+Running optimization stage 1 on fifo_array_32s_512s_3s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv":547:7:547:9|Synthesizing module sub in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+   Generated name = sub_32s
+Running optimization stage 1 on sub_32s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv":228:7:228:18|Synthesizing module cross_module in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = cross_module_32s_10s
+Running optimization stage 1 on cross_module_32s_10s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv":299:7:299:11|Synthesizing module Cross in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = Cross_32s_10s
+Running optimization stage 1 on Cross_32s_10s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv":176:7:176:9|Synthesizing module dot in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = dot_32s_10s
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Synthesizing module fifo_array in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	ARRAY_SIZE=32'b00000000000000000000000000000011
+   Generated name = fifo_array_32s_1024s_3s
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_32s_1024s_11s
+Running optimization stage 1 on fifo_32s_1024s_11s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=1024, width=32
+Running optimization stage 1 on fifo_array_32s_1024s_3s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000001100
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_12s_1024s_11s
+Running optimization stage 1 on fifo_12s_1024s_11s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=1024, width=12
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000000001
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_1s_1024s_11s
+Running optimization stage 1 on fifo_1s_1024s_11s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=1024, width=1
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/hit_bool/hit_bool.sv":1:7:1:14|Synthesizing module hit_bool in library work.
+Running optimization stage 1 on hit_bool .......
+Running optimization stage 2 on hit_bool .......
+@N: CL201 :"/home/jco1147/ray_tracer/github/RayTracer/sv/hit_bool/hit_bool.sv":586:0:586:8|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 2 reachable states with original encodings of:
+   00
+   01
+Running optimization stage 2 on fifo_1s_1024s_11s .......
+Running optimization stage 2 on fifo_12s_1024s_11s .......
+Running optimization stage 2 on fifo_32s_1024s_11s .......
+Running optimization stage 2 on fifo_array_32s_1024s_3s .......
+Running optimization stage 2 on Cross_32s_10s .......
+Running optimization stage 2 on cross_module_32s_10s .......
+Running optimization stage 2 on sub_32s .......
+Running optimization stage 2 on fifo_32s_512s_10s .......
+Running optimization stage 2 on fifo_array_32s_512s_3s .......
+Running optimization stage 2 on sub_module_32s .......
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp0/distcomp0.rt.csv
+

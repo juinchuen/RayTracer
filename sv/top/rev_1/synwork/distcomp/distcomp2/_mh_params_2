@@ -1,0 +1,4 @@
+top work.p_hit
+parameter D_BITS 32;
+parameter Q_BITS 10;
+parameter M_BITS 12;

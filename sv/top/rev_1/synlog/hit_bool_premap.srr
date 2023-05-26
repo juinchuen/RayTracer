@@ -1,0 +1,122 @@
+# Thu May 25 00:57:23 2023
+
+
+Copyright (C) 1994-2018 Synopsys, Inc.
+This Synopsys software and all associated documentation are proprietary to Synopsys, Inc.
+and may only be used pursuant to the terms and conditions of a written license agreement
+with Synopsys, Inc. All other use, reproduction, modification, or distribution of the
+Synopsys software or the associated documentation is strictly prohibited.
+Tool: Synplify (R) Premier
+Build: O-2018.09-SP1
+Install: /vol/synopsys/fpga/O-2018.09-SP1
+OS: Red Hat Enterprise Linux 8.8 (Ootpa)
+Hostname: joker.ece.northwestern.edu
+max virtual memory: unlimited (bytes)
+max user processes: 62115
+max stack size: 8388608 (bytes)
+
+
+Implementation : rev_1
+Synopsys Intel FPGA Technology Pre-mapping, Version maprc, Build 4745R, Built Nov 27 2018 21:14:52
+
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 98MB peak: 99MB)
+
+@A: MF827 |No constraint file specified.
+@N: MF284 |Setting synthesis effort to medium for the design
+@L: /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool_scck.rpt 
+Printing clock  summary report in "/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool_scck.rpt" file 
+@N: MF915 |Option synthesis_strategy=advanced is enabled. 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 120MB peak: 123MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 120MB peak: 123MB)
+
+@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
+@N: FA350 |Clearbox flow is not supported when QUARTUS_ROOTDIR is not set
+@N: FA351 |Clearbox flow is not supported because clearbox does not exist
+@W: FA352 |Not using the Clearbox flow might affect timing correlation and Quality of Results (QoR).
+@N: MF284 |Setting synthesis effort to medium for the design
+
+Finished Clear Box Flow. (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 136MB peak: 138MB)
+
+@N: MH105 |UMR3 is only supported for HAPS-80.
+@N: MH105 |UMR3 is only supported for HAPS-80.
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 162MB peak: 164MB)
+
+
+
+Clock Summary
+******************
+
+          Start                    Requested     Requested     Clock        Clock                     Clock
+Level     Clock                    Frequency     Period        Type         Group                     Load 
+-----------------------------------------------------------------------------------------------------------
+0 -       ray_tracer_top|clock     220.4 MHz     4.537         inferred     Autoconstr_clkgroup_0     11924
+===========================================================================================================
+
+
+
+Clock Load Summary
+***********************
+
+                         Clock     Source          Clock Pin                                                      Non-clock Pin     Non-clock Pin
+Clock                    Load      Pin             Seq Example                                                    Seq Example       Comb Example 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+ray_tracer_top|clock     11924     clock(port)     P_HIT0.origin_fifo.genblk1\[2\]\.u_fifo.fifo_buf[31:0].CLK     -                 -            
+=================================================================================================================================================
+
+@W: MT529 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":62:4:62:12|Found inferred clock ray_tracer_top|clock which controls 11924 sequential elements including INPUT_RAY_FIFO.empty. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.sap.
+
+Starting constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 150MB peak: 164MB)
+
+Encoding state machine state[3:0] (in view: work.streamer_10_32_12_11(verilog))
+original code -> new code
+   000 -> 00
+   001 -> 01
+   010 -> 10
+   011 -> 11
+@N: MO225 :"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv":27:0:27:5|There are no possible illegal states for state machine state[3:0] (in view: work.streamer_10_32_12_11(verilog)); safe FSM implementation is not required.
+Encoding state machine state[7:0] (in view: work.accumulate_10_32_12(verilog))
+original code -> new code
+   0000 -> 00000001
+   0001 -> 00000010
+   0010 -> 00000100
+   0011 -> 00001000
+   0100 -> 00010000
+   0101 -> 00100000
+   0110 -> 01000000
+   0111 -> 10000000
+Encoding state machine state[1:0] (in view: work.hit_bool(verilog))
+original code -> new code
+   00 -> 0
+   01 -> 1
+@N: MO225 :"/home/jco1147/ray_tracer/github/RayTracer/sv/hit_bool/hit_bool.sv":586:0:586:8|There are no possible illegal states for state machine state[1:0] (in view: work.hit_bool(verilog)); safe FSM implementation is not required.
+Encoding state machine state[2:0] (in view: work.divide_module_10s_32s_43(verilog))
+original code -> new code
+   00 -> 00
+   01 -> 01
+   10 -> 10
+
+Finished constraint checker preprocessing (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 157MB peak: 164MB)
+
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 158MB peak: 164MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:01s; Memory used current: 70MB peak: 164MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Thu May 25 00:57:24 2023
+
+###########################################################]

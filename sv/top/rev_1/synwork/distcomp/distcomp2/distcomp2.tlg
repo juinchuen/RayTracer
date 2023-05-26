@@ -1,0 +1,121 @@
+@N:: Applying property .distcompnoprune with value 1 on module p_hit_1 in library work
+@N:: Applying property .noprune with value 1 on module p_hit_1 in library work
+@N:: Applying property .distcomp_black_box with value 1 on module p_hit_1 in library work
+@N:: Applying property syn_black_box with value 1 on module p_hit_1 in library work
+@N:: Applying property .distcompmodetop with value 1 on module p_hit in library work
+@N:: Applying property .distcompnoprune with value 1 on module p_hit in library work
+@N:: Applying property .noprune with value 1 on module p_hit in library work
+@N:: Applying property .distcompnoprune with value 1 on module fifo_array in library work
+@N:: Applying property .noprune with value 1 on module fifo_array in library work
+@N:: Applying property .distcompnoprune with value 1 on module fifo in library work
+@N:: Applying property .noprune with value 1 on module fifo in library work
+@N:: Applying property .distcompnoprune with value 1 on module p_hit_module in library work
+@N:: Applying property .noprune with value 1 on module p_hit_module in library work
+@N:: Applying property .distcompnoprune with value 1 on module add in library work
+@N:: Applying property .noprune with value 1 on module add in library work
+@N:: Applying property .distcompnoprune with value 1 on module add_module in library work
+@N:: Applying property .noprune with value 1 on module add_module in library work
+@N:: Applying property .distcompnoprune with value 1 on module p_hit_mult in library work
+@N:: Applying property .noprune with value 1 on module p_hit_mult in library work
+@N:: Applying property .distcompnoprune with value 1 on module scale in library work
+@N:: Applying property .noprune with value 1 on module scale in library work
+@N:: Applying property .distcompnoprune with value 1 on module scale_module in library work
+@N:: Applying property .noprune with value 1 on module scale_module in library work
+Selecting top level module p_hit
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_1.sv":259:7:259:13|Synthesizing module p_hit_1 in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = p_hit_1_32s_10s
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Synthesizing module fifo_array in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000001000000000
+	ARRAY_SIZE=32'b00000000000000000000000000000011
+   Generated name = fifo_array_32s_512s_3s
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000001000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001010
+   Generated name = fifo_32s_512s_10s
+Running optimization stage 1 on fifo_32s_512s_10s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=512, width=32
+Running optimization stage 1 on fifo_array_32s_512s_3s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv":354:7:354:18|Synthesizing module scale_module in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = scale_module_32s_10s
+Running optimization stage 1 on scale_module_32s_10s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv":422:7:422:11|Synthesizing module scale in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = scale_32s_10s
+Running optimization stage 1 on scale_32s_10s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv":1:7:1:16|Synthesizing module p_hit_mult in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = p_hit_mult_32s_10s
+Running optimization stage 1 on p_hit_mult_32s_10s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv":2:7:2:16|Synthesizing module add_module in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+   Generated name = add_module_32s
+Running optimization stage 1 on add_module_32s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv":67:7:67:9|Synthesizing module add in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+   Generated name = add_32s
+Running optimization stage 1 on add_32s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv":92:7:92:18|Synthesizing module p_hit_module in library work.
+
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = p_hit_module_32s_10s
+Running optimization stage 1 on p_hit_module_32s_10s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Synthesizing module fifo_array in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	ARRAY_SIZE=32'b00000000000000000000000000000011
+   Generated name = fifo_array_32s_1024s_3s
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_32s_1024s_11s
+Running optimization stage 1 on fifo_32s_1024s_11s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=1024, width=32
+Running optimization stage 1 on fifo_array_32s_1024s_3s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000001100
+	FIFO_BUFFER_SIZE=32'b00000000000000000011000000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001111
+   Generated name = fifo_12s_12288s_15s
+Running optimization stage 1 on fifo_12s_12288s_15s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=12288, width=12
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv":182:7:182:11|Synthesizing module p_hit in library work.
+@W: CS263 :"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv":227:28:227:74|Port-width mismatch for port in_full. The port definition is 4 bits, but the actual port connection bit width is 3. Adjust either the definition or the instantiation of this port.
+Running optimization stage 1 on p_hit .......
+Running optimization stage 2 on p_hit .......
+Running optimization stage 2 on fifo_12s_12288s_15s .......
+Running optimization stage 2 on fifo_32s_1024s_11s .......
+Running optimization stage 2 on fifo_array_32s_1024s_3s .......
+Running optimization stage 2 on p_hit_module_32s_10s .......
+Running optimization stage 2 on add_32s .......
+Running optimization stage 2 on add_module_32s .......
+Running optimization stage 2 on p_hit_mult_32s_10s .......
+Running optimization stage 2 on scale_32s_10s .......
+Running optimization stage 2 on scale_module_32s_10s .......
+Running optimization stage 2 on fifo_32s_512s_10s .......
+Running optimization stage 2 on fifo_array_32s_512s_3s .......
+
+For a summary of runtime and memory usage per design unit, please see file:
+==========================================================
+@L: /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp2/distcomp2.rt.csv
+

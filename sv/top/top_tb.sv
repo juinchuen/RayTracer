@@ -73,11 +73,11 @@ module top_tb ();
         reset = 0;
         in_wr_en = 1;
 
-        wait(count == 1024)
+        wait(count == 1026)
 
         in_wr_en = 0;
 
-        wait(out_count == 1000)
+        wait(out_count == 1024)
 
         $fclose(sim_output_file);
 
