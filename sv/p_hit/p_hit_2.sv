@@ -224,7 +224,7 @@ p_hit_module #(
     .origin_2             (origin_in[2:0]),
     .dir_1                (dir[2:0]),
     .dir_2                (dir[2:0]),
-    .in_full              ({in_full_arr[0], in_full_arr[1], in_full_arr[2]}),
+    .in_full              ({in_full_arr[0], in_full_arr[1], in_full_arr[2], in_full_arr[3]}),
     .in_wr_en             ({in_wr_en, in_wr_en, in_wr_en, in_wr_en}),
 
     .out                  (p_hit[2:0]),
