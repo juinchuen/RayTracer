@@ -208,7 +208,7 @@ module p_hit #(
     output logic out_empty 
 );
 
-logic in_full_arr[8:0];
+logic in_full_arr[9:0];
 logic out_empty_arr[6:0];
 
 p_hit_module #(
@@ -241,7 +241,7 @@ fifo_array #(
     .clock              (clock),
     .wr_en              (in_wr_en),
     .din                (v0_in[2:0]),
-    .full               (in_full_arr[3]),
+    .full               (in_full_arr[4]),
     .rd_en              (out_rd_en),
     .dout               (v0_out[2:0]),
     .empty              (out_empty_arr[1])
@@ -352,7 +352,7 @@ always_comb begin
     all_empty = 0;
     all_full  = 0;
 
-    for(int i = 0; i < 9; i = i + 1) begin
+    for(int i = 0; i < 10; i = i + 1) begin
         all_full = all_full || in_full_arr[i];
     end
     for(int i = 0; i < 7; i = i + 1) begin
