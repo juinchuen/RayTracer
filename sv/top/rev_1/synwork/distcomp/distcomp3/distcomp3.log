@@ -75,7 +75,6 @@ Synopsys Verilog Compiler, Version comp2018q4p1, Build 004R, Built Nov 27 2018 2
 @I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/scemi_pipes.svh" (library snps_haps)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv" (library work)
-@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv" (library work)
@@ -84,7 +83,10 @@ Synopsys Verilog Compiler, Version comp2018q4p1, Build 004R, Built Nov 27 2018 2
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_1.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/hit_bool/hit_bool.sv" (library work)
+@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv" (library work)
+@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/shader/shader.sv" (library work)
 Verilog syntax check successful!
+File /home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv changed - recompiling
 @N:: Applying property .distcompnoprune with value 1 on module hit_bool in library work
 @N:: Applying property .noprune with value 1 on module hit_bool in library work
 @N:: Applying property .distcomp_black_box with value 1 on module hit_bool in library work
@@ -96,14 +98,16 @@ Verilog syntax check successful!
 @N:: Applying property .distcompmodetop with value 1 on module ray_tracer_top in library work
 @N:: Applying property .distcompnoprune with value 1 on module ray_tracer_top in library work
 @N:: Applying property .noprune with value 1 on module ray_tracer_top in library work
-@N:: Applying property .distcompnoprune with value 1 on module accumulate in library work
-@N:: Applying property .noprune with value 1 on module accumulate in library work
-@N:: Applying property .distcompnoprune with value 1 on module sramb in library work
-@N:: Applying property .noprune with value 1 on module sramb in library work
-@N:: Applying property .distcompnoprune with value 1 on module streamer in library work
-@N:: Applying property .noprune with value 1 on module streamer in library work
+@N:: Applying property .distcompnoprune with value 1 on module shader in library work
+@N:: Applying property .noprune with value 1 on module shader in library work
+@N:: Applying property .distcompnoprune with value 1 on module dummy_memory in library work
+@N:: Applying property .noprune with value 1 on module dummy_memory in library work
 @N:: Applying property .distcompnoprune with value 1 on module fifo in library work
 @N:: Applying property .noprune with value 1 on module fifo in library work
+@N:: Applying property .distcompnoprune with value 1 on module accumulate in library work
+@N:: Applying property .noprune with value 1 on module accumulate in library work
+@N:: Applying property .distcompnoprune with value 1 on module streamer in library work
+@N:: Applying property .noprune with value 1 on module streamer in library work
 Selecting top level module ray_tracer_top
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
 
@@ -122,17 +126,13 @@ Running optimization stage 1 on fifo_192_1024_11s .......
    Generated name = streamer_10_32_12_11
 Running optimization stage 1 on streamer_10_32_12_11 .......
 @W: CL169 :"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv":27:0:27:5|Pruning unused register i[31:0]. Make sure that there are no unused intermediate registers.
-@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":16:7:16:11|Synthesizing module sramb in library work.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":1:7:1:18|Synthesizing module dummy_memory in library work.
 
-	SRAMB_BUFFER_SIZE=32'b00000000000000000000000000010000
-	SRAMB_ADDR_WIDTH=32'b00000000000000000000000000001100
-	SRAMB_DATA_WIDTH=32'b00000000000000000000000110000000
-   Generated name = sramb_16s_12s_384s
-Opening data file ../triangle_data.txt from directory /home/jco1147/ray_tracer/github/RayTracer/sv/top/..
-@W: CG532 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":34:1:34:7|Within an initial block, only Verilog force statements and memory $readmemh/$readmemb initialization statements are recognized, and all other content is ignored.
-Running optimization stage 1 on sramb_16s_12s_384s .......
-@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":62:1:62:6|Found RAM mem, depth=16, width=384
-@W: CL271 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":62:1:62:6|Pruning unused bits 11 to 4 of read_addr[11:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+	Q_BITS=32'b00000000000000000000000000001010
+	D_BITS=32'b00000000000000000000000000100000
+	M_BITS=32'b00000000000000000000000000001100
+   Generated name = dummy_memory_10_32_12
+Running optimization stage 1 on dummy_memory_10_32_12 .......
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv":182:7:182:11|Synthesizing module p_hit in library work.
 
 	D_BITS=32'b00000000000000000000000000100000
@@ -153,9 +153,42 @@ Running optimization stage 1 on sramb_16s_12s_384s .......
    Generated name = accumulate_10_32_12
 Running optimization stage 1 on accumulate_10_32_12 .......
 @W: CL169 :"/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv":42:0:42:5|Pruning unused register i[31:0]. Make sure that there are no unused intermediate registers.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000001100
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_12_1024_11s
+Running optimization stage 1 on fifo_12_1024_11s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=1024, width=12
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000000001
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_1_1024_11s
+Running optimization stage 1 on fifo_1_1024_11s .......
+@N: CL134 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":34:4:34:12|Found RAM fifo_buf, depth=1024, width=1
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/shader/shader.sv":1:7:1:12|Synthesizing module shader in library work.
+
+	M_BITS=32'b00000000000000000000000000001100
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = shader_12_32_10
+Running optimization stage 1 on shader_12_32_10 .......
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv":1:7:1:20|Synthesizing module ray_tracer_top in library work.
 Running optimization stage 1 on ray_tracer_top .......
 Running optimization stage 2 on ray_tracer_top .......
+Running optimization stage 2 on shader_12_32_10 .......
+@N: CL201 :"/home/jco1147/ray_tracer/github/RayTracer/sv/shader/shader.sv":91:4:91:9|Trying to extract state machine for register state.
+Extracted state machine for register state
+State machine has 4 reachable states with original encodings of:
+   000
+   001
+   010
+   011
+Running optimization stage 2 on fifo_1_1024_11s .......
+Running optimization stage 2 on fifo_12_1024_11s .......
 Running optimization stage 2 on accumulate_10_32_12 .......
 @N: CL201 :"/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv":42:0:42:5|Trying to extract state machine for register state.
 Extracted state machine for register state
@@ -168,9 +201,46 @@ State machine has 8 reachable states with original encodings of:
    0101
    0110
    0111
-Running optimization stage 2 on sramb_16s_12s_384s .......
-@W: CL246 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":24:42:24:48|Input port bits 11 to 4 of rd_addr[11:0] are unused. Assign logic for all port bits or change the input port size.
-@W: CL246 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":25:42:25:48|Input port bits 11 to 4 of wr_addr[11:0] are unused. Assign logic for all port bits or change the input port size.
+Running optimization stage 2 on dummy_memory_10_32_12 .......
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 383 to 356 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 351 to 323 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 320 to 298 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 294 to 292 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 290 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 288 to 275 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 272 to 264 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 262 to 257 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 255 to 242 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 240 to 238 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 236 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 234 to 230 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 223 to 210 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 208 to 205 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 203 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 201 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 198 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 196 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 191 to 179 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 176 to 168 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 166 to 161 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 159 to 146 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 144 to 142 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 140 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 138 to 134 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 131 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 127 to 114 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 112 to 109 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 107 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 102 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 95 to 83 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 80 to 50 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 48 to 46 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 44 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 42 to 35 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 31 to 18 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL279 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bits 16 to 13 of data_out_buf[383:0]. If this is not the intended behavior, drive the inputs with valid values, or inputs from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 11 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
+@W: CL260 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":27:4:27:9|Pruning register bit 6 of data_out_buf[383:0]. If this is not the intended behavior, drive the input with valid values, or an input from the top level.
 Running optimization stage 2 on streamer_10_32_12_11 .......
 @N: CL201 :"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv":27:0:27:5|Trying to extract state machine for register state.
 Extracted state machine for register state
@@ -187,11 +257,11 @@ For a summary of runtime and memory usage per design unit, please see file:
 
 @END
 
-At c_ver Exit (Real Time elapsed 0h:00m:01s; CPU Time elapsed 0h:00m:00s; Memory used current: 95MB peak: 105MB)
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 96MB peak: 97MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu May 25 00:57:19 2023
+# Wed May 31 03:11:22 2023
 
 ###########################################################]

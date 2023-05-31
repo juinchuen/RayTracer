@@ -19,6 +19,7 @@ Implementation : rev_1
 Synopsys Synopsys Netlist Linker, Version comp2018q4p1, Build 004R, Built Nov 27 2018 21:19:49
 
 @N|Running in 64-bit mode
+File /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/hit_bool_comp.srs changed - recompiling
 @N: NF107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv":1:7:1:20|Selected library: work cell: ray_tracer_top view verilog as top level
 @N: NF107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv":1:7:1:20|Selected library: work cell: ray_tracer_top view verilog as top level
 
@@ -27,6 +28,6 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu May 25 00:57:23 2023
+# Wed May 31 03:11:24 2023
 
 ###########################################################]

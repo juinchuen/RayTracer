@@ -34,7 +34,7 @@
 @N: CG333 :"/vol/synopsys/fpga/O-2018.09-SP1/lib/altera/quartus_prime181/altera_mf.v":54154:12:54154:23|Read directive translate_on.
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv":1:7:1:14|Synthesizing module streamer in library work.
-@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":16:7:16:11|Synthesizing module sramb in library work.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":1:7:1:18|Synthesizing module dummy_memory in library work.
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Synthesizing module fifo_array in library work.
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_1.sv":1:7:1:23|Synthesizing module p_hit_fifo_in_pt1 in library work.
@@ -67,6 +67,9 @@
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/hit_bool/hit_bool.sv":1:7:1:14|Synthesizing module hit_bool in library work.
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv":1:7:1:16|Synthesizing module accumulate in library work.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/shader/shader.sv":1:7:1:12|Synthesizing module shader in library work.
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv":1:7:1:20|Synthesizing module ray_tracer_top in library work.
 @N|Running in 64-bit mode
 @N: NF107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv":1:7:1:20|Selected library: work cell: ray_tracer_top view verilog as top level

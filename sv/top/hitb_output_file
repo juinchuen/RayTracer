@@ -5073,7 +5073,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, 0000270a, 00018617 00008631
+  hit, 11, 0000270a, 00019617 00008631
 nohit
 nohit
 nohit
@@ -5469,7 +5469,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, fffff8fa, 000156fe 0000b038
+  hit, 11, fffff8fa, 000166fe 0000b038
 nohit
 nohit
 nohit
@@ -5481,7 +5481,7 @@ nohit
 nohit
 nohit
 nohit
-nohit
+  hit, 11, ffffcc8d, 0001398d 0000b19c
 nohit
 nohit
 nohit
@@ -5853,7 +5853,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, fffff905, 00015704 0000d821
+  hit, 11, fffff905, 00016704 0000d821
 nohit
 nohit
 nohit
@@ -5865,7 +5865,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffcc8d, 0001298d 0000d8d3
+  hit, 11, ffffcc8d, 0001398d 0000d8d3
 nohit
 nohit
 nohit
@@ -5877,7 +5877,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffa1a1, 0000fdaa 0000d97d
+  hit, 11, ffffa1a1, 00010daa 0000d97d
 nohit
 nohit
 nohit
@@ -6237,7 +6237,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, fffff8fa, 00015702 00010000
+  hit, 11, fffff8fa, 00016702 00010000
 nohit
 nohit
 nohit
@@ -6249,7 +6249,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffcc91, 0001298e 00010000
+  hit, 11, ffffcc91, 0001398e 00010000
 nohit
 nohit
 nohit
@@ -6261,7 +6261,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffa1a2, 0000fdab 00010000
+  hit, 11, ffffa1a2, 00010dab 00010000
 nohit
 nohit
 nohit
@@ -6273,7 +6273,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff7826, 0000d343 00010000
+  hit, 11, ffff7826, 0000e343 00010000
 nohit
 nohit
 nohit
@@ -6285,7 +6285,7 @@ nohit
 nohit
 nohit
 nohit
-nohit
+  hit, 11, ffff5004, 0000ba3e 00010000
 nohit
 nohit
 nohit
@@ -6621,7 +6621,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, fffff905, 00015704 000127de
+  hit, 11, fffff905, 00016704 000127de
 nohit
 nohit
 nohit
@@ -6633,7 +6633,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffcc8d, 0001298d 0001272c
+  hit, 11, ffffcc8d, 0001398d 0001272c
 nohit
 nohit
 nohit
@@ -6645,7 +6645,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffa1a1, 0000fdaa 00012682
+  hit, 11, ffffa1a1, 00010daa 00012682
 nohit
 nohit
 nohit
@@ -6657,7 +6657,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff7824, 0000d341 000125de
+  hit, 11, ffff7824, 0000e341 000125de
 nohit
 nohit
 nohit
@@ -6669,7 +6669,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff5002, 0000aa3c 0001253c
+  hit, 11, ffff5002, 0000ba3c 0001253c
 nohit
 nohit
 nohit
@@ -6681,7 +6681,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff293c, 00008291 000124a0
+  hit, 11, ffff293c, 00009291 000124a0
 nohit
 nohit
 nohit
@@ -7005,7 +7005,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, fffff8fa, 000156fe 00014fc7
+nohit
 nohit
 nohit
 nohit
@@ -7017,7 +7017,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffcc8d, 0001298d 00014e63
+  hit, 11, ffffcc8d, 0001398d 00014e63
 nohit
 nohit
 nohit
@@ -7029,7 +7029,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffa1a4, 0000fdad 00014d08
+  hit, 11, ffffa1a4, 00010dad 00014d08
 nohit
 nohit
 nohit
@@ -7041,7 +7041,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff7825, 0000d342 00014bc0
+  hit, 11, ffff7825, 0000e342 00014bc0
 nohit
 nohit
 nohit
@@ -7053,7 +7053,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff5008, 0000aa3b 00014a7c
+  hit, 11, ffff5008, 0000ba3b 00014a7c
 nohit
 nohit
 nohit
@@ -7065,7 +7065,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff293b, 00008293 00014949
+  hit, 11, ffff293b, 00009293 00014949
 nohit
 nohit
 nohit
@@ -7077,7 +7077,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000d3d3, 000081ed 00015699
-  hit, 11, ffff03ae, 00005c2b 00014819
+  hit, 11, ffff03ae, 00006c2b 00014819
 nohit
 nohit
 nohit
@@ -7089,7 +7089,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000fe04, 000057f0 000157f0
-nohit
+  hit, 11, fffedf4a, 000046fa 000146fa
 nohit
 nohit
 nohit
@@ -7401,7 +7401,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffcc89, 0001298c 00017590
+  hit, 11, ffffcc89, 0001398c 00017590
 nohit
 nohit
 nohit
@@ -7413,7 +7413,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffa19f, 0000fda9 00017390
+  hit, 11, ffffa19f, 00010da9 00017390
 nohit
 nohit
 nohit
@@ -7425,7 +7425,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff7825, 0000d341 000171a0
+  hit, 11, ffff7825, 0000e341 000171a0
 nohit
 nohit
 nohit
@@ -7437,7 +7437,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff5005, 0000aa3b 00016fbe
+  hit, 11, ffff5005, 0000ba3b 00016fbe
 nohit
 nohit
 nohit
@@ -7449,7 +7449,7 @@ nohit
 nohit
 nohit
   hit, 10, 00009545, 0000a951 00017efb
-  hit, 11, ffff2934, 00008290 00016deb
+  hit, 11, ffff2934, 00009290 00016deb
 nohit
 nohit
 nohit
@@ -7461,7 +7461,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000bd8e, 000080e0 000180e0
-  hit, 11, ffff03ad, 00005c2a 00016c2a
+  hit, 11, ffff03ad, 00006c2a 00016c2a
 nohit
 nohit
 nohit
@@ -7473,7 +7473,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000e716, 00005733 000182d4
-  hit, 11, fffedf4d, 000036f6 00016a77
+  hit, 11, fffedf4d, 000046f6 00016a77
 nohit
 nohit
 nohit
@@ -7485,7 +7485,7 @@ nohit
 nohit
 nohit
   hit, 10, 000111e9, 00002c42 000184d5
-  hit, 11, fffebc0b, 000012ec 000168cf
+  hit, 11, fffebc0b, 000022ec 000168cf
 nohit
 nohit
 nohit
@@ -7785,7 +7785,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffcc93, 00012991 00019cc5
+  hit, 11, ffffcc93, 00013991 00019cc5
 nohit
 nohit
 nohit
@@ -7797,7 +7797,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffa19a, 0000fda8 00019a14
+  hit, 11, ffffa19a, 00010da8 00019a14
 nohit
 nohit
 nohit
@@ -7809,7 +7809,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff7827, 0000d342 00019781
+  hit, 11, ffff7827, 0000e342 00019781
 nohit
 nohit
 nohit
@@ -7821,7 +7821,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff500a, 0000aa3d 000194fd
+  hit, 11, ffff500a, 0000ba3d 000194fd
 nohit
 nohit
 nohit
@@ -7833,7 +7833,7 @@ nohit
 nohit
 nohit
   hit, 10, 00007ff4, 0000a7fe 0001a7fe
-  hit, 11, ffff293d, 00008293 00019293
+  hit, 11, ffff293d, 00009293 00019293
 nohit
 nohit
 nohit
@@ -7845,7 +7845,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000a7a4, 00007fd7 0001aa76
-  hit, 11, ffff03a4, 00005c28 00019037
+  hit, 11, ffff03a4, 00006c28 00019037
 nohit
 nohit
 nohit
@@ -7857,7 +7857,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000d078, 00005683 0001ad07
-  hit, 11, fffedf4e, 000036fa 00018df4
+  hit, 11, fffedf4e, 000046fa 00018df4
 nohit
 nohit
 nohit
@@ -7869,7 +7869,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000fa94, 00002be4 0001afa5
-  hit, 11, fffebc08, 000012eb 00018bbe
+  hit, 11, fffebc08, 000022eb 00018bbe
 nohit
 nohit
 nohit
@@ -7881,7 +7881,7 @@ nohit
 nohit
 nohit
   hit, 10, 000125f1, 00000000 0001b25f
-  hit, 11, fffe99e6, fffff000 0001899e
+  hit, 11, fffe99e6, 00000000 0001899e
 nohit
 nohit
 nohit
@@ -7893,7 +7893,7 @@ nohit
 nohit
 nohit
 nohit
-nohit
+  hit, 11, fffe78c6, ffffde20 0001878a
 nohit
 nohit
 nohit
@@ -8169,7 +8169,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffcc93, 00012990 0001c3fa
+  hit, 11, ffffcc93, 00013990 0001c3fa
 nohit
 nohit
 nohit
@@ -8181,7 +8181,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffa1a9, 0000fdae 0001c09f
+  hit, 11, ffffa1a9, 00010dae 0001c09f
 nohit
 nohit
 nohit
@@ -8193,7 +8193,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffff7823, 0000d33f 0001bd61
+  hit, 11, ffff7823, 0000e33f 0001bd61
 nohit
 nohit
 nohit
@@ -8205,7 +8205,7 @@ nohit
 nohit
 nohit
   hit, 10, 00004501, 0000cd64 0001cd64
-  hit, 11, ffff500c, 0000aa41 0001ba41
+  hit, 11, ffff500c, 0000ba41 0001ba41
 nohit
 nohit
 nohit
@@ -8217,7 +8217,7 @@ nohit
 nohit
 nohit
   hit, 10, 00006af7, 0000a6ab 0001d057
-  hit, 11, ffff2940, 00008290 0001b736
+  hit, 11, ffff2940, 00009290 0001b736
 nohit
 nohit
 nohit
@@ -8229,7 +8229,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000920a, 00007ed6 0001d363
-  hit, 11, ffff03a8, 00005c2a 0001b444
+  hit, 11, ffff03a8, 00006c2a 0001b444
 nohit
 nohit
 nohit
@@ -8241,7 +8241,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000ba40, 000055cc 0001d686
-  hit, 11, fffedf4d, 000036f6 0001b16d
+  hit, 11, fffedf4d, 000046f6 0001b16d
 nohit
 nohit
 nohit
@@ -8253,7 +8253,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000e3a7, 00002b89 0001d9c3
-  hit, 11, fffebc0b, 000012ec 0001aead
+  hit, 11, fffebc0b, 000022ec 0001aead
 nohit
 nohit
 nohit
@@ -8265,7 +8265,7 @@ nohit
 nohit
 nohit
   hit, 10, 00010e55, 00000000 0001dd1c
-  hit, 11, fffe99e3, fffff000 0001ac04
+  hit, 11, fffe99e3, 00000000 0001ac04
   hit,  0, fffeae33, ffffdd4a 0001ad98
 nohit
 nohit
@@ -8553,7 +8553,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffcc87, 0001298c 0001eb2a
+nohit
 nohit
 nohit
 nohit
@@ -8565,7 +8565,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffa19f, 0000fda9 0001e725
+  hit, 11, ffffa19f, 00010da9 0001e725
 nohit
 nohit
 nohit
@@ -8577,7 +8577,7 @@ nohit
 nohit
 nohit
   hit, 10, 00000cae, 0000f12c 0001f12c
-  hit, 11, ffff7825, 0000d33f 0001e33f
+  hit, 11, ffff7825, 0000e33f 0001e33f
 nohit
 nohit
 nohit
@@ -8589,7 +8589,7 @@ nohit
 nohit
 nohit
   hit, 10, 000030fd, 0000cbd2 0001f493
-  hit, 11, ffff500d, 0000aa3f 0001df7d
+  hit, 11, ffff500d, 0000ba3f 0001df7d
 nohit
 nohit
 nohit
@@ -8601,7 +8601,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000565a, 0000a564 0001f816
-  hit, 11, ffff293c, 00008292 0001dbdc
+  hit, 11, ffff293c, 00009292 0001dbdc
 nohit
 nohit
 nohit
@@ -8613,7 +8613,7 @@ nohit
 nohit
 nohit
   hit, 10, 00007cc1, 00007dd7 0001fbaf
-  hit, 11, ffff03ac, 00005c2b 0001d856
+  hit, 11, ffff03ac, 00006c2b 0001d856
 nohit
 nohit
 nohit
@@ -8625,7 +8625,7 @@ nohit
 nohit
 nohit
   hit, 10, 0000a456, 00005522 0001ff66
-nohit
+  hit, 11, fffedf4b, 000046fa 0001d4ee
   hit,  0, ffff0426, 0000240e 0001d861
 nohit
 nohit
@@ -8949,7 +8949,7 @@ nohit
 nohit
 nohit
 nohit
-  hit, 11, ffffa1a3, 0000fdaa 00020daa
+  hit, 11, ffffa1a3, 00010daa 00020daa
 nohit
 nohit
 nohit
@@ -8961,7 +8961,7 @@ nohit
 nohit
 nohit
   hit, 10, fffff96d, 0000ef61 00021743
-  hit, 11, ffff7820, 0000d342 0002091f
+  hit, 11, ffff7820, 0000e342 0002091f
 nohit
 nohit
 nohit
@@ -8973,7 +8973,7 @@ nohit
 nohit
 nohit
   hit, 10, 00001d38, 0000ca46 00021b32
-  hit, 11, ffff500b, 0000aa3f 000204c1
+  hit, 11, ffff500b, 0000ba3f 000204c1
 nohit
 nohit
 nohit
@@ -8985,7 +8985,7 @@ nohit
 nohit
 nohit
   hit, 10, 00004205, 0000a41a 00021f33
-nohit
+  hit, 11, ffff2937, 0000928e 0002007d
   hit,  0, ffff60ec, 00007088 00020696
 nohit
 nohit
@@ -9333,7 +9333,7 @@ nohit
 nohit
 nohit
   hit, 10, ffffc434, 00011175 00023885
-  hit, 11, ffffa19f, 0000fdac 00023432
+  hit, 11, ffffa19f, 00010dac 00023432
   hit,  0, ffff8689, 0000e49b 000230cc
 nohit
 nohit

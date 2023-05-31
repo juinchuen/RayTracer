@@ -90,7 +90,6 @@ Synopsys Verilog Compiler, Version comp2018q4p1, Build 004R, Built Nov 27 2018 2
 @I::"/vol/synopsys/fpga/O-2018.09-SP1/lib/vlog/scemi_pipes.svh" (library snps_haps)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv" (library work)
-@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv" (library work)
@@ -99,7 +98,10 @@ Synopsys Verilog Compiler, Version comp2018q4p1, Build 004R, Built Nov 27 2018 2
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_1.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv" (library work)
 @I::"/home/jco1147/ray_tracer/github/RayTracer/sv/hit_bool/hit_bool.sv" (library work)
+@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv" (library work)
+@I::"/home/jco1147/ray_tracer/github/RayTracer/sv/shader/shader.sv" (library work)
 Verilog syntax check successful!
+File /home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv changed - recompiling
 Selecting top level module ray_tracer_top
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
 
@@ -116,14 +118,13 @@ Running optimization stage 1 on fifo_192_1024_11s .......
 	TRI_MAX=13'b0000000001011
    Generated name = streamer_10_32_12_11
 Running optimization stage 1 on streamer_10_32_12_11 .......
-@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv":16:7:16:11|Synthesizing module sramb in library work.
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv":1:7:1:18|Synthesizing module dummy_memory in library work.
 
-	SRAMB_BUFFER_SIZE=32'b00000000000000000000000000010000
-	SRAMB_ADDR_WIDTH=32'b00000000000000000000000000001100
-	SRAMB_DATA_WIDTH=32'b00000000000000000000000110000000
-   Generated name = sramb_16s_12s_384s
-Opening data file ../triangle_data.txt from directory /home/jco1147/ray_tracer/github/RayTracer/sv/top/..
-Running optimization stage 1 on sramb_16s_12s_384s .......
+	Q_BITS=32'b00000000000000000000000000001010
+	D_BITS=32'b00000000000000000000000000100000
+	M_BITS=32'b00000000000000000000000000001100
+   Generated name = dummy_memory_10_32_12
+Running optimization stage 1 on dummy_memory_10_32_12 .......
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":78:7:78:16|Synthesizing module fifo_array in library work.
 
 	FIFO_DATA_WIDTH=32'b00000000000000000000000000100000
@@ -323,15 +324,36 @@ Running optimization stage 1 on hit_bool_32_10_12 .......
 	M_BITS=32'b00000000000000000000000000001100
    Generated name = accumulate_10_32_12
 Running optimization stage 1 on accumulate_10_32_12 .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000001100
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_12_1024_11s
+Running optimization stage 1 on fifo_12_1024_11s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":1:7:1:10|Synthesizing module fifo in library work.
+
+	FIFO_DATA_WIDTH=32'b00000000000000000000000000000001
+	FIFO_BUFFER_SIZE=32'b00000000000000000000010000000000
+	FIFO_ADDR_WIDTH=32'b00000000000000000000000000001011
+   Generated name = fifo_1_1024_11s
+Running optimization stage 1 on fifo_1_1024_11s .......
+@N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/shader/shader.sv":1:7:1:12|Synthesizing module shader in library work.
+
+	M_BITS=32'b00000000000000000000000000001100
+	D_BITS=32'b00000000000000000000000000100000
+	Q_BITS=32'b00000000000000000000000000001010
+   Generated name = shader_12_32_10
+Running optimization stage 1 on shader_12_32_10 .......
 @N: CG364 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv":1:7:1:20|Synthesizing module ray_tracer_top in library work.
 Running optimization stage 1 on ray_tracer_top .......
 
-At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 96MB peak: 109MB)
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 97MB peak: 109MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu May 25 00:57:18 2023
+# Wed May 31 03:11:20 2023
 
 ###########################################################]
 ###########################################################[
@@ -355,6 +377,7 @@ Implementation : rev_1
 Synopsys Synopsys Netlist Linker, Version comp2018q4p1, Build 004R, Built Nov 27 2018 21:19:49
 
 @N|Running in 64-bit mode
+File /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/layer0.srs changed - recompiling
 @N: NF107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv":1:7:1:20|Selected library: work cell: ray_tracer_top view verilog as top level
 @N: NF107 :"/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv":1:7:1:20|Selected library: work cell: ray_tracer_top view verilog as top level
 
@@ -363,7 +386,7 @@ At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu May 25 00:57:18 2023
+# Wed May 31 03:11:21 2023
 
 ###########################################################]
 
@@ -381,7 +404,7 @@ Compiling work_ray_tracer_top_verilog as a separate process
 Compilation of node work.hit_bool finished successfully.Real start time 0h:00m:00s, Real end time = 0h:00m:01s, Total real run time = 0h:00m:01s
 Compilation of node work.p_hit_1 finished successfully.Real start time 0h:00m:00s, Real end time = 0h:00m:01s, Total real run time = 0h:00m:01s
 Compilation of node work.p_hit finished successfully.Real start time 0h:00m:00s, Real end time = 0h:00m:01s, Total real run time = 0h:00m:01s
-Compilation of node work.ray_tracer_top finished successfully.Real start time 0h:00m:00s, Real end time = 0h:00m:02s, Total real run time = 0h:00m:02s
+Compilation of node work.ray_tracer_top finished successfully.Real start time 0h:00m:00s, Real end time = 0h:00m:01s, Total real run time = 0h:00m:01s
 
 Distributed Compiler Report
 ***************************
@@ -391,7 +414,7 @@ DP Name                            Status      Start time     End Time       Tot
 work.hit_bool_32_10_12.verilog     Success     0h:00m:00s     0h:00m:01s     0h:00m:01s          /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp0/distcomp0.log
 work.p_hit_1_32_10.verilog         Success     0h:00m:00s     0h:00m:01s     0h:00m:01s          /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp1/distcomp1.log
 work.p_hit_32_10_12.verilog        Success     0h:00m:00s     0h:00m:01s     0h:00m:01s          /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp2/distcomp2.log
-work.ray_tracer_top.verilog        Success     0h:00m:00s     0h:00m:02s     0h:00m:02s          /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp3/distcomp3.log
+work.ray_tracer_top.verilog        Success     0h:00m:00s     0h:00m:01s     0h:00m:01s          /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp3/distcomp3.log
 =================================================================================================================================================================================================
 ###########################################################[
 
@@ -414,6 +437,7 @@ Implementation : rev_1
 Synopsys Synopsys Netlist Linker, Version comp2018q4p1, Build 004R, Built Nov 27 2018 21:19:49
 
 @N|Running in 64-bit mode
+File /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork//distcomp/distcomp3/distcomp3.srs changed - recompiling
 
 =======================================================================================
 For a summary of linker messages for components that did not bind, please see log file:
@@ -421,21 +445,21 @@ For a summary of linker messages for components that did not bind, please see lo
 =======================================================================================
 
 
-At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 78MB peak: 80MB)
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 78MB peak: 79MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu May 25 00:57:21 2023
+# Wed May 31 03:11:23 2023
 
 ###########################################################]
 @END
 
-At c_hdl Exit (Real Time elapsed 0h:00m:04s; CPU Time elapsed 0h:00m:03s; Memory used current: 4MB peak: 17MB)
+At c_hdl Exit (Real Time elapsed 0h:00m:03s; CPU Time elapsed 0h:00m:02s; Memory used current: 4MB peak: 16MB)
 
-Process took 0h:00m:04s realtime, 0h:00m:03s cputime
+Process took 0h:00m:03s realtime, 0h:00m:02s cputime
 
 Process completed successfully.
-# Thu May 25 00:57:21 2023
+# Wed May 31 03:11:23 2023
 
 ###########################################################]

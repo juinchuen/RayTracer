@@ -10,20 +10,13 @@ module ray_tracer_top #(
 
     input   logic                       in_wr_en,
     input   logic signed [D_BITS-1 : 0] ray_in              [5:0],
+
+    input   logic                       full_world_shader,
     
     output  logic                       in_full,
 
-    output  logic signed [D_BITS-1 : 0] instruction_read    [17:0],
-
-    output logic                        hit_acc_shader,
-    output logic signed  [D_BITS-1 : 0] phit_acc_shader     [2:0],
-    output logic         [M_BITS-1 : 0] triangle_ID_acc_shader,
-    output logic                        wr_acc_shader,
-
-    output logic signed  [D_BITS-1 : 0] phit_hitb_acc       [2:0],
-    output logic                        hit_hitb_acc,
-    output logic         [M_BITS-1 : 0] triangle_ID_hitb_acc,
-    output logic                        rd_acc_hitb
+    output logic         [7:0]          pixel_shader_world   [2:0],
+    output logic                        wr_shader_world
 );
 
     // WIRE DECLARATION LIST
@@ -37,15 +30,6 @@ module ray_tracer_top #(
 
     logic           [M_BITS-1 : 0]          addr_streamer_mem;
     logic signed    [D_BITS-1 : 0]          triangle_parse_mem_streamer [11:0];
-    logic signed    [12 * D_BITS - 1 : 0]   triangle_mem_streamer;
-
-    logic           [M_BITS-1 : 0]          mem_wr_addr;
-    logic                                   mem_wr_en;
-    logic           [D_BITS * 12 - 1 : 0]   mem_din;
-
-    assign mem_wr_addr = 'b0;
-    assign mem_wr_en = 0;
-    assign mem_din  = 'b0;
 
     logic           [M_BITS-1 : 0]  triangle_ID_streamer_phit;
     logic                           full_phit_streamer;
@@ -67,21 +51,21 @@ module ray_tracer_top #(
     logic                           rd_hitb_phit;
     logic                           empty_phit_hitb;
 
-    // logic           [M_BITS-1 : 0]  triangle_ID_hitb_acc;
-    // logic                           hit_hitb_acc;
-    // logic signed    [D_BITS-1 : 0]  phit_hitb_acc           [2:0];
-    // logic                           rd_acc_hitb;
+    logic           [M_BITS-1 : 0]  triangle_ID_hitb_acc;
+    logic                           hit_hitb_acc;
+    logic signed    [D_BITS-1 : 0]  phit_hitb_acc           [2:0];
+    logic                           rd_acc_hitb;
     logic                           empty_hitb_acc;
 
     logic                           full_shader_acc;
-    // logic                           wr_acc_shader;
-    // logic                           hit_acc_shader;
-    // logic signed    [D_BITS-1 : 0]  phit_acc_shader         [2:0];
-    // logic           [M_BITS-1 : 0]  triangle_ID_acc_shader;
+    logic                           wr_acc_shader;
+    logic                           hit_acc_shader;
+    logic signed    [D_BITS-1 : 0]  phit_acc_shader         [2:0];
+    logic           [M_BITS-1 : 0]  triangle_ID_acc_shader;
 
     logic signed    [D_BITS-1 : 0]  origin_hitb_acc         [2:0];
 
-    assign                          full_shader_acc = 0;
+    logic signed    [D_BITS-1 : 0]  instruction_read        [17:0];
 
     generate
 
@@ -139,29 +123,16 @@ module ray_tracer_top #(
         .mem_data           (triangle_parse_mem_streamer)
     );
 
-    generate
+    dummy_memory #(
+        .Q_BITS     (Q_BITS),
+        .D_BITS     (D_BITS),
+        .M_BITS     (M_BITS)
+    ) DUM_MEM0 (
+        .clock      (clock),
+        .reset      (reset),
+        .mem_addr   (addr_streamer_mem),    
 
-        for (i = 0; i < 12; i = i + 1) begin
-
-            assign triangle_parse_mem_streamer [i] = triangle_mem_streamer [D_BITS * i + 31 : D_BITS * i];
-
-        end
-
-    endgenerate
-
-    sramb #(
-
-	    .SRAMB_BUFFER_SIZE  ('d16),
-	    .SRAMB_ADDR_WIDTH   (M_BITS),
-	    .SRAMB_DATA_WIDTH   ('d384)
-	
-    ) MEM0 (
-	    .clock      (clock),
-	    .rd_addr    (addr_streamer_mem),
-	    .wr_addr    (mem_wr_addr),
-	    .wr_en      (mem_wr_en),
-	    .dout       (triangle_mem_streamer),
-	    .din        (mem_din)
+        .data_out   (triangle_parse_mem_streamer)
     );
 
     p_hit #(
@@ -256,6 +227,25 @@ module ray_tracer_top #(
         .hit_min            (hit_acc_shader),
         .p_hit_min          (phit_acc_shader),
         .triangle_ID_min    (triangle_ID_acc_shader)
+    );
+
+    shader #(
+        .Q_BITS     (Q_BITS),
+        .D_BITS     (D_BITS),
+        .M_BITS     (M_BITS)
+    ) SHADE0 (
+    .clock          (clock),
+    .reset          (reset),
+
+    .hit_in         (hit_acc_shader),
+    .triangle_ID_in (triangle_ID_acc_shader),
+    .wr_en_in       (wr_acc_shader),
+
+    .in_fifo_full   (full_shader_acc),
+    .out_full       (full_world_shader),
+
+    .pixel          (pixel_shader_world),
+    .out_wr_en      (wr_shader_world)
     );
 
 endmodule

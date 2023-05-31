@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Timing Correlation XML file -->
+<timing_correlation_data>
+<!-- Points -->
+<path_info title="true">
+<index> Index   </index>
+<start_inst> Start Inst   </start_inst>
+<start_type> Start Type   </start_type>
+<start_clock> Start Clock   </start_clock>
+<end_inst> End Inst   </end_inst>
+<end_type> End Type   </end_type>
+<end_clock> End Clock   </end_clock>
+<clock_skew> Clock Skew   </clock_skew>
+<req_per> Required Time   </req_per>
+<slack> Slack   </slack>
+<ucf> Clock Group   </ucf>
+<status> Status   </status>
+</path_info>
+<path_info>
+<index> 1   </index>
+<start_inst>    </start_inst>
+<start_type>  </start_type>
+<start_clock>    </start_clock>
+<end_inst>    </end_inst>
+<end_type>    </end_type>
+<end_clock>    </end_clock>
+<clock_skew>
+<val>  </val>
+<txt>  -  </txt>
+</clock_skew>
+<req_per>  </req_per>
+<slack>  </slack>
+<ucf>  </ucf>
+<status>
+<val> 0 </val>
+</status>
+<margin>
+<val> 0 </val>
+</margin>
+</path_info>
+</timing_correlation_data>

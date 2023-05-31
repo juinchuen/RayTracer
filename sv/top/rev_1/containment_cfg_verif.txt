@@ -1,3 +1,7 @@
+ray_tracer_top.SHADE0.DUM_MEM0 work dummy_memory 0 1
+ray_tracer_top.SHADE0.input_hit_fifo work fifo 0 1
+ray_tracer_top.SHADE0.input_tri_fifo work fifo 0 1
+ray_tracer_top.SHADE0 work shader 0 1
 ray_tracer_top.ACC0 work accumulate 0 1
 ray_tracer_top.HIT_BOOL0.u_hit_bool_fifo work fifo 0 1
 ray_tracer_top.HIT_BOOL0.u_p_hit_fifo_array.genblk1\[2\]\.u_fifo work fifo 0 1
@@ -177,6 +181,6 @@ ray_tracer_top.P_HIT0.u_p_hit_module.u_p_hit_mult.u_p_hit_1 work p_hit_1 0 1
 ray_tracer_top.P_HIT0.u_p_hit_module.u_p_hit_mult work p_hit_mult 0 1
 ray_tracer_top.P_HIT0.u_p_hit_module work p_hit_module 0 1
 ray_tracer_top.P_HIT0 work p_hit 0 1
-ray_tracer_top.MEM0 work sramb 0 1
+ray_tracer_top.DUM_MEM0 work dummy_memory 0 1
 ray_tracer_top.STREAMER0 work streamer 0 1
 ray_tracer_top.INPUT_RAY_FIFO work fifo 0 1

@@ -12,7 +12,7 @@
 Starting:    /vol/synopsys/fpga/O-2018.09-SP1/linux_a_64/mbin/synplify
 Install:     /vol/synopsys/fpga/O-2018.09-SP1
 Hostname:    joker.ece.northwestern.edu
-Date:        Thu May 25 00:54:34 2023
+Date:        Wed May 31 02:24:28 2023
 Version:     O-2018.09-SP1
 
 Arguments:   -product synplify_premier
@@ -25,66 +25,215 @@ License Option: ident
 
 
 
+Project with name "/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.prj" already loaded.
+Removed file: /home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv
 log file: "/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srr"
 Running: rev_1 in foreground
 
-Running proj_1|rev_1
+Running top|rev_1
 
-Running Flow: compile (Compile) on proj_1|rev_1
-# Thu May 25 00:57:17 2023
+Running Flow: compile (Compile) on top|rev_1
+# Wed May 31 02:25:37 2023
 
-Running Flow: compile_flow (Compile Process) on proj_1|rev_1
-# Thu May 25 00:57:17 2023
+Running Flow: compile_flow (Compile Process) on top|rev_1
+# Wed May 31 02:25:37 2023
 License granted for 4 parallel jobs
 
-Running: compiler (Compile Input) on proj_1|rev_1
-# Thu May 25 00:57:17 2023
+Running: compiler (Compile Input) on top|rev_1
+# Wed May 31 02:25:37 2023
 Copied /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/hit_bool_comp.srs to /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srs
 
 compiler completed
-# Thu May 25 00:57:22 2023
+# Wed May 31 02:25:42 2023
 
 Return Code: 0
 Run Time:00h:00m:05s
 
-Running: multi_srs_gen (Multi-srs Generator) on proj_1|rev_1
-# Thu May 25 00:57:22 2023
+Running: multi_srs_gen (Multi-srs Generator) on top|rev_1
+# Wed May 31 02:25:42 2023
 
 multi_srs_gen completed
-# Thu May 25 00:57:23 2023
+# Wed May 31 02:25:42 2023
 
 Return Code: 0
-Run Time:00h:00m:01s
+Run Time:00h:00m:00s
 Copied /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/hit_bool_mult.srs to /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srs
-Complete: Compile Process on proj_1|rev_1
+Complete: Compile Process on top|rev_1
 
-Running: premap (Premap) on proj_1|rev_1
-# Thu May 25 00:57:23 2023
+Running: premap (Premap) on top|rev_1
+# Wed May 31 02:25:42 2023
 
 premap completed with warnings
-# Thu May 25 00:57:24 2023
+# Wed May 31 02:25:44 2023
 
 Return Code: 1
-Run Time:00h:00m:01s
-Complete: Compile on proj_1|rev_1
+Run Time:00h:00m:02s
+Complete: Compile on top|rev_1
 
-Running Flow: map (Map) on proj_1|rev_1
-# Thu May 25 00:57:24 2023
+Running Flow: map (Map) on top|rev_1
+# Wed May 31 02:25:44 2023
 License granted for 4 parallel jobs
 
-Running: fpga_mapper (Map & Optimize) on proj_1|rev_1
-# Thu May 25 00:57:24 2023
+Running: fpga_mapper (Map & Optimize) on top|rev_1
+# Wed May 31 02:25:44 2023
 Copied /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/hit_bool_m.srm to /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srm
 
 fpga_mapper completed with warnings
-# Thu May 25 00:58:40 2023
+# Wed May 31 02:26:49 2023
 
 Return Code: 1
-Run Time:00h:01m:16s
-Complete: Map on proj_1|rev_1
-Complete: Logic Synthesis on proj_1|rev_1
-0Loaded XDM (Hierarchy) data base - elapsed time 0:0 Blocks=36
-@N Implementation '/home/jco1147/ray_tracer/github/RayTracer/sv/top/proj_1.prj|rev_1' design hierarchy loaded from database
-Copied /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srr to /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/backup/hit_bool.srr
-exit status=0
+Run Time:00h:01m:05s
+Complete: Map on top|rev_1
+Complete: Logic Synthesis on top|rev_1
+01WARNING:  No database file, or it is out of date.
+INFO:  Resetting Correlation database
+WARNING:  No database file, or it is out of date.
+INFO:  Target Implementation: /home/jco1147/ray_tracer/github/RayTracer/sv/top/top.prj|rev_1
+INFO:  **** *_synplify.sdc verification mode  *****
+log file: "/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srr"
+Running: timing in foreground
+
+running timing analysis on /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srd
+
+Running: timing (Timing Analysis) on top|rev_1
+# Wed May 31 02:28:42 2023
+
+timing completed with warnings
+# Wed May 31 02:28:46 2023
+
+Return Code: 1
+Run Time:00h:00m:04s
+INFO:  Running with: effort = high, paths per endpoint = 1, sorted by = slack, QOR mode = 1 
+ 
+INFO:  Exiting after *.itd file creation, correlation check not run. 
+ 
+0
+/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/sdc_verif_slack.xml /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/sdc_verif_slack_match.xml0
+/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/sdc_verif_slack.xml /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/sdc_verif_slack_match.xmlMouse stroke not recognized
+log file: "/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srr"
+Running: rev_1 in foreground
+
+Running top|rev_1
+
+Running Flow: compile (Compile) on top|rev_1
+# Wed May 31 02:34:38 2023
+
+Running Flow: compile_flow (Compile Process) on top|rev_1
+# Wed May 31 02:34:38 2023
+License granted for 4 parallel jobs
+
+Running: compiler (Compile Input) on top|rev_1
+# Wed May 31 02:34:38 2023
+Copied /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/hit_bool_comp.srs to /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srs
+
+compiler completed
+# Wed May 31 02:34:42 2023
+
+Return Code: 0
+Run Time:00h:00m:04s
+
+Running: multi_srs_gen (Multi-srs Generator) on top|rev_1
+# Wed May 31 02:34:42 2023
+
+multi_srs_gen completed
+# Wed May 31 02:34:42 2023
+
+Return Code: 0
+Run Time:00h:00m:00s
+Copied /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/hit_bool_mult.srs to /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srs
+Complete: Compile Process on top|rev_1
+
+Running: premap (Premap) on top|rev_1
+# Wed May 31 02:34:42 2023
+
+premap completed with warnings
+# Wed May 31 02:34:44 2023
+
+Return Code: 1
+Run Time:00h:00m:02s
+Complete: Compile on top|rev_1
+
+Running Flow: map (Map) on top|rev_1
+# Wed May 31 02:34:44 2023
+License granted for 4 parallel jobs
+
+Running: fpga_mapper (Map & Optimize) on top|rev_1
+# Wed May 31 02:34:44 2023
+Copied /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/hit_bool_m.srm to /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srm
+
+fpga_mapper completed with warnings
+# Wed May 31 02:35:51 2023
+
+Return Code: 1
+Run Time:00h:01m:07s
+Complete: Map on top|rev_1
+Complete: Logic Synthesis on top|rev_1
+0log file: "/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srr"
+Running: rev_1 in foreground
+
+Running top|rev_1
+
+Running Flow: compile (Compile) on top|rev_1
+# Wed May 31 02:38:35 2023
+
+Running Flow: compile_flow (Compile Process) on top|rev_1
+# Wed May 31 02:38:35 2023
+License granted for 4 parallel jobs
+
+Running: compiler (Compile Input) on top|rev_1
+# Wed May 31 02:38:35 2023
+
+compiler completed
+# Wed May 31 02:38:38 2023
+
+Return Code: 0
+Run Time:00h:00m:03s
+
+Running: multi_srs_gen (Multi-srs Generator) on top|rev_1
+# Wed May 31 02:38:38 2023
+Up-To-Date: multi_srs_gen. No run necessary
+Complete: Compile Process on top|rev_1
+
+Running: premap (Premap) on top|rev_1
+# Wed May 31 02:38:38 2023
+
+premap completed with warnings
+# Wed May 31 02:38:40 2023
+
+Return Code: 1
+Run Time:00h:00m:02s
+Complete: Compile on top|rev_1
+
+Running Flow: map (Map) on top|rev_1
+# Wed May 31 02:38:40 2023
+License granted for 4 parallel jobs
+
+Running: fpga_mapper (Map & Optimize) on top|rev_1
+# Wed May 31 02:38:40 2023
+Loaded XDM (Hierarchy) data base - elapsed time 0:0 Blocks=39
+@N Implementation '/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.prj|rev_1' design hierarchy loaded from database
+Copied /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/synwork/hit_bool_m.srm to /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.srm
+
+fpga_mapper completed with warnings
+# Wed May 31 02:40:08 2023
+
+Return Code: 1
+Run Time:00h:01m:28s
+Complete: Map on top|rev_1
+Complete: Logic Synthesis on top|rev_1
+0Opening object source file /home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv
+Opening object source file /home/jco1147/ray_tracer/github/RayTracer/sv/top/dummy_memory.sv
+Opening object source file /home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv
+Opening object source file /home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv
+0WARNING:  No database file, or it is out of date.
+INFO:  Resetting Correlation database
+WARNING:  No database file, or it is out of date.
+INFO:  Target Implementation: /home/jco1147/ray_tracer/github/RayTracer/sv/top/top.prj|rev_1
+INFO:  **** *_synplify.sdc verification mode  *****
+INFO:  Running with: effort = high, paths per endpoint = 1, sorted by = slack, QOR mode = 1 
+ 
+INFO:  Exiting after *.itd file creation, correlation check not run. 
+ 
+0
+/home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/sdc_verif_slack.xml /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/sdc_verif_slack_match.xmlexit status=0
 License checkin: synplifypremierdp

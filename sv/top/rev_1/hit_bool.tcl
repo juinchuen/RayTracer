@@ -4,7 +4,7 @@
 set_global_assignment -name TOP_LEVEL_ENTITY "|ray_tracer_top"
 set_global_assignment -name ROUTING_BACK_ANNOTATION_MODE NORMAL
 set_global_assignment -name FAMILY "CYCLONE V"
-set_global_assignment -name DEVICE "5CGXFC7C6F23C6"
+set_global_assignment -name DEVICE "5CSEBA6U23A7"
 set_global_assignment -section_id ray_tracer_top -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL "SYNPLIFY"
 set_global_assignment -section_id eda_design_synthesis -name EDA_USE_LMF synplcty.lmf
 set_global_assignment -name TAO_FILE "myresults.tao"

@@ -16,7 +16,7 @@ max stack size: 8388608 (bytes)
 
 Implementation : rev_1
 
-# Written on Thu May 25 00:57:23 2023
+# Written on Wed May 31 03:11:25 2023
 
 ##### FILES SYNTAX CHECKED ##############################################
 Constraint File(s):      (none)
@@ -36,7 +36,7 @@ Clock Summary
           Start                    Requested     Requested     Clock        Clock                     Clock
 Level     Clock                    Frequency     Period        Type         Group                     Load 
 -----------------------------------------------------------------------------------------------------------
-0 -       ray_tracer_top|clock     220.4 MHz     4.537         inferred     Autoconstr_clkgroup_0     11924
+0 -       ray_tracer_top|clock     190.8 MHz     5.240         inferred     Autoconstr_clkgroup_0     11621
 ===========================================================================================================
 
 
@@ -46,5 +46,5 @@ Clock Load Summary
                          Clock     Source          Clock Pin                                                      Non-clock Pin     Non-clock Pin
 Clock                    Load      Pin             Seq Example                                                    Seq Example       Comb Example 
 -------------------------------------------------------------------------------------------------------------------------------------------------
-ray_tracer_top|clock     11924     clock(port)     P_HIT0.origin_fifo.genblk1\[2\]\.u_fifo.fifo_buf[31:0].CLK     -                 -            
+ray_tracer_top|clock     11621     clock(port)     P_HIT0.origin_fifo.genblk1\[2\]\.u_fifo.fifo_buf[31:0].CLK     -                 -            
 =================================================================================================================================================

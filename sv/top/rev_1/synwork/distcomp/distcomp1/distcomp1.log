@@ -82,6 +82,9 @@ Verilog syntax check successful!
 Selecting top level module p_hit_1
 @N: Setting default value for parameter D_BITS to 32;
 @N: Setting default value for parameter Q_BITS to 10;
+
+Compiler output is up to date.  No re-compile necessary
+
 @N:: Applying property .distcompnoprune with value 1 on module fifo_array in library work
 @N:: Applying property .noprune with value 1 on module fifo_array in library work
 @N:: Applying property .distcomp_black_box with value 1 on module fifo_array in library work
@@ -208,11 +211,11 @@ For a summary of runtime and memory usage per design unit, please see file:
 
 @END
 
-At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 89MB peak: 96MB)
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 85MB peak: 86MB)
 
 Process took 0h:00m:01s realtime, 0h:00m:01s cputime
 
 Process completed successfully.
-# Thu May 25 00:57:19 2023
+# Wed May 31 03:11:21 2023
 
 ###########################################################]

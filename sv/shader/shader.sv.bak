@@ -1,0 +1,163 @@
+module shader # (
+    parameter M_BITS = 'd12,
+    parameter D_BITS = 'd32,
+    parameter Q_BITS = 'd16
+) (
+    input   logic           clock,
+    input   logic           reset,
+
+    input   logic           hit_in,
+    input   logic           triangle_ID_in,
+    input   logic           wr_en_in,
+
+    input   logic           in_fifo_full,
+    input   logic           out_full,
+
+    output  logic   [7:0]   pixel               [2:0],
+    output  logic           out_wr_en
+);
+
+    logic                   in_fifo_empty;
+    logic [2:0]             state;
+
+    logic [M_BITS-1 : 0]    read_triangle_ID;
+    logic                   read_hit;
+
+    logic [12*D_BITS-1 : 0] triangle;
+    logic [D_BITS-1 : 0]    normal          [2:0];
+
+    logic                   tri_fifo_empty;
+    logic                   hit_fifo_empty;
+    logic                   tri_fifo_full;
+    logic                   hit_fifo_full;
+
+    assign in_fifo_full = tri_fifo_full | hit_fifo_full;
+    assign in_fifo_empty = tri_fifo_empty | hit_fifo_empty;
+
+    genvar i;
+
+    generate
+
+        for (i = 0; i < 3; i = i + 1) begin
+
+            assign normal[i] = triangle[D_BITS * (i + 10) - 1 : D_BITS * (i + 9)];
+
+        end
+
+    endgenerate
+
+    fifo #(
+        .FIFO_DATA_WIDTH    (M_BITS),
+        .FIFO_BUFFER_SIZE   ('d1024)
+    ) input_tri_fifo (
+        .reset      (reset),
+        .wr_clk     (clock),
+
+        .wr_en      (wr_en_in),
+        .din        (triangle_ID_in),
+
+        .full       (tri_fifo_full),
+        .rd_clk     (clock),
+        .rd_en      (rd_en_in),
+        .dout       (triangle_ID_out),
+        .empty      (tri_fifo_empty)
+    );
+
+    fifo #(
+        .FIFO_DATA_WIDTH    ('d1),
+        .FIFO_BUFFER_SIZE   ('d1024)
+    ) input_hit_fifo (
+        .reset      (reset),
+        .wr_clk     (clock),
+
+        .wr_en      (wr_en_in),
+        .din        (hit_in),
+
+        .full       (hit_fifo_full),
+        .rd_clk     (clock),
+        .rd_en      (rd_en_in),
+        .dout       (hit_out),
+        .empty      (hit_fifo_empty)
+    );
+
+    module dummy_memory #(
+        .Q_BITS (Q_BITS),
+        .D_BITS (D_BITS),
+        .M_BITS (M_BITS)
+    ) (
+        .clock      (clock),
+        .reset      (reset),
+        .mem_addr   (read_triangle_ID),
+
+        .data_out   (triangle)
+    );
+
+    always @ (posedge clock or posedge reset) begin
+
+        if (reset) begin
+
+            pixel[0]    <= 'b0;
+            pixel[1]    <= 'b0;
+            pixel[2]    <= 'b0;
+
+            out_wr_en   <= 'b0;
+
+            state       <= 'b0
+
+        end else begin
+
+            case (state)
+
+                'h00 :  begin
+
+                            out_wr_en               <= 0;
+
+                            if (!in_fifo_empty) begin
+
+                                read_triangle_ID    <= triangle_ID_out;
+                                read_hit            <= hit_out;
+
+                                rd_en_in            <= 'b1;
+
+                                state               <= 'h01;
+
+                            end
+
+                        end
+
+                'h01 :  begin
+
+                            rd_en_in    <= 'b0;
+
+                            pixel[0]    <= normal[2][Q_BITS - 1: Q_BITS - 8];
+                            pixel[1]    <= normal[2][Q_BITS - 1: Q_BITS - 8];
+                            pixel[2]    <= normal[2][Q_BITS - 1: Q_BITS - 8];
+
+                            state       <= 'h02;
+                            
+                        end
+
+                'h02 :  begin
+
+                            if (!out_full) begin
+
+                                out_wr_en   <= 1;
+
+                                state       <= 'h00;
+
+                            end
+
+                        end
+
+            endcase
+
+        end
+
+    end
+
+endmodule
+
+
+            
+            
+

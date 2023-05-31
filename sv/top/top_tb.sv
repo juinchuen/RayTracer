@@ -28,6 +28,13 @@ module top_tb ();
     logic                       hit_hitb;
     logic                       rd_hitb;
 
+    logic full_world_shader;
+
+    assign full_world_shader = 0;
+
+    logic [7:0] pixel_shader_world [2:0];
+    logic wr_shader_world;
+
     int count;
     genvar i;
 
@@ -37,6 +44,7 @@ module top_tb ();
     int sim_output_file;
     int hitb_output_file;
     int ascii_output_file;
+    int shader_output_file;
 
     generate
 
@@ -53,6 +61,7 @@ module top_tb ();
         sim_output_file = $fopen("sim_output_file", "w");
         hitb_output_file = $fopen("hitb_output_file", "w");
         ascii_output_file = $fopen("ascii_output_file", "w");
+        shader_output_file = $fopen("shader_output_file", "w");
         
         $display("Loading ray data");
         $readmemh("../ray_data.txt", ray_data);
@@ -127,7 +136,11 @@ module top_tb ();
         .phit_hitb_acc              (p_hit_hitb),
         .hit_hitb_acc               (hit_hitb),
         .triangle_ID_hitb_acc       (triangle_ID_hitb),
-        .rd_acc_hitb                (rd_hitb)
+        .rd_acc_hitb                (rd_hitb),
+
+        .full_world_shader          (full_world_shader),
+        .pixel_shader_world         (pixel_shader_world),
+        .wr_shader_world            (wr_shader_world)
 
     );
 
@@ -181,5 +194,13 @@ module top_tb ();
         end
 
     end
+
+    always @ (posedge wr_shader_world) begin
+
+        $fwrite(shader_output_file, "%d\n", pixel_shader_world[0]);
+
+    end
+
+
 
 endmodule

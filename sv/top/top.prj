@@ -1,13 +1,12 @@
 #--  Synopsys, Inc.
 #--  Version O-2018.09-SP1
 #--  Project file /home/jco1147/ray_tracer/github/RayTracer/sv/top/top.prj
-#--  Written on Thu May 25 01:03:47 2023
+#--  Written on Wed May 31 03:17:11 2023
 
 
 #project files
 add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/top/top.sv"
 add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/accumulate/accumulate_v2.sv"
-add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/sramb.sv"
 add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/streamer/streamer.sv"
 add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv"
 add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/fifo_math.sv"
@@ -16,6 +15,8 @@ add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/d
 add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_1.sv"
 add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/p_hit/p_hit_2.sv"
 add_file -verilog -vlog_std sysv "/home/jco1147/ray_tracer/github/RayTracer/sv/hit_bool/hit_bool.sv"
+add_file -verilog -vlog_std sysv "dummy_memory.sv"
+add_file -verilog -vlog_std sysv "../shader/shader.sv"
 
 
 
@@ -33,9 +34,9 @@ set_option -job par_1 -add par
 
 #device options
 set_option -technology CYCLONEV
-set_option -part 5CGXFC7C6
-set_option -package FC23
-set_option -speed_grade -6
+set_option -part 5CSEBA6
+set_option -package UA23
+set_option -speed_grade -7
 set_option -part_companion ""
 
 #compilation/mapping options
@@ -45,6 +46,7 @@ set_option -use_fsm_explorer 0
 set_option -distributed_compile 1
 
 # altera_options
+set_option -reporting_ctd slack
 set_option -rw_check_on_ram 1
 
 # mapper_without_write_options
@@ -61,9 +63,10 @@ set_option -maxfan 30
 set_option -disable_io_insertion 0
 set_option -pipe 1
 set_option -update_models_cp 0
-set_option -retiming 0
+set_option -retiming 1
 set_option -no_sequential_opt 0
 set_option -fix_gated_and_generated_clocks 1
+set_option -quartus_version 18.1
 
 # sequential_optimization_options
 set_option -symbolic_fsm_compiler 1
@@ -75,6 +78,9 @@ set_option -multi_file_compilation_unit 1
 
 # Compiler Options
 set_option -auto_infer_blackbox 0
+
+#timing report file option
+set_option -reporting_filename "rev_1/hit_bool.ta"
 
 #automatic place and route (vendor) options
 set_option -write_apr_constraint 1

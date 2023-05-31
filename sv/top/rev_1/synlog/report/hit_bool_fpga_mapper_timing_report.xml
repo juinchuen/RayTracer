@@ -16,8 +16,8 @@ Max Top 5 critical clocks will be reported. For rest user needs to refer to Deta
 </row>
 <row>
 <data>ray_tracer_top|clock</data>
-<data>133.6 MHz</data>
-<data>111.1 MHz</data>
-<data>-1.516</data>
+<data>179.7 MHz</data>
+<data>145.5 MHz</data>
+<data>-1.310</data>
 </row>
 </report_table>

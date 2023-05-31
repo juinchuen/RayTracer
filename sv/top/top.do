@@ -17,6 +17,10 @@ vlog -work work "../divide/divide_top.sv"
 vlog -work work "../p_hit/p_hit_1.sv"
 vlog -work work "../p_hit/p_hit_2.sv"
 
+#   dependencies for shader
+vlog -work work "../shader/shader.sv"
+vlog -work work "dummy_memory.sv"
+
 # dependencies for hit_bool
 vlog -work work "../hit_bool/hit_bool.sv"
 
@@ -29,6 +33,8 @@ add wave -noupdate -group IO -radix hexadecimal /top_tb/ray_data_feed
 add wave -noupdate -group IO -radix hexadecimal /top_tb/instruction_read
 add wave -noupdate -group IO -radix hexadecimal /top_tb/DUT_INST0/wr_streamer_phit
 add wave -noupdate -group IO -radix hexadecimal /top_tb/DUT_INST0/addr_streamer_mem
+add wave -noupdate -group IO -radix hexadecimal /top_tb/DUT_INST0/wr_shader_world
+add wave -noupdate -group IO -radix hexadecimal /top_tb/DUT_INST0/pixel_shader_world
 
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/empty_fifo0_streamer
 add wave -noupdate -group S2P -radix hexadecimal /top_tb/DUT_INST0/ray_parse_fifo0_streamer
@@ -80,6 +86,14 @@ add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/triangle_ID_p
 add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/normal_phit_hitb
 add wave -noupdate -group P2H -radix hexadecimal /top_tb/DUT_INST0/rd_hitb_phit
 
+add wave -noupdate -group SHADER -radix hexadecimal /top_tb/DUT_INST0/SHADE0/state
+add wave -noupdate -group SHADER -radix hexadecimal /top_tb/DUT_INST0/SHADE0/read_hit
+add wave -noupdate -group SHADER -radix hexadecimal /top_tb/DUT_INST0/SHADE0/read_triangle_ID
+add wave -noupdate -group SHADER -radix hexadecimal /top_tb/DUT_INST0/SHADE0/wr_en_in
+add wave -noupdate -group SHADER -radix hexadecimal /top_tb/DUT_INST0/SHADE0/triangle_parse
+add wave -noupdate -group SHADER -radix hexadecimal /top_tb/DUT_INST0/SHADE0/pix_val
+add wave -noupdate -group SHADER -radix hexadecimal /top_tb/DUT_INST0/SHADE0/out_wr_en
+add wave -noupdate -group SHADER -radix hexadecimal /top_tb/DUT_INST0/SHADE0/pixel
 
 
 run -all

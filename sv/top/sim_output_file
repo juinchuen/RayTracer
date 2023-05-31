@@ -454,7 +454,7 @@ no hit
 no hit
 no hit
 hit,       11
-hit,        4
+hit,       11
 hit,        5
 hit,        5
 hit,        5
@@ -521,7 +521,7 @@ hit,       11
 hit,       11
 hit,       11
 hit,       11
-hit,        4
+hit,       11
 hit,        5
 hit,        5
 hit,        5
@@ -581,6 +581,7 @@ no hit
 no hit
 no hit
 no hit
+no hit
 hit,       11
 hit,       11
 hit,       11
@@ -588,7 +589,6 @@ hit,       11
 hit,       11
 hit,       11
 hit,       11
-hit,       10
 hit,        5
 hit,        5
 hit,        5
@@ -655,7 +655,7 @@ hit,       11
 hit,       11
 hit,       11
 hit,       11
-hit,        7
+hit,       11
 hit,        8
 hit,        8
 hit,        8
@@ -710,13 +710,13 @@ no hit
 no hit
 no hit
 no hit
+no hit
 hit,       11
 hit,       11
 hit,       11
 hit,       11
 hit,       11
 hit,       11
-hit,       10
 hit,        0
 hit,        0
 hit,        0
@@ -746,7 +746,7 @@ no hit
 hit,       11
 hit,       11
 hit,       11
-hit,       10
+hit,       11
 hit,        0
 hit,        0
 hit,        0

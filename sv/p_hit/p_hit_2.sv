@@ -241,7 +241,7 @@ fifo_array #(
     .clock              (clock),
     .wr_en              (in_wr_en),
     .din                (v0_in[2:0]),
-    .full               (in_full_arr[4]),
+    .full               (in_full_arr[9]),
     .rd_en              (out_rd_en),
     .dout               (v0_out[2:0]),
     .empty              (out_empty_arr[1])
@@ -291,23 +291,6 @@ fifo_array #(
     .dout               (tri_normal_out[2:0]),
     .empty              (out_empty_arr[4])
 );
-
-// logic signed [M_BITS-1:0] temp_in[1:0], temp_out[1:0];
-
-// fifo_array#(
-//     .FIFO_DATA_WIDTH     (M_BITS),
-//     .FIFO_BUFFER_SIZE    (M_BITS*32),
-//     .ARRAY_SIZE          (2)
-// ) triangle_id_fifo (
-//     .reset              (reset),
-//     .clock              (clock),
-//     .wr_en              (in_wr_en),
-//     .din                (temp_in[1:0]),
-//     .full               (in_full_arr[7]),
-//     .rd_en              (out_rd_en),
-//     .dout               (temp_out[1:0]),
-//     .empty              (out_empty_arr[5])
-// );
 
 fifo #(
     .FIFO_DATA_WIDTH     (M_BITS),
