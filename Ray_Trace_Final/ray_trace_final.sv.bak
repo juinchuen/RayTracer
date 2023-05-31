@@ -1,0 +1,11 @@
+module fpga_top(
+
+	input logic switch,
+	
+	output logic led
+	
+)
+
+assign led = switch;
+
+endmodule

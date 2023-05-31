@@ -1,0 +1,17 @@
+Analysis & Synthesis Status : Successful - Wed May 31 17:19:04 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : ray_trace_final
+Top-level Entity Name : ray_trace_final
+Family : Cyclone V
+Logic utilization (in ALMs) : N/A
+Total registers : 429663
+Total pins : 10
+Total virtual pins : 0
+Total block memory bits : 102,912
+Total DSP Blocks : 33
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0
+Total DLLs : 0

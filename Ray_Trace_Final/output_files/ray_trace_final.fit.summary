@@ -1,0 +1,20 @@
+Fitter Status : Failed - Wed May 31 17:06:15 2023
+Quartus Prime Version : 22.1std.1 Build 917 02/14/2023 SC Lite Edition
+Revision Name : ray_trace_final
+Top-level Entity Name : ray_trace_final
+Family : Cyclone V
+Device : 5CSEBA6U23I7
+Timing Models : Final
+Logic utilization (in ALMs) : 294,239 / 41,910 ( 702 % )
+Total registers : 428823
+Total pins : 10 / 314 ( 3 % )
+Total virtual pins : 0
+Total block memory bits : 102,912 / 5,662,720 ( 2 % )
+Total RAM Blocks : 0 / 553 ( 0 % )
+Total DSP Blocks : 33 / 112 ( 29 % )
+Total HSSI RX PCSs : 0
+Total HSSI PMA RX Deserializers : 0
+Total HSSI TX PCSs : 0
+Total HSSI PMA TX Serializers : 0
+Total PLLs : 0 / 6 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )
