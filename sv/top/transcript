@@ -18,16 +18,16 @@
 # vmap work work 
 # Modifying modelsim.ini
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:25 on May 31,2023
+# Start time: 03:27:26 on May 31,2023
 # vlog -reportprogress 300 -work work ../sramb.sv 
 # -- Compiling module sramb
 # 
 # Top level modules:
 # 	sramb
-# End time: 01:59:26 on May 31,2023, Elapsed time: 0:00:01
+# End time: 03:27:26 on May 31,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:26 on May 31,2023
+# Start time: 03:27:26 on May 31,2023
 # vlog -reportprogress 300 -work work ../streamer/streamer.sv 
 # -- Compiling module streamer
 # ** Warning: ../streamer/streamer.sv(11): (vlog-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
@@ -35,10 +35,10 @@
 # 
 # Top level modules:
 # 	streamer
-# End time: 01:59:26 on May 31,2023, Elapsed time: 0:00:00
+# End time: 03:27:26 on May 31,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 2
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:26 on May 31,2023
+# Start time: 03:27:26 on May 31,2023
 # vlog -reportprogress 300 -work work ../fifo.sv 
 # -- Compiling module fifo
 # -- Compiling module fifo_array
@@ -46,240 +46,27 @@
 # 
 # Top level modules:
 # 	fifo_array
-# End time: 01:59:26 on May 31,2023, Elapsed time: 0:00:00
+# End time: 03:27:27 on May 31,2023, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:26 on May 31,2023
+# Start time: 03:27:27 on May 31,2023
 # vlog -reportprogress 300 -work work top.sv 
 # -- Compiling module ray_tracer_top
 # ** Warning: top.sv(12): (vlog-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
 # 
 # Top level modules:
 # 	ray_tracer_top
-# End time: 01:59:27 on May 31,2023, Elapsed time: 0:00:01
+# End time: 03:27:27 on May 31,2023, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 1
 # Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:27 on May 31,2023
+# Start time: 03:27:27 on May 31,2023
 # vlog -reportprogress 300 -work work top_tb.sv 
 # -- Compiling module top_tb
-# 
-# Top level modules:
-# 	top_tb
-# End time: 01:59:27 on May 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:27 on May 31,2023
-# vlog -reportprogress 300 -work work ../accumulate/accumulate_v2.sv 
-# -- Compiling module accumulate
-# ** Warning: ../accumulate/accumulate_v2.sv(16): (vlog-13314) Defaulting port 'p_hit' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../accumulate/accumulate_v2.sv(18): (vlog-13314) Defaulting port 'origin' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	accumulate
-# End time: 01:59:27 on May 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 2
-# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:27 on May 31,2023
-# vlog -reportprogress 300 -work work ../fifo_math.sv 
-# -- Compiling module add_module
-# ** Warning: ../fifo_math.sv(7): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../fifo_math.sv(8): (vlog-13314) Defaulting port 'y' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module add
-# ** Warning: ../fifo_math.sv(72): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../fifo_math.sv(73): (vlog-13314) Defaulting port 'y' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module dot_module
-# ** Warning: ../fifo_math.sv(122): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../fifo_math.sv(123): (vlog-13314) Defaulting port 'y' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module dot
-# ** Warning: ../fifo_math.sv(182): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../fifo_math.sv(183): (vlog-13314) Defaulting port 'y' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module cross_module
-# ** Warning: ../fifo_math.sv(234): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../fifo_math.sv(235): (vlog-13314) Defaulting port 'y' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module Cross
-# ** Warning: ../fifo_math.sv(305): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../fifo_math.sv(306): (vlog-13314) Defaulting port 'y' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module scale_module
-# ** Warning: ../fifo_math.sv(360): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module scale
-# ** Warning: ../fifo_math.sv(428): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module sub_module
-# ** Warning: ../fifo_math.sv(478): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../fifo_math.sv(479): (vlog-13314) Defaulting port 'y' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module sub
-# ** Warning: ../fifo_math.sv(552): (vlog-13314) Defaulting port 'x' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../fifo_math.sv(553): (vlog-13314) Defaulting port 'y' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module sub_single_module
-# -- Compiling module sub_single
-# 
-# Top level modules:
-# 	add
-# 	dot
-# 	Cross
-# 	scale
-# 	sub
-# 	sub_single
-# End time: 01:59:28 on May 31,2023, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 18
-# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:28 on May 31,2023
-# vlog -reportprogress 300 -work work ../divide/divide.sv 
-# -- Compiling module divide_module
-# 
-# Top level modules:
-# 	divide_module
-# End time: 01:59:28 on May 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:28 on May 31,2023
-# vlog -reportprogress 300 -work work ../divide/divide_top.sv 
-# -- Compiling module divide_top
-# 
-# Top level modules:
-# 	divide_top
-# End time: 01:59:28 on May 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:28 on May 31,2023
-# vlog -reportprogress 300 -work work ../p_hit/p_hit_1.sv 
-# -- Compiling module p_hit_fifo_in_pt1
-# ** Warning: ../p_hit/p_hit_1.sv(6): (vlog-13314) Defaulting port 'tri_normal_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(7): (vlog-13314) Defaulting port 'v0_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(8): (vlog-13314) Defaulting port 'origin_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module p_hit_dot_add_pt1
-# ** Warning: ../p_hit/p_hit_1.sv(87): (vlog-13314) Defaulting port 'tri_normal' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(88): (vlog-13314) Defaulting port 'v0' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(89): (vlog-13314) Defaulting port 'origin' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module p_hit_dot_pt2
-# ** Warning: ../p_hit/p_hit_1.sv(195): (vlog-13314) Defaulting port 'tri_normal' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(196): (vlog-13314) Defaulting port 'dir' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module p_hit_1
-# ** Warning: ../p_hit/p_hit_1.sv(265): (vlog-13314) Defaulting port 'tri_normal_1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(266): (vlog-13314) Defaulting port 'tri_normal_2' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(267): (vlog-13314) Defaulting port 'v0' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(268): (vlog-13314) Defaulting port 'origin' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(269): (vlog-13314) Defaulting port 'dir' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_1.sv(271): (vlog-13314) Defaulting port 'in_wr_en' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	p_hit_1
-# End time: 01:59:29 on May 31,2023, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 14
-# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:29 on May 31,2023
-# vlog -reportprogress 300 -work work ../p_hit/p_hit_2.sv 
-# -- Compiling module p_hit_mult
-# ** Warning: ../p_hit/p_hit_2.sv(7): (vlog-13314) Defaulting port 'tri_normal_1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(8): (vlog-13314) Defaulting port 'tri_normal_2' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(9): (vlog-13314) Defaulting port 'v0' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(10): (vlog-13314) Defaulting port 'origin' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(11): (vlog-13314) Defaulting port 'dir_1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(12): (vlog-13314) Defaulting port 'dir_2' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(14): (vlog-13314) Defaulting port 'in_wr_en' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module p_hit_module
-# ** Warning: ../p_hit/p_hit_2.sv(98): (vlog-13314) Defaulting port 'tri_normal_1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(99): (vlog-13314) Defaulting port 'tri_normal_2' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(100): (vlog-13314) Defaulting port 'v0' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(101): (vlog-13314) Defaulting port 'origin_1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(102): (vlog-13314) Defaulting port 'origin_2' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(103): (vlog-13314) Defaulting port 'dir_1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(104): (vlog-13314) Defaulting port 'dir_2' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(106): (vlog-13314) Defaulting port 'in_wr_en' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# -- Compiling module p_hit
-# ** Warning: ../p_hit/p_hit_2.sv(189): (vlog-13314) Defaulting port 'tri_normal_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(190): (vlog-13314) Defaulting port 'v0_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(191): (vlog-13314) Defaulting port 'v1_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(192): (vlog-13314) Defaulting port 'v2_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(193): (vlog-13314) Defaulting port 'origin_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../p_hit/p_hit_2.sv(194): (vlog-13314) Defaulting port 'dir' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	p_hit
-# End time: 01:59:29 on May 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 21
-# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:29 on May 31,2023
-# vlog -reportprogress 300 -work work ../shader/shader.sv 
-# -- Compiling module shader
-# 
-# Top level modules:
-# 	shader
-# End time: 01:59:29 on May 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:29 on May 31,2023
-# vlog -reportprogress 300 -work work dummy_memory.sv 
-# -- Compiling module dummy_memory
-# 
-# Top level modules:
-# 	dummy_memory
-# End time: 01:59:30 on May 31,2023, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
-# Model Technology ModelSim SE-64 vlog 2020.1 Compiler 2020.01 Jan 28 2020
-# Start time: 01:59:30 on May 31,2023
-# vlog -reportprogress 300 -work work ../hit_bool/hit_bool.sv 
-# -- Compiling module hit_bool
-# ** Warning: ../hit_bool/hit_bool.sv(11): (vlog-13314) Defaulting port 'p_hit_din' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../hit_bool/hit_bool.sv(14): (vlog-13314) Defaulting port 'normal' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../hit_bool/hit_bool.sv(17): (vlog-13314) Defaulting port 'v0' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../hit_bool/hit_bool.sv(18): (vlog-13314) Defaulting port 'v1' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../hit_bool/hit_bool.sv(19): (vlog-13314) Defaulting port 'v2' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Warning: ../hit_bool/hit_bool.sv(24): (vlog-13314) Defaulting port 'ray_origin_din' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# 
-# Top level modules:
-# 	hit_bool
-# End time: 01:59:30 on May 31,2023, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 6
-# vsim -classdebug -voptargs="+acc" "+notimingchecks" -L work work.top_tb -wlf top_tb.wlf 
-# Start time: 01:59:30 on May 31,2023
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: top.sv(12): (vopt-13314) Defaulting port 'ray_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading sv_std.std
-# Loading work.top_tb(fast)
-# Loading work.ray_tracer_top(fast)
-# Loading work.fifo(fast)
-# Loading work.streamer(fast)
-# Loading work.dummy_memory(fast)
-# Loading work.p_hit(fast)
-# Loading work.p_hit_module(fast)
-# Loading work.p_hit_mult(fast)
-# Loading work.p_hit_1(fast)
-# Loading work.p_hit_dot_add_pt1(fast)
-# Loading work.p_hit_fifo_in_pt1(fast)
-# Loading work.fifo_array(fast)
-# Loading work.fifo(fast__1)
-# Loading work.dot(fast)
-# Loading work.dot_module(fast)
-# Loading work.sub_single(fast)
-# Loading work.sub_single_module(fast)
-# Loading work.p_hit_dot_pt2(fast)
-# Loading work.divide_top(fast)
-# Loading work.divide_module(fast)
-# Loading work.scale(fast)
-# Loading work.scale_module(fast)
-# Loading work.add(fast)
-# Loading work.add_module(fast)
-# Loading work.fifo_array(fast__1)
-# Loading work.fifo(fast__2)
-# Loading work.fifo(fast__3)
-# Loading work.hit_bool(fast)
-# Loading work.sub(fast)
-# Loading work.sub_module(fast)
-# Loading work.Cross(fast)
-# Loading work.cross_module(fast)
-# Loading work.fifo_array(fast__2)
-# Loading work.fifo(fast__4)
-# Loading work.fifo(fast__5)
-# Loading work.fifo(fast__6)
-# Loading work.accumulate(fast)
-# Loading work.shader(fast)
-# Loading work.fifo(fast__7)
-# Loading work.fifo(fast__8)
-# Loading ray data
-# ** Note: $finish    : top_tb.sv(93)
-#    Time: 6267780 ns  Iteration: 3  Instance: /top_tb
-# 1
-# Break in Module top_tb at top_tb.sv line 93
-# End time: 02:23:21 on May 31,2023, Elapsed time: 0:23:51
-# Errors: 0, Warnings: 1
+# ** Error: (vlog-13069) top_tb.sv(145): near ")": syntax error, unexpected ')', expecting .* or '.'.
+# End time: 03:27:27 on May 31,2023, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: /vol/mentor/modelsim-2020.1/modeltech/linux_x86_64/vlog failed.
+# Error in macro ./top.do line 10
+# /vol/mentor/modelsim-2020.1/modeltech/linux_x86_64/vlog failed.
+#     while executing
+# "vlog -work work "top_tb.sv""
