@@ -128,6 +128,17 @@ module top_tb ();
         .ray_in                     (ray_data_feed),
         .in_full                    (in_full),
 
+        .instruction_read           (instruction_read),
+        .hit_acc_shader             (hit_out),
+        .phit_acc_shader            (p_hit_out),
+        .triangle_ID_acc_shader     (triangle_ID_out),
+        .wr_acc_shader              (wr_en_out),
+
+        .phit_hitb_acc              (p_hit_hitb),
+        .hit_hitb_acc               (hit_hitb),
+        .triangle_ID_hitb_acc       (triangle_ID_hitb),
+        .rd_acc_hitb                (rd_hitb),
+
         .full_world_shader          (full_world_shader),
         .pixel_shader_world         (pixel_shader_world),
         .wr_shader_world            (wr_shader_world)

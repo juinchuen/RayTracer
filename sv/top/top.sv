@@ -15,6 +15,18 @@ module ray_tracer_top #(
     
     output  logic                       in_full,
 
+    output  logic signed [D_BITS-1 : 0] instruction_read    [17:0],
+
+    output logic                        hit_acc_shader,
+    output logic signed  [D_BITS-1 : 0] phit_acc_shader     [2:0],
+    output logic         [M_BITS-1 : 0] triangle_ID_acc_shader,
+    output logic                        wr_acc_shader,
+
+    output logic signed  [D_BITS-1 : 0] phit_hitb_acc       [2:0],
+    output logic                        hit_hitb_acc,
+    output logic         [M_BITS-1 : 0] triangle_ID_hitb_acc,
+    output logic                        rd_acc_hitb,
+
     output logic         [7:0]          pixel_shader_world   [2:0],
     output logic                        wr_shader_world
 );
@@ -50,22 +62,14 @@ module ray_tracer_top #(
 
     logic                           rd_hitb_phit;
     logic                           empty_phit_hitb;
-
-    logic           [M_BITS-1 : 0]  triangle_ID_hitb_acc;
-    logic                           hit_hitb_acc;
-    logic signed    [D_BITS-1 : 0]  phit_hitb_acc           [2:0];
-    logic                           rd_acc_hitb;
+    
     logic                           empty_hitb_acc;
 
     logic                           full_shader_acc;
-    logic                           wr_acc_shader;
-    logic                           hit_acc_shader;
-    logic signed    [D_BITS-1 : 0]  phit_acc_shader         [2:0];
-    logic           [M_BITS-1 : 0]  triangle_ID_acc_shader;
 
     logic signed    [D_BITS-1 : 0]  origin_hitb_acc         [2:0];
 
-    logic signed    [D_BITS-1 : 0]  instruction_read        [17:0];
+    // logic signed    [D_BITS-1 : 0]  instruction_read        [17:0];
 
     generate
 
