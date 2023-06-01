@@ -1,1 +1,0 @@
-set tmp [q_correlate_db_qii -paths_per 1 -qor 1 -sdc_verif -impl_name /home/jco1147/ray_tracer/github/RayTracer/sv/top/top.prj|rev_1 -impl_result /home/jco1147/ray_tracer/github/RayTracer/sv/top/rev_1/hit_bool.vqm -load_sta -no_gui]

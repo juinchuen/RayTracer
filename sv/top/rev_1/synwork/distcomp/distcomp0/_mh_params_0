@@ -1,4 +1,0 @@
-top work.hit_bool
-parameter D_BITS 32;
-parameter Q_BITS 10;
-parameter M_BITS 12;

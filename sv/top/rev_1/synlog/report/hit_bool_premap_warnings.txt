@@ -1,5 +1,0 @@
-@W: FA406 |Environment variable QUARTUS_ROOTDIR not set. Cannot determine PAR version.
-@W: FA352 |Not using the Clearbox flow might affect timing correlation and Quality of Results (QoR).
-@W: BN132 :"/home/jco1147/ray_tracer/github/RayTracer/sv/shader/shader.sv":91:4:91:9|Removing sequential instance SHADE0.pixel[2][7:0] because it is equivalent to instance SHADE0.pixel[1][7:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: BN132 :"/home/jco1147/ray_tracer/github/RayTracer/sv/shader/shader.sv":91:4:91:9|Removing sequential instance SHADE0.pixel[1][7:0] because it is equivalent to instance SHADE0.pixel[0][7:0]. To keep the instance, apply constraint syn_preserve=1 on the instance.
-@W: MT529 :"/home/jco1147/ray_tracer/github/RayTracer/sv/fifo.sv":62:4:62:12|Found inferred clock ray_tracer_top|clock which controls 11621 sequential elements including INPUT_RAY_FIFO.empty. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
